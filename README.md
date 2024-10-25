@@ -18,6 +18,8 @@ platform=cpu
 make torch-${platform}
 # Install the project and core + train + test dependencies. Subsets: [train,test,bench,tune]
 pip install -r requirements/core.${platform}.txt -e .[train,test]
+pip install opencv-python==4.10.0.84
+pip install shapely==2.0.6
 pip install openai-clip==1.0.1
 
 python setup.py sdist bdist_wheel
