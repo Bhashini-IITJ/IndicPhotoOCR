@@ -152,12 +152,11 @@ README_original.md
 
 results/
 images
-bharatSTR/
+bharatSTR/*
 bharatSTR/East/tmp
 bharatSTR/models
 bharatSTR/images
 __pycache__/
-bharatSTR/
 
 bharatOCR/detection/East
 bharatOCR/recognition/models
