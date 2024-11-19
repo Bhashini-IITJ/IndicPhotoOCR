@@ -5,7 +5,7 @@ from bharatOCR.ocr import OCR  # Ensure OCR class is saved in a file named ocr.p
 from bharatOCR.theme import Seafoam
 
 # Initialize the OCR object for text detection and recognition
-ocr = OCR(device="cpu", verbose=False)
+ocr = OCR(verbose=False)
 
 def process_image(image):
     """
@@ -72,7 +72,6 @@ links_html = """
 links_html = """
 <div style="text-align: center; padding-top: 20px;">
     <a href="https://github.com/Bhashini-IITJ/BharatOCR" target="_blank" style="margin-right: 20px; font-size: 18px; text-decoration: none;">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="width: 20px; vertical-align: middle; margin-right: 8px;">
         GitHub Repository
     </a>
     <a href="https://github.com/Bhashini-IITJ/BharatSceneTextDataset" target="_blank" style="font-size: 18px; text-decoration: none;">
