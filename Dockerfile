@@ -17,27 +17,27 @@ RUN apt-get update && apt-get install -y wget && \
 # Create a new Conda environment named "bocr" with Python 3.9
 RUN conda create -n bocr python=3.9 -y
 
-# # Initialize conda 
-# RUN conda init
+# Initialize conda 
+RUN conda init
 
-# # Reload the env configs
-# RUN source ~/.bashrc
+# Reload the env configs
+RUN source ~/.bashrc
 
-# # Make RUN commands use the bocr environment
-#SHELL ["conda", "run", "-n", "bocr", "/bin/bash", "-c"]
+# Make RUN commands use the bocr environment
+SHELL ["conda", "run", "-n", "bocr", "/bin/bash", "-c"]
 
-# Set default shell to bash
-SHELL ["/bin/bash", "-c"]
+# # Set default shell to bash
+# SHELL ["/bin/bash", "-c"]
 
-# Clone BharatOCR repository
-RUN git clone https://github.com/Bhashini-IITJ/BharatOCR.git && \
-    git switch photoOCR && \
-    cd IndicPhotoOCR && \
-    python setup.py sdist bdist_wheel && \
-    pip install ./dist/IndicPhotoOCR-1.1.0-py3-none-any.whl[cu118] --extra-index-url https://download.pytorch.org/whl/cu118
+# # Clone BharatOCR repository
+# RUN git clone https://github.com/Bhashini-IITJ/BharatOCR.git && \
+#     git switch photoOCR && \
+#     cd IndicPhotoOCR && \
+#     python setup.py sdist bdist_wheel && \
+#     pip install ./dist/IndicPhotoOCR-1.1.0-py3-none-any.whl[cu118] --extra-index-url https://download.pytorch.org/whl/cu118
 
-# # Set default command to run BharatOCR
-CMD ["conda", "run", "-n", "bocr", "python", "-m", "IndicPhotoOCR.ocr"]
+# # # Set default command to run BharatOCR
+# CMD ["conda", "run", "-n", "bocr", "python", "-m", "IndicPhotoOCR.ocr"]
 
 
 # cd IndicPhotoOCR
