@@ -135,7 +135,11 @@ class OCR:
         os.makedirs(f"{root_image_dir}/images", exist_ok=True)
         # Temporarily save the cropped image to pass to the script model
         cropped_path = f'{root_image_dir}/images/temp_crop_{x_min}_{y_min}.jpg'
-        cropped_image.save(cropped_path)
+        if cropped_image.mode == 'RGBA':
+            cropped_image = cropped_image.convert('RGB')
+            cropped_image.save(cropped_path)
+        else:
+            cropped_image.save(cropped_path)
 
         # Predict script language, here we assume "hindi" as the model name
         if self.verbose:
@@ -220,6 +224,7 @@ if __name__ == '__main__':
     # detect_model_checkpoint = 'bharatSTR/East/tmp/epoch_990_checkpoint.pth.tar'
     sample_image_path = 'test_images/image_88.jpg'
     cropped_image_path = 'test_images/cropped_image/image_141_0.jpg'
+    # sample_image_path = '/nvme/anik/splitonBSTD/12C_images/D_image_1338.png'
 
     ocr = OCR(device="cuda", identifier_lang='hindi', verbose=False)
 

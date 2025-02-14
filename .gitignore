@@ -176,4 +176,8 @@ static/pics/IndicPhotoOCR.gif
 test_images/image_742.jpg
 
 
-
+get_detections.py
+get_recognitions.py
+recognitions_IndicPhotoOCR.csv
+recognitions_IndicPhotoOCR_ViT.csv
+recognitions_IndicPhotoOCR_ViT_12C.csv
