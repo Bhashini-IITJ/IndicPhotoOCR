@@ -14,18 +14,6 @@ IndicPhotoOCR Documentation
    :maxdepth: 2
    :caption: Contents:
 
-   modules
-
-Module Documentation
-====================
-
-.. .. automodule:: IndicPhotoOCR
-..    :members:
-..    :undoc-members:
-..    :show-inheritance:
-
-.. Submodules
-.. ----------
 
 End-2-End OCR Class
 ^^^^^^^^^^^^^^^^^^^
@@ -33,44 +21,17 @@ End-2-End OCR Class
    :members:
    :undoc-members:
    :show-inheritance:
+   :exclude-members: crop_and_identify_script
 
 
-.. Detection
-.. ^^^^^^^^^
-.. .. automodule:: IndicPhotoOCR.ocr.OCR.detect
-..    :members:
-..    :undoc-members:
-..    :show-inheritance:
+Detection
+^^^^^^^^^
+.. automodule:: IndicPhotoOCR.detection.textbpn.textbpnpp_detector
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :exclude-members: ensure_model, pad_image, rescale_result, to_device
 
-.. .. automodule:: IndicPhotoOCR.detection.east_config
-..    :members:
-..    :undoc-members:
-..    :show-inheritance:
-
-.. .. automodule:: IndicPhotoOCR.detection.east_detector
-..    :members:
-..    :undoc-members:
-..    :show-inheritance:
-
-.. .. automodule:: IndicPhotoOCR.detection.east_locality_aware_nms
-..    :members:
-..    :undoc-members:
-..    :show-inheritance:
-
-.. .. automodule:: IndicPhotoOCR.detection.east_model
-..    :members:
-..    :undoc-members:
-..    :show-inheritance:
-
-.. .. automodule:: IndicPhotoOCR.detection.east_preprossing
-..    :members:
-..    :undoc-members:
-..    :show-inheritance:
-
-.. .. automodule:: IndicPhotoOCR.detection.east_utils
-..    :members:
-..    :undoc-members:
-..    :show-inheritance:
 
 Recognition
 ^^^^^^^^^^^
@@ -79,20 +40,14 @@ Recognition
    :members:
    :undoc-members:
    :show-inheritance:
+   :exclude-members: ensure_model, get_transform, get_model_output, load_model
 
-.. Script Identification
-.. ^^^^^^^^^^^^^^^^^^^^^
+Script Identification
+^^^^^^^^^^^^^^^^^^^^^
 
-.. .. automodule:: IndicPhotoOCR.script_identification.CLIP_identifier
-..    :members:
-..    :undoc-members:
-..    :show-inheritance:
-
-.. Utilities
-.. ^^^^^^^^^
-
-.. .. automodule:: IndicPhotoOCR.utils.helper
-..    :members:
-..    :undoc-members:
-..    :show-inheritance:
+.. automodule:: IndicPhotoOCR.script_identification.vit.vit_infer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :exclude-members: unzip_file, ensure_model
 

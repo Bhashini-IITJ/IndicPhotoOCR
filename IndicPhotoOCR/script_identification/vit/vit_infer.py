@@ -93,19 +93,38 @@ processor = AutoImageProcessor.from_pretrained(pretrained_vit_model,use_fast=Tru
 
 
 class VIT_identifier:
+    """
+    A class for script identification using a ViT (Vision Transformer) model.
+    """
+    
     def __init__(self):
+        """
+        Initializes the VIT_identifier class.
+        """
         pass 
 
     def unzip_file(self, zip_path, extract_to):
+        """
+        Extracts a ZIP file to a specified directory.
 
+        Args:
+            zip_path (str): Path to the ZIP file.
+            extract_to (str): Directory where files should be extracted.
+        """
         with zipfile.ZipFile(zip_path, 'r') as zip_ref:
             zip_ref.extractall(extract_to)
             print(f"Extracted files to {extract_to}")
 
-
-
-
     def ensure_model(self, model_name):
+        """
+        Ensures that the specified model is available locally. If not, downloads and extracts it.
+
+        Args:
+            model_name (str): The name of the model to check/download.
+
+        Returns:
+            str: The local path of the model.
+        """
         model_path = model_info[model_name]["path"]
         url = model_info[model_name]["url"]
         root_model_dir = "IndicPhotoOCR/script_identification/vit"
@@ -113,10 +132,8 @@ class VIT_identifier:
 
         if not os.path.exists(model_path):
             print(f"Model not found locally. Downloading {model_name} from {url}...")
-
             response = requests.get(url, stream=True)
             zip_path = os.path.join(model_path, "temp_download.zip")
-
             os.makedirs(model_path, exist_ok=True)
 
             with open(zip_path, "wb") as file:
@@ -125,61 +142,66 @@ class VIT_identifier:
 
             with zipfile.ZipFile(zip_path, 'r') as zip_ref:
                 zip_ref.extractall(model_path)
-
             os.remove(zip_path)
 
             print(f"Downloaded and extracted to {model_path}")
         
-        else:
-            # print(f"Model folder already exists: {model_path}")
-            pass
-        
         return model_path
 
+    def identify(self, image_path, model_name, device):
+        """
+        Identifies the script in a given image using a ViT model.
 
+        Args:
+            image_path (str): Path to the input image.
+            model_name (str): Name of the model to be used.
+            device (int): Device to run the model on (e.g., 0 for GPU, -1 for CPU).
 
-
-
-    def identify(self, image_path,model_name, device):
+        Returns:
+            str: The predicted script label.
+        """
         model_path = self.ensure_model(model_name)
-
         vit = ViTForImageClassification.from_pretrained(model_path)
-        model= pipeline('image-classification', model=vit, feature_extractor=processor,device=device)
+        model = pipeline('image-classification', model=vit, feature_extractor=processor, device=device)
 
-        if image_path.endswith((".png", ".jpg", ".jpeg")):  
-
+        if image_path.endswith((".png", ".jpg", ".jpeg")):
             image = Image.open(image_path)
             output = model(image)
             predicted_label = max(output, key=lambda x: x['score'])['label']
-            
-            # print(f"image_path: {image_path}, predicted_label: {predicted_label}\n")
         
         return predicted_label
 
+    def predict_batch(self, image_dir, model_name, time_show, output_csv="prediction.csv"):
+        """
+        Processes a batch of images in a directory and predicts the script for each image.
 
-    def predict_batch(self, image_dir,model_name,time_show,output_csv="prediction.csv"):
+        Args:
+            image_dir (str): Directory containing images.
+            model_name (str): Name of the model to be used.
+            time_show (bool): Whether to print processing time.
+            output_csv (str, optional): Path to save the predictions as a CSV file. Defaults to "prediction.csv".
+
+        Returns:
+            str: The output CSV file path containing predictions.
+        """
         model_path = self.ensure_model(model_name)
         vit = ViTForImageClassification.from_pretrained(model_path)
-        model= pipeline('image-classification', model=vit, feature_extractor=processor,device=0)
+        model = pipeline('image-classification', model=vit, feature_extractor=processor, device=0)
 
         start_time = time.time()
-        results=[]
-        image_count=0
+        results = []
+        image_count = 0
+
         for filename in os.listdir(image_dir):
-            
-            if filename.endswith((".png", ".jpg", ".jpeg")):  
+            if filename.endswith((".png", ".jpg", ".jpeg")):
                 img_path = os.path.join(image_dir, filename)
                 image = Image.open(img_path)
-                
-
                 output = model(image)
                 predicted_label = max(output, key=lambda x: x['score'])['label'].capitalize()
-                
                 results.append({"Filepath": filename, "Language": predicted_label})
-                image_count+=1
+                image_count += 1
         
         elapsed_time = time.time() - start_time
-
         if time_show:
             print(f"Time taken to process {image_count} images: {elapsed_time:.2f} seconds")
         

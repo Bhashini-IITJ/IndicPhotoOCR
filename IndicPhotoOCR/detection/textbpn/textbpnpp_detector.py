@@ -28,6 +28,15 @@ model_info = {
 }
         # Ensure model file exists; download directly if not
 def ensure_model(model_name):
+    """
+    Ensure that the specified model is available locally. If not, download it.
+
+    Args:
+        model_name (str): Name of the model (e.g., "textbpnpp").
+
+    Returns:
+        str: Path to the model file.
+    """
     model_path = model_info[model_name]["path"]
     url = model_info[model_name]["url"]
     root_model_dir = "IndicPhotoOCR/detection/textbpn"
@@ -59,10 +68,12 @@ def ensure_model(model_name):
 class TextBPNpp_detector:
     def __init__(self, model_name="textbpnpp", backbone="resnet50", device="cpu"):
         """
-        Initialize the TextBPN model.
-        :param model_path: Path to the pre-trained model.
-        :param backbone: Backbone architecture (default: "resnet50").
-        :param device: Device to run the model on (default: "cpu").
+        Initialize the TextBPN++ model for text detection.
+
+        Args:
+            model_name (str): Name of the model (default: "textbpnpp").
+            backbone (str): Backbone network architecture (default: "resnet50").
+            device (str): Device for model inference, "cpu" or "cuda" (default: "cpu").
         """
         self.model_path = ensure_model(model_name)
         self.device = torch.device(device)
@@ -74,20 +85,28 @@ class TextBPNpp_detector:
     @staticmethod
     def to_device(tensor, device):
         """
-        Move tensor to the specified device.
-        :param tensor: Tensor to move.
-        :param device: Target device.
-        :return: Tensor on the target device.
+        Move a tensor to the specified device.
+
+        Args:
+            tensor (torch.Tensor): Tensor to be moved.
+            device (str): Target device ("cpu" or "cuda").
+
+        Returns:
+            torch.Tensor: Tensor moved to the specified device.
         """
         return tensor.to(device, non_blocking=True)
 
     @staticmethod
     def pad_image(image, stride=32):
         """
-        Pad the image to make its dimensions divisible by the stride.
-        :param image: Input image.
-        :param stride: Stride size.
-        :return: Padded image and original dimensions.
+        Pad an image to ensure its dimensions are multiples of a given stride.
+
+        Args:
+            image (np.ndarray): Input image as a NumPy array.
+            stride (int): Stride value for padding (default: 32).
+
+        Returns:
+            tuple: Padded image and original dimensions before padding.
         """
         h, w = image.shape[:2]
         new_h = (h + stride - 1) // stride * stride
@@ -100,12 +119,16 @@ class TextBPNpp_detector:
     @staticmethod
     def rescale_result(image, bbox_contours, original_height, original_width):
         """
-        Rescale the bounding box contours to the original image size.
-        :param image: Image after resizing.
-        :param bbox_contours: Bounding box contours.
-        :param original_height: Original image height.
-        :param original_width: Original image width.
-        :return: Original image and rescaled contours.
+        Rescale bounding box coordinates back to the original image dimensions.
+
+        Args:
+            image (np.ndarray): Processed image after resizing.
+            bbox_contours (list): List of bounding box contours.
+            original_height (int): Original image height before resizing.
+            original_width (int): Original image width before resizing.
+
+        Returns:
+            list: Rescaled bounding box contours.
         """
         contours = []
         for cont in bbox_contours:
@@ -116,9 +139,14 @@ class TextBPNpp_detector:
 
     def detect(self, image_path):
         """
-        Perform text detection on the given image.
-        :param image_path: Path to the input image.
-        :return: Dictionary with detection results.
+        Detect text regions in the input image.
+
+        Args:
+            image_path (str): Path to the image file.
+
+        Returns:
+            dict: Detected text bounding boxes in the format:
+                  {"detections": [[[x1, y1], [x2, y2], [x3, y3], [x4, y4]], ...]}
         """
         image = cv2.imread(image_path)
         if image is None:
@@ -149,11 +177,16 @@ class TextBPNpp_detector:
 
     def visualize_detections(self, image_path, bbox_result_dict, output_path="output.png"):
         """
-        Visualize detections on the image.
-        :param image_path: Path to the input image.
-        :param bbox_result_dict: Detection results in the format:
-                                {'detections': [[[x1, y1], [x2, y2], [x3, y3], [x4, y4]], ...]}.
-        :param output_path: Path to save the visualized image. If None, the image is only displayed.
+        Visualize and save detected text bounding boxes on an image.
+
+        Args:
+            image_path (str): Path to the input image.
+            bbox_result_dict (dict): Dictionary containing detected text bounding boxes.
+                                     Format: {"detections": [[[x1, y1], [x2, y2], [x3, y3], [x4, y4]], ...]}.
+            output_path (str): Path to save the visualized image (default: "output.png").
+
+        Returns:
+            None
         """
         # Load the image
         image = cv2.imread(image_path)

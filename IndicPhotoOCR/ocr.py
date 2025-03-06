@@ -23,9 +23,8 @@ class OCR:
 
     Args:
         device (str): Device to use for inference ('cuda:0' or 'cpu').
-        identifier_lang (str): Default script identifier model to use.
-            Valid options: ['hindi', 'bengali', 'tamil', 'telugu', 'malayalam', 'kannada',
-                            'gujarati', 'marathi', 'punjabi', 'odia', 'assamese', 'urdu', 'meitei']
+        identifier_lang (str): Default script identifier model to use. Valid options: ['hindi', 'bengali', 'tamil', 'telugu', 'malayalam', 'kannada',
+                            'gujarati', 'marathi', 'punjabi', 'odia', 'assamese', 'urdu', 'meitei', 'auto'].
         verbose (bool): Whether to print detailed processing information.
     """
     def __init__(self, device='cuda:0', identifier_lang='hindi', verbose=False):
@@ -171,14 +170,12 @@ class OCR:
         
         Args:
             cropped_image_path (str): Path to the cropped image.
-            script_lang (str): Identified script language.
-                Valid options: ['hindi', 'bengali', 'tamil', 'telugu', 'malayalam', 'kannada',
+            script_lang (str): Identified script language. Valid options: ['hindi', 'bengali', 'tamil', 'telugu', 'malayalam', 'kannada',
                             'gujarati', 'marathi', 'punjabi', 'odia', 'assamese']
         
         Returns:
             str: Recognized text.
         """
-        """Recognize text in a cropped image area using the identified script."""
         if self.verbose:
             print("Recognizing text in detected area...")
         recognized_text = self.recogniser.recognise(script_lang, cropped_image_path, script_lang, self.verbose, self.device)
