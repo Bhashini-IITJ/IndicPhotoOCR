@@ -110,6 +110,15 @@ class OCR:
         print(f"Image saved at: {path_to_save}")
         
     def identify(self, cropped_path):
+        """
+        Identify the script of the text present in a cropped image.
+        
+        Args:
+            cropped_path (str): Path to the cropped image containing text.
+        
+        Returns:
+            str: Predicted script language of the text in the image.
+        """
         return self.identifier.identify(cropped_path, self.indentifier_lang, self.device)
         
     def crop_and_identify_script(self, image, bbox):
@@ -163,6 +172,8 @@ class OCR:
         Args:
             cropped_image_path (str): Path to the cropped image.
             script_lang (str): Identified script language.
+                Valid options: ['hindi', 'bengali', 'tamil', 'telugu', 'malayalam', 'kannada',
+                            'gujarati', 'marathi', 'punjabi', 'odia', 'assamese']
         
         Returns:
             str: Recognized text.
