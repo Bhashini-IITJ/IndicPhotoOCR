@@ -1,0 +1,345 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IndicPhotoOCR.recognition.parseq_recogniser &mdash; IndicPhotoOCR 1.3.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=bb516dca"></script>
+      <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            IndicPhotoOCR
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"></div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IndicPhotoOCR</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">IndicPhotoOCR.recognition.parseq_recogniser</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for IndicPhotoOCR.recognition.parseq_recogniser</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">csv</span>
+<span class="c1"># import fire</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="c1"># import pandas as pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nltk</span><span class="w"> </span><span class="kn">import</span> <span class="n">edit_distance</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">torchvision</span><span class="w"> </span><span class="kn">import</span> <span class="n">transforms</span> <span class="k">as</span> <span class="n">T</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">Tuple</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">IndicPhotoOCR.utils.strhub.data.module</span><span class="w"> </span><span class="kn">import</span> <span class="n">SceneTextDataModule</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IndicPhotoOCR.utils.strhub.models.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_from_checkpoint</span>
+
+
+<span class="n">model_info</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;assamese&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;models/assamese.ckpt&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;url&quot;</span> <span class="p">:</span> <span class="s2">&quot;https://github.com/anikde/STocr/releases/download/V2.0.0/assamese.ckpt&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;bengali&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;models/bengali.ckpt&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;url&quot;</span> <span class="p">:</span> <span class="s2">&quot;https://github.com/anikde/STocr/releases/download/V2.0.0/bengali.ckpt&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;hindi&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;models/hindi.ckpt&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;url&quot;</span> <span class="p">:</span> <span class="s2">&quot;https://github.com/anikde/STocr/releases/download/V2.0.0/hindi.ckpt&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;gujarati&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;models/gujarati.ckpt&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;url&quot;</span> <span class="p">:</span> <span class="s2">&quot;https://github.com/anikde/STocr/releases/download/V2.0.0/gujarati.ckpt&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;kannada&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;models/kannada.ckpt&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;url&quot;</span> <span class="p">:</span> <span class="s2">&quot;https://github.com/anikde/STocr/releases/download/V2.0.0/kannada.ckpt&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;malayalam&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;models/malayalam.ckpt&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;url&quot;</span> <span class="p">:</span> <span class="s2">&quot;https://github.com/anikde/STocr/releases/download/V2.0.0/malayalam.ckpt&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;marathi&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;models/marathi.ckpt&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;url&quot;</span> <span class="p">:</span> <span class="s2">&quot;https://github.com/anikde/STocr/releases/download/V2.0.0/marathi.ckpt&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;odia&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;models/odia.ckpt&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;url&quot;</span> <span class="p">:</span> <span class="s2">&quot;https://github.com/anikde/STocr/releases/download/V2.0.0/odia.ckpt&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;punjabi&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;models/punjabi.ckpt&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;url&quot;</span> <span class="p">:</span> <span class="s2">&quot;https://github.com/anikde/STocr/releases/download/V2.0.0/punjabi.ckpt&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;tamil&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;models/tamil.ckpt&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;url&quot;</span> <span class="p">:</span> <span class="s2">&quot;https://github.com/anikde/STocr/releases/download/V2.0.0/tamil.ckpt&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;telugu&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;models/telugu.ckpt&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;url&quot;</span> <span class="p">:</span> <span class="s2">&quot;https://github.com/anikde/STocr/releases/download/V2.0.0/telugu.ckpt&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<div class="viewcode-block" id="PARseqrecogniser">
+<a class="viewcode-back" href="../../../index.html#IndicPhotoOCR.recognition.parseq_recogniser.PARseqrecogniser">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">PARseqrecogniser</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<div class="viewcode-block" id="PARseqrecogniser.get_transform">
+<a class="viewcode-back" href="../../../index.html#IndicPhotoOCR.recognition.parseq_recogniser.PARseqrecogniser.get_transform">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">img_size</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">augment</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">rotation</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="n">transforms</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">augment</span><span class="p">:</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">.augment</span><span class="w"> </span><span class="kn">import</span> <span class="n">rand_augment_transform</span>
+            <span class="n">transforms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rand_augment_transform</span><span class="p">())</span>
+        <span class="k">if</span> <span class="n">rotation</span><span class="p">:</span>
+            <span class="n">transforms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="k">lambda</span> <span class="n">img</span><span class="p">:</span> <span class="n">img</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">rotation</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+        <span class="n">transforms</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+            <span class="n">T</span><span class="o">.</span><span class="n">Resize</span><span class="p">(</span><span class="n">img_size</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="n">InterpolationMode</span><span class="o">.</span><span class="n">BICUBIC</span><span class="p">),</span>
+            <span class="n">T</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+            <span class="n">T</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+        <span class="p">])</span>
+        <span class="k">return</span> <span class="n">T</span><span class="o">.</span><span class="n">Compose</span><span class="p">(</span><span class="n">transforms</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="PARseqrecogniser.load_model">
+<a class="viewcode-back" href="../../../index.html#IndicPhotoOCR.recognition.parseq_recogniser.PARseqrecogniser.load_model">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">load_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">checkpoint</span><span class="p">):</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">load_from_checkpoint</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">)</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">model</span></div>
+
+
+<div class="viewcode-block" id="PARseqrecogniser.get_model_output">
+<a class="viewcode-back" href="../../../index.html#IndicPhotoOCR.recognition.parseq_recogniser.PARseqrecogniser.get_model_output">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_model_output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">image_path</span><span class="p">):</span>
+        <span class="n">hp</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">hparams</span>
+        <span class="n">transform</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_transform</span><span class="p">(</span><span class="n">hp</span><span class="o">.</span><span class="n">img_size</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">image_name</span> <span class="o">=</span> <span class="n">image_path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;RGB&#39;</span><span class="p">)</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+        <span class="n">logits</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">))</span>
+        <span class="n">probs</span> <span class="o">=</span> <span class="n">logits</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">preds</span><span class="p">,</span> <span class="n">probs</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">probs</span><span class="p">)</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">charset_adapter</span><span class="p">(</span><span class="n">preds</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">scores</span> <span class="o">=</span> <span class="n">probs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">text</span></div>
+
+
+        <span class="c1"># Ensure model file exists; download directly if not</span>
+<div class="viewcode-block" id="PARseqrecogniser.ensure_model">
+<a class="viewcode-back" href="../../../index.html#IndicPhotoOCR.recognition.parseq_recogniser.PARseqrecogniser.ensure_model">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">ensure_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model_name</span><span class="p">):</span>
+        <span class="n">model_path</span> <span class="o">=</span> <span class="n">model_info</span><span class="p">[</span><span class="n">model_name</span><span class="p">][</span><span class="s2">&quot;path&quot;</span><span class="p">]</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">model_info</span><span class="p">[</span><span class="n">model_name</span><span class="p">][</span><span class="s2">&quot;url&quot;</span><span class="p">]</span>
+        <span class="n">root_model_dir</span> <span class="o">=</span> <span class="s2">&quot;IndicPhotoOCR/recognition/&quot;</span>
+        <span class="n">model_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root_model_dir</span><span class="p">,</span> <span class="n">model_path</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">model_path</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Model not found locally. Downloading </span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2"> from </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+            
+            <span class="c1"># Start the download with a progress bar</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">total_size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;content-length&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">root_model_dir</span><span class="si">}</span><span class="s2">/models&quot;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">,</span> <span class="n">tqdm</span><span class="p">(</span>
+                    <span class="n">desc</span><span class="o">=</span><span class="n">model_name</span><span class="p">,</span>
+                    <span class="n">total</span><span class="o">=</span><span class="n">total_size</span><span class="p">,</span>
+                    <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;B&#39;</span><span class="p">,</span>
+                    <span class="n">unit_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="n">unit_divisor</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span>
+            <span class="p">)</span> <span class="k">as</span> <span class="n">bar</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="mi">1024</span><span class="p">):</span>
+                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+                    <span class="n">bar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Downloaded model for </span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+            
+        <span class="k">return</span> <span class="n">model_path</span></div>
+
+
+<div class="viewcode-block" id="PARseqrecogniser.bstr">
+<a class="viewcode-back" href="../../../index.html#IndicPhotoOCR.recognition.parseq_recogniser.PARseqrecogniser.bstr">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">bstr</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span> <span class="n">language</span><span class="p">,</span> <span class="n">image_dir</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Runs the OCR model to process images and save the output as a JSON file.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            checkpoint (str): Path to the model checkpoint file.</span>
+<span class="sd">            language (str): Language code (e.g., &#39;hindi&#39;, &#39;english&#39;).</span>
+<span class="sd">            image_dir (str): Directory containing the images to process.</span>
+<span class="sd">            save_dir (str): Directory where the output JSON file will be saved.</span>
+
+<span class="sd">        Example usage:</span>
+<span class="sd">            python your_script.py --checkpoint /path/to/checkpoint.ckpt --language hindi --image_dir /path/to/images --save_dir /path/to/save</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda:1&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">language</span> <span class="o">!=</span> <span class="s2">&quot;english&quot;</span><span class="p">:</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">checkpoint</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">hub</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;baudm/parseq&#39;</span><span class="p">,</span> <span class="s1">&#39;parseq&#39;</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="n">parseq_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">image_path</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">image_dir</span><span class="p">)):</span>
+            <span class="k">assert</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">image_dir</span><span class="p">,</span> <span class="n">image_path</span><span class="p">))</span> <span class="o">==</span> <span class="kc">True</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">image_path</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">get_model_output</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">image_dir</span><span class="p">,</span> <span class="n">image_path</span><span class="p">),</span> <span class="n">language</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">language</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+            <span class="n">filename</span> <span class="o">=</span> <span class="n">image_path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">parseq_dict</span><span class="p">[</span><span class="n">filename</span><span class="p">]</span> <span class="o">=</span> <span class="n">text</span>
+
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">save_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">language</span><span class="si">}</span><span class="s2">_test.json&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">parseq_dict</span><span class="p">,</span> <span class="n">json_file</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="PARseqrecogniser.bstr_onImage">
+<a class="viewcode-back" href="../../../index.html#IndicPhotoOCR.recognition.parseq_recogniser.PARseqrecogniser.bstr_onImage">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">bstr_onImage</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span> <span class="n">language</span><span class="p">,</span> <span class="n">image_path</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Runs the OCR model to process images and save the output as a JSON file.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            checkpoint (str): Path to the model checkpoint file.</span>
+<span class="sd">            language (str): Language code (e.g., &#39;hindi&#39;, &#39;english&#39;).</span>
+<span class="sd">            image_dir (str): Directory containing the images to process.</span>
+<span class="sd">            save_dir (str): Directory where the output JSON file will be saved.</span>
+
+<span class="sd">        Example usage:</span>
+<span class="sd">            python your_script.py --checkpoint /path/to/checkpoint.ckpt --language hindi --image_dir /path/to/images --save_dir /path/to/save</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda:1&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">language</span> <span class="o">!=</span> <span class="s2">&quot;english&quot;</span><span class="p">:</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">checkpoint</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">hub</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;baudm/parseq&#39;</span><span class="p">,</span> <span class="s1">&#39;parseq&#39;</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="c1"># parseq_dict = {}</span>
+        <span class="c1"># for image_path in tqdm(os.listdir(image_dir)):</span>
+        <span class="c1">#     assert os.path.exists(os.path.join(image_dir, image_path)) == True, f&quot;{image_path}&quot;</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">get_model_output</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">image_path</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">language</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">text</span></div>
+
+
+
+<div class="viewcode-block" id="PARseqrecogniser.recognise">
+<a class="viewcode-back" href="../../../index.html#IndicPhotoOCR.recognition.parseq_recogniser.PARseqrecogniser.recognise">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">recognise</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">checkpoint</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">image_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">language</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">device</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Loads the desired model and returns the recognized word from the specified image.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            checkpoint (str): Path to the model checkpoint file.</span>
+<span class="sd">            language (str): Language code (e.g., &#39;hindi&#39;, &#39;english&#39;).</span>
+<span class="sd">            image_path (str): Path to the image for which text recognition is needed.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The recognized text from the image.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># device = torch.device(&quot;cuda:0&quot; if torch.cuda.is_available() else &quot;cpu&quot;)</span>
+
+        <span class="k">if</span> <span class="n">language</span> <span class="o">!=</span> <span class="s2">&quot;english&quot;</span><span class="p">:</span>
+            <span class="n">model_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensure_model</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">)</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">model_path</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">hub</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;baudm/parseq&#39;</span><span class="p">,</span> <span class="s1">&#39;parseq&#39;</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">)</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="n">recognized_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_model_output</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">image_path</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">recognized_text</span></div>
+</div>
+
+<span class="c1"># if __name__ == &#39;__main__&#39;:</span>
+<span class="c1">#     fire.Fire(main)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Anik De.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
