@@ -1,0 +1,367 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IndicPhotoOCR.ocr &mdash; IndicPhotoOCR 1.3.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=bb516dca"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IndicPhotoOCR
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"></div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IndicPhotoOCR</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">IndicPhotoOCR.ocr</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for IndicPhotoOCR.ocr</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+
+<span class="c1"># from IndicPhotoOCR.detection.east_detector import EASTdetector</span>
+<span class="c1"># from IndicPhotoOCR.script_identification.CLIP_identifier import CLIPidentifier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IndicPhotoOCR.script_identification.vit.vit_infer</span><span class="w"> </span><span class="kn">import</span> <span class="n">VIT_identifier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IndicPhotoOCR.recognition.parseq_recogniser</span><span class="w"> </span><span class="kn">import</span> <span class="n">PARseqrecogniser</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">IndicPhotoOCR.detection.east_config</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cfg</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IndicPhotoOCR.detection.textbpn.textbpnpp_detector</span><span class="w"> </span><span class="kn">import</span> <span class="n">TextBPNpp_detector</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">IndicPhotoOCR.utils.helper</span><span class="w"> </span><span class="kn">import</span> <span class="n">detect_para</span>
+
+
+<div class="viewcode-block" id="OCR">
+<a class="viewcode-back" href="../../index.html#IndicPhotoOCR.ocr.OCR">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">OCR</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Optical Character Recognition (OCR) pipeline for text detection, script identification,</span>
+<span class="sd">    and text recognition.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        device (str): Device to use for inference (&#39;cuda:0&#39; or &#39;cpu&#39;).</span>
+<span class="sd">        identifier_lang (str): Default script identifier model to use. Valid options: [&#39;hindi&#39;, &#39;bengali&#39;, &#39;tamil&#39;, &#39;telugu&#39;, &#39;malayalam&#39;, &#39;kannada&#39;,</span>
+<span class="sd">                            &#39;gujarati&#39;, &#39;marathi&#39;, &#39;punjabi&#39;, &#39;odia&#39;, &#39;assamese&#39;, &#39;urdu&#39;, &#39;meitei&#39;, &#39;auto&#39;].</span>
+<span class="sd">        verbose (bool): Whether to print detailed processing information.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;cuda:0&#39;</span><span class="p">,</span> <span class="n">identifier_lang</span><span class="o">=</span><span class="s1">&#39;hindi&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="c1"># self.detect_model_checkpoint = detect_model_checkpoint</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">device</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="n">verbose</span>
+        <span class="c1"># self.image_path = image_path</span>
+        <span class="c1"># self.detector = EASTdetector()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">detector</span> <span class="o">=</span> <span class="n">TextBPNpp_detector</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">recogniser</span> <span class="o">=</span> <span class="n">PARseqrecogniser</span><span class="p">()</span>
+        <span class="c1"># self.identifier = CLIPidentifier()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">VIT_identifier</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">indentifier_lang</span> <span class="o">=</span> <span class="n">identifier_lang</span>
+
+    <span class="c1"># def detect(self, image_path, detect_model_checkpoint=cfg.checkpoint):</span>
+    <span class="c1">#     &quot;&quot;&quot;Run the detection model to get bounding boxes of text areas.&quot;&quot;&quot;</span>
+
+    <span class="c1">#     if self.verbose:</span>
+    <span class="c1">#         print(&quot;Running text detection...&quot;)</span>
+    <span class="c1">#     detections = self.detector.detect(image_path, detect_model_checkpoint, self.device)</span>
+    <span class="c1">#     # print(detections)</span>
+    <span class="c1">#     return detections[&#39;detections&#39;]</span>
+<div class="viewcode-block" id="OCR.detect">
+<a class="viewcode-back" href="../../index.html#IndicPhotoOCR.ocr.OCR.detect">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">detect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image_path</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Detect text regions in the input image.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            image_path (str): Path to the image file.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            list: Detected text bounding boxes.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">detections</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">detector</span><span class="o">.</span><span class="n">detect</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">detections</span><span class="p">[</span><span class="s1">&#39;detections&#39;</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="OCR.visualize_detection">
+<a class="viewcode-back" href="../../index.html#IndicPhotoOCR.ocr.OCR.visualize_detection">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">visualize_detection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image_path</span><span class="p">,</span> <span class="n">detections</span><span class="p">,</span> <span class="n">save_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Visualize and optionally save the detected text bounding boxes on an image.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            image_path (str): Path to the image file.</span>
+<span class="sd">            detections (list): List of bounding boxes.</span>
+<span class="sd">            save_path (str, optional): Path to save the output image.</span>
+<span class="sd">            show (bool): Whether to display the image.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Default save path if none is provided</span>
+        <span class="n">default_save_path</span> <span class="o">=</span> <span class="s2">&quot;test.png&quot;</span>
+        <span class="n">path_to_save</span> <span class="o">=</span> <span class="n">save_path</span> <span class="k">if</span> <span class="n">save_path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">default_save_path</span>
+
+        <span class="c1"># Get the directory part of the path</span>
+        <span class="n">directory</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">path_to_save</span><span class="p">)</span>
+        
+        <span class="c1"># Check if the directory exists, and create it if it doesn’t</span>
+        <span class="k">if</span> <span class="n">directory</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Created directory: </span><span class="si">{</span><span class="n">directory</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Read the image and draw bounding boxes</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">box</span> <span class="ow">in</span> <span class="n">detections</span><span class="p">:</span>
+            <span class="c1"># Convert list of points to a numpy array with int type</span>
+            <span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">box</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+
+            <span class="c1"># Compute the top-left and bottom-right corners of the bounding box</span>
+            <span class="n">x_min</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">points</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+            <span class="n">y_min</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">points</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+            <span class="n">x_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">points</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+            <span class="n">y_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">points</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+
+            <span class="c1"># Draw the rectangle</span>
+            <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">y_min</span><span class="p">),</span> <span class="p">(</span><span class="n">x_max</span><span class="p">,</span> <span class="n">y_max</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+        <span class="c1"># Show the image if &#39;show&#39; is True</span>
+        <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+        <span class="c1"># Save the annotated image</span>
+        <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="n">path_to_save</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Image saved at: </span><span class="si">{</span><span class="n">path_to_save</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+        
+<div class="viewcode-block" id="OCR.identify">
+<a class="viewcode-back" href="../../index.html#IndicPhotoOCR.ocr.OCR.identify">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">identify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cropped_path</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Identify the script of the text present in a cropped image.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            cropped_path (str): Path to the cropped image containing text.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            str: Predicted script language of the text in the image.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">identifier</span><span class="o">.</span><span class="n">identify</span><span class="p">(</span><span class="n">cropped_path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">indentifier_lang</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span></div>
+
+        
+    <span class="k">def</span><span class="w"> </span><span class="nf">crop_and_identify_script</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">bbox</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Crop a text area from the image and identify its script language.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            image (PIL.Image): The full image.</span>
+<span class="sd">            bbox (list): List of four corner points, each a [x, y] pair.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: Identified script language.</span>
+<span class="sd">            str: Path to the cropped image.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Extract x and y coordinates from the four corner points</span>
+        <span class="n">x_coords</span> <span class="o">=</span> <span class="p">[</span><span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">bbox</span><span class="p">]</span>
+        <span class="n">y_coords</span> <span class="o">=</span> <span class="p">[</span><span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">bbox</span><span class="p">]</span>
+
+        <span class="c1"># Get the bounding box coordinates (min and max)</span>
+        <span class="n">x_min</span><span class="p">,</span> <span class="n">y_min</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">x_coords</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">y_coords</span><span class="p">)</span>
+        <span class="n">x_max</span><span class="p">,</span> <span class="n">y_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">x_coords</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">y_coords</span><span class="p">)</span>
+
+        <span class="c1"># Crop the image based on the bounding box</span>
+        <span class="n">cropped_image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">crop</span><span class="p">((</span><span class="n">x_min</span><span class="p">,</span> <span class="n">y_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="n">y_max</span><span class="p">))</span>
+        <span class="n">root_image_dir</span> <span class="o">=</span> <span class="s2">&quot;IndicPhotoOCR/script_identification&quot;</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">root_image_dir</span><span class="si">}</span><span class="s2">/images&quot;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="c1"># Temporarily save the cropped image to pass to the script model</span>
+        <span class="n">cropped_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">root_image_dir</span><span class="si">}</span><span class="s1">/images/temp_crop_</span><span class="si">{</span><span class="n">x_min</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">y_min</span><span class="si">}</span><span class="s1">.jpg&#39;</span>
+        <span class="c1"># Convert RGBA to RGB so as to save them</span>
+        <span class="k">if</span> <span class="n">cropped_image</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;RGBA&#39;</span><span class="p">:</span>
+            <span class="n">cropped_image</span> <span class="o">=</span> <span class="n">cropped_image</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;RGB&#39;</span><span class="p">)</span>
+            <span class="n">cropped_image</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">cropped_path</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cropped_image</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">cropped_path</span><span class="p">)</span>
+
+        <span class="c1"># Predict script language, here we assume &quot;hindi&quot; as the model name</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Identifying script for the cropped area...&quot;</span><span class="p">)</span>
+        <span class="n">script_lang</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">identify</span><span class="p">(</span><span class="n">cropped_path</span><span class="p">)</span>  <span class="c1"># Use &quot;hindi&quot; as the model name</span>
+        <span class="c1"># print(script_lang)</span>
+
+        <span class="c1"># Clean up temporary file</span>
+        <span class="c1"># os.remove(cropped_path)</span>
+
+        <span class="k">return</span> <span class="n">script_lang</span><span class="p">,</span> <span class="n">cropped_path</span>
+
+<div class="viewcode-block" id="OCR.recognise">
+<a class="viewcode-back" href="../../index.html#IndicPhotoOCR.ocr.OCR.recognise">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">recognise</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cropped_image_path</span><span class="p">,</span> <span class="n">script_lang</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Recognize text in a cropped image using the identified script model.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            cropped_image_path (str): Path to the cropped image.</span>
+<span class="sd">            script_lang (str): Identified script language. Valid options: [&#39;hindi&#39;, &#39;bengali&#39;, &#39;tamil&#39;, &#39;telugu&#39;, &#39;malayalam&#39;, &#39;kannada&#39;,</span>
+<span class="sd">                            &#39;gujarati&#39;, &#39;marathi&#39;, &#39;punjabi&#39;, &#39;odia&#39;, &#39;assamese&#39;]</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            str: Recognized text.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Recognizing text in detected area...&quot;</span><span class="p">)</span>
+        <span class="n">recognized_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">recogniser</span><span class="o">.</span><span class="n">recognise</span><span class="p">(</span><span class="n">script_lang</span><span class="p">,</span> <span class="n">cropped_image_path</span><span class="p">,</span> <span class="n">script_lang</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+        <span class="c1"># print(recognized_text)</span>
+        <span class="k">return</span> <span class="n">recognized_text</span></div>
+
+
+<div class="viewcode-block" id="OCR.ocr">
+<a class="viewcode-back" href="../../index.html#IndicPhotoOCR.ocr.OCR.ocr">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">ocr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image_path</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Perform end-to-end OCR: detect text, identify script, and recognize text.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            image_path (str): Path to the input image.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: Recognized text with corresponding bounding boxes.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">recognized_texts</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">recognized_words</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
+        
+        <span class="c1"># Run detection</span>
+        <span class="n">detections</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">detect</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
+
+        <span class="c1"># Process each detected text area</span>
+        <span class="c1"># for bbox in detections:</span>
+            <span class="c1"># # Crop and identify script language</span>
+            <span class="c1"># script_lang, cropped_path = self.crop_and_identify_script(image, bbox)</span>
+
+            <span class="c1"># # Check if the script language is valid</span>
+            <span class="c1"># if script_lang:</span>
+
+            <span class="c1">#     # Recognize text</span>
+            <span class="c1">#     recognized_word = self.recognise(cropped_path, script_lang)</span>
+            <span class="c1">#     recognized_words.append(recognized_word)</span>
+
+            <span class="c1">#     if self.verbose:</span>
+            <span class="c1">#         print(f&quot;Recognized word: {recognized_word}&quot;)</span>
+
+
+        <span class="k">for</span> <span class="nb">id</span><span class="p">,</span> <span class="n">bbox</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">detections</span><span class="p">):</span>
+            <span class="c1"># Identify the script and crop the image to this region</span>
+            <span class="n">script_lang</span><span class="p">,</span> <span class="n">cropped_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">crop_and_identify_script</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">bbox</span><span class="p">)</span>
+
+            <span class="c1"># Calculate bounding box coordinates</span>
+            <span class="n">x1</span> <span class="o">=</span> <span class="nb">min</span><span class="p">([</span><span class="n">bbox</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bbox</span><span class="p">))])</span>
+            <span class="n">y1</span> <span class="o">=</span> <span class="nb">min</span><span class="p">([</span><span class="n">bbox</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bbox</span><span class="p">))])</span>
+            <span class="n">x2</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">bbox</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bbox</span><span class="p">))])</span>
+            <span class="n">y2</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">bbox</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bbox</span><span class="p">))])</span>
+
+            <span class="k">if</span> <span class="n">script_lang</span><span class="p">:</span>
+                <span class="n">recognized_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">recognise</span><span class="p">(</span><span class="n">cropped_path</span><span class="p">,</span> <span class="n">script_lang</span><span class="p">)</span>
+                <span class="n">recognized_texts</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;img_</span><span class="si">{</span><span class="nb">id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;txt&quot;</span><span class="p">:</span> <span class="n">recognized_text</span><span class="p">,</span> <span class="s2">&quot;bbox&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">]}</span>
+
+        <span class="k">return</span> <span class="n">detect_para</span><span class="p">(</span><span class="n">recognized_texts</span><span class="p">)</span></div>
+</div>
+
+        <span class="c1"># return recognized_words</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c1"># detect_model_checkpoint = &#39;bharatSTR/East/tmp/epoch_990_checkpoint.pth.tar&#39;</span>
+    <span class="n">sample_image_path</span> <span class="o">=</span> <span class="s1">&#39;test_images/image_88.jpg&#39;</span>
+    <span class="n">cropped_image_path</span> <span class="o">=</span> <span class="s1">&#39;test_images/cropped_image/image_141_0.jpg&#39;</span>
+
+    <span class="n">ocr</span> <span class="o">=</span> <span class="n">OCR</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s2">&quot;cuda&quot;</span><span class="p">,</span> <span class="n">identifier_lang</span><span class="o">=</span><span class="s1">&#39;hindi&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># detections = ocr.detect(sample_image_path)</span>
+    <span class="c1"># print(detections)</span>
+
+    <span class="c1"># ocr.visualize_detection(sample_image_path, detections)</span>
+
+    <span class="c1"># recognition = ocr.recognise(cropped_image_path, &quot;hindi&quot;)</span>
+    <span class="c1"># print(recognition)</span>
+
+    <span class="n">recognised_words</span> <span class="o">=</span> <span class="n">ocr</span><span class="o">.</span><span class="n">ocr</span><span class="p">(</span><span class="n">sample_image_path</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">recognised_words</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Anik De.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
