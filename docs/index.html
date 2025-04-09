@@ -1,0 +1,425 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IndicPhotoOCR Documentation &mdash; IndicPhotoOCR 1.3.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=bb516dca"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            IndicPhotoOCR
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">IndicPhotoOCR Documentation</a><ul>
+<li><a class="reference internal" href="#module-IndicPhotoOCR.ocr">End-2-End OCR Class</a><ul>
+<li><a class="reference internal" href="#IndicPhotoOCR.ocr.OCR"><code class="docutils literal notranslate"><span class="pre">OCR</span></code></a><ul>
+<li><a class="reference internal" href="#IndicPhotoOCR.ocr.OCR.detect"><code class="docutils literal notranslate"><span class="pre">OCR.detect()</span></code></a></li>
+<li><a class="reference internal" href="#IndicPhotoOCR.ocr.OCR.identify"><code class="docutils literal notranslate"><span class="pre">OCR.identify()</span></code></a></li>
+<li><a class="reference internal" href="#IndicPhotoOCR.ocr.OCR.ocr"><code class="docutils literal notranslate"><span class="pre">OCR.ocr()</span></code></a></li>
+<li><a class="reference internal" href="#IndicPhotoOCR.ocr.OCR.recognise"><code class="docutils literal notranslate"><span class="pre">OCR.recognise()</span></code></a></li>
+<li><a class="reference internal" href="#IndicPhotoOCR.ocr.OCR.visualize_detection"><code class="docutils literal notranslate"><span class="pre">OCR.visualize_detection()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-IndicPhotoOCR.detection.textbpn.textbpnpp_detector">Detection</a><ul>
+<li><a class="reference internal" href="#IndicPhotoOCR.detection.textbpn.textbpnpp_detector.TextBPNpp_detector"><code class="docutils literal notranslate"><span class="pre">TextBPNpp_detector</span></code></a><ul>
+<li><a class="reference internal" href="#IndicPhotoOCR.detection.textbpn.textbpnpp_detector.TextBPNpp_detector.detect"><code class="docutils literal notranslate"><span class="pre">TextBPNpp_detector.detect()</span></code></a></li>
+<li><a class="reference internal" href="#IndicPhotoOCR.detection.textbpn.textbpnpp_detector.TextBPNpp_detector.visualize_detections"><code class="docutils literal notranslate"><span class="pre">TextBPNpp_detector.visualize_detections()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-IndicPhotoOCR.recognition.parseq_recogniser">Recognition</a><ul>
+<li><a class="reference internal" href="#IndicPhotoOCR.recognition.parseq_recogniser.PARseqrecogniser"><code class="docutils literal notranslate"><span class="pre">PARseqrecogniser</span></code></a><ul>
+<li><a class="reference internal" href="#IndicPhotoOCR.recognition.parseq_recogniser.PARseqrecogniser.bstr"><code class="docutils literal notranslate"><span class="pre">PARseqrecogniser.bstr()</span></code></a></li>
+<li><a class="reference internal" href="#IndicPhotoOCR.recognition.parseq_recogniser.PARseqrecogniser.bstr_onImage"><code class="docutils literal notranslate"><span class="pre">PARseqrecogniser.bstr_onImage()</span></code></a></li>
+<li><a class="reference internal" href="#IndicPhotoOCR.recognition.parseq_recogniser.PARseqrecogniser.recognise"><code class="docutils literal notranslate"><span class="pre">PARseqrecogniser.recognise()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-IndicPhotoOCR.script_identification.vit.vit_infer">Script Identification</a><ul>
+<li><a class="reference internal" href="#IndicPhotoOCR.script_identification.vit.vit_infer.VIT_identifier"><code class="docutils literal notranslate"><span class="pre">VIT_identifier</span></code></a><ul>
+<li><a class="reference internal" href="#IndicPhotoOCR.script_identification.vit.vit_infer.VIT_identifier.identify"><code class="docutils literal notranslate"><span class="pre">VIT_identifier.identify()</span></code></a></li>
+<li><a class="reference internal" href="#IndicPhotoOCR.script_identification.vit.vit_infer.VIT_identifier.predict_batch"><code class="docutils literal notranslate"><span class="pre">VIT_identifier.predict_batch()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">IndicPhotoOCR</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">IndicPhotoOCR Documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="indicphotoocr-documentation">
+<h1>IndicPhotoOCR Documentation<a class="headerlink" href="#indicphotoocr-documentation" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<section id="module-IndicPhotoOCR.ocr">
+<span id="end-2-end-ocr-class"></span><h2>End-2-End OCR Class<a class="headerlink" href="#module-IndicPhotoOCR.ocr" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="IndicPhotoOCR.ocr.OCR">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">IndicPhotoOCR.ocr.</span></span><span class="sig-name descname"><span class="pre">OCR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cuda:0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">identifier_lang</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'hindi'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/IndicPhotoOCR/ocr.html#OCR"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IndicPhotoOCR.ocr.OCR" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Optical Character Recognition (OCR) pipeline for text detection, script identification,
+and text recognition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>device</strong> (<em>str</em>) – Device to use for inference (‘cuda:0’ or ‘cpu’).</p></li>
+<li><p><strong>identifier_lang</strong> (<em>str</em>) – Default script identifier model to use. Valid options: [‘hindi’, ‘bengali’, ‘tamil’, ‘telugu’, ‘malayalam’, ‘kannada’,
+‘gujarati’, ‘marathi’, ‘punjabi’, ‘odia’, ‘assamese’, ‘urdu’, ‘meitei’, ‘auto’].</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Whether to print detailed processing information.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="IndicPhotoOCR.ocr.OCR.detect">
+<span class="sig-name descname"><span class="pre">detect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/IndicPhotoOCR/ocr.html#OCR.detect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IndicPhotoOCR.ocr.OCR.detect" title="Link to this definition"></a></dt>
+<dd><p>Detect text regions in the input image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>image_path</strong> (<em>str</em>) – Path to the image file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Detected text bounding boxes.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="IndicPhotoOCR.ocr.OCR.identify">
+<span class="sig-name descname"><span class="pre">identify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cropped_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/IndicPhotoOCR/ocr.html#OCR.identify"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IndicPhotoOCR.ocr.OCR.identify" title="Link to this definition"></a></dt>
+<dd><p>Identify the script of the text present in a cropped image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cropped_path</strong> (<em>str</em>) – Path to the cropped image containing text.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Predicted script language of the text in the image.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="IndicPhotoOCR.ocr.OCR.ocr">
+<span class="sig-name descname"><span class="pre">ocr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/IndicPhotoOCR/ocr.html#OCR.ocr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IndicPhotoOCR.ocr.OCR.ocr" title="Link to this definition"></a></dt>
+<dd><p>Perform end-to-end OCR: detect text, identify script, and recognize text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>image_path</strong> (<em>str</em>) – Path to the input image.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Recognized text with corresponding bounding boxes.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="IndicPhotoOCR.ocr.OCR.recognise">
+<span class="sig-name descname"><span class="pre">recognise</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cropped_image_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">script_lang</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/IndicPhotoOCR/ocr.html#OCR.recognise"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IndicPhotoOCR.ocr.OCR.recognise" title="Link to this definition"></a></dt>
+<dd><p>Recognize text in a cropped image using the identified script model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cropped_image_path</strong> (<em>str</em>) – Path to the cropped image.</p></li>
+<li><p><strong>script_lang</strong> (<em>str</em>) – Identified script language. Valid options: [‘hindi’, ‘bengali’, ‘tamil’, ‘telugu’, ‘malayalam’, ‘kannada’,
+‘gujarati’, ‘marathi’, ‘punjabi’, ‘odia’, ‘assamese’]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Recognized text.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="IndicPhotoOCR.ocr.OCR.visualize_detection">
+<span class="sig-name descname"><span class="pre">visualize_detection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detections</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/IndicPhotoOCR/ocr.html#OCR.visualize_detection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IndicPhotoOCR.ocr.OCR.visualize_detection" title="Link to this definition"></a></dt>
+<dd><p>Visualize and optionally save the detected text bounding boxes on an image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image_path</strong> (<em>str</em>) – Path to the image file.</p></li>
+<li><p><strong>detections</strong> (<em>list</em>) – List of bounding boxes.</p></li>
+<li><p><strong>save_path</strong> (<em>str</em><em>, </em><em>optional</em>) – Path to save the output image.</p></li>
+<li><p><strong>show</strong> (<em>bool</em>) – Whether to display the image.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-IndicPhotoOCR.detection.textbpn.textbpnpp_detector">
+<span id="detection"></span><h2>Detection<a class="headerlink" href="#module-IndicPhotoOCR.detection.textbpn.textbpnpp_detector" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="IndicPhotoOCR.detection.textbpn.textbpnpp_detector.TextBPNpp_detector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">IndicPhotoOCR.detection.textbpn.textbpnpp_detector.</span></span><span class="sig-name descname"><span class="pre">TextBPNpp_detector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'textbpnpp'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backbone</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'resnet50'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cpu'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/IndicPhotoOCR/detection/textbpn/textbpnpp_detector.html#TextBPNpp_detector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IndicPhotoOCR.detection.textbpn.textbpnpp_detector.TextBPNpp_detector" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="IndicPhotoOCR.detection.textbpn.textbpnpp_detector.TextBPNpp_detector.detect">
+<span class="sig-name descname"><span class="pre">detect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/IndicPhotoOCR/detection/textbpn/textbpnpp_detector.html#TextBPNpp_detector.detect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IndicPhotoOCR.detection.textbpn.textbpnpp_detector.TextBPNpp_detector.detect" title="Link to this definition"></a></dt>
+<dd><p>Detect text regions in the input image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>image_path</strong> (<em>str</em>) – Path to the image file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Detected text bounding boxes in the format:</dt><dd><p>{“detections”: [[[x1, y1], [x2, y2], [x3, y3], [x4, y4]], …]}</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="IndicPhotoOCR.detection.textbpn.textbpnpp_detector.TextBPNpp_detector.visualize_detections">
+<span class="sig-name descname"><span class="pre">visualize_detections</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bbox_result_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'output.png'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/IndicPhotoOCR/detection/textbpn/textbpnpp_detector.html#TextBPNpp_detector.visualize_detections"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IndicPhotoOCR.detection.textbpn.textbpnpp_detector.TextBPNpp_detector.visualize_detections" title="Link to this definition"></a></dt>
+<dd><p>Visualize and save detected text bounding boxes on an image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image_path</strong> (<em>str</em>) – Path to the input image.</p></li>
+<li><p><strong>bbox_result_dict</strong> (<em>dict</em>) – Dictionary containing detected text bounding boxes.
+Format: {“detections”: [[[x1, y1], [x2, y2], [x3, y3], [x4, y4]], …]}.</p></li>
+<li><p><strong>output_path</strong> (<em>str</em>) – Path to save the visualized image (default: “output.png”).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-IndicPhotoOCR.recognition.parseq_recogniser">
+<span id="recognition"></span><h2>Recognition<a class="headerlink" href="#module-IndicPhotoOCR.recognition.parseq_recogniser" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="IndicPhotoOCR.recognition.parseq_recogniser.PARseqrecogniser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">IndicPhotoOCR.recognition.parseq_recogniser.</span></span><span class="sig-name descname"><span class="pre">PARseqrecogniser</span></span><a class="reference internal" href="_modules/IndicPhotoOCR/recognition/parseq_recogniser.html#PARseqrecogniser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IndicPhotoOCR.recognition.parseq_recogniser.PARseqrecogniser" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="IndicPhotoOCR.recognition.parseq_recogniser.PARseqrecogniser.bstr">
+<span class="sig-name descname"><span class="pre">bstr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">language</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_dir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/IndicPhotoOCR/recognition/parseq_recogniser.html#PARseqrecogniser.bstr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IndicPhotoOCR.recognition.parseq_recogniser.PARseqrecogniser.bstr" title="Link to this definition"></a></dt>
+<dd><p>Runs the OCR model to process images and save the output as a JSON file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>checkpoint</strong> (<em>str</em>) – Path to the model checkpoint file.</p></li>
+<li><p><strong>language</strong> (<em>str</em>) – Language code (e.g., ‘hindi’, ‘english’).</p></li>
+<li><p><strong>image_dir</strong> (<em>str</em>) – Directory containing the images to process.</p></li>
+<li><p><strong>save_dir</strong> (<em>str</em>) – Directory where the output JSON file will be saved.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Example usage:</dt><dd><p>python your_script.py –checkpoint /path/to/checkpoint.ckpt –language hindi –image_dir /path/to/images –save_dir /path/to/save</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="IndicPhotoOCR.recognition.parseq_recogniser.PARseqrecogniser.bstr_onImage">
+<span class="sig-name descname"><span class="pre">bstr_onImage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">language</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/IndicPhotoOCR/recognition/parseq_recogniser.html#PARseqrecogniser.bstr_onImage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IndicPhotoOCR.recognition.parseq_recogniser.PARseqrecogniser.bstr_onImage" title="Link to this definition"></a></dt>
+<dd><p>Runs the OCR model to process images and save the output as a JSON file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>checkpoint</strong> (<em>str</em>) – Path to the model checkpoint file.</p></li>
+<li><p><strong>language</strong> (<em>str</em>) – Language code (e.g., ‘hindi’, ‘english’).</p></li>
+<li><p><strong>image_dir</strong> (<em>str</em>) – Directory containing the images to process.</p></li>
+<li><p><strong>save_dir</strong> (<em>str</em>) – Directory where the output JSON file will be saved.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Example usage:</dt><dd><p>python your_script.py –checkpoint /path/to/checkpoint.ckpt –language hindi –image_dir /path/to/images –save_dir /path/to/save</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="IndicPhotoOCR.recognition.parseq_recogniser.PARseqrecogniser.recognise">
+<span class="sig-name descname"><span class="pre">recognise</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">checkpoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/IndicPhotoOCR/recognition/parseq_recogniser.html#PARseqrecogniser.recognise"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IndicPhotoOCR.recognition.parseq_recogniser.PARseqrecogniser.recognise" title="Link to this definition"></a></dt>
+<dd><p>Loads the desired model and returns the recognized word from the specified image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>checkpoint</strong> (<em>str</em>) – Path to the model checkpoint file.</p></li>
+<li><p><strong>language</strong> (<em>str</em>) – Language code (e.g., ‘hindi’, ‘english’).</p></li>
+<li><p><strong>image_path</strong> (<em>str</em>) – Path to the image for which text recognition is needed.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The recognized text from the image.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-IndicPhotoOCR.script_identification.vit.vit_infer">
+<span id="script-identification"></span><h2>Script Identification<a class="headerlink" href="#module-IndicPhotoOCR.script_identification.vit.vit_infer" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="IndicPhotoOCR.script_identification.vit.vit_infer.VIT_identifier">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">IndicPhotoOCR.script_identification.vit.vit_infer.</span></span><span class="sig-name descname"><span class="pre">VIT_identifier</span></span><a class="reference internal" href="_modules/IndicPhotoOCR/script_identification/vit/vit_infer.html#VIT_identifier"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IndicPhotoOCR.script_identification.vit.vit_infer.VIT_identifier" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class for script identification using a ViT (Vision Transformer) model.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="IndicPhotoOCR.script_identification.vit.vit_infer.VIT_identifier.identify">
+<span class="sig-name descname"><span class="pre">identify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/IndicPhotoOCR/script_identification/vit/vit_infer.html#VIT_identifier.identify"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IndicPhotoOCR.script_identification.vit.vit_infer.VIT_identifier.identify" title="Link to this definition"></a></dt>
+<dd><p>Identifies the script in a given image using a ViT model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image_path</strong> (<em>str</em>) – Path to the input image.</p></li>
+<li><p><strong>model_name</strong> (<em>str</em>) – Name of the model to be used.</p></li>
+<li><p><strong>device</strong> (<em>int</em>) – Device to run the model on (e.g., 0 for GPU, -1 for CPU).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The predicted script label.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="IndicPhotoOCR.script_identification.vit.vit_infer.VIT_identifier.predict_batch">
+<span class="sig-name descname"><span class="pre">predict_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_show</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_csv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'prediction.csv'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/IndicPhotoOCR/script_identification/vit/vit_infer.html#VIT_identifier.predict_batch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#IndicPhotoOCR.script_identification.vit.vit_infer.VIT_identifier.predict_batch" title="Link to this definition"></a></dt>
+<dd><p>Processes a batch of images in a directory and predicts the script for each image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image_dir</strong> (<em>str</em>) – Directory containing images.</p></li>
+<li><p><strong>model_name</strong> (<em>str</em>) – Name of the model to be used.</p></li>
+<li><p><strong>time_show</strong> (<em>bool</em>) – Whether to print processing time.</p></li>
+<li><p><strong>output_csv</strong> (<em>str</em><em>, </em><em>optional</em>) – Path to save the predictions as a CSV file. Defaults to “prediction.csv”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The output CSV file path containing predictions.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Anik De.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
