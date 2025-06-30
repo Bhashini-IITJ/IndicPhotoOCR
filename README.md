@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p align="center">
   <img src="./static/pics/IndicPhotoOCR_LOGO.png" alt="IndicPhotoOCR Logo" width="45%">
   <h3 align="center">
@@ -238,3 +239,7 @@ National Language Translation Mission [Bhashini](https://bhashini.gov.in/).
 For any queries, please contact us at:
 - [Anik De](mailto:anekde@gmail.com)
 
+=======
+# INDICPHOTOOCR
+Test images and Results
+>>>>>>> 3bd5ed01d23961bf9433e581ee823cf001288577
