@@ -4,7 +4,7 @@ setup(
     name="IndicPhotoOCR",
     version="1.3.1",
     description="Scene Text Recognition Toolkit across 13 Indian Languages which contains detection, script identification, and text recognition modules",
-    long_description=open("README.md").read() + "\n\n" + open("CHANGELOG.md").read(),
+    long_description=open("README.md", encoding="utf-8").read() + "\n\n" + open("CHANGELOG.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
     author="Anik De",
     author_email="anekde@gmail.com",
