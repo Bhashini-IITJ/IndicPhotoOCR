@@ -1,0 +1,1021 @@
+{
+  "locality_31.jpg504946": {
+    "filename": "locality_31.jpg",
+    "size": 504946,
+    "regions": [
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [78, 77, 445, 416],
+          "all_points_y": [196, 294, 274, 188]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "होटल"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [478, 489, 842, 839, 502, 483],
+          "all_points_y": [211, 274, 258, 187, 196, 199]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "मिडटो"
+        }
+      }
+    ],
+    "file_attributes": {}
+  },
+  "locality_32.jpg620166": {
+    "filename": "locality_32.jpg",
+    "size": 620166,
+    "regions": [
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [451, 448, 546, 534],
+          "all_points_y": [266, 347, 339, 255]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "एच"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [549, 612, 608, 556, 543],
+          "all_points_y": [236, 238, 322, 318, 270]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "डी"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [625, 718, 718, 629, 626, 619],
+          "all_points_y": [237, 232, 302, 309, 275, 268]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "एफ"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [728, 792, 792, 712, 722],
+          "all_points_y": [208, 202, 278, 265, 220]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "सी"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [820, 949, 942, 818, 815],
+          "all_points_y": [177, 179, 257, 255, 206]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "बैंक"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [802, 802, 871, 861, 809],
+          "all_points_y": [273, 300, 290, 263, 264]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "बिहिया"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [895, 941, 919, 876, 871, 874, 874, 884],
+          "all_points_y": [281, 275, 241, 257, 271, 282, 285, 287]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "शाखा"
+        }
+      }
+    ],
+    "file_attributes": {}
+  },
+  "locality_33.jpg317569": {
+    "filename": "locality_33.jpg",
+    "size": 317569,
+    "regions": [
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [120, 106, 300, 296, 120],
+          "all_points_y": [122, 235, 199, 95, 126]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "एम.एम"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [345, 889, 892, 323, 311],
+          "all_points_y": [77, 14, 140, 208, 124]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "JEWELLWRS"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [325, 427, 422, 323, 327],
+          "all_points_y": [266, 257, 194, 205, 257]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "THE"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [481, 731, 706, 463, 404, 431],
+          "all_points_y": [262, 235, 129, 185, 212, 248]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "HALLMARKS"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [767, 923, 837, 727, 704, 743],
+          "all_points_y": [219, 194, 124, 153, 183, 235]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "SHOP"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [499, 530, 630, 625],
+          "all_points_y": [325, 424, 427, 325]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "एम.एम"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [655, 738, 734, 641, 630],
+          "all_points_y": [327, 325, 427, 409, 368]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "ज्वेलर्स"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [794, 826, 991, 986, 743, 736, 783],
+          "all_points_y": [307, 305, 293, 427, 406, 343, 307]
+        },
+        "region_attributes": {
+          "Transcription": ""
+        }
+      }
+    ],
+    "file_attributes": {}
+  },
+  "locality_35.jpg296737": {
+    "filename": "locality_35.jpg",
+    "size": 296737,
+    "regions": [
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [498, 495, 543, 543],
+          "all_points_y": [78, 105, 113, 72]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "होटल"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [567, 570, 548, 549],
+          "all_points_y": [75, 111, 105, 81]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "श्री"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [600, 600, 579, 576],
+          "all_points_y": [80, 105, 105, 90]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "राम"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [633, 633, 611, 609],
+          "all_points_y": [84, 108, 107, 90]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "इन"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [498, 500, 551, 549],
+          "all_points_y": [382, 396, 400, 382]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "HOTEL"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [503, 552, 554, 492, 495],
+          "all_points_y": [420, 424, 388, 394, 412]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "SHRI"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [566, 602, 597, 557, 555],
+          "all_points_y": [418, 421, 387, 390, 414]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "RAM"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [612, 656, 653, 606, 606],
+          "all_points_y": [385, 393, 429, 423, 397]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "INN"
+        }
+      }
+    ],
+    "file_attributes": {}
+  },
+  "locality_36.jpg304020": {
+    "filename": "locality_36.jpg",
+    "size": 304020,
+    "regions": [
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [259, 257, 396, 389],
+          "all_points_y": [149, 219, 220, 130]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "भोंडू"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [411, 512, 513, 414, 400],
+          "all_points_y": [121, 124, 213, 202, 169]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "साव"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [209, 210, 382, 370, 232],
+          "all_points_y": [242, 313, 313, 224, 233]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "तिलकुट"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [411, 404, 565, 543],
+          "all_points_y": [221, 297, 299, 210]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "भंडार"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [159, 159, 188, 189],
+          "all_points_y": [342, 364, 360, 335]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "खोवे"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [208, 208, 193, 190],
+          "all_points_y": [335, 363, 360, 344]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "का"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [258, 257, 227, 219, 208, 210],
+          "all_points_y": [335, 360, 371, 360, 344, 330]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "स्पेशल"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [305, 303, 260, 262],
+          "all_points_y": [328, 360, 359, 340]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "तिलकुट"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [359, 359, 308, 307, 313],
+          "all_points_y": [319, 359, 356, 335, 326]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "और"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [387, 382, 348, 367],
+          "all_points_y": [319, 364, 351, 326]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "गजक"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [430, 431, 389, 384, 396],
+          "all_points_y": [319, 356, 355, 336, 327]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "के "
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [448, 485, 486, 429, 436],
+          "all_points_y": [317, 316, 354, 351, 325]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "लिए"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [545, 546, 485, 487],
+          "all_points_y": [308, 362, 360, 322]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "आवश्य"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [599, 603, 546, 547],
+          "all_points_y": [302, 354, 351, 319]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "पधारें"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [97, 143, 138, 83],
+          "all_points_y": [433, 438, 477, 464]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "नमकीन खाजा"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [169, 202, 203, 156],
+          "all_points_y": [429, 437, 476, 470]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "स्पेशल खाजा"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [225, 267, 269, 218],
+          "all_points_y": [433, 440, 479, 479]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "गज"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [300, 349, 349, 307],
+          "all_points_y": [439, 443, 480, 479]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "लड्डू"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [375, 435, 430, 372],
+          "all_points_y": [438, 445, 477, 479]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "खीये का लाई"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [457, 514, 527, 441],
+          "all_points_y": [440, 438, 480, 486]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "खोये का मंनरसा "
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [555, 611, 631, 545],
+          "all_points_y": [438, 436, 485, 478]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "खोये का पदुकीया "
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [86, 106, 106, 89],
+          "all_points_y": [489, 493, 477, 472]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "खोआ"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [120, 136, 138, 114],
+          "all_points_y": [493, 495, 478, 474]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "हमारे"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [147, 170, 168, 145],
+          "all_points_y": [493, 495, 479, 474]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "विवाह"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [175, 193, 190, 177, 176],
+          "all_points_y": [476, 479, 497, 492, 484]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "और"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [206, 227, 218, 195, 195],
+          "all_points_y": [501, 500, 477, 476, 495]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "पार्टी"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [243, 257, 258, 237, 236],
+          "all_points_y": [505, 505, 481, 479, 498]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "शुभ"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [300, 302, 263, 260],
+          "all_points_y": [500, 481, 480, 503]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "अवसर"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [323, 358, 360, 323],
+          "all_points_y": [502, 506, 481, 484]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "ऑर्डर"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [393, 396, 358, 366],
+          "all_points_y": [486, 510, 503, 479]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "लिए"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [432, 432, 429, 399, 399, 425],
+          "all_points_y": [487, 502, 509, 504, 488, 484]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "जट्टा"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [460, 458, 438, 435, 454],
+          "all_points_y": [495, 506, 505, 488, 484]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "है"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [487, 487, 461, 463, 479],
+          "all_points_y": [510, 481, 485, 505, 509]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "मो"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [3, 0, 65, 67],
+          "all_points_y": [333, 351, 347, 326]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "LOOK GREAT"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [3, 1, 52, 65, 10, 3],
+          "all_points_y": [372, 399, 406, 351, 351, 357]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "ENDURA MASS"
+        }
+      }
+    ],
+    "file_attributes": {}
+  },
+  "locality_37.jpg343532": {
+    "filename": "locality_37.jpg",
+    "size": 343532,
+    "regions": [
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [420, 426, 492, 501],
+          "all_points_y": [342, 426, 414, 345]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "श्री"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [698, 695, 790, 788],
+          "all_points_y": [143, 181, 178, 135]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "BIHAR TOURISM"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [554, 554, 610, 612],
+          "all_points_y": [172, 196, 195, 163]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "अतुलया"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [655, 655, 601, 606],
+          "all_points_y": [153, 182, 190, 163]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "भारत"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [532, 532, 675, 670],
+          "all_points_y": [198, 228, 213, 179]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "incredible india"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [515, 658, 658, 501],
+          "all_points_y": [328, 331, 408, 408]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "श्वेतांबर"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [689, 753, 756, 690, 678],
+          "all_points_y": [308, 313, 412, 389, 365]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "जैन"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [532, 544, 646, 650, 589],
+          "all_points_y": [423, 485, 483, 417, 403]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "मंदिर"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [403, 397, 489, 495],
+          "all_points_y": [503, 572, 578, 491]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "shree"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [520, 521, 695, 708, 643, 547, 512, 495],
+          "all_points_y": [497, 497, 497, 544, 558, 567, 567, 534]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "Swetamber"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [710, 710, 790, 796, 716, 689, 710],
+          "all_points_y": [472, 474, 485, 574, 561, 529, 492]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "Jain"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [500, 501, 658, 658, 563, 523, 495, 492],
+          "all_points_y": [623, 623, 618, 569, 577, 570, 586, 609]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "Temple"
+        }
+      }
+    ],
+    "file_attributes": {}
+  },
+  "locality_38.jpg154326": {
+    "filename": "locality_38.jpg",
+    "size": 154326,
+    "regions": [
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [515, 518, 673, 666],
+          "all_points_y": [38, 87, 106, 56]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "कचहरी"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [170, 176, 382, 366, 245],
+          "all_points_y": [54, 254, 251, 69, 47]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "दारोगा"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [395, 538, 525, 403, 367, 372],
+          "all_points_y": [94, 119, 284, 270, 192, 100]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "प्रसाद"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [563, 567, 633, 621, 509, 529, 529],
+          "all_points_y": [118, 118, 142, 297, 251, 161, 130]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "राय"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [657, 836, 827, 702, 623, 621],
+          "all_points_y": [112, 145, 320, 307, 253, 190]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "मेमोरियल"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [852, 856, 930, 928, 862, 823, 826, 837],
+          "all_points_y": [160, 161, 175, 348, 347, 328, 264, 173]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "ट्रस्ट"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [325, 313, 314, 317, 444, 447],
+          "all_points_y": [300, 301, 308, 374, 378, 311]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "दारोगा"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [454, 544, 544, 463, 440, 447],
+          "all_points_y": [314, 323, 393, 377, 349, 331]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "प्रसाद"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [553, 607, 607, 549, 546],
+          "all_points_y": [329, 336, 396, 378, 361]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "राय"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [626, 660, 673, 670, 661, 639, 628, 612, 612, 611, 611],
+          "all_points_y": [336, 346, 368, 389, 403, 400, 383, 373, 360, 351, 350]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "पथ"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [688, 763, 755, 677, 684],
+          "all_points_y": [340, 351, 405, 387, 348]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "पटना "
+        }
+      }
+    ],
+    "file_attributes": {}
+  },
+  "locality_39.jpg457397": {
+    "filename": "locality_39.jpg",
+    "size": 457397,
+    "regions": [
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [94, 66, 441, 422],
+          "all_points_y": [521, 685, 690, 557]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "विधानमंडल"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [53, 59, 413, 390, 210],
+          "all_points_y": [753, 897, 893, 738, 726]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "सचिवालय"
+        }
+      }
+    ],
+    "file_attributes": {}
+  },
+  "locality_40.jpg377934": {
+    "filename": "locality_40.jpg",
+    "size": 377934,
+    "regions": [
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [306, 306, 545, 536],
+          "all_points_y": [388, 430, 466, 425]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "PATLIPUTRA"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [555, 675, 685, 556, 548],
+          "all_points_y": [426, 442, 505, 473, 449]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "NIRVANA"
+        }
+      }
+    ],
+    "file_attributes": {}
+  }
+}
