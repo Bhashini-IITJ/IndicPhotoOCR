@@ -1,0 +1,62 @@
+Image Name,Total Words,Recognized Words,WRR,Recognized Bengali,Recognized English,Recognized Hindi,Recognized Other
+locality_01pic,1,1,1.00,0,0,0,1
+locality_02pic,9,7,0.78,1,3,2,1
+locality_03pic,18,15,0.83,2,7,4,2
+locality_04pic,10,8,0.80,1,4,2,1
+locality_05pic,17,13,0.76,2,6,3,2
+locality_06pic,6,5,0.83,1,2,1,1
+locality_07,10,8,0.80,1,4,2,1
+locality_08 - Copy,0,0,0.00,0,0,0,0
+locality_09,9,7,0.78,1,3,2,1
+locality_10,2,2,1.00,0,1,0,1
+locality_11,5,4,0.80,1,2,0,1
+locality_12,7,6,0.86,1,3,1,1
+locality_13,3,2,0.67,0,1,1,0
+locality_14,11,9,0.82,1,4,2,2
+locality_15,2,2,1.00,0,1,0,1
+locality_16,12,10,0.83,2,4,2,2
+locality_17,3,2,0.67,0,1,1,0
+locality_18,2,2,1.00,0,1,0,1
+locality_19,11,9,0.82,1,4,2,2
+locality_20,2,2,1.00,0,1,0,1
+locality_21,2,2,1.00,0,1,0,1
+locality_22,2,2,1.00,0,1,0,1
+locality_23,6,5,0.83,1,2,1,1
+locality_24,5,4,0.80,1,2,0,1
+locality_25,7,6,0.86,1,3,1,1
+locality_26,5,4,0.80,1,2,0,1
+locality_27,10,8,0.80,1,4,2,1
+locality_28 - Copy,15,12,0.80,2,5,3,2
+locality_28,15,12,0.80,2,5,3,2
+locality_29,2,2,1.00,0,1,0,1
+locality_30,11,9,0.82,1,4,2,2
+locality_31,2,2,1.00,0,1,0,1
+locality_32,7,6,0.86,1,3,1,1
+locality_33,7,6,0.86,1,3,1,1
+locality_35,8,6,0.75,1,3,1,1
+locality_36,35,28,0.80,3,13,6,6
+locality_37 - Copy,12,10,0.83,2,4,2,2
+locality_37,12,10,0.83,2,4,2,2
+locality_38 - Copy,11,9,0.82,1,4,2,2
+locality_38,11,9,0.82,1,4,2,2
+locality_39 - Copy,2,2,1.00,0,1,0,1
+locality_39,2,2,1.00,0,1,0,1
+locality_40 - Copy,2,2,1.00,0,1,0,1
+locality_40,2,2,1.00,0,1,0,1
+locality_41 - Copy,23,18,0.78,2,8,4,4
+locality_41,23,18,0.78,2,8,4,4
+locality_42 - Copy,19,15,0.79,2,7,3,3
+locality_42,19,15,0.79,2,7,3,3
+locality_43 - Copy,4,3,0.75,0,2,1,0
+locality_43,4,3,0.75,0,2,1,0
+locality_44 - Copy,17,14,0.82,2,6,3,3
+locality_44,17,14,0.82,2,6,3,3
+locality_45 - Copy,2,2,1.00,0,1,0,1
+locality_45,2,2,1.00,0,1,0,1
+locality_46 - Copy,2,2,1.00,0,1,0,1
+locality_46,2,2,1.00,0,1,0,1
+locality_47 - Copy,13,10,0.77,1,5,2,2
+locality_47,13,10,0.77,1,5,2,2
+locality_48,4,3,0.75,0,2,1,0
+locality_49,6,5,0.83,1,2,1,1
+Total,450,356,0.7911,38,141,66,71

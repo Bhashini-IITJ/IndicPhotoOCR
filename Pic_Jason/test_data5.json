@@ -1,0 +1,1055 @@
+{
+  "locality_41.jpg531636": {
+    "filename": "locality_41.jpg",
+    "size": 531636,
+    "regions": [
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [297, 306, 711, 691],
+          "all_points_y": [111, 181, 160, 77]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "AMARON"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [906, 922, 1020, 1014],
+          "all_points_y": [55, 108, 92, 54]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "amaron"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [747, 748, 851, 834],
+          "all_points_y": [129, 169, 174, 132]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "AMARON"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [297, 387, 390, 310],
+          "all_points_y": [212, 214, 183, 189]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "LASTS"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [413, 401, 484, 482, 404, 407],
+          "all_points_y": [210, 209, 206, 181, 187, 204]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "LONG"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [498, 505, 596, 595, 492],
+          "all_points_y": [206, 206, 204, 175, 181]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "REALLY"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [611, 618, 693, 688, 610],
+          "all_points_y": [200, 198, 201, 172, 181]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "LONG"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [292, 300, 406, 390],
+          "all_points_y": [234, 277, 273, 224]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "UTTAM"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [413, 489, 484, 412, 396],
+          "all_points_y": [264, 261, 227, 227, 247]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "AUTO"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [496, 536, 524, 492, 492],
+          "all_points_y": [264, 264, 227, 232, 257]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "MOB."
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [446, 453, 527, 521],
+          "all_points_y": [489, 505, 504, 479]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "GSTNO."
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [226, 241, 469, 450],
+          "all_points_y": [519, 601, 582, 509]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "UTTAM"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [475, 664, 681, 470, 465],
+          "all_points_y": [510, 501, 578, 579, 535]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "AUTO"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [694, 934, 939, 690, 677],
+          "all_points_y": [510, 473, 582, 565, 525]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "PARTS"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [430, 439, 558, 528],
+          "all_points_y": [610, 676, 667, 616]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "HERO"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [595, 601, 748, 730],
+          "all_points_y": [615, 664, 654, 615]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "HONDA"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [462, 598, 596, 447],
+          "all_points_y": [707, 704, 664, 679]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "Genuine"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [615, 733, 708, 610, 613],
+          "all_points_y": [704, 699, 668, 671, 696]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "Parts"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [210, 306, 301, 201],
+          "all_points_y": [754, 764, 701, 713]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "harpur"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [327, 407, 392, 297, 309],
+          "all_points_y": [753, 753, 705, 714, 744]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "khagaol"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [419, 438, 472, 465, 407],
+          "all_points_y": [750, 750, 750, 711, 716]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "road"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [495, 567, 559, 447],
+          "all_points_y": [753, 750, 719, 722]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "patna"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [670, 733, 711, 665],
+          "all_points_y": [744, 740, 704, 717]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "mo."
+        }
+      }
+    ],
+    "file_attributes": {}
+  },
+  "locality_42.jpg239680": {
+    "filename": "locality_42.jpg",
+    "size": 239680,
+    "regions": [
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [220, 220, 444, 438],
+          "all_points_y": [115, 177, 170, 113]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "ritesh"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [488, 718, 684, 455, 431, 441],
+          "all_points_y": [172, 166, 103, 111, 117, 171]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "kirana"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [717, 850, 865, 725, 703, 702],
+          "all_points_y": [108, 106, 160, 169, 128, 119]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "store"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [288, 285, 331, 330],
+          "all_points_y": [191, 214, 214, 195]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "note"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [354, 362, 401, 404, 357, 354],
+          "all_points_y": [191, 189, 190, 206, 210, 199]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "hamare"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [408, 445, 441, 413, 410],
+          "all_points_y": [187, 189, 210, 208, 198]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "yaha"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [457, 460, 487, 488, 453, 452],
+          "all_points_y": [188, 189, 187, 208, 209, 193]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "sudha"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [500, 502, 518, 519, 494, 496],
+          "all_points_y": [187, 187, 187, 214, 204, 191]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "ka"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [527, 533, 548, 557, 533, 523, 522],
+          "all_points_y": [184, 184, 184, 204, 206, 197, 193]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "doodh"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [566, 571, 603, 612, 567, 560],
+          "all_points_y": [183, 182, 179, 202, 204, 187]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "lassi"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [618, 651, 655, 619, 616],
+          "all_points_y": [179, 172, 203, 195, 180]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "dahi"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [657, 682, 691, 700, 666, 659],
+          "all_points_y": [177, 176, 176, 208, 208, 195]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "pedda"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [705, 714, 739, 733, 699, 695],
+          "all_points_y": [172, 172, 197, 209, 205, 184]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "bhi"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [739, 789, 804, 755, 726],
+          "all_points_y": [170, 170, 201, 208, 191]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "milta"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [819, 826, 794, 791],
+          "all_points_y": [172, 200, 201, 178]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "hai"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [378, 381, 527, 519],
+          "all_points_y": [237, 276, 268, 232]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "punaichowk"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [537, 602, 611, 527, 525],
+          "all_points_y": [232, 231, 269, 257, 239]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "patna"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [625, 743, 739, 617],
+          "all_points_y": [227, 216, 265, 261]
+        },
+        "region_attributes": {
+          "Language": "Other",
+          "Transcription": "800023"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [9, 62, 49, 0],
+          "all_points_y": [231, 242, 285, 269]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "liye"
+        }
+      }
+    ],
+    "file_attributes": {}
+  },
+  "locality_43.jpg257294": {
+    "filename": "locality_43.jpg",
+    "size": 257294,
+    "regions": [
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [644, 650, 810, 800],
+          "all_points_y": [353, 402, 403, 353]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "bhartiya"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [822, 820, 903, 910],
+          "all_points_y": [354, 397, 398, 351]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "dak"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [641, 644, 808, 802, 682],
+          "all_points_y": [418, 469, 458, 406, 406]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "India"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [823, 944, 927, 848, 817, 816],
+          "all_points_y": [468, 459, 403, 402, 403, 443]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "Post"
+        }
+      }
+    ],
+    "file_attributes": {}
+  },
+  "locality_44.jpg352759": {
+    "filename": "locality_44.jpg",
+    "size": 352759,
+    "regions": [
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [318, 318, 424, 421],
+          "all_points_y": [99, 146, 133, 88]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "RAJ"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [278, 275, 448, 450, 296],
+          "all_points_y": [140, 182, 182, 121, 132]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "PLAZA"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [299, 296, 389, 391],
+          "all_points_y": [287, 320, 318, 295]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "TANISHQA"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [396, 434, 430, 385, 386],
+          "all_points_y": [284, 282, 318, 310, 292]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "SKIN"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [459, 489, 495, 434, 436, 441],
+          "all_points_y": [282, 284, 321, 313, 296, 282]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "CLINIC"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [268, 270, 408, 410],
+          "all_points_y": [360, 388, 386, 354]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "STUDIO 11\n"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [559, 560, 673, 663],
+          "all_points_y": [259, 292, 303, 267]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "TO-LET"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [678, 691, 722, 722, 678, 675],
+          "all_points_y": [270, 270, 272, 303, 303, 298]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "for"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [545, 602, 594, 534],
+          "all_points_y": [324, 327, 293, 286]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "shop"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [613, 619, 663, 659, 602],
+          "all_points_y": [329, 329, 329, 299, 296]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "office"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [684, 691, 734, 734, 678],
+          "all_points_y": [329, 329, 329, 304, 304]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "bank"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [164, 163, 504, 458],
+          "all_points_y": [590, 664, 664, 569]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "KALYAN"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [264, 475, 464, 270],
+          "all_points_y": [691, 691, 639, 655]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "JEWELLERS"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [608, 633, 916, 886],
+          "all_points_y": [579, 647, 644, 565]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "KALYAN"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [757, 760, 808, 801, 770],
+          "all_points_y": [678, 677, 677, 646, 655]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "jewe"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [830, 838, 860, 852, 827],
+          "all_points_y": [686, 684, 683, 652, 659]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "lar"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [877, 917, 903, 877],
+          "all_points_y": [686, 677, 650, 658]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "s"
+        }
+      }
+    ],
+    "file_attributes": {}
+  },
+  "locality_45.jpg306732": {
+    "filename": "locality_45.jpg",
+    "size": 306732,
+    "regions": [
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [163, 159, 607, 572],
+          "all_points_y": [106, 284, 273, 111]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "HOTEL"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [597, 626, 1069, 1072],
+          "all_points_y": [118, 273, 274, 112]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "YUVRAJ"
+        }
+      }
+    ],
+    "file_attributes": {}
+  },
+  "locality_46.jpg210786": {
+    "filename": "locality_46.jpg",
+    "size": 210786,
+    "regions": [
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [197, 196, 450, 438],
+          "all_points_y": [42, 106, 103, 25]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "HOTEL"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [404, 409, 886, 849],
+          "all_points_y": [115, 209, 191, 102]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "VRINDAVAN"
+        }
+      }
+    ],
+    "file_attributes": {}
+  },
+  "locality_47.jpg275863": {
+    "filename": "locality_47.jpg",
+    "size": 275863,
+    "regions": [
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [469, 471, 635, 638],
+          "all_points_y": [18, 81, 82, 11]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "V"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [489, 649, 646, 494],
+          "all_points_y": [121, 121, 62, 71]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "MART"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [706, 704, 764, 759],
+          "all_points_y": [148, 172, 166, 135]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "SHOP"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [775, 834, 835, 775],
+          "all_points_y": [165, 165, 137, 142]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "ONLINE"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [857, 1029, 1012, 852],
+          "all_points_y": [165, 163, 132, 144]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "smartretail.com"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [132, 130, 307, 301],
+          "all_points_y": [349, 406, 410, 339]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "VMART"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [854, 861, 932, 914],
+          "all_points_y": [353, 398, 388, 336]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "V"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [943, 1035, 1053, 931, 920],
+          "all_points_y": [344, 332, 405, 405, 334]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "MART"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [630, 635, 678, 677],
+          "all_points_y": [254, 279, 278, 249]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "BUY"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [647, 687, 682, 642],
+          "all_points_y": [296, 299, 271, 278]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "GET"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [630, 640, 719, 710, 635],
+          "all_points_y": [327, 326, 328, 290, 300]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "FREE"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [743, 747, 771, 767],
+          "all_points_y": [281, 298, 298, 275]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "free"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [780, 820, 816, 774, 778],
+          "all_points_y": [296, 296, 276, 281, 296]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "vikreta"
+        }
+      }
+    ],
+    "file_attributes": {}
+  },
+  "locality_48.jpg472117": {
+    "filename": "locality_48.jpg",
+    "size": 472117,
+    "regions": [
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [14, 25, 295, 283],
+          "all_points_y": [121, 223, 223, 133]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "Cheap"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [375, 366, 550, 541],
+          "all_points_y": [123, 210, 203, 135]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "Best"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [560, 563, 761, 765],
+          "all_points_y": [131, 210, 203, 142]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "Super"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [782, 780, 1063, 1006],
+          "all_points_y": [132, 204, 221, 131]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "Market"
+        }
+      }
+    ],
+    "file_attributes": {}
+  },
+  "locality_49.jpg414850": {
+    "filename": "locality_49.jpg",
+    "size": 414850,
+    "regions": [
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [744, 739, 950, 928],
+          "all_points_y": [158, 244, 236, 152]
+        },
+        "region_attributes": {
+          "Language": "Hindi",
+          "Transcription": "tanishq"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [426, 389, 395, 729, 720],
+          "all_points_y": [321, 321, 411, 394, 311]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "TANISHQ"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [498, 501, 635, 627],
+          "all_points_y": [225, 316, 308, 226]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "T"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [424, 469, 467, 438],
+          "all_points_y": [433, 436, 394, 402]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "A"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [485, 552, 555, 471],
+          "all_points_y": [437, 440, 397, 402]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "TATA"
+        }
+      },
+      {
+        "shape_attributes": {
+          "name": "polygon",
+          "all_points_x": [567, 709, 687, 558],
+          "all_points_y": [436, 427, 381, 397]
+        },
+        "region_attributes": {
+          "Language": "English",
+          "Transcription": "PRODUCT"
+        }
+      }
+    ],
+    "file_attributes": {}
+  }
+}
