@@ -1,0 +1,370 @@
+{
+  "AnnotationDataset_img26": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [1431, 1055],
+          [1656, 1055],
+          [1656, 1122],
+          [1431, 1122]
+        ],
+        "text": "Maharaja",
+        "script_language": "Bengali"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [1668, 1043],
+          [1762, 1043],
+          [1762, 1123],
+          [1668, 1123]
+        ],
+        "text": "Bir",
+        "script_language": "Bengali"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [1775, 1049],
+          [1926, 1049],
+          [1926, 1122],
+          [1775, 1122]
+        ],
+        "text": "Bikram",
+        "script_language": "Bengali"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [1939, 1053],
+          [2220, 1053],
+          [2220, 1129],
+          [1939, 1129]
+        ],
+        "text": "Bimanbandar",
+        "script_language": "Bengali"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [2247, 1064],
+          [2555, 1064],
+          [2555, 1127],
+          [2247, 1127]
+        ],
+        "text": "Agartalai",
+        "script_language": "Bengali"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [2566, 1068],
+          [2822, 1068],
+          [2822, 1131],
+          [2566, 1131]
+        ],
+        "text": "Agomoner",
+        "script_language": "Bengali"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [2837, 1072],
+          [2955, 1072],
+          [2955, 1131],
+          [2837, 1131]
+        ],
+        "text": "Jonno",
+        "script_language": "Bengali"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [2971, 1072],
+          [3160, 1072],
+          [3160, 1131],
+          [2971, 1131]
+        ],
+        "text": "Dhananyabad",
+        "script_language": "Bengali"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [1521, 1154],
+          [1739, 1154],
+          [1739, 1225],
+          [1521, 1225]
+        ],
+        "text": "Maharaja",
+        "script_language": "Hindi"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [1754, 1156],
+          [1842, 1156],
+          [1842, 1227],
+          [1754, 1227]
+        ],
+        "text": "Bir",
+        "script_language": "Hindi"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [1857, 1154],
+          [2010, 1154],
+          [2010, 1225],
+          [1857, 1225]
+        ],
+        "text": "Bikram",
+        "script_language": "Hindi"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [2027, 1150],
+          [2254, 1150],
+          [2254, 1240],
+          [2027, 1240]
+        ],
+        "text": "Hawaiadda",
+        "script_language": "Hindi"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [2285, 1165],
+          [2512, 1165],
+          [2512, 1234],
+          [2285, 1234]
+        ],
+        "text": "Agartala",
+        "script_language": "Hindi"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [2522, 1162],
+          [2627, 1162],
+          [2627, 1227],
+          [2522, 1227]
+        ],
+        "text": "Aane",
+        "script_language": "Hindi"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [2638, 1154],
+          [2701, 1154],
+          [2701, 1232],
+          [2638, 1232]
+        ],
+        "text": "ke",
+        "script_language": "Hindi"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [2711, 1162],
+          [2820, 1162],
+          [2820, 1227],
+          [2711, 1227]
+        ],
+        "text": "liye",
+        "script_language": "Hindi"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [2833, 1169],
+          [3034, 1169],
+          [3034, 1236],
+          [2833, 1236]
+        ],
+        "text": "Dhananyabad",
+        "script_language": "Hindi"
+      },
+      "polygon_17": {
+        "coordinates": [
+          [860, 1251],
+          [1221, 1251],
+          [1221, 1354],
+          [860, 1354]
+        ],
+        "text": "Thanks",
+        "script_language": "English"
+      },
+      "polygon_18": {
+        "coordinates": [
+          [1257, 1259],
+          [1423, 1259],
+          [1423, 1353],
+          [1257, 1353]
+        ],
+        "text": "For",
+        "script_language": "English"
+      },
+      "polygon_19": {
+        "coordinates": [
+          [1439, 1261],
+          [1827, 1261],
+          [1827, 1374],
+          [1439, 1374]
+        ],
+        "text": "Visiting",
+        "script_language": "English"
+      },
+      "polygon_20": {
+        "coordinates": [
+          [1863, 1265],
+          [2312, 1265],
+          [2312, 1383],
+          [1863, 1383]
+        ],
+        "text": "Maharaja",
+        "script_language": "English"
+      },
+      "polygon_21": {
+        "coordinates": [
+          [2344, 1267],
+          [2485, 1267],
+          [2485, 1357],
+          [2344, 1357]
+        ],
+        "text": "Bir",
+        "script_language": "English"
+      },
+      "polygon_22": {
+        "coordinates": [
+          [2512, 1276],
+          [2856, 1276],
+          [2856, 1360],
+          [2512, 1360]
+        ],
+        "text": "Bikram",
+        "script_language": "English"
+      },
+      "polygon_23": {
+        "coordinates": [
+          [2883, 1280],
+          [3242, 1280],
+          [3242, 1381],
+          [2883, 1381]
+        ],
+        "text": "Airport",
+        "script_language": "English"
+      },
+      "polygon_24": {
+        "coordinates": [
+          [3288, 1278],
+          [3714, 1278],
+          [3714, 1381],
+          [3288, 1381]
+        ],
+        "text": "Agartala",
+        "script_language": "English"
+      },
+      "polygon_25": {
+        "coordinates": [
+          [876, 2191],
+          [1338, 2191],
+          [1338, 2303],
+          [876, 2303]
+        ],
+        "text": "ICFAI",
+        "script_language": "English"
+      },
+      "polygon_26": {
+        "coordinates": [
+          [974, 2291],
+          [1259, 2291],
+          [1259, 2333],
+          [974, 2333]
+        ],
+        "text": "UNIVERSITY",
+        "script_language": "English"
+      },
+      "polygon_27": {
+        "coordinates": [
+          [996, 2331],
+          [1245, 2331],
+          [1245, 2367],
+          [996, 2367]
+        ],
+        "text": "TRIPURA",
+        "script_language": "English"
+      },
+      "polygon_28": {
+        "coordinates": [
+          [828, 2361],
+          [1209, 2361],
+          [1209, 2495],
+          [828, 2495]
+        ],
+        "text": "Dream",
+        "script_language": "English"
+      },
+      "polygon_29": {
+        "coordinates": [
+          [1256, 2361],
+          [1432, 2361],
+          [1432, 2484],
+          [1256, 2484]
+        ],
+        "text": "Big",
+        "script_language": "English"
+      },
+      "polygon_30": {
+        "coordinates": [
+          [895, 2507],
+          [1172, 2507],
+          [1172, 2563],
+          [895, 2563]
+        ],
+        "text": "ADMISSION",
+        "script_language": "English"
+      },
+      "polygon_31": {
+        "coordinates": [
+          [1186, 2510],
+          [1348, 2510],
+          [1348, 2566],
+          [1186, 2566]
+        ],
+        "text": "OPEN",
+        "script_language": "English"
+      },
+      "polygon_32": {
+        "coordinates": [
+          [3576, 2520],
+          [3696, 2520],
+          [3696, 2566],
+          [3576, 2566]
+        ],
+        "text": "WELCOME",
+        "script_language": "English"
+      },
+      "polygon_33": {
+        "coordinates": [
+          [3699, 2522],
+          [3739, 2522],
+          [3739, 2564],
+          [3699, 2564]
+        ],
+        "text": "TO",
+        "script_language": "English"
+      },
+      "polygon_34": {
+        "coordinates": [
+          [3584, 2573],
+          [3764, 2573],
+          [3764, 2609],
+          [3584, 2609]
+        ],
+        "text": "Agartalai",
+        "script_language": "Bengali"
+      },
+      "polygon_35": {
+        "coordinates": [
+          [3584, 2623],
+          [3762, 2623],
+          [3762, 2659],
+          [3584, 2659]
+        ],
+        "text": "Agartalatong",
+        "script_language": "Kokbarok"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

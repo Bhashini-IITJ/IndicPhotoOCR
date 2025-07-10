@@ -1,0 +1,200 @@
+{
+  "AnnotationDataset_img53": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [472, 233],
+          [722, 233],
+          [722, 418],
+          [472, 418]
+        ],
+        "text": "IIFL FINANCE",
+        "script_language": "English"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [242, 452],
+          [717, 452],
+          [717, 526],
+          [242, 526]
+        ],
+        "text": "IIFL FINANCE",
+        "script_language": "Bengali"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [1242, 225],
+          [1691, 225],
+          [1691, 430],
+          [1242, 430]
+        ],
+        "text": "GOLD",
+        "script_language": "Bengali"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [1745, 230],
+          [2203, 230],
+          [2203, 429],
+          [1745, 429]
+        ],
+        "text": "LOAN",
+        "script_language": "Bengali"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [1401, 495],
+          [1699, 495],
+          [1699, 609],
+          [1401, 609]
+        ],
+        "text": "GOLD",
+        "script_language": "English"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [1723, 486],
+          [2039, 486],
+          [2039, 611],
+          [1723, 611]
+        ],
+        "text": "LOAN",
+        "script_language": "English"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [699, 566],
+          [946, 566],
+          [946, 631],
+          [699, 631]
+        ],
+        "text": "Madhya Bazar",
+        "script_language": "English"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [478, 571],
+          [666, 571],
+          [666, 631],
+          [478, 631]
+        ],
+        "text": "Bishalgarh",
+        "script_language": "English"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [270, 577],
+          [463, 577],
+          [463, 631],
+          [270, 631]
+        ],
+        "text": "Madhya Bazar",
+        "script_language": "Bengali"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [45, 571],
+          [238, 571],
+          [238, 642],
+          [45, 642]
+        ],
+        "text": "Bishalgarh",
+        "script_language": "Bengali"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [449, 1151],
+          [1171, 1151],
+          [1171, 1248],
+          [449, 1248]
+        ],
+        "text": "The Home of Fresh Baking",
+        "script_language": "English"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [1865, 134],
+          [2394, 134],
+          [2394, 202],
+          [1865, 202]
+        ],
+        "text": "GSTIN:16AABCI0745G1ZW",
+        "script_language": "English"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [651, 998],
+          [671, 1094],
+          [1134, 1032],
+          [1131, 929]
+        ],
+        "text": "Mr Bakeryy",
+        "script_language": "English"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [1427, 1174],
+          [1643, 1174],
+          [1643, 1296],
+          [1427, 1296]
+        ],
+        "text": "Shreeguru",
+        "script_language": "Bengali"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [1646, 1177],
+          [1765, 1177],
+          [1765, 1294],
+          [1646, 1294]
+        ],
+        "text": "Book",
+        "script_language": "Bengali"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [1828, 1171],
+          [2246, 1171],
+          [2246, 1319],
+          [1828, 1319]
+        ],
+        "text": "Varieties",
+        "script_language": "Bengali"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [443, 748],
+          [776, 748],
+          [776, 808],
+          [443, 808]
+        ],
+        "text": "1800-889-3866",
+        "script_language": "English"
+      },
+      "polygon_17": {
+        "coordinates": [
+          [483, 1455],
+          [582, 1455],
+          [582, 1688],
+          [483, 1688]
+        ],
+        "text": "MR",
+        "script_language": "English"
+      },
+      "polygon_18": {
+        "coordinates": [
+          [108, 125],
+          [347, 125],
+          [347, 190],
+          [108, 190]
+        ],
+        "text": "9136127306",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

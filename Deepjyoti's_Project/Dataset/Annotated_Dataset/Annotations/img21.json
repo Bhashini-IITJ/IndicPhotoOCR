@@ -1,0 +1,100 @@
+{
+  "AnnotationDataset_img21": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [1184, 1037],
+          [2254, 1037],
+          [2254, 1249],
+          [1184, 1249]
+        ],
+        "text": "KAMAKHYA",
+        "script_language": "Assamesse"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [2343, 1037],
+          [2774, 1037],
+          [2774, 1257],
+          [2343, 1257]
+        ],
+        "text": "JN",
+        "script_language": "Assamesse"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [1171, 1285],
+          [2298, 1285],
+          [2298, 1513],
+          [1171, 1513]
+        ],
+        "text": "KAMAKHYA",
+        "script_language": "Hindi"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [1123, 1542],
+          [2433, 1542],
+          [2433, 1778],
+          [1123, 1778]
+        ],
+        "text": "KAMAKHYA",
+        "script_language": "English"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [2375, 1261],
+          [2757, 1261],
+          [2757, 1513],
+          [2375, 1513]
+        ],
+        "text": "JN",
+        "script_language": "Hindi"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [2522, 1566],
+          [2790, 1566],
+          [2790, 1786],
+          [2522, 1786]
+        ],
+        "text": "JN",
+        "script_language": "English"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [1403, 1830],
+          [1741, 1830],
+          [1741, 1903],
+          [1403, 1903]
+        ],
+        "text": "HEIGHT",
+        "script_language": "English"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [1782, 1802],
+          [2111, 1802],
+          [2111, 1916],
+          [1782, 1916]
+        ],
+        "text": "ABOVE",
+        "script_language": "English"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [2184, 1810],
+          [2440, 1810],
+          [2440, 1916],
+          [2184, 1916]
+        ],
+        "text": "MSL",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

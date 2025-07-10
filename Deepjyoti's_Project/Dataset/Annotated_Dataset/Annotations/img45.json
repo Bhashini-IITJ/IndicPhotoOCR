@@ -1,0 +1,600 @@
+{
+  "AnnotationDataset_img45": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [109, 766],
+          [370, 766],
+          [370, 850],
+          [109, 850]
+        ],
+        "text": "GOPAL",
+        "script_language": "Bengali"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [389, 758],
+          [736, 758],
+          [736, 844],
+          [389, 844]
+        ],
+        "text": "MEDICAL",
+        "script_language": "Bengali"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [312, 854],
+          [401, 854],
+          [401, 879],
+          [312, 879]
+        ],
+        "text": "CHEMIST",
+        "script_language": "Bengali"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [413, 854],
+          [455, 854],
+          [455, 881],
+          [413, 881]
+        ],
+        "text": "AND",
+        "script_language": "Bengali"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [461, 847],
+          [537, 847],
+          [537, 881],
+          [461, 881]
+        ],
+        "text": "DRUGIST",
+        "script_language": "Bengali"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [229, 884],
+          [394, 884],
+          [394, 938],
+          [229, 938]
+        ],
+        "text": "GOPAL",
+        "script_language": "English"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [399, 886],
+          [621, 886],
+          [621, 935],
+          [399, 935]
+        ],
+        "text": "MEDICAL",
+        "script_language": "English"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [226, 941],
+          [298, 941],
+          [298, 971],
+          [226, 971]
+        ],
+        "text": "CENTRAL",
+        "script_language": "Bengali"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [301, 938],
+          [346, 938],
+          [346, 973],
+          [301, 973]
+        ],
+        "text": "ROAD",
+        "script_language": "Bengali"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [355, 940],
+          [446, 940],
+          [446, 969],
+          [355, 969]
+        ],
+        "text": "BISHALGARH",
+        "script_language": "Bengali"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [456, 938],
+          [559, 938],
+          [559, 968],
+          [456, 968]
+        ],
+        "text": "SEPAHIJALA",
+        "script_language": "Bengali"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [562, 935],
+          [623, 935],
+          [623, 964],
+          [562, 964]
+        ],
+        "text": "TRIPURA",
+        "script_language": "Bengali"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [202, 968],
+          [293, 968],
+          [293, 995],
+          [202, 995]
+        ],
+        "text": "MObile",
+        "script_language": "English"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [306, 970],
+          [468, 970],
+          [468, 995],
+          [306, 995]
+        ],
+        "text": "9774508672",
+        "script_language": "English"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [490, 965],
+          [655, 965],
+          [655, 992],
+          [490, 992]
+        ],
+        "text": "9612150381",
+        "script_language": "English"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [807, 753],
+          [888, 753],
+          [888, 827],
+          [807, 827]
+        ],
+        "text": "MAA",
+        "script_language": "Bengali"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [894, 733],
+          [1042, 733],
+          [1042, 834],
+          [894, 834]
+        ],
+        "text": "DURGA",
+        "script_language": "Bengali"
+      },
+      "polygon_17": {
+        "coordinates": [
+          [1056, 729],
+          [1391, 729],
+          [1391, 823],
+          [1056, 823]
+        ],
+        "text": "MEDICAL",
+        "script_language": "Bengali"
+      },
+      "polygon_18": {
+        "coordinates": [
+          [1413, 744],
+          [1539, 744],
+          [1539, 810],
+          [1413, 810]
+        ],
+        "text": "HALL",
+        "script_language": "Bengali"
+      },
+      "polygon_19": {
+        "coordinates": [
+          [882, 840],
+          [981, 840],
+          [981, 911],
+          [882, 911]
+        ],
+        "text": "MAA",
+        "script_language": "English"
+      },
+      "polygon_20": {
+        "coordinates": [
+          [990, 839],
+          [1143, 839],
+          [1143, 906],
+          [990, 906]
+        ],
+        "text": "DURGA",
+        "script_language": "English"
+      },
+      "polygon_21": {
+        "coordinates": [
+          [1155, 840],
+          [1350, 840],
+          [1350, 906],
+          [1155, 906]
+        ],
+        "text": "MEDICAL",
+        "script_language": "English"
+      },
+      "polygon_22": {
+        "coordinates": [
+          [1357, 830],
+          [1466, 830],
+          [1466, 896],
+          [1357, 896]
+        ],
+        "text": "HALL",
+        "script_language": "English"
+      },
+      "polygon_23": {
+        "coordinates": [
+          [1000, 913],
+          [1145, 913],
+          [1145, 948],
+          [1000, 948]
+        ],
+        "text": "CHEMIST",
+        "script_language": "Bengali"
+      },
+      "polygon_24": {
+        "coordinates": [
+          [1149, 914],
+          [1196, 914],
+          [1196, 943],
+          [1149, 943]
+        ],
+        "text": "AND",
+        "script_language": "Bengali"
+      },
+      "polygon_25": {
+        "coordinates": [
+          [1209, 914],
+          [1354, 914],
+          [1354, 941],
+          [1209, 941]
+        ],
+        "text": "DRUGIST",
+        "script_language": "Bengali"
+      },
+      "polygon_26": {
+        "coordinates": [
+          [918, 955],
+          [1149, 955],
+          [1149, 989],
+          [918, 989]
+        ],
+        "text": "9774502459, 9862619659",
+        "script_language": "English"
+      },
+      "polygon_27": {
+        "coordinates": [
+          [138, 1078],
+          [387, 1078],
+          [387, 1147],
+          [138, 1147]
+        ],
+        "text": "GOPAL",
+        "script_language": "Bengali"
+      },
+      "polygon_28": {
+        "coordinates": [
+          [152, 1164],
+          [364, 1164],
+          [364, 1231],
+          [152, 1231]
+        ],
+        "text": "GOPAL",
+        "script_language": "English"
+      },
+      "polygon_29": {
+        "coordinates": [
+          [421, 1064],
+          [748, 1064],
+          [748, 1147],
+          [421, 1147]
+        ],
+        "text": "MEDICAL",
+        "script_language": "Bengali"
+      },
+      "polygon_30": {
+        "coordinates": [
+          [386, 1181],
+          [659, 1181],
+          [659, 1228],
+          [386, 1228]
+        ],
+        "text": "MEDICAL",
+        "script_language": "English"
+      },
+      "polygon_31": {
+        "coordinates": [
+          [313, 1152],
+          [428, 1152],
+          [428, 1182],
+          [313, 1182]
+        ],
+        "text": "CHEMIST",
+        "script_language": "Bengali"
+      },
+      "polygon_32": {
+        "coordinates": [
+          [438, 1149],
+          [502, 1149],
+          [502, 1184],
+          [438, 1184]
+        ],
+        "text": "AND",
+        "script_language": "Bengali"
+      },
+      "polygon_33": {
+        "coordinates": [
+          [502, 1150],
+          [611, 1150],
+          [611, 1182],
+          [502, 1182]
+        ],
+        "text": "DRUGIST",
+        "script_language": "Bengali"
+      },
+      "polygon_34": {
+        "coordinates": [
+          [805, 1066],
+          [889, 1066],
+          [889, 1147],
+          [805, 1147]
+        ],
+        "text": "MAA",
+        "script_language": "Bengali"
+      },
+      "polygon_35": {
+        "coordinates": [
+          [899, 1059],
+          [1040, 1059],
+          [1040, 1143],
+          [899, 1143]
+        ],
+        "text": "DURGA",
+        "script_language": "Bengali"
+      },
+      "polygon_36": {
+        "coordinates": [
+          [1047, 1059],
+          [1385, 1059],
+          [1385, 1142],
+          [1047, 1142]
+        ],
+        "text": "MEDICAL",
+        "script_language": "Bengali"
+      },
+      "polygon_37": {
+        "coordinates": [
+          [1393, 1068],
+          [1526, 1068],
+          [1526, 1140],
+          [1393, 1140]
+        ],
+        "text": "HALL",
+        "script_language": "Bengali"
+      },
+      "polygon_38": {
+        "coordinates": [
+          [926, 1149],
+          [1084, 1149],
+          [1084, 1181],
+          [926, 1181]
+        ],
+        "text": "CHEMIST",
+        "script_language": "Bengali"
+      },
+      "polygon_39": {
+        "coordinates": [
+          [1098, 1142],
+          [1182, 1142],
+          [1182, 1184],
+          [1098, 1184]
+        ],
+        "text": "AND",
+        "script_language": "Bengali"
+      },
+      "polygon_40": {
+        "coordinates": [
+          [1196, 1137],
+          [1326, 1137],
+          [1326, 1181],
+          [1196, 1181]
+        ],
+        "text": "DRUGIST",
+        "script_language": "Bengali"
+      },
+      "polygon_41": {
+        "coordinates": [
+          [866, 1184],
+          [1048, 1184],
+          [1048, 1221],
+          [866, 1221]
+        ],
+        "text": "MAA DURGA",
+        "script_language": "English"
+      },
+      "polygon_42": {
+        "coordinates": [
+          [1059, 1182],
+          [1206, 1182],
+          [1206, 1217],
+          [1059, 1217]
+        ],
+        "text": "MEDICAL",
+        "script_language": "English"
+      },
+      "polygon_43": {
+        "coordinates": [
+          [1219, 1184],
+          [1320, 1184],
+          [1320, 1219],
+          [1219, 1219]
+        ],
+        "text": "HALL",
+        "script_language": "English"
+      },
+      "polygon_44": {
+        "coordinates": [
+          [1337, 1150],
+          [1445, 1150],
+          [1445, 1211],
+          [1337, 1211]
+        ],
+        "text": "9774502459  9862619659",
+        "script_language": "English"
+      },
+      "polygon_45": {
+        "coordinates": [
+          [232, 1249],
+          [452, 1249],
+          [452, 1287],
+          [232, 1287]
+        ],
+        "text": "GOPAL",
+        "script_language": "Bengali"
+      },
+      "polygon_46": {
+        "coordinates": [
+          [463, 1243],
+          [704, 1243],
+          [704, 1286],
+          [463, 1286]
+        ],
+        "text": "MEDICAL",
+        "script_language": "Bengali"
+      },
+      "polygon_47": {
+        "coordinates": [
+          [845, 1237],
+          [933, 1237],
+          [933, 1291],
+          [845, 1291]
+        ],
+        "text": "MAA",
+        "script_language": "Bengali"
+      },
+      "polygon_48": {
+        "coordinates": [
+          [950, 1231],
+          [1065, 1231],
+          [1065, 1296],
+          [950, 1296]
+        ],
+        "text": "DURGA",
+        "script_language": "Bengali"
+      },
+      "polygon_49": {
+        "coordinates": [
+          [1075, 1235],
+          [1311, 1235],
+          [1311, 1296],
+          [1075, 1296]
+        ],
+        "text": "MEDICAL",
+        "script_language": "Bengali"
+      },
+      "polygon_50": {
+        "coordinates": [
+          [1316, 1234],
+          [1395, 1234],
+          [1395, 1289],
+          [1316, 1289]
+        ],
+        "text": "HALL",
+        "script_language": "Bengali"
+      },
+      "polygon_51": {
+        "coordinates": [
+          [1161, 1331],
+          [1350, 1331],
+          [1350, 1402],
+          [1161, 1402]
+        ],
+        "text": "AUSHADH",
+        "script_language": "Bengali"
+      },
+      "polygon_52": {
+        "coordinates": [
+          [775, 1425],
+          [829, 1425],
+          [829, 1752],
+          [775, 1752]
+        ],
+        "text": "AUSHADH",
+        "script_language": "Bengali"
+      },
+      "polygon_53": {
+        "coordinates": [
+          [100, 1481],
+          [146, 1481],
+          [146, 1694],
+          [100, 1694]
+        ],
+        "text": "AUSHADH",
+        "script_language": "Bengali"
+      },
+      "polygon_54": {
+        "coordinates": [
+          [396, 1739],
+          [451, 1739],
+          [451, 1941],
+          [396, 1941]
+        ],
+        "text": "AUSHADH",
+        "script_language": "Bengali"
+      },
+      "polygon_55": {
+        "coordinates": [
+          [467, 1737],
+          [517, 1737],
+          [517, 1940],
+          [467, 1940]
+        ],
+        "text": "AUSHADH",
+        "script_language": "Bengali"
+      },
+      "polygon_56": {
+        "coordinates": [
+          [736, 1664],
+          [783, 1664],
+          [783, 1885],
+          [736, 1885]
+        ],
+        "text": "AUSHADH",
+        "script_language": "Bengali"
+      },
+      "polygon_57": {
+        "coordinates": [
+          [785, 1795],
+          [905, 1795],
+          [905, 1827],
+          [785, 1827]
+        ],
+        "text": "DR. N.C. ROY",
+        "script_language": "English"
+      },
+      "polygon_58": {
+        "coordinates": [
+          [913, 1799],
+          [1032, 1799],
+          [1032, 1826],
+          [913, 1826]
+        ],
+        "text": "DR. SUBHAJIT DAS",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

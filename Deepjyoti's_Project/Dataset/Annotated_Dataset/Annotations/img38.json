@@ -1,0 +1,90 @@
+{
+  "AnnotationDataset_img38": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [1217, 1176],
+          [1819, 1176],
+          [1819, 1438],
+          [1217, 1438]
+        ],
+        "text": "BUS",
+        "script_language": "Bengali"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [1409, 1421],
+          [2236, 1421],
+          [2236, 1622],
+          [1409, 1622]
+        ],
+        "text": "NAGERJALA",
+        "script_language": "Bengali"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [2306, 1466],
+          [3043, 1466],
+          [3043, 1630],
+          [2306, 1630]
+        ],
+        "text": "AGARTALA",
+        "script_language": "Bengali"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [1642, 913],
+          [2043, 913],
+          [2043, 1110],
+          [1642, 1110]
+        ],
+        "text": "SHYAMA",
+        "script_language": "Bengali"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [2118, 934],
+          [2499, 934],
+          [2499, 1135],
+          [2118, 1135]
+        ],
+        "text": "PRASAD",
+        "script_language": "Bengali"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [2535, 926],
+          [3031, 926],
+          [3031, 1176],
+          [2535, 1176]
+        ],
+        "text": "MUKHERJEE",
+        "script_language": "Bengali"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [1364, 893],
+          [1614, 893],
+          [1614, 1094],
+          [1364, 1094]
+        ],
+        "text": "DR",
+        "script_language": "Bengali"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [1901, 1184],
+          [3208, 1184],
+          [3208, 1471],
+          [1901, 1471]
+        ],
+        "text": "TERMINAL",
+        "script_language": "Bengali"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

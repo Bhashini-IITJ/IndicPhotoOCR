@@ -1,0 +1,71 @@
+{
+  "AnnotationDataset_img20": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [1656, 1267],
+          [1660, 1374],
+          [2154, 1365],
+          [2154, 1255]
+        ],
+        "text": "KAMAKHYA",
+        "script_language": "Assamesse"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [2199, 1255],
+          [2203, 1357],
+          [2404, 1361],
+          [2387, 1255]
+        ],
+        "text": "JN",
+        "script_language": "Assamesse"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [1651, 1382],
+          [1680, 1484],
+          [2183, 1484],
+          [2187, 1386]
+        ],
+        "text": "KAMAKHYA",
+        "script_language": "Hindi"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [2216, 1382],
+          [2216, 1488],
+          [2400, 1496],
+          [2395, 1386]
+        ],
+        "text": "JN",
+        "script_language": "Hindi"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [1627, 1496],
+          [1627, 1623],
+          [2248, 1623],
+          [2240, 1517]
+        ],
+        "text": "KAMAKHYA",
+        "script_language": "English"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [2281, 1504],
+          [2277, 1615],
+          [2400, 1607],
+          [2412, 1582],
+          [2404, 1517]
+        ],
+        "text": "JN",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

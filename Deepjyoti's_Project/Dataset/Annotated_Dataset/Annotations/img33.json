@@ -1,0 +1,90 @@
+{
+  "AnnotationDataset_img33": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [1688, 1124],
+          [1947, 1124],
+          [1947, 1237],
+          [1688, 1237]
+        ],
+        "text": "Tattho",
+        "script_language": "Bengali"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [1981, 1127],
+          [2069, 1127],
+          [2069, 1235],
+          [1981, 1235]
+        ],
+        "text": "Oo",
+        "script_language": "Bengali"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [2091, 1093],
+          [2520, 1093],
+          [2520, 1260],
+          [2091, 1260]
+        ],
+        "text": "Sanskriti",
+        "script_language": "Bengali"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [2538, 1091],
+          [3025, 1091],
+          [3025, 1235],
+          [2538, 1235]
+        ],
+        "text": "Adhikar",
+        "script_language": "Bengali"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [1617, 1283],
+          [2038, 1283],
+          [2038, 1440],
+          [1617, 1440]
+        ],
+        "text": "Kakothum",
+        "script_language": "Kakborok"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [2058, 1250],
+          [2289, 1250],
+          [2289, 1404],
+          [2058, 1404]
+        ],
+        "text": "tai",
+        "script_language": "Kakborok"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [2310, 1276],
+          [2618, 1276],
+          [2618, 1440],
+          [2310, 1440]
+        ],
+        "text": "Hukum",
+        "script_language": "Kakborok"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [2626, 1242],
+          [3090, 1242],
+          [3090, 1434],
+          [2626, 1434]
+        ],
+        "text": "Dagikhuo",
+        "script_language": "Kakborok"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

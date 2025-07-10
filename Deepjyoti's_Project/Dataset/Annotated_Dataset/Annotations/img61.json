@@ -1,0 +1,226 @@
+{
+  "AnnotationDataset_img61": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [112, 514],
+          [131, 727],
+          [770, 589],
+          [742, 264],
+          [544, 333],
+          [550, 404]
+        ],
+        "text": "JEWELLERY",
+        "script_language": "Bengali"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [129, 445],
+          [138, 499],
+          [542, 396],
+          [535, 329]
+        ],
+        "text": "M.8413900893/9862406331",
+        "script_language": "English"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [757, 333],
+          [776, 557],
+          [1628, 363],
+          [1606, 84],
+          [1322, 168],
+          [1312, 101],
+          [1122, 161],
+          [1105, 239]
+        ],
+        "text": "ANAMIKA",
+        "script_language": "Bengali"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [211, 720],
+          [215, 783],
+          [303, 750],
+          [301, 697]
+        ],
+        "text": "Aekhane",
+        "script_language": "Bengali"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [310, 694],
+          [312, 748],
+          [464, 720],
+          [460, 660]
+        ],
+        "text": "22carat",
+        "script_language": "Bengali"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [475, 660],
+          [477, 720],
+          [602, 697],
+          [598, 639]
+        ],
+        "text": "cadeum",
+        "script_language": "Bengali"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [606, 643],
+          [608, 690],
+          [639, 679],
+          [632, 647]
+        ],
+        "text": "Oo",
+        "script_language": "Bengali"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [641, 634],
+          [647, 688],
+          [789, 660],
+          [780, 604]
+        ],
+        "text": "hallmarker",
+        "script_language": "Bengali"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [800, 598],
+          [802, 656],
+          [912, 641],
+          [907, 574]
+        ],
+        "text": "sonar",
+        "script_language": "Bengali"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [916, 576],
+          [927, 634],
+          [1077, 608],
+          [1073, 546]
+        ],
+        "text": "Alonkar",
+        "script_language": "Bengali"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [1088, 540],
+          [1097, 600],
+          [1200, 585],
+          [1191, 514]
+        ],
+        "text": "prostut",
+        "script_language": "Bengali"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [1211, 503],
+          [1228, 574],
+          [1322, 557],
+          [1312, 488]
+        ],
+        "text": "kora",
+        "script_language": "Bengali"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [1335, 484],
+          [1346, 546],
+          [1426, 531],
+          [1413, 467]
+        ],
+        "text": "hoi",
+        "script_language": "Bengali"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [215, 821],
+          [454, 776],
+          [449, 722],
+          [217, 768]
+        ],
+        "text": "Pro:Shree Pradip",
+        "script_language": "Bengali"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [467, 722],
+          [469, 776],
+          [608, 753],
+          [591, 705]
+        ],
+        "text": "Sarkar",
+        "script_language": "Bengali"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [613, 694],
+          [617, 761],
+          [796, 729],
+          [787, 662]
+        ],
+        "text": "Bishalgarh",
+        "script_language": "Bengali"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [806, 658],
+          [813, 710],
+          [950, 694],
+          [937, 641]
+        ],
+        "text": "Utar",
+        "script_language": "Bengali"
+      },
+      "polygon_17": {
+        "coordinates": [
+          [955, 643],
+          [968, 688],
+          [1097, 662],
+          [1082, 600]
+        ],
+        "text": "Bazzar",
+        "script_language": "Bengali"
+      },
+      "polygon_18": {
+        "coordinates": [
+          [1114, 654],
+          [1099, 587],
+          [1462, 514],
+          [1477, 593]
+        ],
+        "text": "Sepahijala Tripura",
+        "script_language": "Bengali"
+      },
+      "polygon_19": {
+        "coordinates": [
+          [144, 864],
+          [161, 1021],
+          [892, 931],
+          [877, 729]
+        ],
+        "text": "JEWELLERY",
+        "script_language": "English"
+      },
+      "polygon_20": {
+        "coordinates": [
+          [905, 729],
+          [914, 931],
+          [1658, 841],
+          [1628, 613]
+        ],
+        "text": "ANAMIKA",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

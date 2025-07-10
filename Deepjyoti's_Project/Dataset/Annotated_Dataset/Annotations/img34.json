@@ -1,0 +1,407 @@
+{
+  "AnnotationDataset_img34": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [569, 1274],
+          [561, 1380],
+          [1160, 1361],
+          [1171, 1244]
+        ],
+        "text": "DIRECTORATE",
+        "script_language": "English"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [1187, 1236],
+          [1179, 1359],
+          [1290, 1359],
+          [1301, 1239]
+        ],
+        "text": "OF",
+        "script_language": "English"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [1323, 1236],
+          [1320, 1359],
+          [1925, 1329],
+          [1933, 1206]
+        ],
+        "text": "INFORMATION",
+        "script_language": "English"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [1955, 1206],
+          [1941, 1331],
+          [2034, 1320],
+          [1998, 1206]
+        ],
+        "text": "&",
+        "script_language": "English"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [2036, 1206],
+          [2042, 1326],
+          [2526, 1304],
+          [2516, 1171]
+        ],
+        "text": "CULTURAL",
+        "script_language": "English"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [2532, 1173],
+          [2540, 1307],
+          [2946, 1282],
+          [2927, 1157]
+        ],
+        "text": "AFFAIRS",
+        "script_language": "English"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [942, 1399],
+          [942, 1511],
+          [1258, 1508],
+          [1244, 1383]
+        ],
+        "text": "Tattho",
+        "script_language": "Bengali"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [1261, 1386],
+          [1301, 1503],
+          [1410, 1497],
+          [1386, 1380]
+        ],
+        "text": "Oo",
+        "script_language": "Bengali"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [1418, 1372],
+          [1443, 1503],
+          [1919, 1492],
+          [1914, 1348],
+          [1873, 1356],
+          [1827, 1307],
+          [1734, 1329],
+          [1729, 1364]
+        ],
+        "text": "Sanskriti",
+        "script_language": "Bengali"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [1928, 1350],
+          [1949, 1484],
+          [2521, 1467],
+          [2507, 1315],
+          [2205, 1339],
+          [2137, 1304],
+          [2085, 1312],
+          [2064, 1345]
+        ],
+        "text": "Adhikar",
+        "script_language": "Bengali"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [920, 1538],
+          [920, 1666],
+          [1171, 1663],
+          [1225, 1683],
+          [1271, 1683],
+          [1293, 1663],
+          [1359, 1655],
+          [1372, 1530]
+        ],
+        "text": "Kakothum",
+        "script_language": "Kakborok"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [1402, 1522],
+          [1397, 1655],
+          [1696, 1655],
+          [1680, 1508],
+          [1582, 1492],
+          [1541, 1519]
+        ],
+        "text": "Tei",
+        "script_language": "Kakborok"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [1693, 1511],
+          [1715, 1653],
+          [2053, 1666],
+          [2001, 1497]
+        ],
+        "text": "Hukum",
+        "script_language": "Kakborok"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [2026, 1497],
+          [2064, 1636],
+          [2567, 1636],
+          [2521, 1478],
+          [2295, 1486],
+          [2224, 1446],
+          [2151, 1489]
+        ],
+        "text": "Dagikhuo",
+        "script_language": "Kakborok"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [1456, 2140],
+          [1572, 2140],
+          [1572, 2195],
+          [1456, 2195]
+        ],
+        "text": "Tattho",
+        "script_language": "Bengali"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [1435, 2213],
+          [1598, 2213],
+          [1598, 2278],
+          [1435, 2278]
+        ],
+        "text": "Kakothum",
+        "script_language": "Kakborok"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [1584, 2140],
+          [1617, 2140],
+          [1617, 2197],
+          [1584, 2197]
+        ],
+        "text": "Oo",
+        "script_language": "Bengali"
+      },
+      "polygon_17": {
+        "coordinates": [
+          [1633, 2130],
+          [1802, 2130],
+          [1802, 2204],
+          [1633, 2204]
+        ],
+        "text": "Sanskriti",
+        "script_language": "Bengali"
+      },
+      "polygon_18": {
+        "coordinates": [
+          [1815, 2138],
+          [2013, 2138],
+          [2013, 2201],
+          [1815, 2201]
+        ],
+        "text": "Adhikar",
+        "script_language": "Bengali"
+      },
+      "polygon_19": {
+        "coordinates": [
+          [1605, 2203],
+          [1705, 2203],
+          [1705, 2266],
+          [1605, 2266]
+        ],
+        "text": "Tei",
+        "script_language": "Kakborok"
+      },
+      "polygon_20": {
+        "coordinates": [
+          [1715, 2207],
+          [1842, 2207],
+          [1842, 2276],
+          [1715, 2276]
+        ],
+        "text": "Hukum",
+        "script_language": "Kakborok"
+      },
+      "polygon_21": {
+        "coordinates": [
+          [1848, 2207],
+          [2036, 2207],
+          [2036, 2285],
+          [1848, 2285]
+        ],
+        "text": "Dagikhuo",
+        "script_language": "Kakborok"
+      },
+      "polygon_22": {
+        "coordinates": [
+          [3332, 2038],
+          [3557, 2038],
+          [3557, 2156],
+          [3332, 2156]
+        ],
+        "text": "KABI",
+        "script_language": "Bengali"
+      },
+      "polygon_23": {
+        "coordinates": [
+          [3569, 2034],
+          [3830, 2034],
+          [3830, 2169],
+          [3569, 2169]
+        ],
+        "text": "PRONAM",
+        "script_language": "Bengali"
+      },
+      "polygon_24": {
+        "coordinates": [
+          [3292, 1751],
+          [3346, 1751],
+          [3346, 1784],
+          [3292, 1784]
+        ],
+        "text": "Tattho",
+        "script_language": "Bengali"
+      },
+      "polygon_25": {
+        "coordinates": [
+          [3357, 1751],
+          [3382, 1751],
+          [3382, 1781],
+          [3357, 1781]
+        ],
+        "text": "Oo",
+        "script_language": "Bengali"
+      },
+      "polygon_26": {
+        "coordinates": [
+          [3392, 1751],
+          [3479, 1751],
+          [3479, 1781],
+          [3392, 1781]
+        ],
+        "text": "Sanskriti",
+        "script_language": "Bengali"
+      },
+      "polygon_27": {
+        "coordinates": [
+          [3490, 1748],
+          [3544, 1748],
+          [3544, 1781],
+          [3490, 1781]
+        ],
+        "text": "Daptor",
+        "script_language": "Bengali"
+      },
+      "polygon_28": {
+        "coordinates": [
+          [3292, 1791],
+          [3371, 1791],
+          [3371, 1818],
+          [3292, 1818]
+        ],
+        "text": "Tripura",
+        "script_language": "Bengali"
+      },
+      "polygon_29": {
+        "coordinates": [
+          [3381, 1783],
+          [3468, 1783],
+          [3468, 1813],
+          [3381, 1813]
+        ],
+        "text": "Sarkar",
+        "script_language": "Bengali"
+      },
+      "polygon_30": {
+        "coordinates": [
+          [3300, 1827],
+          [3414, 1827],
+          [3414, 1865],
+          [3300, 1865]
+        ],
+        "text": "Ayojito",
+        "script_language": "Bengali"
+      },
+      "polygon_31": {
+        "coordinates": [
+          [3308, 1914],
+          [3395, 1914],
+          [3395, 1947],
+          [3308, 1947]
+        ],
+        "text": "Kaji",
+        "script_language": "Bengali"
+      },
+      "polygon_32": {
+        "coordinates": [
+          [3409, 1908],
+          [3515, 1908],
+          [3515, 1946],
+          [3409, 1946]
+        ],
+        "text": "Najrul",
+        "script_language": "Bengali"
+      },
+      "polygon_33": {
+        "coordinates": [
+          [3528, 1906],
+          [3680, 1906],
+          [3680, 1944],
+          [3528, 1944]
+        ],
+        "text": "Islamer",
+        "script_language": "Bengali"
+      },
+      "polygon_34": {
+        "coordinates": [
+          [3327, 1960],
+          [3477, 1960],
+          [3477, 1998],
+          [3327, 1998]
+        ],
+        "text": "JanmoJayanti",
+        "script_language": "Bengali"
+      },
+      "polygon_35": {
+        "coordinates": [
+          [3485, 1957],
+          [3635, 1957],
+          [3635, 2001],
+          [3485, 2001]
+        ],
+        "text": "Upolokhe",
+        "script_language": "Bengali"
+      },
+      "polygon_36": {
+        "coordinates": [
+          [3360, 2181],
+          [3469, 2181],
+          [3469, 2227],
+          [3360, 2227]
+        ],
+        "text": "26 May",
+        "script_language": "Bengali"
+      },
+      "polygon_37": {
+        "coordinates": [
+          [3474, 2178],
+          [3597, 2178],
+          [3597, 2216],
+          [3474, 2216]
+        ],
+        "text": "2025",
+        "script_language": "Bengali"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

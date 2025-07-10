@@ -1,0 +1,207 @@
+{
+  "AnnotationDataset_img4": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [979, 2356],
+          [1347, 2356],
+          [1347, 2557],
+          [979, 2557]
+        ],
+        "text": "LICI",
+        "script_language": "English"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [1076, 1513],
+          [1249, 1513],
+          [1249, 1690],
+          [1076, 1690]
+        ],
+        "text": "LIC",
+        "script_language": "English"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [968, 1214],
+          [947, 1454],
+          [1995, 1568],
+          [1985, 1329]
+        ],
+        "text": "PREMIUM",
+        "script_language": "English"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [2078, 1346],
+          [2078, 1579],
+          [2700, 1662],
+          [2713, 1423]
+        ],
+        "text": "POINT",
+        "script_language": "English"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [2547, 1683],
+          [2547, 1815],
+          [2547, 1829],
+          [2713, 1846],
+          [2700, 1700]
+        ],
+        "text": "LIC",
+        "script_language": "English"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [1301, 1537],
+          [1298, 1718],
+          [2037, 1797],
+          [2033, 1620]
+        ],
+        "text": "DIPANKAR",
+        "script_language": "English"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [2078, 1631],
+          [2078, 1797],
+          [2380, 1829],
+          [2380, 1662]
+        ],
+        "text": "SHILL",
+        "script_language": "English"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [968, 1981],
+          [965, 2099],
+          [1239, 2124],
+          [1242, 1995]
+        ],
+        "text": "Mob",
+        "script_language": "English"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [1280, 2006],
+          [1284, 2127],
+          [1950, 2183],
+          [1957, 2072]
+        ],
+        "text": "9862187277",
+        "script_language": "English"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [2051, 2082],
+          [2047, 2200],
+          [2672, 2255],
+          [2693, 2141]
+        ],
+        "text": "7005882940",
+        "script_language": "English"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [920, 2172],
+          [913, 2301],
+          [1273, 2335],
+          [1287, 2203]
+        ],
+        "text": "Aekhane",
+        "script_language": "Bengali"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [1312, 2210],
+          [1308, 2328],
+          [1450, 2356],
+          [1922, 2384],
+          [1912, 2273],
+          [1860, 2245],
+          [1860, 2224],
+          [1801, 2224],
+          [1763, 2245]
+        ],
+        "text": "Bharatborsher",
+        "script_language": "Bengali"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [1957, 2273],
+          [1950, 2398],
+          [2349, 2429],
+          [2335, 2307]
+        ],
+        "text": "Jekono",
+        "script_language": "Bengali"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [2370, 2301],
+          [2373, 2432],
+          [2717, 2471],
+          [2727, 2339]
+        ],
+        "text": "Brancher",
+        "script_language": "Bengali"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [1395, 2398],
+          [1419, 2550],
+          [1853, 2592],
+          [1867, 2453],
+          [1669, 2439],
+          [1638, 2394],
+          [1565, 2391],
+          [1548, 2415],
+          [1516, 2398],
+          [1457, 2380],
+          [1419, 2398],
+          [1405, 2412]
+        ],
+        "text": "Premium",
+        "script_language": "Bengali"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [1895, 2460],
+          [1891, 2585],
+          [2207, 2616],
+          [2203, 2491]
+        ],
+        "text": "Songraha",
+        "script_language": "Bengali"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [2228, 2491],
+          [2245, 2613],
+          [2425, 2637],
+          [2446, 2530],
+          [2443, 2495]
+        ],
+        "text": "Kora",
+        "script_language": "Bengali"
+      },
+      "polygon_17": {
+        "coordinates": [
+          [2464, 2512],
+          [2477, 2623],
+          [2523, 2658],
+          [2602, 2661],
+          [2630, 2627],
+          [2623, 2536]
+        ],
+        "text": "Hoi",
+        "script_language": "Bengali"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

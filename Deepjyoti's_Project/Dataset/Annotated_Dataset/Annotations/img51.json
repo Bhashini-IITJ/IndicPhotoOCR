@@ -1,0 +1,120 @@
+{
+  "AnnotationDataset_img51": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [73, 132],
+          [818, 132],
+          [818, 261],
+          [73, 261]
+        ],
+        "text": "VOLTAS.beko",
+        "script_language": "English"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [1047, 73],
+          [1853, 73],
+          [1853, 261],
+          [1047, 261]
+        ],
+        "text": "LuMINOUS",
+        "script_language": "English"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [319, 286],
+          [484, 286],
+          [484, 350],
+          [319, 350]
+        ],
+        "text": "New",
+        "script_language": "Bengali"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [493, 300],
+          [1176, 300],
+          [1176, 443],
+          [493, 443]
+        ],
+        "text": "Bholagiri",
+        "script_language": "Bengali"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [1195, 286],
+          [1993, 286],
+          [1993, 465],
+          [1195, 465]
+        ],
+        "text": "Electronics",
+        "script_language": "Bengali"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [549, 453],
+          [1170, 453],
+          [1170, 557],
+          [549, 557]
+        ],
+        "text": "Bholagiri",
+        "script_language": "English"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [1206, 437],
+          [1937, 437],
+          [1937, 543],
+          [1206, 543]
+        ],
+        "text": "Electronics",
+        "script_language": "English"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [448, 445],
+          [540, 445],
+          [540, 504],
+          [448, 504]
+        ],
+        "text": "New",
+        "script_language": "English"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [689, 565],
+          [851, 565],
+          [851, 621],
+          [689, 621]
+        ],
+        "text": "Mob",
+        "script_language": "English"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [896, 557],
+          [1327, 557],
+          [1327, 621],
+          [896, 621]
+        ],
+        "text": "8974445977",
+        "script_language": "English"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [1394, 554],
+          [1828, 554],
+          [1828, 610],
+          [1394, 610]
+        ],
+        "text": "9612224098",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

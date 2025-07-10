@@ -1,0 +1,330 @@
+{
+  "AnnotationDataset_img60": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [244, 97],
+          [575, 97],
+          [575, 230],
+          [244, 230]
+        ],
+        "text": "JOY",
+        "script_language": "Bengali"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [602, 89],
+          [1286, 89],
+          [1286, 249],
+          [602, 249]
+        ],
+        "text": "SANTOSHI",
+        "script_language": "Bengali"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [1316, 116],
+          [1524, 116],
+          [1524, 256],
+          [1316, 256]
+        ],
+        "text": "MAA",
+        "script_language": "Bengali"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [1587, 109],
+          [2567, 109],
+          [2567, 261],
+          [1587, 261]
+        ],
+        "text": "ENTERPRISE",
+        "script_language": "Bengali"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [728, 259],
+          [946, 259],
+          [946, 305],
+          [728, 305]
+        ],
+        "text": "Central",
+        "script_language": "Bengali"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [967, 259],
+          [1117, 259],
+          [1117, 303],
+          [967, 303]
+        ],
+        "text": "Road",
+        "script_language": "Bengali"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [1156, 264],
+          [1449, 264],
+          [1449, 317],
+          [1156, 317]
+        ],
+        "text": "Bishalgarh",
+        "script_language": "Bengali"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [1485, 268],
+          [1821, 268],
+          [1821, 316],
+          [1485, 316]
+        ],
+        "text": "Sepahijala",
+        "script_language": "Bengali"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [1848, 266],
+          [2049, 266],
+          [2049, 317],
+          [1848, 317]
+        ],
+        "text": "Tripura",
+        "script_language": "Bengali"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [583, 307],
+          [750, 307],
+          [750, 372],
+          [583, 372]
+        ],
+        "text": "Aekhnae",
+        "script_language": "Bengali"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [769, 312],
+          [914, 312],
+          [914, 365],
+          [769, 365]
+        ],
+        "text": "MObil",
+        "script_language": "Bengali"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [946, 312],
+          [1065, 312],
+          [1065, 368],
+          [946, 368]
+        ],
+        "text": "Greese",
+        "script_language": "Bengali"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [1093, 322],
+          [1369, 322],
+          [1369, 382],
+          [1093, 382]
+        ],
+        "text": "Breakwell",
+        "script_language": "Bengali"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [1393, 327],
+          [1717, 327],
+          [1717, 380],
+          [1393, 380]
+        ],
+        "text": "Gearwell",
+        "script_language": "Bengali"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [1739, 327],
+          [1858, 327],
+          [1858, 390],
+          [1739, 390]
+        ],
+        "text": "TATA",
+        "script_language": "Bengali"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [1887, 329],
+          [1989, 329],
+          [1989, 389],
+          [1887, 389]
+        ],
+        "text": "Bus",
+        "script_language": "Bengali"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [2012, 334],
+          [2225, 334],
+          [2225, 385],
+          [2012, 385]
+        ],
+        "text": "Comander",
+        "script_language": "Bengali"
+      },
+      "polygon_17": {
+        "coordinates": [
+          [735, 387],
+          [1093, 387],
+          [1093, 440],
+          [735, 440]
+        ],
+        "text": "Powertiller",
+        "script_language": "Bengali"
+      },
+      "polygon_18": {
+        "coordinates": [
+          [1108, 392],
+          [1154, 392],
+          [1154, 440],
+          [1108, 440]
+        ],
+        "text": "Oo",
+        "script_language": "Bengali"
+      },
+      "polygon_19": {
+        "coordinates": [
+          [1175, 392],
+          [1368, 392],
+          [1368, 452],
+          [1175, 452]
+        ],
+        "text": "Jabotiyo",
+        "script_language": "Bengali"
+      },
+      "polygon_20": {
+        "coordinates": [
+          [1396, 394],
+          [1587, 394],
+          [1587, 452],
+          [1396, 452]
+        ],
+        "text": "Spare",
+        "script_language": "Bengali"
+      },
+      "polygon_21": {
+        "coordinates": [
+          [1606, 394],
+          [1746, 394],
+          [1746, 459],
+          [1606, 459]
+        ],
+        "text": "Parts",
+        "script_language": "Bengali"
+      },
+      "polygon_22": {
+        "coordinates": [
+          [1768, 394],
+          [1928, 394],
+          [1928, 459],
+          [1768, 459]
+        ],
+        "text": "Pauwa",
+        "script_language": "Bengali"
+      },
+      "polygon_23": {
+        "coordinates": [
+          [1940, 399],
+          [2039, 399],
+          [2039, 462],
+          [1940, 462]
+        ],
+        "text": "Jai",
+        "script_language": "Bengali"
+      },
+      "polygon_24": {
+        "coordinates": [
+          [610, 450],
+          [755, 450],
+          [755, 506],
+          [610, 506]
+        ],
+        "text": "Mob",
+        "script_language": "English"
+      },
+      "polygon_25": {
+        "coordinates": [
+          [779, 452],
+          [1214, 452],
+          [1214, 512],
+          [779, 512]
+        ],
+        "text": "9862068256",
+        "script_language": "English"
+      },
+      "polygon_26": {
+        "coordinates": [
+          [1272, 467],
+          [1717, 467],
+          [1717, 520],
+          [1272, 520]
+        ],
+        "text": "9436184890",
+        "script_language": "English"
+      },
+      "polygon_27": {
+        "coordinates": [
+          [1780, 464],
+          [2220, 464],
+          [2220, 529],
+          [1780, 529]
+        ],
+        "text": "9774552723",
+        "script_language": "English"
+      },
+      "polygon_28": {
+        "coordinates": [
+          [237, 491],
+          [505, 491],
+          [505, 588],
+          [237, 588]
+        ],
+        "text": "JOY",
+        "script_language": "English"
+      },
+      "polygon_29": {
+        "coordinates": [
+          [559, 513],
+          [1294, 513],
+          [1294, 612],
+          [559, 612]
+        ],
+        "text": "SANTOSHI",
+        "script_language": "English"
+      },
+      "polygon_30": {
+        "coordinates": [
+          [1340, 527],
+          [1650, 527],
+          [1650, 614],
+          [1340, 614]
+        ],
+        "text": "MAA",
+        "script_language": "English"
+      },
+      "polygon_31": {
+        "coordinates": [
+          [1693, 532],
+          [2571, 532],
+          [2571, 617],
+          [1693, 617]
+        ],
+        "text": "ENTERPRISE",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

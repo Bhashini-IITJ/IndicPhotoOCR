@@ -1,0 +1,60 @@
+{
+  "AnnotationDataset_img41": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [707, 638],
+          [1026, 638],
+          [1026, 850],
+          [707, 850]
+        ],
+        "text": "PARUL",
+        "script_language": "Bengali"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [1044, 609],
+          [1557, 609],
+          [1557, 903],
+          [1044, 903]
+        ],
+        "text": "ELECTRIC",
+        "script_language": "Bengali"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [709, 882],
+          [1046, 882],
+          [1046, 1028],
+          [709, 1028]
+        ],
+        "text": "PARUL",
+        "script_language": "English"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [1062, 887],
+          [1550, 887],
+          [1550, 1047],
+          [1062, 1047]
+        ],
+        "text": "ELECTRIC",
+        "script_language": "English"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [1256, 1058],
+          [1527, 1058],
+          [1527, 1108],
+          [1256, 1108]
+        ],
+        "text": "M-9436184484",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

@@ -1,0 +1,60 @@
+{
+  "AnnotationDataset_img29": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [1609, 1187],
+          [2025, 1187],
+          [2025, 1468],
+          [1609, 1468]
+        ],
+        "text": "NO",
+        "script_language": "English"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [1047, 1474],
+          [2555, 1474],
+          [2555, 1789],
+          [1047, 1789]
+        ],
+        "text": "FIREWORKS",
+        "script_language": "English"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [1063, 1806],
+          [1609, 1806],
+          [1609, 2110],
+          [1063, 2110]
+        ],
+        "text": "BAJJI",
+        "script_language": "Bengali"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [1699, 1823],
+          [2520, 1823],
+          [2520, 2110],
+          [1699, 2110]
+        ],
+        "text": "FOTANO",
+        "script_language": "Bengali"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [1485, 2116],
+          [2104, 2116],
+          [2104, 2409],
+          [1485, 2409]
+        ],
+        "text": "NISHEDH",
+        "script_language": "Bengali"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

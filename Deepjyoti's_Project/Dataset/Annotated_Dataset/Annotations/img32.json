@@ -1,0 +1,150 @@
+{
+  "AnnotationDataset_img32": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [853, 1428],
+          [1351, 1428],
+          [1351, 1537],
+          [853, 1537]
+        ],
+        "text": "PARKING",
+        "script_language": "English"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [1005, 1575],
+          [1463, 1575],
+          [1463, 1689],
+          [1005, 1689]
+        ],
+        "text": "PARBAN",
+        "script_language": "English"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [1175, 1720],
+          [1436, 1720],
+          [1436, 1838],
+          [1175, 1838]
+        ],
+        "text": "HALL",
+        "script_language": "English"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [1383, 1425],
+          [1917, 1425],
+          [1917, 1526],
+          [1383, 1526]
+        ],
+        "text": "RESERVED",
+        "script_language": "English"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [1948, 1414],
+          [2167, 1414],
+          [2167, 1526],
+          [1948, 1526]
+        ],
+        "text": "FOR",
+        "script_language": "English"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [1488, 1571],
+          [2011, 1571],
+          [2011, 1687],
+          [1488, 1687]
+        ],
+        "text": "BANQUET",
+        "script_language": "English"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [1452, 1723],
+          [1890, 1723],
+          [1890, 1828],
+          [1452, 1828]
+        ],
+        "text": "GUESTS",
+        "script_language": "English"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [979, 1877],
+          [1314, 1877],
+          [1314, 2009],
+          [979, 2009]
+        ],
+        "text": "PARBAN",
+        "script_language": "Bengali"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [1356, 1852],
+          [1624, 1852],
+          [1624, 2024],
+          [1356, 2024]
+        ],
+        "text": "BIYE",
+        "script_language": "Bengali"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [1671, 1866],
+          [2069, 1866],
+          [2069, 2022],
+          [1671, 2022]
+        ],
+        "text": "BARIR",
+        "script_language": "Bengali"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [1023, 2044],
+          [1678, 2044],
+          [1678, 2203],
+          [1023, 2203]
+        ],
+        "text": "AATHITHIDER",
+        "script_language": "Bengali"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [1711, 2062],
+          [1995, 2062],
+          [1995, 2180],
+          [1711, 2180]
+        ],
+        "text": "JONNO",
+        "script_language": "Bengali"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [1093, 2214],
+          [1471, 2214],
+          [1471, 2361],
+          [1093, 2361]
+        ],
+        "text": "PARKING",
+        "script_language": "Bengali"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [1508, 2214],
+          [2051, 2214],
+          [2051, 2373],
+          [1508, 2373]
+        ],
+        "text": "SONGRAKHITO",
+        "script_language": "Bengali"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

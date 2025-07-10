@@ -1,0 +1,70 @@
+{
+  "AnnotationDataset_img66": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [818, 232],
+          [1476, 232],
+          [1476, 351],
+          [818, 351]
+        ],
+        "text": "uJJivAn",
+        "script_language": "English"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [1885, 206],
+          [2508, 206],
+          [2508, 357],
+          [1885, 357]
+        ],
+        "text": "uJJivAn",
+        "script_language": "Bengali"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [826, 371],
+          [1478, 371],
+          [1478, 414],
+          [826, 414]
+        ],
+        "text": "UJJIVAN SMALL FINANCE BANK",
+        "script_language": "English"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [1908, 371],
+          [2517, 371],
+          [2517, 423],
+          [1908, 423]
+        ],
+        "text": "UJJIVAN SMALL FINANCE BANK",
+        "script_language": "Bengali"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [2795, 449],
+          [3079, 449],
+          [3079, 492],
+          [2795, 492]
+        ],
+        "text": "BISHALGARH BRANCH",
+        "script_language": "English"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [3114, 447],
+          [3311, 447],
+          [3311, 493],
+          [3114, 493]
+        ],
+        "text": "BISHALGARH SHAKHA",
+        "script_language": "Bengali"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

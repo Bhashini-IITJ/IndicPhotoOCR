@@ -1,0 +1,150 @@
+{
+  "AnnotationDataset_img57": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [293, 238],
+          [293, 395],
+          [596, 370],
+          [613, 190]
+        ],
+        "text": "MAHAKALI",
+        "script_language": "Bengali"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [621, 163],
+          [623, 355],
+          [876, 368],
+          [886, 163]
+        ],
+        "text": "MISHTANNA",
+        "script_language": "Bengali"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [896, 168],
+          [898, 338],
+          [1206, 328],
+          [1209, 128]
+        ],
+        "text": "BHANDER",
+        "script_language": "Bengali"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [833, 80],
+          [833, 168],
+          [1229, 125],
+          [1236, 13]
+        ],
+        "text": "M.9612892169",
+        "script_language": "English"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [283, 420],
+          [280, 548],
+          [538, 536],
+          [546, 393]
+        ],
+        "text": "MAHAKALI",
+        "script_language": "English"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [556, 390],
+          [551, 538],
+          [876, 523],
+          [881, 368]
+        ],
+        "text": "MISHTANNA",
+        "script_language": "English"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [901, 368],
+          [896, 521],
+          [1204, 511],
+          [1214, 345]
+        ],
+        "text": "BHANDER",
+        "script_language": "English"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [513, 556],
+          [513, 626],
+          [871, 616],
+          [873, 538]
+        ],
+        "text": "Prop:-Shree Dinesh Pal",
+        "script_language": "Bengali"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [305, 656],
+          [305, 743],
+          [400, 741],
+          [398, 648]
+        ],
+        "text": "Aekhane",
+        "script_language": "Bengali"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [405, 643],
+          [405, 748],
+          [696, 743],
+          [686, 643]
+        ],
+        "text": "Paneer,Doi,Ghee,Chanar",
+        "script_language": "Bengali"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [703, 656],
+          [706, 743],
+          [813, 746],
+          [816, 658]
+        ],
+        "text": "Payesh",
+        "script_language": "Bengali"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [946, 628],
+          [943, 751],
+          [816, 748],
+          [826, 628]
+        ],
+        "text": "ettadi",
+        "script_language": "Bengali"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [956, 638],
+          [956, 751],
+          [1161, 758],
+          [1161, 626]
+        ],
+        "text": "Pauwa Jai",
+        "script_language": "Bengali"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [521, 1179],
+          [518, 1239],
+          [861, 1291],
+          [871, 1224]
+        ],
+        "text": "NewMarket,Bishalgarh",
+        "script_language": "Bengali"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

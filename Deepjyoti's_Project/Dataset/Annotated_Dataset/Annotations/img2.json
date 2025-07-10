@@ -1,0 +1,240 @@
+{
+  "AnnotationDataset_img2": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [1211, 1843],
+          [1475, 1843],
+          [1475, 1933],
+          [1211, 1933]
+        ],
+        "text": "Aekhane",
+        "script_language": "Bengali"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [1492, 1832],
+          [1659, 1832],
+          [1659, 1940],
+          [1492, 1940]
+        ],
+        "text": "Songe",
+        "script_language": "Bengali"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [1683, 1829],
+          [1856, 1829],
+          [1856, 1926],
+          [1683, 1926]
+        ],
+        "text": "Songe",
+        "script_language": "Bengali"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [1159, 1936],
+          [2013, 1936],
+          [2013, 2203],
+          [1159, 2203]
+        ],
+        "text": "FLEX",
+        "script_language": "English"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [1162, 2228],
+          [2009, 2228],
+          [2009, 2568],
+          [1162, 2568]
+        ],
+        "text": "FLEX",
+        "script_language": "Bengali"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [1607, 2536],
+          [1784, 2536],
+          [1784, 2626],
+          [1607, 2626]
+        ],
+        "text": "Kora",
+        "script_language": "Bengali"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [1797, 2533],
+          [1929, 2533],
+          [1929, 2641],
+          [1797, 2641]
+        ],
+        "text": "Hoi",
+        "script_language": "Bengali"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [2058, 1856],
+          [2256, 1856],
+          [2256, 1953],
+          [2058, 1953]
+        ],
+        "text": "XEROX",
+        "script_language": "English"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [2058, 1971],
+          [2242, 1971],
+          [2242, 2044],
+          [2058, 2044]
+        ],
+        "text": "Printout",
+        "script_language": "English"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [2058, 2061],
+          [2349, 2061],
+          [2349, 2137],
+          [2058, 2137]
+        ],
+        "text": "ColourXerox",
+        "script_language": "English"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [2051, 2155],
+          [2398, 2155],
+          [2398, 2224],
+          [2051, 2224]
+        ],
+        "text": "Passport Photo",
+        "script_language": "English"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [2058, 2245],
+          [2349, 2245],
+          [2349, 2314],
+          [2058, 2314]
+        ],
+        "text": "Visiting Card",
+        "script_language": "English"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [2068, 2335],
+          [2432, 2335],
+          [2432, 2411],
+          [2068, 2411]
+        ],
+        "text": "Glow Sing Board",
+        "script_language": "English"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [2061, 2436],
+          [2325, 2436],
+          [2325, 2509],
+          [2061, 2509]
+        ],
+        "text": "Vinyl Glosy",
+        "script_language": "English"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [2061, 2530],
+          [2314, 2530],
+          [2314, 2592],
+          [2061, 2592]
+        ],
+        "text": "Done here",
+        "script_language": "English"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [1145, 2654],
+          [1346, 2654],
+          [1346, 2796],
+          [1145, 2796]
+        ],
+        "text": "M/s",
+        "script_language": "English"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [1388, 2651],
+          [1839, 2651],
+          [1839, 2800],
+          [1388, 2800]
+        ],
+        "text": "Printing",
+        "script_language": "English"
+      },
+      "polygon_17": {
+        "coordinates": [
+          [1877, 2651],
+          [2380, 2651],
+          [2380, 2800],
+          [1877, 2800]
+        ],
+        "text": "Solution",
+        "script_language": "English"
+      },
+      "polygon_18": {
+        "coordinates": [
+          [1117, 2814],
+          [1308, 2814],
+          [1308, 2908],
+          [1117, 2908]
+        ],
+        "text": "Mob",
+        "script_language": "English"
+      },
+      "polygon_19": {
+        "coordinates": [
+          [1367, 2814],
+          [1835, 2814],
+          [1835, 2897],
+          [1367, 2897]
+        ],
+        "text": "9612671899",
+        "script_language": "English"
+      },
+      "polygon_20": {
+        "coordinates": [
+          [1936, 2828],
+          [2418, 2828],
+          [2418, 2897],
+          [1936, 2897]
+        ],
+        "text": "8787356193",
+        "script_language": "English"
+      },
+      "polygon_21": {
+        "coordinates": [
+          [1190, 2915],
+          [1357, 2915],
+          [1357, 2974],
+          [1190, 2974]
+        ],
+        "text": "Email",
+        "script_language": "English"
+      },
+      "polygon_22": {
+        "coordinates": [
+          [1395, 2911],
+          [2308, 2911],
+          [2308, 2980],
+          [1395, 2980]
+        ],
+        "text": "sukantamajumder83@gmail.com",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

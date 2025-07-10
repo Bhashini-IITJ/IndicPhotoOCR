@@ -1,0 +1,190 @@
+{
+  "AnnotationDataset_img25": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [1184, 1066],
+          [1379, 1066],
+          [1379, 1166],
+          [1184, 1166]
+        ],
+        "text": "Deshiyo",
+        "script_language": "Assamesse"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [1387, 1079],
+          [1592, 1079],
+          [1592, 1167],
+          [1387, 1167]
+        ],
+        "text": "Surakhya",
+        "script_language": "Assamesse"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [1602, 1066],
+          [1817, 1066],
+          [1817, 1171],
+          [1602, 1171]
+        ],
+        "text": "Parikhya",
+        "script_language": "Assamesse"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [1917, 1076],
+          [2170, 1076],
+          [2170, 1166],
+          [1917, 1166]
+        ],
+        "text": "Antardeshiyo",
+        "script_language": "Hindi"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [2188, 1091],
+          [2356, 1091],
+          [2356, 1171],
+          [2188, 1171]
+        ],
+        "text": "Surakhya",
+        "script_language": "Hindi"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [2360, 1071],
+          [2505, 1071],
+          [2505, 1159],
+          [2360, 1159]
+        ],
+        "text": "Janch",
+        "script_language": "Hindi"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [1174, 1176],
+          [1604, 1176],
+          [1604, 1274],
+          [1174, 1274]
+        ],
+        "text": "Domestic",
+        "script_language": "English"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [1632, 1184],
+          [2005, 1184],
+          [2005, 1287],
+          [1632, 1287]
+        ],
+        "text": "Security",
+        "script_language": "English"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [2027, 1179],
+          [2302, 1179],
+          [2302, 1279],
+          [2027, 1279]
+        ],
+        "text": "Check",
+        "script_language": "English"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [1169, 1349],
+          [1534, 1349],
+          [1534, 1437],
+          [1169, 1437]
+        ],
+        "text": "Antarrashtriyo",
+        "script_language": "Assamesse"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [1542, 1359],
+          [1742, 1359],
+          [1742, 1444],
+          [1542, 1444]
+        ],
+        "text": "Surakhya",
+        "script_language": "Assamesse"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [1752, 1347],
+          [1982, 1347],
+          [1982, 1437],
+          [1752, 1437]
+        ],
+        "text": "Parikhya",
+        "script_language": "Assamesse"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [2060, 1352],
+          [2348, 1352],
+          [2348, 1447],
+          [2060, 1447]
+        ],
+        "text": "Antarrashtriyo",
+        "script_language": "Hindi"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [2360, 1362],
+          [2515, 1362],
+          [2515, 1450],
+          [2360, 1450]
+        ],
+        "text": "Surakhya",
+        "script_language": "Hindi"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [2525, 1349],
+          [2663, 1349],
+          [2663, 1442],
+          [2525, 1442]
+        ],
+        "text": "Janch",
+        "script_language": "Hindi"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [1161, 1452],
+          [1727, 1452],
+          [1727, 1547],
+          [1161, 1547]
+        ],
+        "text": "International",
+        "script_language": "English"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [1747, 1444],
+          [2097, 1444],
+          [2097, 1564],
+          [1747, 1564]
+        ],
+        "text": "Security",
+        "script_language": "English"
+      },
+      "polygon_17": {
+        "coordinates": [
+          [2117, 1449],
+          [2387, 1449],
+          [2387, 1544],
+          [2117, 1544]
+        ],
+        "text": "Check",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

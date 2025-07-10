@@ -1,0 +1,180 @@
+{
+  "AnnotationDataset_img55": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [187, 163],
+          [1140, 163],
+          [1140, 334],
+          [187, 334]
+        ],
+        "text": "CHITTARANJAN",
+        "script_language": "English"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [423, 361],
+          [918, 361],
+          [918, 495],
+          [423, 495]
+        ],
+        "text": "TEXTILES",
+        "script_language": "English"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [1311, 252],
+          [1779, 252],
+          [1779, 437],
+          [1311, 437]
+        ],
+        "text": "Ranimarket",
+        "script_language": "Bengali"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [2135, 211],
+          [2764, 211],
+          [2764, 350],
+          [2135, 350]
+        ],
+        "text": "Dr.GHOSH'S",
+        "script_language": "English"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [2280, 396],
+          [2679, 396],
+          [2679, 495],
+          [2280, 495]
+        ],
+        "text": "DENTAL",
+        "script_language": "English"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [1868, 960],
+          [1975, 960],
+          [1975, 977],
+          [1868, 977]
+        ],
+        "text": "Dr.GHOSH",
+        "script_language": "English"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [1845, 981],
+          [1922, 981],
+          [1922, 1004],
+          [1845, 1004]
+        ],
+        "text": "DENTAL",
+        "script_language": "English"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [1933, 983],
+          [2000, 983],
+          [2000, 1003],
+          [1933, 1003]
+        ],
+        "text": "CLINIC",
+        "script_language": "English"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [1913, 1010],
+          [1938, 1010],
+          [1938, 1035],
+          [1913, 1035]
+        ],
+        "text": "&",
+        "script_language": "English"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [1852, 1036],
+          [2000, 1036],
+          [2000, 1058],
+          [1852, 1058]
+        ],
+        "text": "ORTHODONTIC",
+        "script_language": "English"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [1891, 1062],
+          [1971, 1062],
+          [1971, 1085],
+          [1891, 1085]
+        ],
+        "text": "CENTRE",
+        "script_language": "English"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [1856, 1101],
+          [1878, 1101],
+          [1878, 1123],
+          [1856, 1123]
+        ],
+        "text": "Dr",
+        "script_language": "English"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [1885, 1099],
+          [1949, 1099],
+          [1949, 1119],
+          [1885, 1119]
+        ],
+        "text": "ANIRBAN",
+        "script_language": "English"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [1953, 1095],
+          [2009, 1095],
+          [2009, 1122],
+          [1953, 1122]
+        ],
+        "text": "GHOSH",
+        "script_language": "English"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [1863, 1176],
+          [1881, 1176],
+          [1881, 1201],
+          [1863, 1201]
+        ],
+        "text": "Dr",
+        "script_language": "English"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [1889, 1176],
+          [1971, 1176],
+          [1971, 1201],
+          [1889, 1201]
+        ],
+        "text": "ANAMIKA",
+        "script_language": "English"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [1978, 1176],
+          [2017, 1176],
+          [2017, 1201],
+          [1978, 1201]
+        ],
+        "text": "DEB",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

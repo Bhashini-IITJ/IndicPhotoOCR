@@ -1,0 +1,229 @@
+{
+  "AnnotationDataset_img70": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [585, 254],
+          [584, 443],
+          [943, 457],
+          [924, 277]
+        ],
+        "text": "LIC",
+        "script_language": "English"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [283, 444],
+          [396, 444],
+          [396, 478],
+          [283, 478]
+        ],
+        "text": "LIFE",
+        "script_language": "Bengali"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [400, 446],
+          [580, 446],
+          [580, 488],
+          [400, 488]
+        ],
+        "text": "INSURANCE",
+        "script_language": "Bengali"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [592, 455],
+          [762, 455],
+          [762, 494],
+          [592, 494]
+        ],
+        "text": "CORPORATION",
+        "script_language": "Bengali"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [771, 466],
+          [941, 466],
+          [941, 499],
+          [771, 499]
+        ],
+        "text": "OFINDIA",
+        "script_language": "Bengali"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [268, 468],
+          [485, 468],
+          [485, 507],
+          [268, 507]
+        ],
+        "text": "BHARATIYE",
+        "script_language": "Hindi"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [505, 477],
+          [660, 477],
+          [660, 517],
+          [505, 517]
+        ],
+        "text": "JIVAN",
+        "script_language": "Hindi"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [684, 485],
+          [792, 485],
+          [792, 522],
+          [684, 522]
+        ],
+        "text": "VIMA",
+        "script_language": "Hindi"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [813, 488],
+          [951, 488],
+          [951, 527],
+          [813, 527]
+        ],
+        "text": "NIGAM",
+        "script_language": "Hindi"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [277, 497],
+          [358, 497],
+          [358, 537],
+          [277, 537]
+        ],
+        "text": "LIFE",
+        "script_language": "English"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [362, 502],
+          [568, 502],
+          [568, 542],
+          [362, 542]
+        ],
+        "text": "INSURANCE",
+        "script_language": "English"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [576, 513],
+          [804, 513],
+          [804, 552],
+          [576, 552]
+        ],
+        "text": "CORPORATION",
+        "script_language": "English"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [810, 520],
+          [852, 520],
+          [852, 557],
+          [810, 557]
+        ],
+        "text": "OF",
+        "script_language": "English"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [861, 522],
+          [959, 522],
+          [959, 556],
+          [861, 556]
+        ],
+        "text": "INDIA",
+        "script_language": "English"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [280, 547],
+          [480, 547],
+          [480, 600],
+          [280, 600]
+        ],
+        "text": "BISHALGARHSO",
+        "script_language": "Bengali"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [537, 553],
+          [726, 553],
+          [726, 606],
+          [537, 606]
+        ],
+        "text": "BISHALGARHSO",
+        "script_language": "Hindi"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [763, 570],
+          [967, 570],
+          [967, 606],
+          [763, 606]
+        ],
+        "text": "BISHALGARHSO",
+        "script_language": "English"
+      },
+      "polygon_17": {
+        "coordinates": [
+          [358, 372],
+          [353, 381],
+          [356, 387],
+          [362, 391],
+          [370, 396],
+          [378, 400],
+          [390, 403],
+          [401, 406],
+          [408, 406],
+          [409, 406],
+          [413, 387],
+          [404, 385],
+          [404, 388],
+          [395, 385],
+          [386, 382],
+          [380, 381],
+          [373, 375],
+          [362, 372]
+        ],
+        "text": "YOOGSHYAM",
+        "script_language": "Sanskrit"
+      },
+      "polygon_18": {
+        "coordinates": [
+          [413, 406],
+          [422, 408],
+          [427, 408],
+          [435, 408],
+          [448, 405],
+          [460, 403],
+          [473, 398],
+          [483, 394],
+          [486, 390],
+          [482, 383],
+          [475, 377],
+          [470, 378],
+          [460, 383],
+          [452, 386],
+          [440, 388],
+          [430, 390],
+          [417, 390],
+          [415, 390],
+          [414, 390]
+        ],
+        "text": "BAHAIYAYAM",
+        "script_language": "Sanskrit"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

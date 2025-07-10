@@ -1,0 +1,700 @@
+{
+  "AnnotationDataset_img7": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [1851, 958],
+          [2145, 958],
+          [2145, 1026],
+          [1851, 1026]
+        ],
+        "text": "TRIPURA",
+        "script_language": "English"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [2150, 955],
+          [2431, 955],
+          [2431, 1028],
+          [2150, 1028]
+        ],
+        "text": "TRAFFIC",
+        "script_language": "English"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [2442, 966],
+          [2684, 966],
+          [2684, 1034],
+          [2442, 1034]
+        ],
+        "text": "POLICE",
+        "script_language": "English"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [1856, 1028],
+          [2111, 1028],
+          [2111, 1169],
+          [1856, 1169]
+        ],
+        "text": "NO",
+        "script_language": "English"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [2140, 1034],
+          [2684, 1034],
+          [2684, 1180],
+          [2140, 1180]
+        ],
+        "text": "ENTRY",
+        "script_language": "English"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [1893, 1247],
+          [2640, 1247],
+          [2640, 1440],
+          [1893, 1440]
+        ],
+        "text": "Longthorai",
+        "script_language": "Bengali"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [2689, 1333],
+          [2817, 1333],
+          [2817, 1382],
+          [2689, 1382]
+        ],
+        "text": "Longthorai",
+        "script_language": "English"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [1713, 1310],
+          [1848, 1310],
+          [1848, 1359],
+          [1713, 1359]
+        ],
+        "text": "Longthorai",
+        "script_language": "English"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [1929, 1611],
+          [2067, 1611],
+          [2067, 1653],
+          [1929, 1653]
+        ],
+        "text": "Longthorai",
+        "script_language": "English"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [2413, 1614],
+          [2556, 1614],
+          [2556, 1666],
+          [2413, 1666]
+        ],
+        "text": "Longthorai",
+        "script_language": "English"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [1861, 661],
+          [2037, 661],
+          [2037, 746],
+          [1861, 746]
+        ],
+        "text": "LOAN",
+        "script_language": "English"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [1675, 651],
+          [1851, 651],
+          [1851, 763],
+          [1675, 763]
+        ],
+        "text": "GOLD",
+        "script_language": "English"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [1724, 580],
+          [1888, 580],
+          [1888, 655],
+          [1724, 655]
+        ],
+        "text": "ICICI",
+        "script_language": "English"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [1895, 587],
+          [2016, 587],
+          [2016, 651],
+          [1895, 651]
+        ],
+        "text": "BANK",
+        "script_language": "English"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [2120, 569],
+          [2211, 569],
+          [2211, 605],
+          [2120, 605]
+        ],
+        "text": "COLLEGE",
+        "script_language": "English"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [2217, 571],
+          [2333, 571],
+          [2333, 607],
+          [2217, 607]
+        ],
+        "text": "COACHING",
+        "script_language": "English"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [2343, 572],
+          [2420, 572],
+          [2420, 612],
+          [2343, 612]
+        ],
+        "text": "CENTRE",
+        "script_language": "English"
+      },
+      "polygon_17": {
+        "coordinates": [
+          [2200, 741],
+          [2255, 741],
+          [2255, 766],
+          [2200, 766]
+        ],
+        "text": "Sudip",
+        "script_language": "English"
+      },
+      "polygon_18": {
+        "coordinates": [
+          [2259, 743],
+          [2396, 743],
+          [2396, 772],
+          [2259, 772]
+        ],
+        "text": "Bhatacharjee",
+        "script_language": "English"
+      },
+      "polygon_19": {
+        "coordinates": [
+          [2573, 668],
+          [2621, 668],
+          [2621, 681],
+          [2573, 681]
+        ],
+        "text": "Please",
+        "script_language": "English"
+      },
+      "polygon_20": {
+        "coordinates": [
+          [2627, 665],
+          [2704, 665],
+          [2704, 682],
+          [2627, 682]
+        ],
+        "text": "Segregate",
+        "script_language": "English"
+      },
+      "polygon_21": {
+        "coordinates": [
+          [2569, 684],
+          [2636, 684],
+          [2636, 703],
+          [2569, 703]
+        ],
+        "text": "Waste In",
+        "script_language": "English"
+      },
+      "polygon_22": {
+        "coordinates": [
+          [2637, 684],
+          [2705, 684],
+          [2705, 700],
+          [2637, 700]
+        ],
+        "text": "Dustbin",
+        "script_language": "English"
+      },
+      "polygon_23": {
+        "coordinates": [
+          [2984, 703],
+          [3241, 703],
+          [3241, 751],
+          [2984, 751]
+        ],
+        "text": "COMERCIAL",
+        "script_language": "English"
+      },
+      "polygon_24": {
+        "coordinates": [
+          [3252, 709],
+          [3359, 709],
+          [3359, 750],
+          [3252, 750]
+        ],
+        "text": "AREA",
+        "script_language": "English"
+      },
+      "polygon_25": {
+        "coordinates": [
+          [3283, 659],
+          [3354, 659],
+          [3354, 691],
+          [3283, 691]
+        ],
+        "text": "Survekshan",
+        "script_language": "Hindi"
+      },
+      "polygon_26": {
+        "coordinates": [
+          [2985, 764],
+          [3066, 764],
+          [3066, 792],
+          [2985, 792]
+        ],
+        "text": "ULB NAME",
+        "script_language": "English"
+      },
+      "polygon_27": {
+        "coordinates": [
+          [2984, 812],
+          [3068, 812],
+          [3068, 839],
+          [2984, 839]
+        ],
+        "text": "AREA NAME",
+        "script_language": "English"
+      },
+      "polygon_28": {
+        "coordinates": [
+          [2981, 857],
+          [3024, 857],
+          [3024, 878],
+          [2981, 878]
+        ],
+        "text": "ZONE",
+        "script_language": "English"
+      },
+      "polygon_29": {
+        "coordinates": [
+          [3144, 759],
+          [3313, 759],
+          [3313, 799],
+          [3144, 799]
+        ],
+        "text": "Bishalgarh M.C",
+        "script_language": "English"
+      },
+      "polygon_30": {
+        "coordinates": [
+          [3129, 973],
+          [3281, 973],
+          [3281, 1012],
+          [3129, 1012]
+        ],
+        "text": "R.Debbarma",
+        "script_language": "English"
+      },
+      "polygon_31": {
+        "coordinates": [
+          [3056, 980],
+          [3108, 980],
+          [3108, 999],
+          [3056, 999]
+        ],
+        "text": "Officer",
+        "script_language": "English"
+      },
+      "polygon_32": {
+        "coordinates": [
+          [3160, 1177],
+          [3249, 1177],
+          [3249, 1200],
+          [3160, 1200]
+        ],
+        "text": "Segregate",
+        "script_language": "English"
+      },
+      "polygon_33": {
+        "coordinates": [
+          [3255, 1177],
+          [3310, 1177],
+          [3310, 1205],
+          [3255, 1205]
+        ],
+        "text": "Waste",
+        "script_language": "English"
+      },
+      "polygon_34": {
+        "coordinates": [
+          [3169, 1059],
+          [3244, 1059],
+          [3244, 1076],
+          [3169, 1076]
+        ],
+        "text": "Dry Waste",
+        "script_language": "English"
+      },
+      "polygon_35": {
+        "coordinates": [
+          [3256, 1059],
+          [3325, 1059],
+          [3325, 1076],
+          [3256, 1076]
+        ],
+        "text": "Wet Waste",
+        "script_language": "English"
+      },
+      "polygon_36": {
+        "coordinates": [
+          [3055, 1172],
+          [3124, 1172],
+          [3124, 1197],
+          [3055, 1197]
+        ],
+        "text": "Plastic",
+        "script_language": "English"
+      },
+      "polygon_37": {
+        "coordinates": [
+          [3059, 1152],
+          [3084, 1152],
+          [3084, 1168],
+          [3059, 1168]
+        ],
+        "text": "TO",
+        "script_language": "English"
+      },
+      "polygon_38": {
+        "coordinates": [
+          [3032, 1151],
+          [3057, 1151],
+          [3057, 1175],
+          [3032, 1175]
+        ],
+        "text": "NO",
+        "script_language": "English"
+      },
+      "polygon_39": {
+        "coordinates": [
+          [2952, 1172],
+          [2983, 1172],
+          [2983, 1192],
+          [2952, 1192]
+        ],
+        "text": "SINGLE",
+        "script_language": "English"
+      },
+      "polygon_40": {
+        "coordinates": [
+          [3024, 1172],
+          [3052, 1172],
+          [3052, 1196],
+          [3024, 1196]
+        ],
+        "text": "USE",
+        "script_language": "English"
+      },
+      "polygon_41": {
+        "coordinates": [
+          [3019, 1235],
+          [3059, 1235],
+          [3059, 1252],
+          [3019, 1252]
+        ],
+        "text": "Clean",
+        "script_language": "English"
+      },
+      "polygon_42": {
+        "coordinates": [
+          [3064, 1235],
+          [3123, 1235],
+          [3123, 1252],
+          [3064, 1252]
+        ],
+        "text": "Business",
+        "script_language": "English"
+      },
+      "polygon_43": {
+        "coordinates": [
+          [3127, 1233],
+          [3156, 1233],
+          [3156, 1250],
+          [3127, 1250]
+        ],
+        "text": "Hub",
+        "script_language": "English"
+      },
+      "polygon_44": {
+        "coordinates": [
+          [3164, 1232],
+          [3220, 1232],
+          [3220, 1256],
+          [3164, 1256]
+        ],
+        "text": "Attracts",
+        "script_language": "English"
+      },
+      "polygon_45": {
+        "coordinates": [
+          [3225, 1233],
+          [3266, 1233],
+          [3266, 1254],
+          [3225, 1254]
+        ],
+        "text": "More",
+        "script_language": "English"
+      },
+      "polygon_46": {
+        "coordinates": [
+          [3017, 1252],
+          [3096, 1252],
+          [3096, 1273],
+          [3017, 1273]
+        ],
+        "text": "Customers",
+        "script_language": "English"
+      },
+      "polygon_47": {
+        "coordinates": [
+          [3111, 1256],
+          [3148, 1256],
+          [3148, 1273],
+          [3111, 1273]
+        ],
+        "text": "Keep",
+        "script_language": "English"
+      },
+      "polygon_48": {
+        "coordinates": [
+          [3149, 1257],
+          [3160, 1257],
+          [3160, 1274],
+          [3149, 1274]
+        ],
+        "text": "It",
+        "script_language": "English"
+      },
+      "polygon_49": {
+        "coordinates": [
+          [3165, 1256],
+          [3245, 1256],
+          [3245, 1275],
+          [3165, 1275]
+        ],
+        "text": "Litter-Free",
+        "script_language": "English"
+      },
+      "polygon_50": {
+        "coordinates": [
+          [3743, 1092],
+          [4046, 1092],
+          [4046, 1149],
+          [3743, 1149]
+        ],
+        "text": "Basudeb",
+        "script_language": "English"
+      },
+      "polygon_51": {
+        "coordinates": [
+          [4067, 1088],
+          [4222, 1088],
+          [4222, 1145],
+          [4067, 1145]
+        ],
+        "text": "Paul",
+        "script_language": "English"
+      },
+      "polygon_52": {
+        "coordinates": [
+          [3827, 959],
+          [3948, 959],
+          [3948, 991],
+          [3827, 991]
+        ],
+        "text": "Khaane",
+        "script_language": "English"
+      },
+      "polygon_53": {
+        "coordinates": [
+          [3825, 995],
+          [3973, 995],
+          [3973, 1023],
+          [3825, 1023]
+        ],
+        "text": "PeKehna",
+        "script_language": "English"
+      },
+      "polygon_54": {
+        "coordinates": [
+          [3805, 469],
+          [3890, 469],
+          [3890, 508],
+          [3805, 508]
+        ],
+        "text": "Zara",
+        "script_language": "English"
+      },
+      "polygon_55": {
+        "coordinates": [
+          [3903, 479],
+          [3946, 479],
+          [3946, 503],
+          [3903, 503]
+        ],
+        "text": "Sa",
+        "script_language": "English"
+      },
+      "polygon_56": {
+        "coordinates": [
+          [3804, 505],
+          [3960, 505],
+          [3960, 534],
+          [3804, 534]
+        ],
+        "text": "Badlaav",
+        "script_language": "English"
+      },
+      "polygon_57": {
+        "coordinates": [
+          [3804, 533],
+          [3924, 533],
+          [3924, 564],
+          [3804, 564]
+        ],
+        "text": "Banaye",
+        "script_language": "English"
+      },
+      "polygon_58": {
+        "coordinates": [
+          [3792, 564],
+          [3864, 564],
+          [3864, 593],
+          [3792, 593]
+        ],
+        "text": "Life",
+        "script_language": "English"
+      },
+      "polygon_59": {
+        "coordinates": [
+          [3875, 567],
+          [3995, 567],
+          [3995, 598],
+          [3875, 598]
+        ],
+        "text": "Behtar",
+        "script_language": "English"
+      },
+      "polygon_60": {
+        "coordinates": [
+          [3977, 607],
+          [4120, 607],
+          [4120, 670],
+          [3977, 670]
+        ],
+        "text": "sara",
+        "script_language": "Bengali"
+      },
+      "polygon_61": {
+        "coordinates": [
+          [4139, 607],
+          [4387, 607],
+          [4387, 676],
+          [4139, 676]
+        ],
+        "text": "Bharater",
+        "script_language": "Bengali"
+      },
+      "polygon_62": {
+        "coordinates": [
+          [4408, 608],
+          [4564, 608],
+          [4564, 667],
+          [4408, 667]
+        ],
+        "text": "Pochondo",
+        "script_language": "Bengali"
+      },
+      "polygon_63": {
+        "coordinates": [
+          [4085, 703],
+          [4189, 703],
+          [4189, 762],
+          [4085, 762]
+        ],
+        "text": "hobe",
+        "script_language": "Bengali"
+      },
+      "polygon_64": {
+        "coordinates": [
+          [4216, 687],
+          [4431, 687],
+          [4431, 772],
+          [4216, 772]
+        ],
+        "text": "Tripurar",
+        "script_language": "Bengali"
+      },
+      "polygon_65": {
+        "coordinates": [
+          [4079, 788],
+          [4247, 788],
+          [4247, 859],
+          [4079, 859]
+        ],
+        "text": "No.1",
+        "script_language": "English"
+      },
+      "polygon_66": {
+        "coordinates": [
+          [4269, 785],
+          [4416, 785],
+          [4416, 857],
+          [4269, 857]
+        ],
+        "text": "Pochondo",
+        "script_language": "Bengali"
+      },
+      "polygon_67": {
+        "coordinates": [
+          [4317, 251],
+          [4457, 251],
+          [4457, 378],
+          [4317, 378]
+        ],
+        "text": "New",
+        "script_language": "Bengali"
+      },
+      "polygon_68": {
+        "coordinates": [
+          [4480, 291],
+          [4603, 291],
+          [4603, 378],
+          [4480, 378]
+        ],
+        "text": "Novh",
+        "script_language": "Bengali"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

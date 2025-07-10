@@ -1,0 +1,192 @@
+{
+  "AnnotationDataset_img5": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [673, 885],
+          [642, 1093],
+          [1093, 1069],
+          [1093, 1007],
+          [920, 1003],
+          [948, 965],
+          [944, 913],
+          [896, 903],
+          [896, 875]
+        ],
+        "text": "Multi Cuisine Restaurant with ultimate gaming experience",
+        "script_language": "English"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [1125, 1159],
+          [1114, 1423],
+          [1833, 1434],
+          [1871, 1152]
+        ],
+        "text": "Adda",
+        "script_language": "Bengali"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [1906, 1250],
+          [2975, 1201],
+          [2944, 923],
+          [2267, 975],
+          [2253, 885],
+          [2159, 885],
+          [2138, 916],
+          [1927, 916],
+          [1798, 944],
+          [1746, 1052],
+          [1746, 1104]
+        ],
+        "text": "Khana",
+        "script_language": "English"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [1944, 1316],
+          [1933, 1420],
+          [2923, 1368],
+          [2940, 1253]
+        ],
+        "text": "A Gaming Restaurant",
+        "script_language": "English"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [507, 1608],
+          [731, 1608],
+          [731, 1677],
+          [507, 1677]
+        ],
+        "text": "Contact",
+        "script_language": "English"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [757, 1619],
+          [824, 1619],
+          [824, 1678],
+          [757, 1678]
+        ],
+        "text": "Us",
+        "script_language": "English"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [867, 1600],
+          [1243, 1600],
+          [1243, 1659],
+          [867, 1659]
+        ],
+        "text": "8837072132",
+        "script_language": "English"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [1323, 1579],
+          [1710, 1579],
+          [1710, 1632],
+          [1323, 1632]
+        ],
+        "text": "7005400644",
+        "script_language": "English"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [2581, 1533],
+          [2752, 1533],
+          [2752, 1589],
+          [2581, 1589]
+        ],
+        "text": "NH-8",
+        "script_language": "English"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [2765, 1517],
+          [3144, 1517],
+          [3144, 1586],
+          [2765, 1586]
+        ],
+        "text": "Aam Bagan",
+        "script_language": "English"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [3187, 1499],
+          [3603, 1499],
+          [3603, 1558],
+          [3187, 1558]
+        ],
+        "text": "Bishalgarh",
+        "script_language": "English"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [3219, 699],
+          [3480, 699],
+          [3480, 744],
+          [3219, 744]
+        ],
+        "text": "Contact Us",
+        "script_language": "English"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [3213, 2816],
+          [3213, 2883],
+          [3379, 2917],
+          [3384, 2840]
+        ],
+        "text": "Adda",
+        "script_language": "Bengali"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [3619, 2827],
+          [3619, 2909],
+          [3389, 2875],
+          [3387, 2776]
+        ],
+        "text": "Khana",
+        "script_language": "English"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [3307, 2928],
+          [3307, 2973],
+          [3200, 2963],
+          [3203, 2931]
+        ],
+        "text": "Multi",
+        "script_language": "English"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [3312, 2931],
+          [3312, 2979],
+          [3421, 2995],
+          [3437, 2960]
+        ],
+        "text": "cuisine",
+        "script_language": "English"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [3445, 2949],
+          [3440, 2997],
+          [3629, 3021],
+          [3632, 2973]
+        ],
+        "text": "restaurant",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

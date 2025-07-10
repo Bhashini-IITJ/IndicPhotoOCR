@@ -1,0 +1,150 @@
+{
+  "AnnotationDataset_img17": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [458, 1228],
+          [1069, 1228],
+          [1069, 1589],
+          [458, 1589]
+        ],
+        "text": "MODERN",
+        "script_language": "Bengali"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [1096, 1298],
+          [1401, 1298],
+          [1401, 1673],
+          [1096, 1673]
+        ],
+        "text": "BOOK",
+        "script_language": "Bengali"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [1450, 1214],
+          [2193, 1214],
+          [2193, 1651],
+          [1450, 1651]
+        ],
+        "text": "BINDING",
+        "script_language": "Bengali"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [2235, 1235],
+          [2797, 1235],
+          [2797, 1610],
+          [2235, 1610]
+        ],
+        "text": "HOUSE",
+        "script_language": "Bengali"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [472, 1672],
+          [1076, 1672],
+          [1076, 1908],
+          [472, 1908]
+        ],
+        "text": "MODERN",
+        "script_language": "English"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [1124, 1686],
+          [1540, 1686],
+          [1540, 1936],
+          [1124, 1936]
+        ],
+        "text": "BOOK",
+        "script_language": "English"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [1589, 1700],
+          [2221, 1700],
+          [2221, 1929],
+          [1589, 1929]
+        ],
+        "text": "BINDING",
+        "script_language": "English"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [2255, 1700],
+          [2810, 1700],
+          [2810, 1929],
+          [2255, 1929]
+        ],
+        "text": "HOUSE",
+        "script_language": "English"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [930, 1978],
+          [1631, 1978],
+          [1631, 2145],
+          [930, 2145]
+        ],
+        "text": "Mob. 9856124947",
+        "script_language": "English"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [1763, 1992],
+          [2297, 1992],
+          [2297, 2152],
+          [1763, 2152]
+        ],
+        "text": "9774831213",
+        "script_language": "English"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [951, 2186],
+          [1305, 2186],
+          [1305, 2346],
+          [951, 2346]
+        ],
+        "text": "New Market",
+        "script_language": "English"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [1332, 2186],
+          [1651, 2186],
+          [1651, 2346],
+          [1332, 2346]
+        ],
+        "text": "Bishalgarh",
+        "script_language": "English"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [1686, 2186],
+          [1991, 2186],
+          [1991, 2353],
+          [1686, 2353]
+        ],
+        "text": "Sepahijala",
+        "script_language": "English"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [2019, 2186],
+          [2262, 2186],
+          [2262, 2353],
+          [2019, 2353]
+        ],
+        "text": "Tripura",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

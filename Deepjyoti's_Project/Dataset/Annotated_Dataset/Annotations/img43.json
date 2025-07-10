@@ -1,0 +1,530 @@
+{
+  "AnnotationDataset_img43": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [504, 1393],
+          [805, 1393],
+          [805, 1526],
+          [504, 1526]
+        ],
+        "text": "BASANA",
+        "script_language": "Bengali"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [831, 1374],
+          [1335, 1374],
+          [1335, 1538],
+          [831, 1538]
+        ],
+        "text": "MEDICAL",
+        "script_language": "Bengali"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [1378, 1386],
+          [1573, 1386],
+          [1573, 1530],
+          [1378, 1530]
+        ],
+        "text": "HALL",
+        "script_language": "Bengali"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [406, 1542],
+          [870, 1542],
+          [870, 1686],
+          [406, 1686]
+        ],
+        "text": "BASANA",
+        "script_language": "English"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [898, 1538],
+          [1382, 1538],
+          [1382, 1694],
+          [898, 1694]
+        ],
+        "text": "MEDICAL",
+        "script_language": "English"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [1401, 1542],
+          [1674, 1542],
+          [1674, 1698],
+          [1401, 1698]
+        ],
+        "text": "HALL",
+        "script_language": "English"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [757, 1686],
+          [1303, 1686],
+          [1303, 1776],
+          [757, 1776]
+        ],
+        "text": "BISHALGARH",
+        "script_language": "English"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [82, 945],
+          [796, 945],
+          [796, 1050],
+          [82, 1050]
+        ],
+        "text": "COMPUTER",
+        "script_language": "English"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [820, 921],
+          [1476, 921],
+          [1476, 1054],
+          [820, 1054]
+        ],
+        "text": "LEARNING",
+        "script_language": "English"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [238, 839],
+          [527, 839],
+          [527, 913],
+          [238, 913]
+        ],
+        "text": "Mobile",
+        "script_language": "English"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [562, 835],
+          [1030, 835],
+          [1030, 897],
+          [562, 897]
+        ],
+        "text": "9862235143",
+        "script_language": "English"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [1054, 812],
+          [1522, 812],
+          [1522, 894],
+          [1054, 894]
+        ],
+        "text": "8787746343",
+        "script_language": "English"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [168, 1066],
+          [336, 1066],
+          [336, 1132],
+          [168, 1132]
+        ],
+        "text": "Email",
+        "script_language": "English"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [359, 1062],
+          [1475, 1062],
+          [1475, 1128],
+          [359, 1128]
+        ],
+        "text": "instituteofcomputerleaning@gmail.com",
+        "script_language": "English"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [258, 1159],
+          [504, 1159],
+          [504, 1237],
+          [258, 1237]
+        ],
+        "text": "Bridge",
+        "script_language": "English"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [523, 1144],
+          [1011, 1144],
+          [1011, 1230],
+          [523, 1230]
+        ],
+        "text": "Chowmuhani",
+        "script_language": "English"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [1050, 1144],
+          [1472, 1144],
+          [1472, 1222],
+          [1050, 1222]
+        ],
+        "text": "Bishalgarh",
+        "script_language": "English"
+      },
+      "polygon_17": {
+        "coordinates": [
+          [432, 47],
+          [693, 47],
+          [693, 86],
+          [432, 86]
+        ],
+        "text": "REGISTER",
+        "script_language": "English"
+      },
+      "polygon_18": {
+        "coordinates": [
+          [709, 37],
+          [786, 37],
+          [786, 79],
+          [709, 79]
+        ],
+        "text": "BY",
+        "script_language": "English"
+      },
+      "polygon_19": {
+        "coordinates": [
+          [367, 101],
+          [512, 101],
+          [512, 149],
+          [367, 149]
+        ],
+        "text": "GOVT",
+        "script_language": "English"
+      },
+      "polygon_20": {
+        "coordinates": [
+          [539, 98],
+          [611, 98],
+          [611, 143],
+          [539, 143]
+        ],
+        "text": "OF",
+        "script_language": "English"
+      },
+      "polygon_21": {
+        "coordinates": [
+          [626, 98],
+          [843, 98],
+          [843, 139],
+          [626, 139]
+        ],
+        "text": "INDIA",
+        "script_language": "English"
+      },
+      "polygon_22": {
+        "coordinates": [
+          [176, 111],
+          [302, 111],
+          [302, 144],
+          [176, 144]
+        ],
+        "text": "INDIA",
+        "script_language": "English"
+      },
+      "polygon_23": {
+        "coordinates": [
+          [106, 111],
+          [159, 111],
+          [159, 147],
+          [106, 147]
+        ],
+        "text": "OF",
+        "script_language": "English"
+      },
+      "polygon_24": {
+        "coordinates": [
+          [1177, 14],
+          [1324, 14],
+          [1324, 51],
+          [1177, 51]
+        ],
+        "text": "COURSE",
+        "script_language": "English"
+      },
+      "polygon_25": {
+        "coordinates": [
+          [1330, 11],
+          [1414, 11],
+          [1414, 45],
+          [1330, 45]
+        ],
+        "text": "PART",
+        "script_language": "English"
+      },
+      "polygon_26": {
+        "coordinates": [
+          [1425, 5],
+          [1453, 5],
+          [1453, 42],
+          [1425, 42]
+        ],
+        "text": "ll",
+        "script_language": "English"
+      },
+      "polygon_27": {
+        "coordinates": [
+          [1202, 80],
+          [1352, 80],
+          [1352, 111],
+          [1202, 111]
+        ],
+        "text": "PROJECTORER",
+        "script_language": "Bengali"
+      },
+      "polygon_28": {
+        "coordinates": [
+          [1361, 81],
+          [1455, 81],
+          [1455, 104],
+          [1361, 104]
+        ],
+        "text": "MADHOME",
+        "script_language": "Bengali"
+      },
+      "polygon_29": {
+        "coordinates": [
+          [1218, 125],
+          [1277, 125],
+          [1277, 161],
+          [1218, 161]
+        ],
+        "text": "CLASS",
+        "script_language": "Bengali"
+      },
+      "polygon_30": {
+        "coordinates": [
+          [1285, 125],
+          [1383, 125],
+          [1383, 155],
+          [1285, 155]
+        ],
+        "text": "KORANO",
+        "script_language": "Bengali"
+      },
+      "polygon_31": {
+        "coordinates": [
+          [1379, 125],
+          [1427, 125],
+          [1427, 148],
+          [1379, 148]
+        ],
+        "text": "HOI",
+        "script_language": "Bengali"
+      },
+      "polygon_32": {
+        "coordinates": [
+          [996, 217],
+          [1277, 217],
+          [1277, 248],
+          [996, 248]
+        ],
+        "text": "INSTITUTE",
+        "script_language": "English"
+      },
+      "polygon_33": {
+        "coordinates": [
+          [1290, 217],
+          [1365, 217],
+          [1365, 245],
+          [1290, 245]
+        ],
+        "text": "OF",
+        "script_language": "English"
+      },
+      "polygon_34": {
+        "coordinates": [
+          [896, 247],
+          [1183, 247],
+          [1183, 295],
+          [896, 295]
+        ],
+        "text": "COMPUTER",
+        "script_language": "English"
+      },
+      "polygon_35": {
+        "coordinates": [
+          [1198, 242],
+          [1477, 242],
+          [1477, 281],
+          [1198, 281]
+        ],
+        "text": "LEARNING",
+        "script_language": "English"
+      },
+      "polygon_36": {
+        "coordinates": [
+          [892, 297],
+          [972, 297],
+          [972, 320],
+          [892, 320]
+        ],
+        "text": "BRIDGE",
+        "script_language": "English"
+      },
+      "polygon_37": {
+        "coordinates": [
+          [977, 290],
+          [1121, 290],
+          [1121, 313],
+          [977, 313]
+        ],
+        "text": "CHOWMUHANI",
+        "script_language": "English"
+      },
+      "polygon_38": {
+        "coordinates": [
+          [1129, 286],
+          [1252, 286],
+          [1252, 309],
+          [1129, 309]
+        ],
+        "text": "BISHALGARH",
+        "script_language": "English"
+      },
+      "polygon_39": {
+        "coordinates": [
+          [1265, 279],
+          [1387, 279],
+          [1387, 304],
+          [1265, 304]
+        ],
+        "text": "SEPAHIJALA",
+        "script_language": "English"
+      },
+      "polygon_40": {
+        "coordinates": [
+          [1390, 275],
+          [1471, 275],
+          [1471, 297],
+          [1390, 297]
+        ],
+        "text": "TRIPURA",
+        "script_language": "English"
+      },
+      "polygon_41": {
+        "coordinates": [
+          [1102, 356],
+          [1207, 356],
+          [1207, 397],
+          [1102, 397]
+        ],
+        "text": "B.Ed",
+        "script_language": "English"
+      },
+      "polygon_42": {
+        "coordinates": [
+          [1321, 350],
+          [1437, 350],
+          [1437, 386],
+          [1321, 386]
+        ],
+        "text": "d.El.Ed",
+        "script_language": "English"
+      },
+      "polygon_43": {
+        "coordinates": [
+          [1057, 428],
+          [1252, 428],
+          [1252, 472],
+          [1057, 472]
+        ],
+        "text": "Bsc Nursing",
+        "script_language": "English"
+      },
+      "polygon_44": {
+        "coordinates": [
+          [1312, 425],
+          [1468, 425],
+          [1468, 466],
+          [1312, 466]
+        ],
+        "text": "D. Pharma",
+        "script_language": "English"
+      },
+      "polygon_45": {
+        "coordinates": [
+          [1305, 487],
+          [1460, 487],
+          [1460, 532],
+          [1305, 532]
+        ],
+        "text": "B. Pharma",
+        "script_language": "English"
+      },
+      "polygon_46": {
+        "coordinates": [
+          [1093, 500],
+          [1212, 500],
+          [1212, 536],
+          [1093, 536]
+        ],
+        "text": "G.N.M",
+        "script_language": "English"
+      },
+      "polygon_47": {
+        "coordinates": [
+          [820, 579],
+          [925, 579],
+          [925, 616],
+          [820, 616]
+        ],
+        "text": "Mob",
+        "script_language": "English"
+      },
+      "polygon_48": {
+        "coordinates": [
+          [935, 575],
+          [1208, 575],
+          [1208, 614],
+          [935, 614]
+        ],
+        "text": "9862235143",
+        "script_language": "English"
+      },
+      "polygon_49": {
+        "coordinates": [
+          [1237, 559],
+          [1502, 559],
+          [1502, 609],
+          [1237, 609]
+        ],
+        "text": "8787746343",
+        "script_language": "English"
+      },
+      "polygon_50": {
+        "coordinates": [
+          [829, 511],
+          [806, 470],
+          [990, 373],
+          [1015, 411]
+        ],
+        "text": "ADMISSION",
+        "script_language": "English"
+      },
+      "polygon_51": {
+        "coordinates": [
+          [882, 496],
+          [907, 539],
+          [1002, 482],
+          [981, 447]
+        ],
+        "text": "OPEN",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

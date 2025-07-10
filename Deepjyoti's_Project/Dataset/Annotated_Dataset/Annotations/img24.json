@@ -1,0 +1,210 @@
+{
+  "AnnotationDataset_img24": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [1215, 1758],
+          [1271, 1758],
+          [1271, 1828],
+          [1215, 1828]
+        ],
+        "text": "P",
+        "script_language": "Assamesse"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [1277, 1767],
+          [1373, 1767],
+          [1373, 1826],
+          [1277, 1826]
+        ],
+        "text": "R",
+        "script_language": "Assamesse"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [1390, 1772],
+          [1458, 1772],
+          [1458, 1823],
+          [1390, 1823]
+        ],
+        "text": "M",
+        "script_language": "Assamesse"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [1466, 1767],
+          [1671, 1767],
+          [1671, 1832],
+          [1466, 1832]
+        ],
+        "text": "COUNTER",
+        "script_language": "Assamesse"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [1207, 1843],
+          [1342, 1843],
+          [1342, 1905],
+          [1207, 1905]
+        ],
+        "text": "Divyang",
+        "script_language": "Hindi"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [1350, 1848],
+          [1420, 1848],
+          [1420, 1904],
+          [1350, 1904]
+        ],
+        "text": "Jan",
+        "script_language": "Hindi"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [1426, 1843],
+          [1471, 1843],
+          [1471, 1911],
+          [1426, 1911]
+        ],
+        "text": "ke",
+        "script_language": "Hindi"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [1480, 1843],
+          [1562, 1843],
+          [1562, 1908],
+          [1480, 1908]
+        ],
+        "text": "liye",
+        "script_language": "Hindi"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [1570, 1843],
+          [1671, 1843],
+          [1671, 1913],
+          [1570, 1913]
+        ],
+        "text": "Desk",
+        "script_language": "Hindi"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [1221, 1919],
+          [1370, 1919],
+          [1370, 1987],
+          [1221, 1987]
+        ],
+        "text": "PRM",
+        "script_language": "English"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [1390, 1921],
+          [1652, 1921],
+          [1652, 1989],
+          [1390, 1989]
+        ],
+        "text": "Counter",
+        "script_language": "English"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [1210, 2470],
+          [1306, 2470],
+          [1306, 2529],
+          [1210, 2529]
+        ],
+        "text": "Wheel",
+        "script_language": "Assamesse"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [1319, 2478],
+          [1432, 2478],
+          [1432, 2534],
+          [1319, 2534]
+        ],
+        "text": "Chair",
+        "script_language": "Assamesse"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [1443, 2481],
+          [1553, 2481],
+          [1553, 2534],
+          [1443, 2534]
+        ],
+        "text": "Sahay",
+        "script_language": "Assamesse"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [1561, 2484],
+          [1671, 2484],
+          [1671, 2543],
+          [1561, 2543]
+        ],
+        "text": "Kendra",
+        "script_language": "Assamesse"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [1221, 2546],
+          [1429, 2546],
+          [1429, 2614],
+          [1221, 2614]
+        ],
+        "text": "Wheelchair",
+        "script_language": "Hindi"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [1440, 2557],
+          [1623, 2557],
+          [1623, 2625],
+          [1440, 2625]
+        ],
+        "text": "Sahayata",
+        "script_language": "Hindi"
+      },
+      "polygon_17": {
+        "coordinates": [
+          [1241, 2622],
+          [1441, 2622],
+          [1441, 2690],
+          [1241, 2690]
+        ],
+        "text": "Wheel",
+        "script_language": "English"
+      },
+      "polygon_18": {
+        "coordinates": [
+          [1454, 2639],
+          [1623, 2639],
+          [1623, 2701],
+          [1454, 2701]
+        ],
+        "text": "Chair",
+        "script_language": "English"
+      },
+      "polygon_19": {
+        "coordinates": [
+          [1252, 2689],
+          [1604, 2689],
+          [1604, 2765],
+          [1252, 2765]
+        ],
+        "text": "Assistance",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

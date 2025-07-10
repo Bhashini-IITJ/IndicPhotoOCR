@@ -1,0 +1,50 @@
+{
+  "AnnotationDataset_img12": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [739, 724],
+          [1786, 724],
+          [1786, 1364],
+          [739, 1364]
+        ],
+        "text": "SUNITI",
+        "script_language": "Bengali"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [1802, 661],
+          [3770, 661],
+          [3770, 1281],
+          [1802, 1281]
+        ],
+        "text": "VARIETIES",
+        "script_language": "Bengali"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [859, 1369],
+          [1874, 1369],
+          [1874, 1650],
+          [859, 1650]
+        ],
+        "text": "SUNITI",
+        "script_language": "English"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [1916, 1307],
+          [3655, 1307],
+          [3655, 1619],
+          [1916, 1619]
+        ],
+        "text": "VARIETISE",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

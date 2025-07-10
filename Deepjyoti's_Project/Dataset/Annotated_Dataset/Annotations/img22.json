@@ -1,0 +1,120 @@
+{
+  "AnnotationDataset_img22": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [1469, 1490],
+          [1614, 1490],
+          [1614, 1577],
+          [1469, 1577]
+        ],
+        "text": "No",
+        "script_language": "English"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [1652, 1490],
+          [2063, 1490],
+          [2063, 1598],
+          [1652, 1598]
+        ],
+        "text": "Spitting",
+        "script_language": "English"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [2133, 1490],
+          [2278, 1490],
+          [2278, 1581],
+          [2133, 1581]
+        ],
+        "text": "No",
+        "script_language": "English"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [2307, 1486],
+          [2755, 1486],
+          [2755, 1598],
+          [2307, 1598]
+        ],
+        "text": "Littering",
+        "script_language": "English"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [1552, 1610],
+          [1975, 1610],
+          [1975, 1693],
+          [1552, 1693]
+        ],
+        "text": "thu-nepelabo",
+        "script_language": "Assamesse"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [1569, 1718],
+          [1959, 1718],
+          [1959, 1805],
+          [1569, 1805]
+        ],
+        "text": "Thukna mana hei",
+        "script_language": "Hindi"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [2208, 1623],
+          [2681, 1623],
+          [2681, 1706],
+          [2208, 1706]
+        ],
+        "text": "Jabor-nephelabo",
+        "script_language": "Assamesse"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [2274, 1731],
+          [2631, 1731],
+          [2631, 1802],
+          [2274, 1802]
+        ],
+        "text": "Kura na pheke",
+        "script_language": "Hindi"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [1701, 1884],
+          [1967, 1884],
+          [1967, 1996],
+          [1701, 1996]
+        ],
+        "text": "FINE",
+        "script_language": "English"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [2042, 1892],
+          [2445, 1892],
+          [2445, 1996],
+          [2042, 1996]
+        ],
+        "text": "₹ 1000",
+        "script_language": "English"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [299, 1457],
+          [1370, 1457],
+          [1370, 1735],
+          [299, 1735]
+        ],
+        "text": "Bimanbandar",
+        "script_language": "Assamesse"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

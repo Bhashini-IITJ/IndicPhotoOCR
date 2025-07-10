@@ -1,0 +1,90 @@
+{
+  "AnnotationDataset_img18": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [804, 655],
+          [971, 655],
+          [971, 713],
+          [804, 713]
+        ],
+        "text": "Guwahati",
+        "script_language": "Hindi"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [1181, 657],
+          [1401, 657],
+          [1401, 719],
+          [1181, 719]
+        ],
+        "text": "HMVT",
+        "script_language": "Hindi"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [1418, 662],
+          [1565, 662],
+          [1565, 732],
+          [1418, 732]
+        ],
+        "text": "Bengaluru",
+        "script_language": "Hindi"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [2625, 687],
+          [2798, 687],
+          [2798, 739],
+          [2625, 739]
+        ],
+        "text": "Guwahati",
+        "script_language": "Assamesse"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [3009, 687],
+          [3206, 687],
+          [3206, 739],
+          [3009, 739]
+        ],
+        "text": "HMVT",
+        "script_language": "Assamesse"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [3217, 692],
+          [3384, 692],
+          [3384, 744],
+          [3217, 744]
+        ],
+        "text": "Bengaluru",
+        "script_language": "Assamesse"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [2025, 849],
+          [2165, 849],
+          [2165, 986],
+          [2025, 986]
+        ],
+        "text": "S.6",
+        "script_language": "English"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [280, 1548],
+          [600, 1548],
+          [600, 1606],
+          [280, 1606]
+        ],
+        "text": "EMERGENCY WINDOW",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

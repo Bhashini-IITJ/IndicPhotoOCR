@@ -1,0 +1,210 @@
+{
+  "AnnotationDataset_img13": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [833, 1461],
+          [1603, 1461],
+          [1603, 1589],
+          [833, 1589]
+        ],
+        "text": "VOLTAS",
+        "script_language": "English"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [1985, 1384],
+          [2797, 1384],
+          [2797, 1512],
+          [1985, 1512]
+        ],
+        "text": "VOLTAS.beko",
+        "script_language": "English"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [892, 1718],
+          [1610, 1718],
+          [1610, 1826],
+          [892, 1826]
+        ],
+        "text": "BHOLAGIRI",
+        "script_language": "English"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [1645, 1666],
+          [2679, 1666],
+          [2679, 1801],
+          [1645, 1801]
+        ],
+        "text": "ELECTRONICS",
+        "script_language": "English"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [2682, 1690],
+          [2904, 1690],
+          [2904, 1739],
+          [2682, 1739]
+        ],
+        "text": "BISHALGARH",
+        "script_language": "English"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [583, 2908],
+          [1548, 2908],
+          [1548, 3161],
+          [583, 3161]
+        ],
+        "text": "BHOLAGIRI",
+        "script_language": "Bengali"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [1610, 2901],
+          [2814, 2901],
+          [2814, 3196],
+          [1610, 3196]
+        ],
+        "text": "ELECTRONICS",
+        "script_language": "Bengali"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [677, 1646],
+          [855, 1646],
+          [855, 1674],
+          [677, 1674]
+        ],
+        "text": "BHOLAGIRI",
+        "script_language": "English"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [866, 1638],
+          [1105, 1638],
+          [1105, 1666],
+          [866, 1666]
+        ],
+        "text": "ELECTRONICS",
+        "script_language": "English"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [719, 1449],
+          [802, 1449],
+          [802, 1474],
+          [719, 1474]
+        ],
+        "text": "TATA",
+        "script_language": "English"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [813, 1441],
+          [910, 1441],
+          [910, 1474],
+          [813, 1474]
+        ],
+        "text": "Product",
+        "script_language": "English"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [2756, 1335],
+          [2861, 1335],
+          [2861, 1371],
+          [2756, 1371]
+        ],
+        "text": "VOLTAS",
+        "script_language": "Bengali"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [2870, 1330],
+          [2959, 1330],
+          [2959, 1366],
+          [2870, 1366]
+        ],
+        "text": "BEKO",
+        "script_language": "Bengali"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [2620, 1549],
+          [2767, 1549],
+          [2767, 1585],
+          [2620, 1585]
+        ],
+        "text": "BHOLAGIRI",
+        "script_language": "Bengali"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [2781, 1535],
+          [2959, 1535],
+          [2959, 1577],
+          [2781, 1577]
+        ],
+        "text": "ELECTRONICS",
+        "script_language": "Bengali"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [769, 1796],
+          [811, 1843],
+          [894, 1774],
+          [872, 1718]
+        ],
+        "text": "NEW",
+        "script_language": "English"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [1091, 3234],
+          [1094, 3320],
+          [1732, 3334],
+          [1724, 3217]
+        ],
+        "text": "BHOLAGIRI",
+        "script_language": "Bengali"
+      },
+      "polygon_17": {
+        "coordinates": [
+          [1749, 3231],
+          [1752, 3323],
+          [2304, 3339],
+          [2296, 3231]
+        ],
+        "text": "ELECTRONICS",
+        "script_language": "Bengali"
+      },
+      "polygon_18": {
+        "coordinates": [
+          [958, 3256],
+          [991, 3317],
+          [1060, 3273],
+          [1035, 3228]
+        ],
+        "text": "NEW",
+        "script_language": "Bengali"
+      },
+      "polygon_19": {
+        "coordinates": [
+          [2346, 937],
+          [2672, 937],
+          [2672, 1034],
+          [2346, 1034]
+        ],
+        "text": "VOLTAS",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

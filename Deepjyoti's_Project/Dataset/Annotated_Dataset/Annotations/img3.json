@@ -1,0 +1,287 @@
+{
+  "AnnotationDataset_img3": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [1132, 469],
+          [1312, 521],
+          [1312, 594],
+          [1305, 611],
+          [1173, 587],
+          [1125, 566]
+        ],
+        "text": "Prop",
+        "script_language": "English"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [1375, 524],
+          [1673, 594],
+          [1666, 670],
+          [1375, 628]
+        ],
+        "text": "Sambhu",
+        "script_language": "English"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [1687, 587],
+          [1687, 677],
+          [1940, 732],
+          [1961, 732],
+          [1961, 649]
+        ],
+        "text": "Debnath",
+        "script_language": "English"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [2853, 833],
+          [2860, 941],
+          [3020, 968],
+          [3023, 871]
+        ],
+        "text": "Mob",
+        "script_language": "English"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [3075, 882],
+          [3468, 958],
+          [3471, 1059],
+          [3086, 979]
+        ],
+        "text": "9774617018",
+        "script_language": "English"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [1090, 580],
+          [1368, 635],
+          [1399, 708],
+          [1937, 819],
+          [2024, 760],
+          [2062, 788],
+          [2045, 840],
+          [2107, 871],
+          [2107, 1170],
+          [1614, 1107],
+          [1611, 1173],
+          [1566, 1177],
+          [1503, 1125],
+          [1420, 1024],
+          [1406, 1093],
+          [1250, 1034],
+          [1205, 1041],
+          [1173, 1048],
+          [1125, 1048],
+          [1107, 899]
+        ],
+        "text": "Biswakarma",
+        "script_language": "Bengali"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [2156, 861],
+          [2437, 913],
+          [2437, 830],
+          [2572, 882],
+          [2603, 941],
+          [3072, 1031],
+          [3075, 968],
+          [3138, 989],
+          [3214, 1027],
+          [3232, 1062],
+          [3416, 1093],
+          [3457, 1118],
+          [3464, 1343],
+          [3315, 1361],
+          [3242, 1298],
+          [3211, 1326],
+          [2388, 1218],
+          [2142, 1163]
+        ],
+        "text": "Automobiles",
+        "script_language": "Bengali"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [1652, 1125],
+          [1645, 1284],
+          [1701, 1302],
+          [2458, 1388],
+          [2447, 1243]
+        ],
+        "text": "Biswakarma",
+        "script_language": "English"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [2482, 1253],
+          [2475, 1399],
+          [3145, 1461],
+          [3152, 1329]
+        ],
+        "text": "Automobiles",
+        "script_language": "English"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [1808, 1364],
+          [2249, 1413],
+          [2249, 1520],
+          [2145, 1527],
+          [2045, 1517],
+          [1815, 1482]
+        ],
+        "text": "Bishalgarh",
+        "script_language": "English"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [2277, 1413],
+          [2270, 1527],
+          [2437, 1541],
+          [2454, 1451]
+        ],
+        "text": "Near",
+        "script_language": "English"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [2465, 1534],
+          [2673, 1559],
+          [2687, 1583],
+          [2721, 1586],
+          [2725, 1566],
+          [2798, 1566],
+          [2798, 1472],
+          [2458, 1437]
+        ],
+        "text": "Satsangha",
+        "script_language": "English"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [2819, 1468],
+          [3041, 1510],
+          [3044, 1597],
+          [2808, 1572]
+        ],
+        "text": "Ashram",
+        "script_language": "English"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [1437, 1527],
+          [1437, 1677],
+          [1038, 1645],
+          [1059, 1493]
+        ],
+        "text": "Aekhane",
+        "script_language": "Bengali"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [1461, 1527],
+          [1465, 1673],
+          [1829, 1701],
+          [1836, 1541]
+        ],
+        "text": "Maruti",
+        "script_language": "Bengali"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [2062, 1541],
+          [1975, 1534],
+          [1975, 1566],
+          [1850, 1555],
+          [1854, 1680],
+          [2010, 1725],
+          [2076, 1732],
+          [2093, 1725]
+        ],
+        "text": "gadi",
+        "script_language": "Bengali"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [2114, 1562],
+          [2110, 1684],
+          [2152, 1722],
+          [2197, 1704],
+          [2204, 1652],
+          [2204, 1618]
+        ],
+        "text": "Ou",
+        "script_language": "Bengali"
+      },
+      "polygon_17": {
+        "coordinates": [
+          [2215, 1572],
+          [2235, 1718],
+          [2576, 1743],
+          [2576, 1607]
+        ],
+        "text": "Bikeer",
+        "script_language": "Bengali"
+      },
+      "polygon_18": {
+        "coordinates": [
+          [2590, 1611],
+          [2603, 1743],
+          [2885, 1756],
+          [2885, 1625],
+          [2826, 1638],
+          [2798, 1593],
+          [2753, 1593],
+          [2746, 1631]
+        ],
+        "text": "Jabotio",
+        "script_language": "Bengali"
+      },
+      "polygon_19": {
+        "coordinates": [
+          [2909, 1635],
+          [2912, 1756],
+          [3082, 1774],
+          [3100, 1791],
+          [3117, 1788],
+          [3114, 1756],
+          [3100, 1704],
+          [3103, 1645],
+          [3048, 1656],
+          [3048, 1618]
+        ],
+        "text": "Parts",
+        "script_language": "Bengali"
+      },
+      "polygon_20": {
+        "coordinates": [
+          [3124, 1638],
+          [3138, 1777],
+          [3339, 1784],
+          [3332, 1673]
+        ],
+        "text": "Pauwa",
+        "script_language": "Bengali"
+      },
+      "polygon_21": {
+        "coordinates": [
+          [3346, 1673],
+          [3353, 1777],
+          [3464, 1798],
+          [3482, 1781],
+          [3464, 1690]
+        ],
+        "text": "Jai",
+        "script_language": "Bengali"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

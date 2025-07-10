@@ -1,0 +1,320 @@
+{
+  "AnnotationDataset_img10": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [864, 35],
+          [1589, 35],
+          [1589, 261],
+          [864, 261]
+        ],
+        "text": "Ajanta",
+        "script_language": "English"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [463, 708],
+          [1135, 708],
+          [1135, 833],
+          [463, 833]
+        ],
+        "text": "RAMTHAKUR",
+        "script_language": "English"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [1177, 719],
+          [1479, 719],
+          [1479, 839],
+          [1177, 839]
+        ],
+        "text": "SHOE",
+        "script_language": "English"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [1526, 713],
+          [1969, 713],
+          [1969, 833],
+          [1526, 833]
+        ],
+        "text": "STORES",
+        "script_language": "English"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [323, 1005],
+          [1281, 1005],
+          [1281, 1302],
+          [323, 1302]
+        ],
+        "text": "RAMTHAKUR",
+        "script_language": "Bengali"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [1323, 1015],
+          [1661, 1015],
+          [1661, 1307],
+          [1323, 1307]
+        ],
+        "text": "SHOE",
+        "script_language": "Bengali"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [1677, 994],
+          [2239, 994],
+          [2239, 1280],
+          [1677, 1280]
+        ],
+        "text": "STORES",
+        "script_language": "Bengali"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [266, 1265],
+          [1089, 1265],
+          [1089, 1411],
+          [266, 1411]
+        ],
+        "text": "RAMTHAKUR",
+        "script_language": "English"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [1156, 1281],
+          [1536, 1281],
+          [1536, 1416],
+          [1156, 1416]
+        ],
+        "text": "SHOE",
+        "script_language": "English"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [1619, 1270],
+          [2181, 1270],
+          [2181, 1405],
+          [1619, 1405]
+        ],
+        "text": "STORES",
+        "script_language": "English"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [870, 1458],
+          [1656, 1458],
+          [1656, 1573],
+          [870, 1573]
+        ],
+        "text": "M.8258938701",
+        "script_language": "English"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [2374, 1015],
+          [2858, 1015],
+          [2858, 1223],
+          [2374, 1223]
+        ],
+        "text": "JOY",
+        "script_language": "Bengali"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [2900, 1015],
+          [3426, 1015],
+          [3426, 1223],
+          [2900, 1223]
+        ],
+        "text": "GURU",
+        "script_language": "Bengali"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [3489, 994],
+          [4280, 994],
+          [4280, 1202],
+          [3489, 1202]
+        ],
+        "text": "BHANDER",
+        "script_language": "Bengali"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [2437, 1234],
+          [2760, 1234],
+          [2760, 1390],
+          [2437, 1390]
+        ],
+        "text": "JOY",
+        "script_language": "English"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [2843, 1239],
+          [3280, 1239],
+          [3280, 1374],
+          [2843, 1374]
+        ],
+        "text": "GURU",
+        "script_language": "English"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [3322, 1239],
+          [4202, 1239],
+          [4202, 1374],
+          [3322, 1374]
+        ],
+        "text": "BHANDER",
+        "script_language": "English"
+      },
+      "polygon_17": {
+        "coordinates": [
+          [3530, 1421],
+          [3921, 1421],
+          [3921, 1551],
+          [3530, 1551]
+        ],
+        "text": "Icecream",
+        "script_language": "Bengali"
+      },
+      "polygon_18": {
+        "coordinates": [
+          [3931, 1432],
+          [4176, 1432],
+          [4176, 1557],
+          [3931, 1557]
+        ],
+        "text": "Pauwa",
+        "script_language": "Bengali"
+      },
+      "polygon_19": {
+        "coordinates": [
+          [4186, 1432],
+          [4358, 1432],
+          [4358, 1536],
+          [4186, 1536]
+        ],
+        "text": "Jai",
+        "script_language": "Bengali"
+      },
+      "polygon_20": {
+        "coordinates": [
+          [2473, 1453],
+          [3155, 1453],
+          [3155, 1552],
+          [2473, 1552]
+        ],
+        "text": "M.9774553136",
+        "script_language": "English"
+      },
+      "polygon_21": {
+        "coordinates": [
+          [2360, 1781],
+          [2353, 1826],
+          [2565, 1857],
+          [2576, 1802]
+        ],
+        "text": "KWALITY",
+        "script_language": "English"
+      },
+      "polygon_22": {
+        "coordinates": [
+          [2367, 1836],
+          [2364, 1874],
+          [2527, 1902],
+          [2541, 1857]
+        ],
+        "text": "WALL'S",
+        "script_language": "English"
+      },
+      "polygon_23": {
+        "coordinates": [
+          [2957, 1871],
+          [2957, 1927],
+          [3166, 1940],
+          [3183, 1895]
+        ],
+        "text": "K",
+        "script_language": "English"
+      },
+      "polygon_24": {
+        "coordinates": [
+          [2978, 1930],
+          [2978, 1975],
+          [3155, 1989],
+          [3145, 1937]
+        ],
+        "text": "WALL'S",
+        "script_language": "English"
+      },
+      "polygon_25": {
+        "coordinates": [
+          [3561, 1888],
+          [3579, 1933],
+          [3797, 1927],
+          [3791, 1878]
+        ],
+        "text": "KWALITY",
+        "script_language": "English"
+      },
+      "polygon_26": {
+        "coordinates": [
+          [3600, 1937],
+          [3610, 1982],
+          [3794, 1975],
+          [3770, 1927]
+        ],
+        "text": "WALL'S",
+        "script_language": "English"
+      },
+      "polygon_27": {
+        "coordinates": [
+          [4183, 1819],
+          [4200, 1871],
+          [4401, 1847],
+          [4395, 1791]
+        ],
+        "text": "KWALITY",
+        "script_language": "English"
+      },
+      "polygon_28": {
+        "coordinates": [
+          [4217, 1874],
+          [4238, 1920],
+          [4401, 1899],
+          [4370, 1836]
+        ],
+        "text": "WALL'S",
+        "script_language": "English"
+      },
+      "polygon_29": {
+        "coordinates": [
+          [1111, 191],
+          [1347, 191],
+          [1347, 267],
+          [1111, 267]
+        ],
+        "text": "SHOES",
+        "script_language": "English"
+      },
+      "polygon_30": {
+        "coordinates": [
+          [1357, 191],
+          [1576, 191],
+          [1576, 260],
+          [1357, 260]
+        ],
+        "text": "Since 1965",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

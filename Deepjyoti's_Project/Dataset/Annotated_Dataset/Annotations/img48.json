@@ -1,0 +1,640 @@
+{
+  "AnnotationDataset_img48": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [177, 1117],
+          [358, 1117],
+          [358, 1289],
+          [177, 1289]
+        ],
+        "text": "TRPURA",
+        "script_language": "Bengali"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [371, 1074],
+          [531, 1074],
+          [531, 1272],
+          [371, 1272]
+        ],
+        "text": "STATE",
+        "script_language": "Bengali"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [565, 1056],
+          [1091, 1056],
+          [1091, 1228],
+          [565, 1228]
+        ],
+        "text": "CO-OPERATIVE",
+        "script_language": "Bengali"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [1065, 1056],
+          [1263, 1056],
+          [1263, 1237],
+          [1065, 1237]
+        ],
+        "text": "BANK",
+        "script_language": "Bengali"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [1276, 1022],
+          [1397, 1022],
+          [1397, 1233],
+          [1276, 1233]
+        ],
+        "text": "LI",
+        "script_language": "Bengali"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [1733, 996],
+          [2039, 996],
+          [2039, 1168],
+          [1733, 1168]
+        ],
+        "text": "TRPURA",
+        "script_language": "English"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [2074, 979],
+          [2294, 979],
+          [2294, 1143],
+          [2074, 1143]
+        ],
+        "text": "STATE",
+        "script_language": "English"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [2311, 910],
+          [2872, 910],
+          [2872, 1121],
+          [2311, 1121]
+        ],
+        "text": "CO-OPERATIVE",
+        "script_language": "English"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [2881, 910],
+          [3114, 910],
+          [3114, 1091],
+          [2881, 1091]
+        ],
+        "text": "BANK",
+        "script_language": "English"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [3131, 901],
+          [3312, 901],
+          [3312, 1082],
+          [3131, 1082]
+        ],
+        "text": "LTD.",
+        "script_language": "English"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [2066, 1125],
+          [2933, 1125],
+          [2933, 1237],
+          [2066, 1237]
+        ],
+        "text": "A SCHEDULED BANK",
+        "script_language": "English"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [2135, 1238],
+          [2847, 1238],
+          [2847, 1329],
+          [2135, 1329]
+        ],
+        "text": "BISHALGARH BRANCH",
+        "script_language": "English"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [436, 1255],
+          [1087, 1255],
+          [1087, 1328],
+          [436, 1328]
+        ],
+        "text": "AKTI NIBONDHIKRITO BANK",
+        "script_language": "Bengali"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [526, 1345],
+          [936, 1345],
+          [936, 1410],
+          [526, 1410]
+        ],
+        "text": "BISHALGARH SHAKHA",
+        "script_language": "Bengali"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [9, 1677],
+          [652, 1677],
+          [652, 1824],
+          [9, 1824]
+        ],
+        "text": "JOYRAM",
+        "script_language": "Bengali"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [694, 1634],
+          [1539, 1634],
+          [1539, 1811],
+          [694, 1811]
+        ],
+        "text": "HARDWARE",
+        "script_language": "Bengali"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [13, 1859],
+          [612, 1859],
+          [612, 1975],
+          [13, 1975]
+        ],
+        "text": "JOYRAM",
+        "script_language": "English"
+      },
+      "polygon_17": {
+        "coordinates": [
+          [647, 1850],
+          [1535, 1850],
+          [1535, 1966],
+          [647, 1966]
+        ],
+        "text": "HARDWARE",
+        "script_language": "English"
+      },
+      "polygon_18": {
+        "coordinates": [
+          [1677, 1608],
+          [2492, 1608],
+          [2492, 1811],
+          [1677, 1811]
+        ],
+        "text": "MAHANAM",
+        "script_language": "Bengali"
+      },
+      "polygon_19": {
+        "coordinates": [
+          [2561, 1595],
+          [3704, 1595],
+          [3704, 1802],
+          [2561, 1802]
+        ],
+        "text": "HARDWARE",
+        "script_language": "Bengali"
+      },
+      "polygon_20": {
+        "coordinates": [
+          [1626, 1841],
+          [1932, 1841],
+          [1932, 1962],
+          [1626, 1962]
+        ],
+        "text": "CENTRALROAD",
+        "script_language": "Bengali"
+      },
+      "polygon_21": {
+        "coordinates": [
+          [3398, 1833],
+          [3717, 1833],
+          [3717, 1936],
+          [3398, 1936]
+        ],
+        "text": "BISHALGARH",
+        "script_language": "Bengali"
+      },
+      "polygon_22": {
+        "coordinates": [
+          [3389, 1979],
+          [3691, 1979],
+          [3691, 2147],
+          [3389, 2147]
+        ],
+        "text": "STAR",
+        "script_language": "English"
+      },
+      "polygon_23": {
+        "coordinates": [
+          [1134, 1992],
+          [1354, 1992],
+          [1354, 2121],
+          [1134, 2121]
+        ],
+        "text": "STAR",
+        "script_language": "English"
+      },
+      "polygon_24": {
+        "coordinates": [
+          [1423, 2014],
+          [1733, 2014],
+          [1733, 2057],
+          [1423, 2057]
+        ],
+        "text": "Authorized Dealer",
+        "script_language": "English"
+      },
+      "polygon_25": {
+        "coordinates": [
+          [1251, 1324],
+          [1380, 1324],
+          [1380, 1380],
+          [1251, 1380]
+        ],
+        "text": "EMAIL",
+        "script_language": "English"
+      },
+      "polygon_26": {
+        "coordinates": [
+          [1389, 1320],
+          [1859, 1320],
+          [1859, 1363],
+          [1389, 1363]
+        ],
+        "text": "BM.BISHAL@TSCB.CO.IN",
+        "script_language": "English"
+      },
+      "polygon_27": {
+        "coordinates": [
+          [1470, 2057],
+          [1681, 2057],
+          [1681, 2113],
+          [1470, 2113]
+        ],
+        "text": "JOYRAM",
+        "script_language": "English"
+      },
+      "polygon_28": {
+        "coordinates": [
+          [1414, 2113],
+          [1742, 2113],
+          [1742, 2169],
+          [1414, 2169]
+        ],
+        "text": "HARDWARE",
+        "script_language": "English"
+      },
+      "polygon_29": {
+        "coordinates": [
+          [1397, 2186],
+          [1548, 2186],
+          [1548, 2233],
+          [1397, 2233]
+        ],
+        "text": "JOYRAM",
+        "script_language": "Bengali"
+      },
+      "polygon_30": {
+        "coordinates": [
+          [1561, 2186],
+          [1733, 2186],
+          [1733, 2238],
+          [1561, 2238]
+        ],
+        "text": "HARDWARE",
+        "script_language": "Bengali"
+      },
+      "polygon_31": {
+        "coordinates": [
+          [1147, 2142],
+          [1319, 2142],
+          [1319, 2201],
+          [1147, 2201]
+        ],
+        "text": "CEMENT",
+        "script_language": "English"
+      },
+      "polygon_32": {
+        "coordinates": [
+          [3420, 2153],
+          [3649, 2153],
+          [3649, 2229],
+          [3420, 2229]
+        ],
+        "text": "CEMENT",
+        "script_language": "English"
+      },
+      "polygon_33": {
+        "coordinates": [
+          [2096, 2018],
+          [2217, 2018],
+          [2217, 2083],
+          [2096, 2083]
+        ],
+        "text": "JAAL",
+        "script_language": "Bengali"
+      },
+      "polygon_34": {
+        "coordinates": [
+          [2247, 1997],
+          [2523, 1997],
+          [2523, 2088],
+          [2247, 2088]
+        ],
+        "text": "PROTIRODHI",
+        "script_language": "Bengali"
+      },
+      "polygon_35": {
+        "coordinates": [
+          [2536, 2001],
+          [2752, 2001],
+          [2752, 2074],
+          [2536, 2074]
+        ],
+        "text": "CEMENT",
+        "script_language": "Bengali"
+      },
+      "polygon_36": {
+        "coordinates": [
+          [2320, 2087],
+          [2695, 2087],
+          [2695, 2152],
+          [2320, 2152]
+        ],
+        "text": "WEATHERPROOF",
+        "script_language": "Bengali"
+      },
+      "polygon_37": {
+        "coordinates": [
+          [2704, 2087],
+          [2803, 2087],
+          [2803, 2152],
+          [2704, 2152]
+        ],
+        "text": "GHAR",
+        "script_language": "Bengali"
+      },
+      "polygon_38": {
+        "coordinates": [
+          [2889, 2048],
+          [3074, 2048],
+          [3074, 2113],
+          [2889, 2113]
+        ],
+        "text": "Weather",
+        "script_language": "English"
+      },
+      "polygon_39": {
+        "coordinates": [
+          [2970, 2103],
+          [3094, 2103],
+          [3094, 2143],
+          [2970, 2143]
+        ],
+        "text": "Shield",
+        "script_language": "English"
+      },
+      "polygon_40": {
+        "coordinates": [
+          [371, 1807],
+          [707, 1807],
+          [707, 1859],
+          [371, 1859]
+        ],
+        "text": "CENTRALROAD",
+        "script_language": "Bengali"
+      },
+      "polygon_41": {
+        "coordinates": [
+          [798, 1790],
+          [1052, 1790],
+          [1052, 1868],
+          [798, 1868]
+        ],
+        "text": "BISHALGARH",
+        "script_language": "Bengali"
+      },
+      "polygon_42": {
+        "coordinates": [
+          [160, 2027],
+          [263, 2027],
+          [263, 2092],
+          [160, 2092]
+        ],
+        "text": "JAAL",
+        "script_language": "Bengali"
+      },
+      "polygon_43": {
+        "coordinates": [
+          [285, 2014],
+          [488, 2014],
+          [488, 2083],
+          [285, 2083]
+        ],
+        "text": "PROTIRODHI",
+        "script_language": "Bengali"
+      },
+      "polygon_44": {
+        "coordinates": [
+          [500, 2009],
+          [664, 2009],
+          [664, 2082],
+          [500, 2082]
+        ],
+        "text": "CEMENT",
+        "script_language": "Bengali"
+      },
+      "polygon_45": {
+        "coordinates": [
+          [328, 2078],
+          [613, 2078],
+          [613, 2138],
+          [328, 2138]
+        ],
+        "text": "WEATHERPROOF",
+        "script_language": "Bengali"
+      },
+      "polygon_46": {
+        "coordinates": [
+          [621, 2083],
+          [699, 2083],
+          [699, 2139],
+          [621, 2139]
+        ],
+        "text": "GHAR",
+        "script_language": "Bengali"
+      },
+      "polygon_47": {
+        "coordinates": [
+          [768, 2057],
+          [906, 2057],
+          [906, 2100],
+          [768, 2100]
+        ],
+        "text": "Weather",
+        "script_language": "English"
+      },
+      "polygon_48": {
+        "coordinates": [
+          [824, 2096],
+          [910, 2096],
+          [910, 2135],
+          [824, 2135]
+        ],
+        "text": "Shield",
+        "script_language": "English"
+      },
+      "polygon_49": {
+        "coordinates": [
+          [707, 2160],
+          [750, 2160],
+          [750, 2193],
+          [707, 2193]
+        ],
+        "text": "Super",
+        "script_language": "Bengali"
+      },
+      "polygon_50": {
+        "coordinates": [
+          [757, 2156],
+          [823, 2156],
+          [823, 2189],
+          [757, 2189]
+        ],
+        "text": "Premium",
+        "script_language": "Bengali"
+      },
+      "polygon_51": {
+        "coordinates": [
+          [826, 2154],
+          [885, 2154],
+          [885, 2187],
+          [826, 2187]
+        ],
+        "text": "CEMENT",
+        "script_language": "Bengali"
+      },
+      "polygon_52": {
+        "coordinates": [
+          [1150, 2208],
+          [1217, 2208],
+          [1217, 2234],
+          [1150, 2234]
+        ],
+        "text": "Solid",
+        "script_language": "English"
+      },
+      "polygon_53": {
+        "coordinates": [
+          [1228, 2208],
+          [1325, 2208],
+          [1325, 2241],
+          [1228, 2241]
+        ],
+        "text": "Setting",
+        "script_language": "English"
+      },
+      "polygon_54": {
+        "coordinates": [
+          [2943, 2132],
+          [3040, 2132],
+          [3040, 2166],
+          [2943, 2166]
+        ],
+        "text": "Cement",
+        "script_language": "English"
+      },
+      "polygon_55": {
+        "coordinates": [
+          [2825, 2173],
+          [2884, 2173],
+          [2884, 2202],
+          [2825, 2202]
+        ],
+        "text": "Super",
+        "script_language": "Bengali"
+      },
+      "polygon_56": {
+        "coordinates": [
+          [2896, 2172],
+          [2974, 2172],
+          [2974, 2205],
+          [2896, 2205]
+        ],
+        "text": "Premium",
+        "script_language": "Bengali"
+      },
+      "polygon_57": {
+        "coordinates": [
+          [2982, 2178],
+          [3053, 2178],
+          [3053, 2200],
+          [2982, 2200]
+        ],
+        "text": "CEMENT",
+        "script_language": "Bengali"
+      },
+      "polygon_58": {
+        "coordinates": [
+          [3134, 2128],
+          [3212, 2128],
+          [3212, 2157],
+          [3134, 2157]
+        ],
+        "text": "SHIELD",
+        "script_language": "English"
+      },
+      "polygon_59": {
+        "coordinates": [
+          [3427, 2234],
+          [3522, 2234],
+          [3522, 2272],
+          [3427, 2272]
+        ],
+        "text": "Solid",
+        "script_language": "English"
+      },
+      "polygon_60": {
+        "coordinates": [
+          [3522, 2234],
+          [3674, 2234],
+          [3674, 2268],
+          [3522, 2268]
+        ],
+        "text": "Setting",
+        "script_language": "English"
+      },
+      "polygon_61": {
+        "coordinates": [
+          [1939, 1840],
+          [2598, 1840],
+          [2598, 1943],
+          [1939, 1943]
+        ],
+        "text": "MAHANAM",
+        "script_language": "English"
+      },
+      "polygon_62": {
+        "coordinates": [
+          [2624, 1828],
+          [3398, 1828],
+          [3398, 1938],
+          [2624, 1938]
+        ],
+        "text": "HARDWARE",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

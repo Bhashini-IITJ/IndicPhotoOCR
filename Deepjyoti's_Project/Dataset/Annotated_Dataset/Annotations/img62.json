@@ -1,0 +1,120 @@
+{
+  "AnnotationDataset_img62": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [30, 261],
+          [220, 261],
+          [220, 412],
+          [30, 412]
+        ],
+        "text": "NEW",
+        "script_language": "Bengali"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [264, 261],
+          [629, 261],
+          [629, 415],
+          [264, 415]
+        ],
+        "text": "PRATIMA",
+        "script_language": "Bengali"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [645, 280],
+          [1148, 280],
+          [1148, 448],
+          [645, 448]
+        ],
+        "text": "JEWELLERY",
+        "script_language": "Bengali"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [1170, 288],
+          [1478, 288],
+          [1478, 436],
+          [1170, 436]
+        ],
+        "text": "HOUSE",
+        "script_language": "Bengali"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [27, 445],
+          [214, 445],
+          [214, 536],
+          [27, 536]
+        ],
+        "text": "NEW",
+        "script_language": "English"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [258, 437],
+          [665, 437],
+          [665, 555],
+          [258, 555]
+        ],
+        "text": "PRATIMA",
+        "script_language": "English"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [678, 461],
+          [1159, 461],
+          [1159, 549],
+          [678, 549]
+        ],
+        "text": "JEWELLERY",
+        "script_language": "English"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [1181, 459],
+          [1480, 459],
+          [1480, 547],
+          [1181, 547]
+        ],
+        "text": "HOUSE",
+        "script_language": "English"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [558, 645],
+          [1003, 645],
+          [1003, 763],
+          [558, 763]
+        ],
+        "text": "BISHALGARH",
+        "script_language": "Bengali"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [651, 1049],
+          [819, 1049],
+          [819, 1109],
+          [651, 1109]
+        ],
+        "text": "KISNA",
+        "script_language": "English"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [1321, 1052],
+          [1453, 1052],
+          [1453, 1096],
+          [1321, 1096]
+        ],
+        "text": "KISNA",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

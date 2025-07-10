@@ -1,0 +1,370 @@
+{
+  "AnnotationDataset_img35": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [758, 817],
+          [1256, 817],
+          [1256, 1035],
+          [758, 1035]
+        ],
+        "text": "BIKI",
+        "script_language": "English"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [1298, 825],
+          [2538, 825],
+          [2538, 1043],
+          [1298, 1043]
+        ],
+        "text": "ALUMINIUM",
+        "script_language": "English"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [2576, 833],
+          [3330, 833],
+          [3330, 1047],
+          [2576, 1047]
+        ],
+        "text": "CENTRE",
+        "script_language": "English"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [695, 1034],
+          [1101, 1034],
+          [1101, 1126],
+          [695, 1126]
+        ],
+        "text": "Nagerjala",
+        "script_language": "English"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [1135, 1043],
+          [1851, 1043],
+          [1851, 1148],
+          [1135, 1148]
+        ],
+        "text": "Near Modern Club",
+        "script_language": "English"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [1885, 1047],
+          [2203, 1047],
+          [2203, 1143],
+          [1885, 1143]
+        ],
+        "text": "Agartala",
+        "script_language": "English"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [2249, 1055],
+          [2680, 1055],
+          [2680, 1147],
+          [2249, 1147]
+        ],
+        "text": "West Tripura",
+        "script_language": "English"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [2756, 1068],
+          [2974, 1068],
+          [2974, 1152],
+          [2756, 1152]
+        ],
+        "text": "Bikash",
+        "script_language": "English"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [2995, 1068],
+          [3171, 1068],
+          [3171, 1143],
+          [2995, 1143]
+        ],
+        "text": "Saha",
+        "script_language": "English"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [3204, 1060],
+          [3363, 1060],
+          [3363, 1152],
+          [3204, 1152]
+        ],
+        "text": "Prop",
+        "script_language": "English"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [1432, 1168],
+          [1700, 1168],
+          [1700, 1243],
+          [1432, 1243]
+        ],
+        "text": "Govt",
+        "script_language": "English"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [1742, 1156],
+          [2052, 1156],
+          [2052, 1244],
+          [1742, 1244]
+        ],
+        "text": "Order",
+        "script_language": "English"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [2069, 1164],
+          [2517, 1164],
+          [2517, 1244],
+          [2069, 1244]
+        ],
+        "text": "Supplies",
+        "script_language": "English"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [582, 1273],
+          [791, 1273],
+          [791, 1336],
+          [582, 1336]
+        ],
+        "text": "Aekhane",
+        "script_language": "Bengali"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [817, 1269],
+          [1135, 1269],
+          [1135, 1353],
+          [817, 1353]
+        ],
+        "text": "Internal",
+        "script_language": "English"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [1168, 1269],
+          [1449, 1269],
+          [1449, 1353],
+          [1168, 1353]
+        ],
+        "text": "Design",
+        "script_language": "English"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [1491, 1273],
+          [2065, 1273],
+          [2065, 1353],
+          [1491, 1353]
+        ],
+        "text": "Aluminiumer Dorja",
+        "script_language": "Bengali"
+      },
+      "polygon_17": {
+        "coordinates": [
+          [2086, 1277],
+          [2300, 1277],
+          [2300, 1340],
+          [2086, 1340]
+        ],
+        "text": "Janala",
+        "script_language": "Bengali"
+      },
+      "polygon_18": {
+        "coordinates": [
+          [2333, 1261],
+          [2563, 1261],
+          [2563, 1336],
+          [2333, 1336]
+        ],
+        "text": "Partition",
+        "script_language": "Bengali"
+      },
+      "polygon_19": {
+        "coordinates": [
+          [2592, 1277],
+          [2981, 1277],
+          [2981, 1344],
+          [2592, 1344]
+        ],
+        "text": "ACP Sheet",
+        "script_language": "English"
+      },
+      "polygon_20": {
+        "coordinates": [
+          [3024, 1269],
+          [3497, 1269],
+          [3497, 1353],
+          [3024, 1353]
+        ],
+        "text": "Steel Ralling",
+        "script_language": "English"
+      },
+      "polygon_21": {
+        "coordinates": [
+          [574, 1361],
+          [934, 1361],
+          [934, 1432],
+          [574, 1432]
+        ],
+        "text": "Gypsum",
+        "script_language": "English"
+      },
+      "polygon_22": {
+        "coordinates": [
+          [959, 1361],
+          [1210, 1361],
+          [1210, 1432],
+          [959, 1432]
+        ],
+        "text": "Board",
+        "script_language": "English"
+      },
+      "polygon_23": {
+        "coordinates": [
+          [1252, 1361],
+          [1428, 1361],
+          [1428, 1420],
+          [1252, 1420]
+        ],
+        "text": "Fall",
+        "script_language": "English"
+      },
+      "polygon_24": {
+        "coordinates": [
+          [1432, 1353],
+          [1742, 1353],
+          [1742, 1437],
+          [1432, 1437]
+        ],
+        "text": "Celling",
+        "script_language": "English"
+      },
+      "polygon_25": {
+        "coordinates": [
+          [1763, 1357],
+          [1960, 1357],
+          [1960, 1428],
+          [1763, 1428]
+        ],
+        "text": "Oo Glass",
+        "script_language": "Bengali"
+      },
+      "polygon_26": {
+        "coordinates": [
+          [1973, 1353],
+          [2124, 1353],
+          [2124, 1433],
+          [1973, 1433]
+        ],
+        "text": "Sulabh",
+        "script_language": "Bengali"
+      },
+      "polygon_27": {
+        "coordinates": [
+          [2132, 1357],
+          [2283, 1357],
+          [2283, 1424],
+          [2132, 1424]
+        ],
+        "text": "Mulle",
+        "script_language": "Bengali"
+      },
+      "polygon_28": {
+        "coordinates": [
+          [2303, 1336],
+          [2445, 1336],
+          [2445, 1432],
+          [2303, 1432]
+        ],
+        "text": "Bikri",
+        "script_language": "Bengali"
+      },
+      "polygon_29": {
+        "coordinates": [
+          [2467, 1353],
+          [2572, 1353],
+          [2572, 1433],
+          [2467, 1433]
+        ],
+        "text": "Kora",
+        "script_language": "Bengali"
+      },
+      "polygon_30": {
+        "coordinates": [
+          [2592, 1353],
+          [3497, 1353],
+          [3497, 1420],
+          [2592, 1420]
+        ],
+        "text": "Hoi Aebong sokal prokar kaaj kora hoi",
+        "script_language": "Bengali"
+      },
+      "polygon_31": {
+        "coordinates": [
+          [528, 1571],
+          [1139, 1571],
+          [1139, 1810],
+          [528, 1810]
+        ],
+        "text": "BIKI",
+        "script_language": "Bengali"
+      },
+      "polygon_32": {
+        "coordinates": [
+          [1215, 1583],
+          [2513, 1583],
+          [2513, 1822],
+          [1215, 1822]
+        ],
+        "text": "ALUMINIUM",
+        "script_language": "Bengali"
+      },
+      "polygon_33": {
+        "coordinates": [
+          [2555, 1587],
+          [3275, 1587],
+          [3275, 1771],
+          [2555, 1771]
+        ],
+        "text": "CENTRE",
+        "script_language": "Bengali"
+      },
+      "polygon_34": {
+        "coordinates": [
+          [3430, 1591],
+          [3761, 1591],
+          [3761, 1754],
+          [3430, 1754]
+        ],
+        "text": "7005342208  9862971769",
+        "script_language": "English"
+      },
+      "polygon_35": {
+        "coordinates": [
+          [3455, 913],
+          [3740, 913],
+          [3740, 1034],
+          [3455, 1034]
+        ],
+        "text": "7005342208  9862971769",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

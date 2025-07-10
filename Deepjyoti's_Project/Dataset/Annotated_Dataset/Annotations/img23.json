@@ -1,0 +1,200 @@
+{
+  "AnnotationDataset_img23": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [1647, 1212],
+          [1862, 1212],
+          [1862, 1336],
+          [1647, 1336]
+        ],
+        "text": "Wheel",
+        "script_language": "Assamesse"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [1891, 1233],
+          [2131, 1233],
+          [2131, 1328],
+          [1891, 1328]
+        ],
+        "text": "Chair",
+        "script_language": "Assamesse"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [2160, 1241],
+          [2379, 1241],
+          [2379, 1332],
+          [2160, 1332]
+        ],
+        "text": "Sohai",
+        "script_language": "Assamesse"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [2408, 1241],
+          [2619, 1241],
+          [2619, 1336],
+          [2408, 1336]
+        ],
+        "text": "Kendra",
+        "script_language": "Assamesse"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [1742, 1353],
+          [2160, 1353],
+          [2160, 1473],
+          [1742, 1473]
+        ],
+        "text": "Wheelchair",
+        "script_language": "Hindi"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [2180, 1369],
+          [2532, 1369],
+          [2532, 1485],
+          [2180, 1485]
+        ],
+        "text": "Sahayak",
+        "script_language": "Hindi"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [1481, 1514],
+          [2160, 1514],
+          [2160, 1617],
+          [1481, 1617]
+        ],
+        "text": "WHEELCHAIR",
+        "script_language": "English"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [2172, 1518],
+          [2776, 1518],
+          [2776, 1617],
+          [2172, 1617]
+        ],
+        "text": "ASSISTANCE",
+        "script_language": "English"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [2511, 1829],
+          [3061, 1829],
+          [3061, 1974],
+          [2511, 1974]
+        ],
+        "text": "GATE 4",
+        "script_language": "English"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [3389, 1841],
+          [3405, 1945],
+          [3550, 1874],
+          [3533, 1742]
+        ],
+        "text": "COSTA",
+        "script_language": "English"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [3426, 1949],
+          [3434, 1998],
+          [3517, 1957],
+          [3517, 1903]
+        ],
+        "text": "COFFEE",
+        "script_language": "English"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [3678, 1820],
+          [3691, 1920],
+          [3765, 1903],
+          [3748, 1791]
+        ],
+        "text": "Get",
+        "script_language": "English"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [3757, 1787],
+          [3769, 1887],
+          [3964, 1816],
+          [3939, 1700]
+        ],
+        "text": "yourself a",
+        "script_language": "English"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [3947, 1692],
+          [3968, 1800],
+          [4088, 1758],
+          [4075, 1638]
+        ],
+        "text": "refresh",
+        "script_language": "English"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [3736, 1940],
+          [3740, 2048],
+          [3848, 2023],
+          [3835, 1907]
+        ],
+        "text": "CUP",
+        "script_language": "English"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [3848, 1899],
+          [3856, 2023],
+          [3926, 1998],
+          [3914, 1870]
+        ],
+        "text": "OF",
+        "script_language": "English"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [3931, 1870],
+          [3939, 1990],
+          [4088, 1953],
+          [4079, 1808]
+        ],
+        "text": "COFFEE",
+        "script_language": "English"
+      },
+      "polygon_17": {
+        "coordinates": [
+          [3715, 2089],
+          [3732, 2247],
+          [3864, 2226],
+          [3848, 2048]
+        ],
+        "text": "ON",
+        "script_language": "English"
+      },
+      "polygon_18": {
+        "coordinates": [
+          [3860, 2044],
+          [3881, 2226],
+          [4067, 2176],
+          [4022, 1982]
+        ],
+        "text": "THE",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

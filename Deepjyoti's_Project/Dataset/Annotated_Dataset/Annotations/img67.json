@@ -1,0 +1,440 @@
+{
+  "AnnotationDataset_img67": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [202, 206],
+          [716, 206],
+          [716, 345],
+          [202, 345]
+        ],
+        "text": "JOYRAM",
+        "script_language": "Bengali"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [763, 209],
+          [1231, 209],
+          [1231, 367],
+          [763, 367]
+        ],
+        "text": "HOMEO",
+        "script_language": "Bengali"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [1282, 238],
+          [1510, 238],
+          [1510, 375],
+          [1282, 375]
+        ],
+        "text": "HALL",
+        "script_language": "Bengali"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [242, 365],
+          [424, 365],
+          [424, 447],
+          [242, 447]
+        ],
+        "text": "JOY",
+        "script_language": "English"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [463, 363],
+          [686, 363],
+          [686, 469],
+          [463, 469]
+        ],
+        "text": "RAM",
+        "script_language": "English"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [715, 379],
+          [1157, 379],
+          [1157, 473],
+          [715, 473]
+        ],
+        "text": "HOMEO",
+        "script_language": "English"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [1186, 399],
+          [1464, 399],
+          [1464, 485],
+          [1186, 485]
+        ],
+        "text": "HALL",
+        "script_language": "English"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [214, 449],
+          [284, 449],
+          [284, 516],
+          [214, 516]
+        ],
+        "text": "All",
+        "script_language": "English"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [300, 468],
+          [437, 468],
+          [437, 521],
+          [300, 521]
+        ],
+        "text": "Kinds",
+        "script_language": "English"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [451, 473],
+          [501, 473],
+          [501, 528],
+          [451, 528]
+        ],
+        "text": "of",
+        "script_language": "English"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [514, 473],
+          [841, 473],
+          [841, 552],
+          [514, 552]
+        ],
+        "text": "Homeopathic",
+        "script_language": "English"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [855, 485],
+          [1083, 485],
+          [1083, 555],
+          [855, 555]
+        ],
+        "text": "Medicine",
+        "script_language": "English"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [1100, 490],
+          [1254, 490],
+          [1254, 560],
+          [1100, 560]
+        ],
+        "text": "Retail",
+        "script_language": "English"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [1263, 495],
+          [1479, 495],
+          [1479, 567],
+          [1263, 567]
+        ],
+        "text": "Counter",
+        "script_language": "English"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [343, 538],
+          [487, 538],
+          [487, 605],
+          [343, 605]
+        ],
+        "text": "Prop",
+        "script_language": "English"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [516, 550],
+          [799, 550],
+          [799, 620],
+          [516, 620]
+        ],
+        "text": "Sumit Kar",
+        "script_language": "English"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [826, 562],
+          [1328, 562],
+          [1328, 634],
+          [826, 634]
+        ],
+        "text": "S/o. Dr. Balai Kar",
+        "script_language": "English"
+      },
+      "polygon_17": {
+        "coordinates": [
+          [194, 607],
+          [364, 607],
+          [364, 691],
+          [194, 691]
+        ],
+        "text": "Aekhane",
+        "script_language": "Bengali"
+      },
+      "polygon_18": {
+        "coordinates": [
+          [384, 622],
+          [514, 622],
+          [514, 699],
+          [384, 699]
+        ],
+        "text": "Sokal",
+        "script_language": "Bengali"
+      },
+      "polygon_19": {
+        "coordinates": [
+          [533, 627],
+          [684, 627],
+          [684, 716],
+          [533, 716]
+        ],
+        "text": "Prokar",
+        "script_language": "Bengali"
+      },
+      "polygon_20": {
+        "coordinates": [
+          [713, 634],
+          [905, 634],
+          [905, 718],
+          [713, 718]
+        ],
+        "text": "HOMEO",
+        "script_language": "Bengali"
+      },
+      "polygon_21": {
+        "coordinates": [
+          [922, 641],
+          [1049, 641],
+          [1049, 725],
+          [922, 725]
+        ],
+        "text": "Aushud",
+        "script_language": "Bengali"
+      },
+      "polygon_22": {
+        "coordinates": [
+          [1061, 641],
+          [1217, 641],
+          [1217, 723],
+          [1061, 723]
+        ],
+        "text": "Bikray",
+        "script_language": "Bengali"
+      },
+      "polygon_23": {
+        "coordinates": [
+          [1236, 658],
+          [1366, 658],
+          [1366, 737],
+          [1236, 737]
+        ],
+        "text": "kora",
+        "script_language": "Bengali"
+      },
+      "polygon_24": {
+        "coordinates": [
+          [1378, 660],
+          [1467, 660],
+          [1467, 744],
+          [1378, 744]
+        ],
+        "text": "Hoi",
+        "script_language": "Bengali"
+      },
+      "polygon_25": {
+        "coordinates": [
+          [276, 691],
+          [274, 754],
+          [1388, 811],
+          [1392, 747]
+        ],
+        "text": "Mob. 9615891471/ 9862304945",
+        "script_language": "English"
+      },
+      "polygon_26": {
+        "coordinates": [
+          [2, 795],
+          [761, 795],
+          [761, 987],
+          [2, 987]
+        ],
+        "text": "JOYRAM",
+        "script_language": "Bengali"
+      },
+      "polygon_27": {
+        "coordinates": [
+          [804, 872],
+          [1414, 872],
+          [1414, 1045],
+          [804, 1045]
+        ],
+        "text": "HOMEO",
+        "script_language": "Bengali"
+      },
+      "polygon_28": {
+        "coordinates": [
+          [130, 1016],
+          [778, 1016],
+          [778, 1198],
+          [130, 1198]
+        ],
+        "text": "JOYRAM",
+        "script_language": "Bengali"
+      },
+      "polygon_29": {
+        "coordinates": [
+          [783, 1011],
+          [1383, 1011],
+          [1383, 1189],
+          [783, 1189]
+        ],
+        "text": "HOMEO",
+        "script_language": "Bengali"
+      },
+      "polygon_30": {
+        "coordinates": [
+          [1400, 1059],
+          [1683, 1059],
+          [1683, 1184],
+          [1400, 1184]
+        ],
+        "text": "HALL",
+        "script_language": "Bengali"
+      },
+      "polygon_31": {
+        "coordinates": [
+          [920, 1220],
+          [1030, 1220],
+          [1030, 1294],
+          [920, 1294]
+        ],
+        "text": "JOY",
+        "script_language": "English"
+      },
+      "polygon_32": {
+        "coordinates": [
+          [1040, 1227],
+          [1148, 1227],
+          [1148, 1304],
+          [1040, 1304]
+        ],
+        "text": "RAM",
+        "script_language": "English"
+      },
+      "polygon_33": {
+        "coordinates": [
+          [1157, 1229],
+          [1371, 1229],
+          [1371, 1308],
+          [1157, 1308]
+        ],
+        "text": "HOMEO",
+        "script_language": "English"
+      },
+      "polygon_34": {
+        "coordinates": [
+          [1383, 1236],
+          [1503, 1236],
+          [1503, 1308],
+          [1383, 1308]
+        ],
+        "text": "HALL",
+        "script_language": "English"
+      },
+      "polygon_35": {
+        "coordinates": [
+          [1059, 1311],
+          [1398, 1311],
+          [1398, 1376],
+          [1059, 1376]
+        ],
+        "text": "DR. B.R. KAR",
+        "script_language": "English"
+      },
+      "polygon_36": {
+        "coordinates": [
+          [989, 1385],
+          [1167, 1385],
+          [1167, 1452],
+          [989, 1452]
+        ],
+        "text": "JOYRAM",
+        "script_language": "Bengali"
+      },
+      "polygon_37": {
+        "coordinates": [
+          [1181, 1392],
+          [1368, 1392],
+          [1368, 1457],
+          [1181, 1457]
+        ],
+        "text": "HOMEO",
+        "script_language": "Bengali"
+      },
+      "polygon_38": {
+        "coordinates": [
+          [1378, 1395],
+          [1479, 1395],
+          [1479, 1457],
+          [1378, 1457]
+        ],
+        "text": "HALL",
+        "script_language": "Bengali"
+      },
+      "polygon_39": {
+        "coordinates": [
+          [1052, 1467],
+          [1234, 1467],
+          [1234, 1515],
+          [1052, 1515]
+        ],
+        "text": "Dr. Balai Kar",
+        "script_language": "Bengali"
+      },
+      "polygon_40": {
+        "coordinates": [
+          [1246, 1474],
+          [1397, 1474],
+          [1397, 1529],
+          [1246, 1529]
+        ],
+        "text": "Homeopath",
+        "script_language": "Bengali"
+      },
+      "polygon_41": {
+        "coordinates": [
+          [763, 168],
+          [929, 168],
+          [929, 209],
+          [763, 209]
+        ],
+        "text": "JOYRAM",
+        "script_language": "Bengali"
+      },
+      "polygon_42": {
+        "coordinates": [
+          [197, 142],
+          [399, 142],
+          [399, 200],
+          [197, 200]
+        ],
+        "text": "Estd:1980",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

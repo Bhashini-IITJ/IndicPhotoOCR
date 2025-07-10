@@ -1,0 +1,220 @@
+{
+  "AnnotationDataset_img37": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [848, 567],
+          [1540, 567],
+          [1540, 647],
+          [848, 647]
+        ],
+        "text": "Synbol of cleanliness",
+        "script_language": "English"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [915, 676],
+          [1498, 676],
+          [1498, 936],
+          [915, 936]
+        ],
+        "text": "SULABH",
+        "script_language": "English"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [1532, 667],
+          [2010, 667],
+          [2010, 915],
+          [1532, 915]
+        ],
+        "text": "TOILET",
+        "script_language": "English"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [2044, 671],
+          [2157, 671],
+          [2157, 919],
+          [2044, 919]
+        ],
+        "text": "&",
+        "script_language": "English"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [2191, 642],
+          [2577, 642],
+          [2577, 898],
+          [2191, 898]
+        ],
+        "text": "BATH",
+        "script_language": "English"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [2610, 634],
+          [3315, 634],
+          [3315, 890],
+          [2610, 890]
+        ],
+        "text": "COMPLEX",
+        "script_language": "English"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [1297, 1003],
+          [1603, 1003],
+          [1603, 1200],
+          [1297, 1200]
+        ],
+        "text": "SULABH",
+        "script_language": "Bengali"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [1649, 948],
+          [2140, 948],
+          [2140, 1149],
+          [1649, 1149]
+        ],
+        "text": "Sauchaloi",
+        "script_language": "Bengali"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [2174, 969],
+          [2422, 969],
+          [2422, 1141],
+          [2174, 1141]
+        ],
+        "text": "Aebong",
+        "script_language": "Bengali"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [2447, 974],
+          [2921, 974],
+          [2921, 1138],
+          [2447, 1138]
+        ],
+        "text": "Snanagar",
+        "script_language": "Bengali"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [1398, 1238],
+          [1809, 1238],
+          [1809, 1314],
+          [1398, 1314]
+        ],
+        "text": "AGARTALA",
+        "script_language": "English"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [856, 1465],
+          [1188, 1465],
+          [1188, 1583],
+          [856, 1583]
+        ],
+        "text": "SULABH",
+        "script_language": "English"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [1230, 1460],
+          [1914, 1460],
+          [1914, 1561],
+          [1230, 1561]
+        ],
+        "text": "INTERNATIONAL",
+        "script_language": "English"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [1939, 1448],
+          [2275, 1448],
+          [2275, 1557],
+          [1939, 1557]
+        ],
+        "text": "SOCIAL",
+        "script_language": "English"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [2300, 1439],
+          [2669, 1439],
+          [2669, 1557],
+          [2300, 1557]
+        ],
+        "text": "SERVICE",
+        "script_language": "English"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [1649, 1347],
+          [2564, 1347],
+          [2564, 1427],
+          [1649, 1427]
+        ],
+        "text": "Operation & Maintenance",
+        "script_language": "English"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [1821, 1204],
+          [2245, 1204],
+          [2245, 1305],
+          [1821, 1305]
+        ],
+        "text": "MUNICIPAL",
+        "script_language": "English"
+      },
+      "polygon_17": {
+        "coordinates": [
+          [2879, 1192],
+          [3294, 1192],
+          [3294, 1289],
+          [2879, 1289]
+        ],
+        "text": "AGARTALA",
+        "script_language": "English"
+      },
+      "polygon_18": {
+        "coordinates": [
+          [1633, 1565],
+          [2615, 1565],
+          [2615, 1657],
+          [1633, 1657]
+        ],
+        "text": "Tripura State Branch, Agartala",
+        "script_language": "English"
+      },
+      "polygon_19": {
+        "coordinates": [
+          [2266, 1200],
+          [2828, 1200],
+          [2828, 1305],
+          [2266, 1305]
+        ],
+        "text": "CORPORATION",
+        "script_language": "English"
+      },
+      "polygon_20": {
+        "coordinates": [
+          [2703, 1439],
+          [3400, 1439],
+          [3400, 1544],
+          [2703, 1544]
+        ],
+        "text": "ORGANISATION",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

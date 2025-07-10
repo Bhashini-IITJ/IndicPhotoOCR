@@ -1,0 +1,50 @@
+{
+  "AnnotationDataset_img49": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [522, 1131],
+          [1657, 1131],
+          [1657, 1268],
+          [522, 1268]
+        ],
+        "text": "BandhanBank",
+        "script_language": "English"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [1918, 1131],
+          [2683, 1131],
+          [2683, 1241],
+          [1918, 1241]
+        ],
+        "text": "BandhanBank",
+        "script_language": "Bengali"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [476, 1277],
+          [1044, 1277],
+          [1044, 1350],
+          [476, 1350]
+        ],
+        "text": "Bishalgarh Branch",
+        "script_language": "English"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [1927, 1273],
+          [2339, 1273],
+          [2339, 1328],
+          [1927, 1328]
+        ],
+        "text": "Bishalgarh Shakha",
+        "script_language": "Bengali"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

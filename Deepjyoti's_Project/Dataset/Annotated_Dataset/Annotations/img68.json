@@ -1,0 +1,280 @@
+{
+  "AnnotationDataset_img68": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [48, 191],
+          [381, 191],
+          [381, 355],
+          [48, 355]
+        ],
+        "text": "Tripura",
+        "script_language": "Bengali"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [409, 185],
+          [715, 185],
+          [715, 349],
+          [409, 349]
+        ],
+        "text": "Gramin",
+        "script_language": "Bengali"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [772, 215],
+          [1023, 215],
+          [1023, 354],
+          [772, 354]
+        ],
+        "text": "Bank",
+        "script_language": "Bengali"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [236, 379],
+          [745, 379],
+          [745, 437],
+          [236, 437]
+        ],
+        "text": "Bharat Sorkarer akti Songstha",
+        "script_language": "Bengali"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [1423, 179],
+          [1729, 179],
+          [1729, 346],
+          [1423, 346]
+        ],
+        "text": "Tripura",
+        "script_language": "Hindi"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [1757, 209],
+          [2093, 209],
+          [2093, 348],
+          [1757, 348]
+        ],
+        "text": "Gramin",
+        "script_language": "Hindi"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [2126, 179],
+          [2320, 179],
+          [2320, 336],
+          [2126, 336]
+        ],
+        "text": "Bank",
+        "script_language": "Hindi"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [1617, 376],
+          [2162, 376],
+          [2162, 437],
+          [1617, 437]
+        ],
+        "text": "Bharat Sorkar ka Upakram ",
+        "script_language": "Hindi"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [2689, 203],
+          [3010, 203],
+          [3010, 351],
+          [2689, 351]
+        ],
+        "text": "Tripura",
+        "script_language": "English"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [3025, 197],
+          [3343, 197],
+          [3343, 342],
+          [3025, 342]
+        ],
+        "text": "Gramin",
+        "script_language": "English"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [3353, 203],
+          [3592, 203],
+          [3592, 336],
+          [3353, 336]
+        ],
+        "text": "Bank",
+        "script_language": "English"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [2883, 339],
+          [3422, 339],
+          [3422, 412],
+          [2883, 412]
+        ],
+        "text": "A Govt. of India Undertaking",
+        "script_language": "English"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [188, 500],
+          [576, 500],
+          [576, 594],
+          [188, 594]
+        ],
+        "text": "Bishalgarh",
+        "script_language": "Bengali"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [600, 509],
+          [785, 509],
+          [785, 585],
+          [600, 585]
+        ],
+        "text": "Shakha",
+        "script_language": "Bengali"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [1599, 494],
+          [1953, 494],
+          [1953, 579],
+          [1599, 579]
+        ],
+        "text": "Bishalgarh",
+        "script_language": "Hindi"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [1993, 500],
+          [2181, 500],
+          [2181, 576],
+          [1993, 576]
+        ],
+        "text": "Shakha",
+        "script_language": "Hindi"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [2871, 500],
+          [3216, 500],
+          [3216, 573],
+          [2871, 573]
+        ],
+        "text": "BISHALGARH",
+        "script_language": "English"
+      },
+      "polygon_17": {
+        "coordinates": [
+          [3228, 497],
+          [3458, 497],
+          [3458, 576],
+          [3228, 576]
+        ],
+        "text": "BRANCH",
+        "script_language": "English"
+      },
+      "polygon_18": {
+        "coordinates": [
+          [727, 624],
+          [1084, 624],
+          [1084, 706],
+          [727, 706]
+        ],
+        "text": "AScheduled",
+        "script_language": "English"
+      },
+      "polygon_19": {
+        "coordinates": [
+          [1102, 618],
+          [1241, 618],
+          [1241, 703],
+          [1102, 703]
+        ],
+        "text": "Bank",
+        "script_language": "English"
+      },
+      "polygon_20": {
+        "coordinates": [
+          [1260, 621],
+          [1460, 621],
+          [1460, 697],
+          [1260, 697]
+        ],
+        "text": "Owned",
+        "script_language": "English"
+      },
+      "polygon_21": {
+        "coordinates": [
+          [1472, 615],
+          [1545, 615],
+          [1545, 709],
+          [1472, 709]
+        ],
+        "text": "by",
+        "script_language": "English"
+      },
+      "polygon_22": {
+        "coordinates": [
+          [1557, 615],
+          [2232, 615],
+          [2232, 688],
+          [1557, 688]
+        ],
+        "text": "Government-Sponsored",
+        "script_language": "English"
+      },
+      "polygon_23": {
+        "coordinates": [
+          [2247, 615],
+          [2320, 615],
+          [2320, 700],
+          [2247, 700]
+        ],
+        "text": "by",
+        "script_language": "English"
+      },
+      "polygon_24": {
+        "coordinates": [
+          [2335, 615],
+          [2562, 615],
+          [2562, 694],
+          [2335, 694]
+        ],
+        "text": "PUNJAB",
+        "script_language": "English"
+      },
+      "polygon_25": {
+        "coordinates": [
+          [2580, 606],
+          [2865, 606],
+          [2865, 685],
+          [2580, 685]
+        ],
+        "text": "NATIONAL",
+        "script_language": "English"
+      },
+      "polygon_26": {
+        "coordinates": [
+          [2880, 609],
+          [3056, 609],
+          [3056, 700],
+          [2880, 700]
+        ],
+        "text": "BANK",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

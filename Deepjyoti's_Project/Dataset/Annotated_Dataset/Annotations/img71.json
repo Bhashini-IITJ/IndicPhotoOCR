@@ -1,0 +1,220 @@
+{
+  "New folder_img71": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [243, 55],
+          [457, 55],
+          [457, 111],
+          [243, 111]
+        ],
+        "text": "Passport",
+        "script_language": "English"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [290, 102],
+          [409, 102],
+          [409, 150],
+          [290, 150]
+        ],
+        "text": "Seva",
+        "script_language": "English"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [112, 142],
+          [305, 142],
+          [305, 194],
+          [112, 194]
+        ],
+        "text": "Service",
+        "script_language": "English"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [327, 159],
+          [583, 159],
+          [583, 208],
+          [327, 208]
+        ],
+        "text": "Excellence",
+        "script_language": "English"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [385, 266],
+          [386, 357],
+          [660, 361],
+          [656, 240],
+          [563, 243],
+          [564, 270]
+        ],
+        "text": "PASSPORT",
+        "script_language": "Hindi"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [673, 244],
+          [674, 356],
+          [807, 361],
+          [807, 247]
+        ],
+        "text": "SEVA",
+        "script_language": "Hindi"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [820, 250],
+          [823, 368],
+          [948, 371],
+          [952, 278],
+          [876, 279],
+          [876, 255]
+        ],
+        "text": "KENDRA",
+        "script_language": "Hindi"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [992, 278],
+          [995, 366],
+          [1228, 373],
+          [1225, 283]
+        ],
+        "text": "AGARTALA",
+        "script_language": "Hindi"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [79, 378],
+          [80, 477],
+          [475, 474],
+          [473, 380]
+        ],
+        "text": "PASSPORT",
+        "script_language": "English"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [486, 383],
+          [487, 470],
+          [664, 470],
+          [657, 386]
+        ],
+        "text": "SEVA",
+        "script_language": "English"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [671, 382],
+          [673, 468],
+          [916, 470],
+          [915, 385]
+        ],
+        "text": "KENDRA",
+        "script_language": "English"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [943, 388],
+          [942, 466],
+          [1232, 469],
+          [1228, 390]
+        ],
+        "text": "AGARTALA",
+        "script_language": "English"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [314, 511],
+          [316, 597],
+          [592, 595],
+          [592, 489],
+          [529, 487],
+          [529, 506]
+        ],
+        "text": "PASSPORT",
+        "script_language": "Bengali"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [601, 502],
+          [600, 594],
+          [833, 595],
+          [833, 503],
+          [703, 503],
+          [703, 483],
+          [642, 483],
+          [643, 507]
+        ],
+        "text": "PARISEVA",
+        "script_language": "Bengali"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [837, 501],
+          [839, 591],
+          [970, 593],
+          [977, 501]
+        ],
+        "text": "KENDRA",
+        "script_language": "Bengali"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [996, 499],
+          [1000, 578],
+          [1233, 579],
+          [1231, 494]
+        ],
+        "text": "AGARTALA",
+        "script_language": "Bengali"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [120, 128],
+          [154, 128],
+          [154, 144],
+          [120, 144]
+        ],
+        "text": "Satyamev",
+        "script_language": "Sanskrit"
+      },
+      "polygon_17": {
+        "coordinates": [
+          [156, 131],
+          [178, 131],
+          [178, 143],
+          [156, 143]
+        ],
+        "text": "Jayate",
+        "script_language": "Sanskrit"
+      },
+      "polygon_18": {
+        "coordinates": [
+          [865, 229],
+          [914, 229],
+          [914, 252],
+          [865, 252]
+        ],
+        "text": "Satyamev",
+        "script_language": "Sanskrit"
+      },
+      "polygon_19": {
+        "coordinates": [
+          [918, 231],
+          [953, 231],
+          [953, 252],
+          [918, 252]
+        ],
+        "text": "Jayate",
+        "script_language": "Sanskrit"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

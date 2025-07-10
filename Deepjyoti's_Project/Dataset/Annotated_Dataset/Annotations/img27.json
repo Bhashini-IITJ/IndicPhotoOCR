@@ -1,0 +1,180 @@
+{
+  "AnnotationDataset_img27": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [1397, 1278],
+          [1391, 1391],
+          [2389, 1454],
+          [2375, 1335]
+        ],
+        "text": "SANJEEVANI",
+        "script_language": "English"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [1383, 1397],
+          [1386, 1491],
+          [1967, 1522],
+          [1967, 1431]
+        ],
+        "text": "HEALTH",
+        "script_language": "English"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [2001, 1434],
+          [2006, 1525],
+          [2381, 1547],
+          [2383, 1462]
+        ],
+        "text": "CARE",
+        "script_language": "English"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [1431, 1510],
+          [1434, 1562],
+          [1638, 1573],
+          [1638, 1527]
+        ],
+        "text": "WHERE",
+        "script_language": "English"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [1666, 1527],
+          [1666, 1579],
+          [1967, 1593],
+          [1978, 1539]
+        ],
+        "text": "ACCURACY",
+        "script_language": "English"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [1998, 1545],
+          [1998, 1593],
+          [2176, 1604],
+          [2179, 1550]
+        ],
+        "text": "MEETS",
+        "script_language": "English"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [2199, 1556],
+          [2199, 1604],
+          [2358, 1613],
+          [2355, 1567]
+        ],
+        "text": "CARE",
+        "script_language": "English"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [1012, 1655],
+          [1006, 1751],
+          [1476, 1774],
+          [1474, 1681]
+        ],
+        "text": "BLOOD",
+        "script_language": "English"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [1023, 1802],
+          [1017, 1902],
+          [1448, 1924],
+          [1454, 1822]
+        ],
+        "text": "URINE",
+        "script_language": "English"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [995, 1947],
+          [986, 2057],
+          [1465, 2080],
+          [1465, 1975]
+        ],
+        "text": "STOOL",
+        "script_language": "English"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [915, 2111],
+          [907, 2213],
+          [1525, 2236],
+          [1525, 2125]
+        ],
+        "text": "SPUTUM",
+        "script_language": "English"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [1003, 2273],
+          [995, 2381],
+          [1431, 2395],
+          [1428, 2278]
+        ],
+        "text": "E.C.G.",
+        "script_language": "English"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [1927, 1698],
+          [1930, 1794],
+          [2213, 1808],
+          [2216, 1703]
+        ],
+        "text": "Rakto",
+        "script_language": "Bengali"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [1967, 1828],
+          [1972, 1947],
+          [2225, 1955],
+          [2225, 1834]
+        ],
+        "text": "MUTRA",
+        "script_language": "Bengali"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [1955, 1987],
+          [1958, 2091],
+          [2230, 2097],
+          [2225, 1992]
+        ],
+        "text": "MAAL",
+        "script_language": "Bengali"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [1944, 2140],
+          [1944, 2236],
+          [2295, 2244],
+          [2293, 2148]
+        ],
+        "text": "KAUF",
+        "script_language": "Bengali"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [1853, 2287],
+          [1853, 2420],
+          [2381, 2434],
+          [2372, 2298]
+        ],
+        "text": "ECG",
+        "script_language": "Bengali"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

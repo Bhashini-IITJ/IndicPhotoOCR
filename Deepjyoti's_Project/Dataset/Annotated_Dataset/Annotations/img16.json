@@ -1,0 +1,280 @@
+{
+  "AnnotationDataset_img16": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [719, 1140],
+          [2073, 1140],
+          [2073, 1473],
+          [719, 1473]
+        ],
+        "text": "PRATIMA",
+        "script_language": "English"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [448, 1505],
+          [1646, 1505],
+          [1646, 1713],
+          [448, 1713]
+        ],
+        "text": "JEWELLERY",
+        "script_language": "English"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [1671, 1500],
+          [2343, 1500],
+          [2343, 1724],
+          [1671, 1724]
+        ],
+        "text": "HOUSE",
+        "script_language": "English"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [2520, 1172],
+          [2733, 1172],
+          [2733, 1339],
+          [2520, 1339]
+        ],
+        "text": "NEW",
+        "script_language": "Bengali"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [2770, 1177],
+          [3197, 1177],
+          [3197, 1328],
+          [2770, 1328]
+        ],
+        "text": "PRATIMA",
+        "script_language": "Bengali"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [3207, 1187],
+          [3769, 1187],
+          [3769, 1364],
+          [3207, 1364]
+        ],
+        "text": "JEWELLERY",
+        "script_language": "Bengali"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [3780, 1192],
+          [4134, 1192],
+          [4134, 1343],
+          [3780, 1343]
+        ],
+        "text": "HOUSE",
+        "script_language": "Bengali"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [2510, 1369],
+          [2739, 1369],
+          [2739, 1489],
+          [2510, 1489]
+        ],
+        "text": "NEW",
+        "script_language": "English"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [2765, 1375],
+          [3202, 1375],
+          [3202, 1484],
+          [2765, 1484]
+        ],
+        "text": "PRATIMA",
+        "script_language": "English"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [3218, 1369],
+          [3770, 1369],
+          [3770, 1494],
+          [3218, 1494]
+        ],
+        "text": "JEWELLERY",
+        "script_language": "English"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [3801, 1380],
+          [4155, 1380],
+          [4155, 1495],
+          [3801, 1495]
+        ],
+        "text": "HOUSE",
+        "script_language": "English"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [3134, 1593],
+          [3592, 1593],
+          [3592, 1723],
+          [3134, 1723]
+        ],
+        "text": "Bishalgarh",
+        "script_language": "Bengali"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [573, 1953],
+          [1125, 1953],
+          [1125, 2120],
+          [573, 2120]
+        ],
+        "text": "PRATIMA",
+        "script_language": "English"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [1177, 1937],
+          [1828, 1937],
+          [1828, 2098],
+          [1177, 2098]
+        ],
+        "text": "JEWELLERY",
+        "script_language": "English"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [1864, 1921],
+          [2239, 1921],
+          [2239, 2098],
+          [1864, 2098]
+        ],
+        "text": "HOUSE",
+        "script_language": "English"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [1109, 2244],
+          [1635, 2244],
+          [1635, 2390],
+          [1109, 2390]
+        ],
+        "text": "Shagatam",
+        "script_language": "Bengali"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [391, 2213],
+          [646, 2213],
+          [646, 2307],
+          [391, 2307]
+        ],
+        "text": "KISNA",
+        "script_language": "English"
+      },
+      "polygon_17": {
+        "coordinates": [
+          [2176, 2166],
+          [2405, 2166],
+          [2405, 2244],
+          [2176, 2244]
+        ],
+        "text": "KISNA",
+        "script_language": "English"
+      },
+      "polygon_18": {
+        "coordinates": [
+          [3202, 2036],
+          [3405, 2036],
+          [3405, 2119],
+          [3202, 2119]
+        ],
+        "text": "KISNA",
+        "script_language": "English"
+      },
+      "polygon_19": {
+        "coordinates": [
+          [3936, 2036],
+          [4123, 2036],
+          [4123, 2109],
+          [3936, 2109]
+        ],
+        "text": "KISNA",
+        "script_language": "English"
+      },
+      "polygon_20": {
+        "coordinates": [
+          [1036, 2963],
+          [1427, 2963],
+          [1427, 3213],
+          [1036, 3213]
+        ],
+        "text": "JEWELLERY",
+        "script_language": "Bengali"
+      },
+      "polygon_21": {
+        "coordinates": [
+          [1432, 2973],
+          [1661, 2973],
+          [1661, 3160],
+          [1432, 3160]
+        ],
+        "text": "HOUSE",
+        "script_language": "Bengali"
+      },
+      "polygon_22": {
+        "coordinates": [
+          [1109, 135],
+          [1635, 135],
+          [1635, 453],
+          [1109, 453]
+        ],
+        "text": "JEWELLERY",
+        "script_language": "English"
+      },
+      "polygon_23": {
+        "coordinates": [
+          [2567, 260],
+          [3140, 260],
+          [3140, 505],
+          [2567, 505]
+        ],
+        "text": "JEWELLERY",
+        "script_language": "Bengali"
+      },
+      "polygon_24": {
+        "coordinates": [
+          [2114, 271],
+          [2551, 271],
+          [2551, 511],
+          [2114, 511]
+        ],
+        "text": "PRATIMA",
+        "script_language": "Bengali"
+      },
+      "polygon_25": {
+        "coordinates": [
+          [3145, 328],
+          [3364, 328],
+          [3364, 583],
+          [3145, 583]
+        ],
+        "text": "HOUSE",
+        "script_language": "Bengali"
+      },
+      "polygon_26": {
+        "coordinates": [
+          [1640, 229],
+          [1926, 229],
+          [1926, 521],
+          [1640, 521]
+        ],
+        "text": "HOUSE",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}

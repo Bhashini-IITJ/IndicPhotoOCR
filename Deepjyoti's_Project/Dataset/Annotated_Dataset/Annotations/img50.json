@@ -1,0 +1,258 @@
+{
+  "AnnotationDataset_img50": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [66, 641],
+          [46, 780],
+          [430, 705],
+          [445, 563]
+        ],
+        "text": "RAMTHAKUR",
+        "script_language": "Bengali"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [461, 555],
+          [446, 689],
+          [725, 638],
+          [739, 491]
+        ],
+        "text": "TRADERS",
+        "script_language": "Bengali"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [104, 813],
+          [111, 759],
+          [300, 721],
+          [296, 771]
+        ],
+        "text": "CENTRALROAD",
+        "script_language": "Bengali"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [393, 743],
+          [404, 686],
+          [602, 648],
+          [598, 702]
+        ],
+        "text": "BISHALGARH",
+        "script_language": "Bengali"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [38, 821],
+          [21, 895],
+          [139, 873],
+          [150, 805]
+        ],
+        "text": "RAM",
+        "script_language": "English"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [154, 868],
+          [382, 823],
+          [391, 754],
+          [157, 798]
+        ],
+        "text": "THAKUR",
+        "script_language": "English"
+      },
+      "polygon_6": {
+        "coordinates": [
+          [404, 746],
+          [395, 823],
+          [698, 757],
+          [709, 680]
+        ],
+        "text": "TRADERS",
+        "script_language": "English"
+      },
+      "polygon_7": {
+        "coordinates": [
+          [432, 821],
+          [425, 848],
+          [629, 813],
+          [630, 780]
+        ],
+        "text": "9436133129",
+        "script_language": "English"
+      },
+      "polygon_8": {
+        "coordinates": [
+          [782, 471],
+          [761, 634],
+          [880, 614],
+          [882, 573],
+          [1097, 527],
+          [1111, 382]
+        ],
+        "text": "TRISHTI",
+        "script_language": "Bengali"
+      },
+      "polygon_9": {
+        "coordinates": [
+          [1118, 391],
+          [1111, 514],
+          [1139, 513],
+          [1164, 550],
+          [1218, 554],
+          [1230, 536],
+          [1254, 543],
+          [1268, 516],
+          [1232, 477],
+          [1252, 380]
+        ],
+        "text": "SHOE",
+        "script_language": "Bengali"
+      },
+      "polygon_10": {
+        "coordinates": [
+          [1261, 364],
+          [1266, 484],
+          [1714, 393],
+          [1718, 236]
+        ],
+        "text": "STORES",
+        "script_language": "Bengali"
+      },
+      "polygon_11": {
+        "coordinates": [
+          [891, 575],
+          [880, 630],
+          [1147, 568],
+          [1143, 514]
+        ],
+        "text": "CENTRALROAD",
+        "script_language": "Bengali"
+      },
+      "polygon_12": {
+        "coordinates": [
+          [1279, 484],
+          [1291, 534],
+          [1534, 489],
+          [1534, 429]
+        ],
+        "text": "BISHALGARH",
+        "script_language": "Bengali"
+      },
+      "polygon_13": {
+        "coordinates": [
+          [789, 670],
+          [779, 752],
+          [1084, 693],
+          [1097, 596]
+        ],
+        "text": "TRISHTI",
+        "script_language": "English"
+      },
+      "polygon_14": {
+        "coordinates": [
+          [1109, 598],
+          [1097, 684],
+          [1314, 641],
+          [1323, 552]
+        ],
+        "text": "SHOE",
+        "script_language": "English"
+      },
+      "polygon_15": {
+        "coordinates": [
+          [1345, 545],
+          [1334, 634],
+          [1718, 561],
+          [1723, 448]
+        ],
+        "text": "STORES",
+        "script_language": "English"
+      },
+      "polygon_16": {
+        "coordinates": [
+          [920, 755],
+          [1211, 702],
+          [1213, 661],
+          [925, 714]
+        ],
+        "text": "9774511428",
+        "script_language": "English"
+      },
+      "polygon_17": {
+        "coordinates": [
+          [1277, 684],
+          [1609, 618],
+          [1602, 570],
+          [1273, 646]
+        ],
+        "text": "9366968711",
+        "script_language": "English"
+      },
+      "polygon_18": {
+        "coordinates": [
+          [291, 1220],
+          [309, 1313],
+          [654, 1291],
+          [632, 1159],
+          [452, 1198],
+          [439, 1157],
+          [402, 1191],
+          [405, 1209]
+        ],
+        "text": "RAMTHAKUR",
+        "script_language": "Bengali"
+      },
+      "polygon_19": {
+        "coordinates": [
+          [639, 1141],
+          [661, 1277],
+          [948, 1227],
+          [934, 1080]
+        ],
+        "text": "TRADERS",
+        "script_language": "Bengali"
+      },
+      "polygon_20": {
+        "coordinates": [
+          [957, 1105],
+          [991, 1241],
+          [1282, 1198],
+          [1261, 1036],
+          [1068, 1061],
+          [1064, 1107]
+        ],
+        "text": "TRISHTI",
+        "script_language": "Bengali"
+      },
+      "polygon_21": {
+        "coordinates": [
+          [1275, 1059],
+          [1297, 1205],
+          [1432, 1188],
+          [1389, 1045]
+        ],
+        "text": "SHOE",
+        "script_language": "Bengali"
+      },
+      "polygon_22": {
+        "coordinates": [
+          [1405, 1039],
+          [1436, 1166],
+          [1836, 1122],
+          [1832, 963],
+          [1661, 1018],
+          [1618, 977],
+          [1538, 997],
+          [1541, 1036]
+        ],
+        "text": "STORES",
+        "script_language": "Bengali"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}
