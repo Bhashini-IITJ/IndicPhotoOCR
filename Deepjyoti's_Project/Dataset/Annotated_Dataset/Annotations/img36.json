@@ -1,0 +1,70 @@
+{
+  "AnnotationDataset_img36": {
+    "annotations": {
+      "polygon_0": {
+        "coordinates": [
+          [805, 1345],
+          [1176, 1345],
+          [1176, 1660],
+          [805, 1660]
+        ],
+        "text": "NO",
+        "script_language": "English"
+      },
+      "polygon_1": {
+        "coordinates": [
+          [1232, 1345],
+          [2324, 1345],
+          [2324, 1649],
+          [1232, 1649]
+        ],
+        "text": "VENDING",
+        "script_language": "English"
+      },
+      "polygon_2": {
+        "coordinates": [
+          [1204, 1688],
+          [1975, 1688],
+          [1975, 2042],
+          [1204, 2042]
+        ],
+        "text": "ZONE",
+        "script_language": "English"
+      },
+      "polygon_3": {
+        "coordinates": [
+          [1992, 1778],
+          [2105, 1778],
+          [2105, 1902],
+          [1992, 1902]
+        ],
+        "text": "BY",
+        "script_language": "English"
+      },
+      "polygon_4": {
+        "coordinates": [
+          [2132, 1778],
+          [2385, 1778],
+          [2385, 1907],
+          [2132, 1907]
+        ],
+        "text": "ORDER",
+        "script_language": "English"
+      },
+      "polygon_5": {
+        "coordinates": [
+          [2054, 1919],
+          [2363, 1919],
+          [2363, 2060],
+          [2054, 2060]
+        ],
+        "text": "AMC",
+        "script_language": "English"
+      }
+    }
+  },
+  "url": "url of the image",
+  "image_name": "path to the image",
+  "split" : "train/test split",
+  "folderName": "folder of the image"
+}
