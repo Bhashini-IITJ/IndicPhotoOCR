@@ -35,6 +35,6 @@ conda activate "$ENV_NAME"
 # Build and install the project
 echo "Building and installing IndicPhotoOCR..."
 python setup.py sdist bdist_wheel
-pip install ./dist/IndicPhotoOCR-1.3.0-py3-none-any.whl[cu118] --extra-index-url https://download.pytorch.org/whl/cu118
+pip install ./dist/indicphotoocr-1.3.0-py3-none-any.whl[cu118] --extra-index-url https://download.pytorch.org/whl/cu118
 
 echo "Installation complete!"
