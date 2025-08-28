@@ -63,7 +63,7 @@ cd IndicPhotoOCR
 
   ```bash
   python setup.py sdist bdist_wheel
-  pip install dist/IndicPhotoOCR-1.3.1-py3-none-any.whl[cpu]
+  pip install dist/indicphotoocr-1.3.1-py3-none-any.whl[cpu]
   ```
 </details>
 
@@ -72,7 +72,7 @@ cd IndicPhotoOCR
 
   ```bash
   python setup.py sdist bdist_wheel
-  pip install ./dist/IndicPhotoOCR-1.3.1-py3-none-any.whl[cu118] --extra-index-url https://download.pytorch.org/whl/cu118
+  pip install ./dist/indicphotoocr-1.3.1-py3-none-any.whl[cu118] --extra-index-url https://download.pytorch.org/whl/cu118
   ```
 </details>
 
@@ -81,7 +81,7 @@ cd IndicPhotoOCR
 
   ```bash
   python setup.py sdist bdist_wheel
-  pip install ./dist/IndicPhotoOCR-1.3.1-py3-none-any.whl[cu121] --extra-index-url https://download.pytorch.org/whl/cu121
+  pip install ./dist/indicphotoocr-1.3.1-py3-none-any.whl[cu121] --extra-index-url https://download.pytorch.org/whl/cu121
   ```
 </details>
 <br>
