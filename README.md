@@ -37,9 +37,9 @@ IndicPhotoOCR is a scene text recognition toolkit designed for detecting, identi
 
 
 ## Updates
-<b>[Feburary 2025]:</b> [Project page](https://vl2g.github.io/projects/IndicPhotoOCR/) created.
-<b>[Feburary 2025]:</b> [Documentation page](https://bhashini-iitj.github.io/IndicPhotoOCR/) created using Sphnix.
-<b>[Feburary 2025]:</b> Support for [Huggingface Demo](https://huggingface.co/spaces/Bhashini-IITJ/IndicPhotoOCR) extened to 12 languages.
+<b>[August 2025]:</b> [Project page](https://vl2g.github.io/projects/IndicPhotoOCR/) created.
+<b>[April 2025]:</b> [Documentation page](https://bhashini-iitj.github.io/IndicPhotoOCR/) created using Sphnix.
+<b>[March 2025]:</b> Support for [Huggingface Demo](https://huggingface.co/spaces/Bhashini-IITJ/IndicPhotoOCR) extened to 12 languages.
 <b>[Feburary 2025]:</b> Added option to choose between tri-lingual and 12 class script identifiction models.</br>
 <b>[Feburary 2025]:</b> Added recoginition models for Malayalam and Kannada.</br>
 <b>[January 2025]:</b> Added ViT based script identification models.</br>
