@@ -10,7 +10,7 @@ A Comprehensive Toolkit for Scene Text Recognition in Indian Languages
 ![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=Bhashini-IITJ.IndicPhotoOCR)
 ![GitHub Repo stars](https://img.shields.io/github/stars/Bhashini-IITJ/IndicPhotoOCR?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/Bhashini-IITJ/IndicPhotoOCR?style=social)
-[![Hugging Face](https://img.shields.io/badge/Hugging_Face-Demo-FF6C00?logo=Huggingface&logoColor=white)](https://huggingface.co/spaces/anikde/IndicPhotoOCR)
+[![Hugging Face](https://img.shields.io/badge/Hugging_Face-Demo-FF6C00?logo=Huggingface&logoColor=white)](https://huggingface.co/spaces/Bhashini-IITJ/IndicPhotoOCR)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1BILXjUF2kKKrzUJ_evubgLHl2busPiH2?usp=sharing#scrollTo=3v76fsYYzVvz)
 
 
