@@ -157,7 +157,8 @@ class TestEnsureModel:
              patch("IndicPhotoOCR.detection.textbpn.textbpnpp_detector.os.path.exists",
                     return_value=False), \
              patch("IndicPhotoOCR.detection.textbpn.textbpnpp_detector.os.makedirs"), \
-             patch("builtins.open", new_callable=MagicMock):
+             patch("builtins.open", new_callable=MagicMock), \
+             patch("IndicPhotoOCR.detection.textbpn.textbpnpp_detector.os.rename"):
             mod.ensure_model("textbpnpp")
             mock_get.assert_called_once()
 

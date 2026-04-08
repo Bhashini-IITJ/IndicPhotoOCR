@@ -131,8 +131,10 @@ class CLIPidentifier:
             print(f"Model not found locally. Downloading {model_name} from {url}...")
             response = requests.get(url, stream=True)
             os.makedirs(f"{root_model_dir}/models", exist_ok=True)
-            with open(f"{model_path}", "wb") as f:
+            tmp_path = model_path + ".tmp"
+            with open(tmp_path, "wb") as f:
                 f.write(response.content)
+            os.rename(tmp_path, model_path)
             print(f"Downloaded model for {model_name}.")
         
         return model_path

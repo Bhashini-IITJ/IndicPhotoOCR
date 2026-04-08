@@ -50,7 +50,8 @@ class TestVITEnsureModel:
              patch("IndicPhotoOCR.script_identification.vit.vit_infer.os.makedirs"), \
              patch("IndicPhotoOCR.script_identification.vit.vit_infer.zipfile.ZipFile"), \
              patch("IndicPhotoOCR.script_identification.vit.vit_infer.os.remove"), \
-             patch("builtins.open", new_callable=MagicMock):
+             patch("builtins.open", new_callable=MagicMock), \
+             patch("IndicPhotoOCR.script_identification.vit.vit_infer.os.rename"):
             ident.ensure_model("hindi")
             mock_get.assert_called_once()
 

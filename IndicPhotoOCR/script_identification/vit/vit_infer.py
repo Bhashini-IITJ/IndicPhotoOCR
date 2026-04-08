@@ -115,18 +115,19 @@ class VIT_identifier:
             print(f"Model not found locally. Downloading {model_name} from {url}...")
 
             response = requests.get(url, stream=True)
-            zip_path = os.path.join(model_path, "temp_download.zip")
-
-            os.makedirs(model_path, exist_ok=True)
+            tmp_model_path = model_path + "_tmp"
+            os.makedirs(tmp_model_path, exist_ok=True)
+            zip_path = os.path.join(tmp_model_path, "temp_download.zip")
 
             with open(zip_path, "wb") as file:
                 for chunk in response.iter_content(chunk_size=8192):
                     file.write(chunk)
 
             with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-                zip_ref.extractall(model_path)
+                zip_ref.extractall(tmp_model_path)
 
             os.remove(zip_path)
+            os.rename(tmp_model_path, model_path)
 
             print(f"Downloaded and extracted to {model_path}")
         

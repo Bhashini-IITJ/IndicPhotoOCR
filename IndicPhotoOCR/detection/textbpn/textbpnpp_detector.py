@@ -41,7 +41,8 @@ def ensure_model(model_name):
         total_size = int(response.headers.get('content-length', 0))
         os.makedirs(f"{root_model_dir}/models", exist_ok=True)
         
-        with open(model_path, "wb") as f, tqdm(
+        tmp_path = model_path + ".tmp"
+        with open(tmp_path, "wb") as f, tqdm(
                 desc=model_name,
                 total=total_size,
                 unit='B',
@@ -51,6 +52,8 @@ def ensure_model(model_name):
             for data in response.iter_content(chunk_size=1024):
                 f.write(data)
                 bar.update(len(data))
+        
+        os.rename(tmp_path, model_path)
 
         print(f"Downloaded model for {model_name}.")
         

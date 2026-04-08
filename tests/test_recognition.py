@@ -74,7 +74,8 @@ class TestPARseqEnsureModel:
              patch("IndicPhotoOCR.recognition.parseq_recogniser.requests.get",
                    return_value=fake_response) as mock_get, \
              patch("IndicPhotoOCR.recognition.parseq_recogniser.os.makedirs"), \
-             patch("builtins.open", new_callable=MagicMock):
+             patch("builtins.open", new_callable=MagicMock), \
+             patch("IndicPhotoOCR.recognition.parseq_recogniser.os.rename"):
             self.rec.ensure_model("hindi")
             mock_get.assert_called_once()
 
