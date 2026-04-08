@@ -94,7 +94,7 @@ processor = AutoImageProcessor.from_pretrained(pretrained_vit_model,use_fast=Tru
 
 class VIT_identifier:
     def __init__(self):
-        pass 
+        self._model_cache = {}
 
     def unzip_file(self, zip_path, extract_to):
 
@@ -141,10 +141,12 @@ class VIT_identifier:
 
 
     def identify(self, image_path,model_name, device):
-        model_path = self.ensure_model(model_name)
+        if model_name not in self._model_cache:
+            model_path = self.ensure_model(model_name)
+            vit = ViTForImageClassification.from_pretrained(model_path)
+            self._model_cache[model_name] = pipeline('image-classification', model=vit, feature_extractor=processor,device=device)
 
-        vit = ViTForImageClassification.from_pretrained(model_path)
-        model= pipeline('image-classification', model=vit, feature_extractor=processor,device=device)
+        model = self._model_cache[model_name]
 
         if image_path.endswith((".png", ".jpg", ".jpeg")):  
 

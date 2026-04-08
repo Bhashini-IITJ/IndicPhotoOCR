@@ -69,7 +69,7 @@ model_info = {
 
 class PARseqrecogniser:
     def __init__(self):
-        pass
+        self._model_cache = {}
 
     def get_transform(self, img_size: Tuple[int], augment: bool = False, rotation: int = 0):
         transforms = []
@@ -207,11 +207,14 @@ class PARseqrecogniser:
         """
         # device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-        if language != "english":
-            model_path = self.ensure_model(checkpoint)
-            model = self.load_model(device, model_path)
-        else:
-            model = torch.hub.load('baudm/parseq', 'parseq', pretrained=True, verbose=verbose).eval().to(device)
+        if language not in self._model_cache:
+            if language != "english":
+                model_path = self.ensure_model(checkpoint)
+                self._model_cache[language] = self.load_model(device, model_path)
+            else:
+                self._model_cache[language] = torch.hub.load('baudm/parseq', 'parseq', pretrained=True, verbose=verbose).eval().to(device)
+
+        model = self._model_cache[language]
 
         recognized_text = self.get_model_output(device, model, image_path)
         
