@@ -159,6 +159,26 @@ class VIT_identifier:
         
         return predicted_label
 
+    def identify_batch(self, image_paths, model_name, device, batch_size=32):
+        if model_name not in self._model_cache:
+            model_path = self.ensure_model(model_name)
+            vit = ViTForImageClassification.from_pretrained(model_path)
+            self._model_cache[model_name] = pipeline('image-classification', model=vit, feature_extractor=processor, device=device)
+
+        model = self._model_cache[model_name]
+
+        def data():
+            for path in image_paths:
+                if path.endswith((".png", ".jpg", ".jpeg")):
+                    yield Image.open(path)
+                else:
+                    yield Image.new("RGB", (64, 32))
+
+        predicted_labels = []
+        for output in model(data(), batch_size=batch_size):
+            predicted_labels.append(max(output, key=lambda x: x['score'])['label'])
+            
+        return predicted_labels
 
     def predict_batch(self, image_dir,model_name,time_show,output_csv="prediction.csv"):
         model_path = self.ensure_model(model_name)

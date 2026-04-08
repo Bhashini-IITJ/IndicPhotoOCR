@@ -244,3 +244,11 @@ class TestPARseqIntegration:
         result, conf = rec.recognise("english", repo_crop_image, "english", False, "cpu", return_confidence=True)
         assert isinstance(result, str)
         assert isinstance(conf, float)
+
+    def test_recognise_batch(self, repo_crop_image):
+        from IndicPhotoOCR.recognition.parseq_recogniser import PARseqrecogniser
+        rec = PARseqrecogniser()
+        results = rec.recognise_batch("hindi", [repo_crop_image, repo_crop_image], "hindi", False, "cpu", return_confidence=True, batch_size=2)
+        assert len(results) == 2
+        assert isinstance(results[0][0], str)
+        assert isinstance(results[0][1], float)

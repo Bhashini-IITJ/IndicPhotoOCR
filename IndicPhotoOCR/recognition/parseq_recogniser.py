@@ -108,6 +108,38 @@ class PARseqrecogniser:
             return text, confidence
         return text
 
+    def get_model_output_batch(self, device, model, image_paths, return_confidence=False, batch_size=32):
+        hp = model.hparams
+        transform = self.get_transform(hp.img_size, rotation=0)
+
+        results = []
+        for i in range(0, len(image_paths), batch_size):
+            batch_paths = image_paths[i:i + batch_size]
+            imgs = []
+            for path in batch_paths:
+                img = Image.open(path).convert('RGB')
+                imgs.append(transform(img))
+            
+            img_tensor = torch.stack(imgs).to(device)
+            
+            # Disable grad for inference speed!
+            with torch.no_grad():
+                logits = model(img_tensor)
+                probs = logits.softmax(-1)
+                preds, probs = model.tokenizer.decode(probs)
+            
+            for j in range(len(preds)):
+                text = model.charset_adapter(preds[j])
+                scores = probs[j].detach().cpu().numpy()
+                confidence = float(scores.mean()) if len(scores) > 0 else 0.0
+                
+                if return_confidence:
+                    results.append((text, confidence))
+                else:
+                    results.append(text)
+        
+        return results
+
         # Ensure model file exists; download directly if not
     def ensure_model(self, model_name):
         model_path = model_info[model_name]["path"]
@@ -225,5 +257,34 @@ class PARseqrecogniser:
         result = self.get_model_output(device, model, image_path, return_confidence=return_confidence)
         
         return result
+
+    def recognise_batch(self, checkpoint: str, image_paths: list, language: str, verbose: bool, device: str, return_confidence: bool = False, batch_size: int = 32) -> list:
+        """
+        Loads the desired model and returns recognized words for a batch of images.
+
+        Args:
+            checkpoint (str): Path to the model checkpoint file.
+            image_paths (list): List of paths to the images.
+            language (str): Language code.
+            verbose (bool): Whether to print verbose output.
+            device (str): Device to run inference on.
+            return_confidence (bool): Whether to return (text, confidence) tuples.
+            batch_size (int): Size of the image batch.
+
+        Returns:
+            list: List of recognized texts or (text, confidence) tuples.
+        """
+        if language not in self._model_cache:
+            if language != "english":
+                model_path = self.ensure_model(language)
+                self._model_cache[language] = self.load_model(device, model_path)
+            else:
+                self._model_cache[language] = torch.hub.load('baudm/parseq', 'parseq', pretrained=True).eval().to(device)
+
+        model = self._model_cache[language]
+
+        results = self.get_model_output_batch(device, model, image_paths, return_confidence=return_confidence, batch_size=batch_size)
+        
+        return results
 # if __name__ == '__main__':
 #     fire.Fire(main)
