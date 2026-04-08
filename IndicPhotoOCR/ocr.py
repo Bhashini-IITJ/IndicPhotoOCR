@@ -4,6 +4,7 @@ import torch
 from PIL import Image
 import cv2
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 # from IndicPhotoOCR.detection.east_detector import EASTdetector
@@ -168,8 +169,8 @@ class OCR:
         script_lang = self.identify(cropped_path)  # Use "hindi" as the model name
         # print(script_lang)
 
-        # Clean up temporary file
-        # os.remove(cropped_path)
+        # Caller is responsible for cleaning up the temporary file
+        # after recognition is complete.
 
         return script_lang, cropped_path
 
@@ -237,6 +238,10 @@ class OCR:
             if script_lang:
                 recognized_text = self.recognise(cropped_path, script_lang)
                 recognized_texts[f"img_{id}"] = {"txt": recognized_text, "bbox": [x1, y1, x2, y2]}
+
+            # Clean up the temporary crop file now that we are done with it
+            if os.path.exists(cropped_path):
+                os.remove(cropped_path)
 
         return detect_para(recognized_texts)
         # return recognized_words

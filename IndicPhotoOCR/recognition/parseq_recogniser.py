@@ -135,7 +135,7 @@ class PARseqrecogniser:
             
         return model_path
 
-    def bstr(checkpoint, language, image_dir, save_dir):
+    def bstr(self, checkpoint, language, image_dir, save_dir):
         """
         Runs the OCR model to process images and save the output as a JSON file.
 
@@ -151,14 +151,14 @@ class PARseqrecogniser:
         device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
 
         if language != "english":
-            model = load_model(device, checkpoint)
+            model = self.load_model(device, checkpoint)
         else:
             model = torch.hub.load('baudm/parseq', 'parseq', pretrained=True).eval().to(device)
 
         parseq_dict = {}
         for image_path in tqdm(os.listdir(image_dir)):
             assert os.path.exists(os.path.join(image_dir, image_path)) == True, f"{image_path}"
-            text = get_model_output(device, model, os.path.join(image_dir, image_path), language=f"{language}")
+            text = self.get_model_output(device, model, os.path.join(image_dir, image_path))
         
             filename = image_path.split('/')[-1]
             parseq_dict[filename] = text
@@ -168,7 +168,7 @@ class PARseqrecogniser:
             json.dump(parseq_dict, json_file, indent=4, ensure_ascii=False)
 
 
-    def bstr_onImage(checkpoint, language, image_path):
+    def bstr_onImage(self, checkpoint, language, image_path):
         """
         Runs the OCR model to process images and save the output as a JSON file.
 
@@ -184,14 +184,11 @@ class PARseqrecogniser:
         device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
 
         if language != "english":
-            model = load_model(device, checkpoint)
+            model = self.load_model(device, checkpoint)
         else:
             model = torch.hub.load('baudm/parseq', 'parseq', pretrained=True).eval().to(device)
 
-        # parseq_dict = {}
-        # for image_path in tqdm(os.listdir(image_dir)):
-        #     assert os.path.exists(os.path.join(image_dir, image_path)) == True, f"{image_path}"
-        text = get_model_output(device, model, image_path, language=f"{language}")
+        text = self.get_model_output(device, model, image_path)
         
         return text
 
