@@ -102,8 +102,9 @@ class PARseqrecogniser:
         preds, probs = model.tokenizer.decode(probs)
         text = model.charset_adapter(preds[0])
         scores = probs[0].detach().cpu().numpy()
+        confidence = float(scores.mean()) if len(scores) > 0 else 0.0
 
-        return text
+        return text, confidence
 
         # Ensure model file exists; download directly if not
     def ensure_model(self, model_name):
@@ -161,7 +162,7 @@ class PARseqrecogniser:
         parseq_dict = {}
         for image_path in tqdm(os.listdir(image_dir)):
             assert os.path.exists(os.path.join(image_dir, image_path)) == True, f"{image_path}"
-            text = self.get_model_output(device, model, os.path.join(image_dir, image_path))
+            text, _ = self.get_model_output(device, model, os.path.join(image_dir, image_path))
         
             filename = image_path.split('/')[-1]
             parseq_dict[filename] = text
@@ -191,9 +192,9 @@ class PARseqrecogniser:
         else:
             model = torch.hub.load('baudm/parseq', 'parseq', pretrained=True).eval().to(device)
 
-        text = self.get_model_output(device, model, image_path)
+        text, confidence = self.get_model_output(device, model, image_path)
         
-        return text
+        return text, confidence
 
 
     def recognise(self, checkpoint: str, image_path: str, language: str, verbose: bool, device: str) -> str:
@@ -206,7 +207,7 @@ class PARseqrecogniser:
             image_path (str): Path to the image for which text recognition is needed.
 
         Returns:
-            str: The recognized text from the image.
+            tuple: (The recognized text from the image as a string, float confidence score).
         """
         # device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
@@ -219,8 +220,8 @@ class PARseqrecogniser:
 
         model = self._model_cache[language]
 
-        recognized_text = self.get_model_output(device, model, image_path)
+        recognized_text, confidence = self.get_model_output(device, model, image_path)
         
-        return recognized_text
+        return recognized_text, confidence
 # if __name__ == '__main__':
 #     fire.Fire(main)

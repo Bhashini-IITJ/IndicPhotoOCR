@@ -147,14 +147,15 @@ class TestGetModelOutput:
         mock_model.charset_adapter.return_value = text_out
         return mock_model
 
-    def test_returns_string(self, synthetic_crop_image):
+    def test_returns_tuple_string_float(self, synthetic_crop_image):
         model = self._make_mock_model("test")
-        result = self.rec.get_model_output("cpu", model, synthetic_crop_image)
+        result, conf = self.rec.get_model_output("cpu", model, synthetic_crop_image)
         assert isinstance(result, str)
+        assert isinstance(conf, float)
 
     def test_returns_model_output_text(self, synthetic_crop_image):
         model = self._make_mock_model("नमस्ते")
-        result = self.rec.get_model_output("cpu", model, synthetic_crop_image)
+        result, _ = self.rec.get_model_output("cpu", model, synthetic_crop_image)
         assert result == "नमस्ते"
 
     def test_raises_on_nonexistent_image(self, tmp_path):
@@ -176,10 +177,11 @@ class TestRecognise:
     def test_recognise_indic_uses_ensure_model(self, synthetic_crop_image):
         with patch.object(self.rec, "ensure_model", return_value="/fake/hindi.ckpt") as m_ensure, \
              patch.object(self.rec, "load_model") as m_load, \
-             patch.object(self.rec, "get_model_output", return_value="टेस्ट"):
-            result = self.rec.recognise("hindi", synthetic_crop_image, "hindi", False, "cpu")
+             patch.object(self.rec, "get_model_output", return_value=("टेस्ट", 0.99)):
+            result, conf = self.rec.recognise("hindi", synthetic_crop_image, "hindi", False, "cpu")
             m_ensure.assert_called_once_with("hindi")
             assert result == "टेस्ट"
+            assert conf == 0.99
 
     def test_recognise_english_uses_torch_hub(self, synthetic_crop_image):
         mock_model = MagicMock()
@@ -188,17 +190,18 @@ class TestRecognise:
 
         with patch("IndicPhotoOCR.recognition.parseq_recogniser.torch.hub.load",
                    return_value=mock_model) as m_hub, \
-             patch.object(self.rec, "get_model_output", return_value="hello"):
-            result = self.rec.recognise("english", synthetic_crop_image, "english", False, "cpu")
+             patch.object(self.rec, "get_model_output", return_value=("hello", 0.99)):
+            result, conf = self.rec.recognise("english", synthetic_crop_image, "english", False, "cpu")
             m_hub.assert_called_once()
             assert result == "hello"
 
-    def test_recognise_returns_string(self, synthetic_crop_image):
+    def test_recognise_returns_tuple_string_float(self, synthetic_crop_image):
         with patch.object(self.rec, "ensure_model", return_value="/fake/m.ckpt"), \
              patch.object(self.rec, "load_model", return_value=MagicMock()), \
-             patch.object(self.rec, "get_model_output", return_value="word"):
-            result = self.rec.recognise("hindi", synthetic_crop_image, "hindi", False, "cpu")
+             patch.object(self.rec, "get_model_output", return_value=("word", 0.99)):
+            result, conf = self.rec.recognise("hindi", synthetic_crop_image, "hindi", False, "cpu")
         assert isinstance(result, str)
+        assert isinstance(conf, float)
 
     @pytest.mark.parametrize("lang", [
         "hindi", "bengali", "tamil", "telugu", "gujarati",
@@ -208,7 +211,7 @@ class TestRecognise:
         """All Indic languages should NOT go through torch.hub."""
         with patch.object(self.rec, "ensure_model", return_value="/fake/m.ckpt"), \
              patch.object(self.rec, "load_model", return_value=MagicMock()), \
-             patch.object(self.rec, "get_model_output", return_value="word"), \
+             patch.object(self.rec, "get_model_output", return_value=("word", 0.99)), \
              patch("IndicPhotoOCR.recognition.parseq_recogniser.torch.hub.load") as m_hub:
             self.rec.recognise(lang, synthetic_crop_image, lang, False, "cpu")
             m_hub.assert_not_called()
@@ -223,12 +226,14 @@ class TestPARseqIntegration:
     def test_recognise_hindi_crop(self, repo_crop_image):
         from IndicPhotoOCR.recognition.parseq_recogniser import PARseqrecogniser
         rec = PARseqrecogniser()
-        result = rec.recognise("hindi", repo_crop_image, "hindi", False, "cpu")
+        result, conf = rec.recognise("hindi", repo_crop_image, "hindi", False, "cpu")
         assert isinstance(result, str)
+        assert isinstance(conf, float)
         assert len(result) > 0
 
     def test_recognise_english_crop(self, repo_crop_image):
         from IndicPhotoOCR.recognition.parseq_recogniser import PARseqrecogniser
         rec = PARseqrecogniser()
-        result = rec.recognise("english", repo_crop_image, "english", False, "cpu")
+        result, conf = rec.recognise("english", repo_crop_image, "english", False, "cpu")
         assert isinstance(result, str)
+        assert isinstance(conf, float)
