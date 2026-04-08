@@ -109,8 +109,8 @@ class PARseqrecogniser:
     def ensure_model(self, model_name):
         model_path = model_info[model_name]["path"]
         url = model_info[model_name]["url"]
-        root_model_dir = "IndicPhotoOCR/recognition/"
-        model_path = os.path.join(root_model_dir, model_path)
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        model_path = os.path.join(current_dir, model_path)
         
         if not os.path.exists(model_path):
             print(f"Model not found locally. Downloading {model_name} from {url}...")
@@ -118,7 +118,7 @@ class PARseqrecogniser:
             # Start the download with a progress bar
             response = requests.get(url, stream=True)
             total_size = int(response.headers.get('content-length', 0))
-            os.makedirs(f"{root_model_dir}/models", exist_ok=True)
+            os.makedirs(os.path.join(current_dir, "models"), exist_ok=True)
             
             tmp_path = model_path + ".tmp"
             with open(tmp_path, "wb") as f, tqdm(

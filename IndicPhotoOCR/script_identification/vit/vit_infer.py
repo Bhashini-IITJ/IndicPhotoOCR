@@ -77,12 +77,12 @@ model_info = {
     "auto": {
         "path": "models/12_classes",
         "url" : "https://github.com/Bhashini-IITJ/ScriptIdentification/releases/download/Vit_Models/12_classes.zip",
-        "subcategories": ["hindi", "english", "assamese","bengali","gujarati","kannada","malayalam","marathi","odia","punjabi","tamil","telegu"]
+        "subcategories": ["hindi", "english", "assamese","bengali","gujarati","kannada","malayalam","marathi","odia","punjabi","tamil","telugu"]
     },
     "10C": {
         "path": "models/10_classes",
         "url" : "https://github.com/Bhashini-IITJ/ScriptIdentification/releases/download/Vit_Models/10_classes.zip",
-        "subcategories": ["hindi", "english","bengali","gujarati","kannada","malayalam","odia","punjabi","tamil","telegu"]
+        "subcategories": ["hindi", "english","bengali","gujarati","kannada","malayalam","odia","punjabi","tamil","telugu"]
     },
     
 
@@ -108,8 +108,8 @@ class VIT_identifier:
     def ensure_model(self, model_name):
         model_path = model_info[model_name]["path"]
         url = model_info[model_name]["url"]
-        root_model_dir = "IndicPhotoOCR/script_identification/vit"
-        model_path = os.path.join(root_model_dir, model_path)
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        model_path = os.path.join(current_dir, model_path)
 
         if not os.path.exists(model_path):
             print(f"Model not found locally. Downloading {model_name} from {url}...")

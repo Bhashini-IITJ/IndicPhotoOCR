@@ -5,6 +5,7 @@ from PIL import Image
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
+import tempfile
 
 
 # from IndicPhotoOCR.detection.east_detector import EASTdetector
@@ -151,10 +152,9 @@ class OCR:
         x, y, w, h = cv2.boundingRect(points)
         cropped_bbox = cropped[y:y+h, x:x+w]
 
-        root_image_dir = "IndicPhotoOCR/script_identification"
-        os.makedirs(f"{root_image_dir}/images", exist_ok=True)
         # Temporarily save the cropped image to pass to the script model
-        cropped_path = f'{root_image_dir}/images/temp_crop_{x}_{y}.jpg'
+        fd, cropped_path = tempfile.mkstemp(suffix=".jpg", prefix=f"crop_{x}_{y}_")
+        os.close(fd)
         # # Convert RGBA to RGB so as to save them
         # if cropped_image.mode == 'RGBA':
         #     cropped_image = cropped_image.convert('RGB')
