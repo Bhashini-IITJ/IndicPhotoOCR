@@ -149,13 +149,13 @@ class TestGetModelOutput:
 
     def test_returns_tuple_string_float(self, synthetic_crop_image):
         model = self._make_mock_model("test")
-        result, conf = self.rec.get_model_output("cpu", model, synthetic_crop_image)
+        result, conf = self.rec.get_model_output("cpu", model, synthetic_crop_image, return_confidence=True)
         assert isinstance(result, str)
         assert isinstance(conf, float)
 
     def test_returns_model_output_text(self, synthetic_crop_image):
         model = self._make_mock_model("नमस्ते")
-        result, _ = self.rec.get_model_output("cpu", model, synthetic_crop_image)
+        result = self.rec.get_model_output("cpu", model, synthetic_crop_image)
         assert result == "नमस्ते"
 
     def test_raises_on_nonexistent_image(self, tmp_path):
@@ -178,7 +178,7 @@ class TestRecognise:
         with patch.object(self.rec, "ensure_model", return_value="/fake/hindi.ckpt") as m_ensure, \
              patch.object(self.rec, "load_model") as m_load, \
              patch.object(self.rec, "get_model_output", return_value=("टेस्ट", 0.99)):
-            result, conf = self.rec.recognise("hindi", synthetic_crop_image, "hindi", False, "cpu")
+            result, conf = self.rec.recognise("hindi", synthetic_crop_image, "hindi", False, "cpu", return_confidence=True)
             m_ensure.assert_called_once_with("hindi")
             assert result == "टेस्ट"
             assert conf == 0.99
@@ -191,7 +191,7 @@ class TestRecognise:
         with patch("IndicPhotoOCR.recognition.parseq_recogniser.torch.hub.load",
                    return_value=mock_model) as m_hub, \
              patch.object(self.rec, "get_model_output", return_value=("hello", 0.99)):
-            result, conf = self.rec.recognise("english", synthetic_crop_image, "english", False, "cpu")
+            result, conf = self.rec.recognise("english", synthetic_crop_image, "english", False, "cpu", return_confidence=True)
             m_hub.assert_called_once()
             assert result == "hello"
 
@@ -199,9 +199,16 @@ class TestRecognise:
         with patch.object(self.rec, "ensure_model", return_value="/fake/m.ckpt"), \
              patch.object(self.rec, "load_model", return_value=MagicMock()), \
              patch.object(self.rec, "get_model_output", return_value=("word", 0.99)):
-            result, conf = self.rec.recognise("hindi", synthetic_crop_image, "hindi", False, "cpu")
+            result, conf = self.rec.recognise("hindi", synthetic_crop_image, "hindi", False, "cpu", return_confidence=True)
         assert isinstance(result, str)
         assert isinstance(conf, float)
+
+    def test_recognise_returns_string_default(self, synthetic_crop_image):
+        with patch.object(self.rec, "ensure_model", return_value="/fake/m.ckpt"), \
+             patch.object(self.rec, "load_model", return_value=MagicMock()), \
+             patch.object(self.rec, "get_model_output", return_value="word"):
+            result = self.rec.recognise("hindi", synthetic_crop_image, "hindi", False, "cpu")
+        assert isinstance(result, str)
 
     @pytest.mark.parametrize("lang", [
         "hindi", "bengali", "tamil", "telugu", "gujarati",
@@ -226,7 +233,7 @@ class TestPARseqIntegration:
     def test_recognise_hindi_crop(self, repo_crop_image):
         from IndicPhotoOCR.recognition.parseq_recogniser import PARseqrecogniser
         rec = PARseqrecogniser()
-        result, conf = rec.recognise("hindi", repo_crop_image, "hindi", False, "cpu")
+        result, conf = rec.recognise("hindi", repo_crop_image, "hindi", False, "cpu", return_confidence=True)
         assert isinstance(result, str)
         assert isinstance(conf, float)
         assert len(result) > 0
@@ -234,6 +241,6 @@ class TestPARseqIntegration:
     def test_recognise_english_crop(self, repo_crop_image):
         from IndicPhotoOCR.recognition.parseq_recogniser import PARseqrecogniser
         rec = PARseqrecogniser()
-        result, conf = rec.recognise("english", repo_crop_image, "english", False, "cpu")
+        result, conf = rec.recognise("english", repo_crop_image, "english", False, "cpu", return_confidence=True)
         assert isinstance(result, str)
         assert isinstance(conf, float)

@@ -174,7 +174,7 @@ class OCR:
 
         return script_lang, cropped_path
 
-    def recognise(self, cropped_image_path, script_lang):
+    def recognise(self, cropped_image_path, script_lang, return_confidence=False):
         """
         Recognize text in a cropped image using the identified script model.
         
@@ -183,14 +183,14 @@ class OCR:
             script_lang (str): Identified script language.
         
         Returns:
-            tuple: (Recognized text as string, float confidence score).
+            str or tuple: Recognized text. If return_confidence is True, returns (text, confidence).
         """
         """Recognize text in a cropped image area using the identified script."""
         if self.verbose:
             print("Recognizing text in detected area...")
-        recognized_text, confidence = self.recogniser.recognise(script_lang, cropped_image_path, script_lang, self.verbose, self.device)
+        result = self.recogniser.recognise(script_lang, cropped_image_path, script_lang, self.verbose, self.device, return_confidence=return_confidence)
         # print(recognized_text)
-        return recognized_text, confidence
+        return result
 
     def ocr(self, image_path):
         """
@@ -236,7 +236,7 @@ class OCR:
             y2 = max([bbox[i][1] for i in range(len(bbox))])
 
             if script_lang:
-                recognized_text, confidence = self.recognise(cropped_path, script_lang)
+                recognized_text, confidence = self.recognise(cropped_path, script_lang, return_confidence=True)
                 recognized_texts[f"img_{id}"] = {"txt": recognized_text, "bbox": [x1, y1, x2, y2], "confidence": confidence}
 
             # Clean up the temporary crop file now that we are done with it

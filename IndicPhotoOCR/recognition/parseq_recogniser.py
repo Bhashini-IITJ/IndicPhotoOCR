@@ -90,7 +90,7 @@ class PARseqrecogniser:
         model = load_from_checkpoint(checkpoint).eval().to(device)
         return model
 
-    def get_model_output(self, device, model, image_path):
+    def get_model_output(self, device, model, image_path, return_confidence=False):
         hp = model.hparams
         transform = self.get_transform(hp.img_size, rotation=0)
 
@@ -104,7 +104,9 @@ class PARseqrecogniser:
         scores = probs[0].detach().cpu().numpy()
         confidence = float(scores.mean()) if len(scores) > 0 else 0.0
 
-        return text, confidence
+        if return_confidence:
+            return text, confidence
+        return text
 
         # Ensure model file exists; download directly if not
     def ensure_model(self, model_name):
@@ -162,7 +164,7 @@ class PARseqrecogniser:
         parseq_dict = {}
         for image_path in tqdm(os.listdir(image_dir)):
             assert os.path.exists(os.path.join(image_dir, image_path)) == True, f"{image_path}"
-            text, _ = self.get_model_output(device, model, os.path.join(image_dir, image_path))
+            text = self.get_model_output(device, model, os.path.join(image_dir, image_path))
         
             filename = image_path.split('/')[-1]
             parseq_dict[filename] = text
@@ -192,12 +194,12 @@ class PARseqrecogniser:
         else:
             model = torch.hub.load('baudm/parseq', 'parseq', pretrained=True).eval().to(device)
 
-        text, confidence = self.get_model_output(device, model, image_path)
+        text = self.get_model_output(device, model, image_path)
         
-        return text, confidence
+        return text
 
 
-    def recognise(self, checkpoint: str, image_path: str, language: str, verbose: bool, device: str) -> str:
+    def recognise(self, checkpoint: str, image_path: str, language: str, verbose: bool, device: str, return_confidence: bool = False):
         """
         Loads the desired model and returns the recognized word from the specified image.
 
@@ -207,7 +209,7 @@ class PARseqrecogniser:
             image_path (str): Path to the image for which text recognition is needed.
 
         Returns:
-            tuple: (The recognized text from the image as a string, float confidence score).
+            str or tuple: The recognized text from the image as a string. If return_confidence is True, returns (text, confidence) tuple.
         """
         # device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
@@ -220,8 +222,8 @@ class PARseqrecogniser:
 
         model = self._model_cache[language]
 
-        recognized_text, confidence = self.get_model_output(device, model, image_path)
+        result = self.get_model_output(device, model, image_path, return_confidence=return_confidence)
         
-        return recognized_text, confidence
+        return result
 # if __name__ == '__main__':
 #     fire.Fire(main)

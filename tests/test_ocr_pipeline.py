@@ -36,7 +36,9 @@ def _make_fake_identifier(label="hindi"):
 
 def _make_fake_recogniser(text="टेस्ट", conf=0.95):
     mock = MagicMock()
-    mock.recognise.return_value = (text, conf)
+    def side_effect(*args, **kwargs):
+        return (text, conf) if kwargs.get("return_confidence", False) else text
+    mock.recognise.side_effect = side_effect
     return mock
 
 
@@ -181,16 +183,20 @@ class TestCropAndIdentifyScript:
 class TestOCRRecognise:
     def test_recognise_returns_tuple_string_float(self, synthetic_crop_image):
         ocr = _build_ocr()
-        result, conf = ocr.recognise(synthetic_crop_image, "hindi")
+        result, conf = ocr.recognise(synthetic_crop_image, "hindi", return_confidence=True)
         assert isinstance(result, str)
         assert isinstance(conf, float)
+
+    def test_recognise_returns_string_default(self, synthetic_crop_image):
+        ocr = _build_ocr()
+        result = ocr.recognise(synthetic_crop_image, "hindi")
+        assert isinstance(result, str)
 
     def test_recognise_delegates_to_recogniser(self, synthetic_crop_image):
         fake_rec = _make_fake_recogniser("मण्डी")
         ocr = _build_ocr(recogniser=fake_rec)
-        result, conf = ocr.recognise(synthetic_crop_image, "hindi")
+        result = ocr.recognise(synthetic_crop_image, "hindi")
         assert result == "मण्डी"
-        assert conf == 0.95
         fake_rec.recognise.assert_called_once()
 
     def test_recognise_passes_language_and_image(self, synthetic_crop_image):
