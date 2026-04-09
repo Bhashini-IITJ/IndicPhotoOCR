@@ -183,4 +183,12 @@ If you use IndicPhotoOCR in your research, please cite us:
 |:---------------------------------:|
 | **[Anand Mishra](https://anandmishra22.github.io/)** - Project Investigator |
 
-**🙏 Acknowledgements:** TextBPN++, PARseq, and Bhashini. Contact: [anekde@gmail.com](mailto:anekde@gmail.com).
+## 🙏 Acknowledgements
+- **Text Recognition**: [PARseq](https://github.com/baudm/parseq)
+- **Text Detection**: TextBPN++ [Original Repository](https://github.com/GXYM/TextBPN-Plus-Plus)
+- **EAST Re-implementation**: [EAST Repository](https://github.com/foamliu/EAST)
+- **National Language Translation Mission**: [Bhashini](https://bhashini.gov.in/)
+
+## 📬 Contact us
+For any queries, please contact us at:
+- **[Anik De](mailto:anekde@gmail.com)**
