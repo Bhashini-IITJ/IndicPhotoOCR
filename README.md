@@ -145,6 +145,9 @@ print(f"Recognized: {text} | Certainty: {conf_score * 100:.2f}%")
 ## 📚 Related Datasets & Citations
 - **Bharat Scene Text Dataset** - [BSTD](https://github.com/Bhashini-IITJ/BharatSceneTextDataset)
 
+> [!NOTE]
+> 🎉 **Our paper has been officially accepted in IJDAR** (International Journal on Document Analysis and Recognition)!
+
 If you use IndicPhotoOCR in your research, please cite us:
 ```bibtex
 @misc{ipo,
