@@ -18,7 +18,9 @@ A Comprehensive Toolkit for Scene Text Recognition in Indian Languages
 </div>
 <hr style="width: 100%; border: 1px solid #000;">
 
-Welcome to **IndicPhotoOCR**! ⚡ We've built an extremely fast, robust, and comprehensive scene text recognition toolkit designed for detecting, identifying, and recognizing text across **12 Indian languages** (plus English). 
+Welcome to **IndicPhotoOCR**! ⚡ We've built an extremely fast, robust, and comprehensive scene text recognition toolkit designed for detecting, identifying, and recognizing text across **11 Indian languages** (plus English). 
+
+**Supported Languages:** Assamese, Bengali, Gujarati, Hindi, Kannada, Malayalam, Marathi, Odia, Punjabi, Tamil, Telugu, and English. (with Urdu and Meitei in the pipeline!)
 
 It is expertly crafted to handle the unique scripts and complex structures of Indian languages. And with our latest **v2 upgrades**, it runs up to **5x faster** natively, with built-in support for **Batch Inference** and precision **Confidence Scoring**! 🔥
 
@@ -78,6 +80,13 @@ ocr_system = OCR(verbose=False, identifier_lang="auto", device="cuda:0")
 
 # Boom! Run the whole pipeline natively
 results = ocr_system.ocr("test_images/image_141.jpg")
+
+# The output is a structured list of lines (paragraphs), where each line is a list of words sequentially ordered left-to-right!
+# Example Output:
+# [
+#    ["राजीव", "चौक", "मेट्रो", "स्टेशन"],   <-- Line 1
+#    ["Rajiv", "Chowk", "Metro", "Station"]  <-- Line 2
+# ]
 
 # 🔥 PRO-TIP: Process very large images with thousands of words concurrently!
 fast_results = ocr_system.ocr("test_images/image_141.jpg", batch_size=32)
@@ -145,7 +154,6 @@ print(f"Recognized: {text} | Certainty: {conf_score * 100:.2f}%")
 ## 📚 Related Datasets & Citations
 - **Bharat Scene Text Dataset** - [BSTD](https://github.com/Bhashini-IITJ/BharatSceneTextDataset)
 
-> [!NOTE]
 > 🎉 **Our paper has been officially accepted in IJDAR** (International Journal on Document Analysis and Recognition)!
 
 If you use IndicPhotoOCR in your research, please cite us:
