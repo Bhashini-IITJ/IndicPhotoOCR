@@ -69,7 +69,7 @@ model_info = {
 
 class PARseqrecogniser:
     def __init__(self):
-        pass
+        self._model_cache = {}
 
     def get_transform(self, img_size: Tuple[int], augment: bool = False, rotation: int = 0):
         transforms = []
@@ -90,7 +90,7 @@ class PARseqrecogniser:
         model = load_from_checkpoint(checkpoint).eval().to(device)
         return model
 
-    def get_model_output(self, device, model, image_path):
+    def get_model_output(self, device, model, image_path, return_confidence=False):
         hp = model.hparams
         transform = self.get_transform(hp.img_size, rotation=0)
 
@@ -102,15 +102,50 @@ class PARseqrecogniser:
         preds, probs = model.tokenizer.decode(probs)
         text = model.charset_adapter(preds[0])
         scores = probs[0].detach().cpu().numpy()
+        confidence = float(scores.mean()) if len(scores) > 0 else 0.0
 
+        if return_confidence:
+            return text, confidence
         return text
+
+    def get_model_output_batch(self, device, model, image_paths, return_confidence=False, batch_size=32):
+        hp = model.hparams
+        transform = self.get_transform(hp.img_size, rotation=0)
+
+        results = []
+        for i in range(0, len(image_paths), batch_size):
+            batch_paths = image_paths[i:i + batch_size]
+            imgs = []
+            for path in batch_paths:
+                img = Image.open(path).convert('RGB')
+                imgs.append(transform(img))
+            
+            img_tensor = torch.stack(imgs).to(device)
+            
+            # Disable grad for inference speed!
+            with torch.no_grad():
+                logits = model(img_tensor)
+                probs = logits.softmax(-1)
+                preds, probs = model.tokenizer.decode(probs)
+            
+            for j in range(len(preds)):
+                text = model.charset_adapter(preds[j])
+                scores = probs[j].detach().cpu().numpy()
+                confidence = float(scores.mean()) if len(scores) > 0 else 0.0
+                
+                if return_confidence:
+                    results.append((text, confidence))
+                else:
+                    results.append(text)
+        
+        return results
 
         # Ensure model file exists; download directly if not
     def ensure_model(self, model_name):
         model_path = model_info[model_name]["path"]
         url = model_info[model_name]["url"]
-        root_model_dir = "IndicPhotoOCR/recognition/"
-        model_path = os.path.join(root_model_dir, model_path)
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        model_path = os.path.join(current_dir, model_path)
         
         if not os.path.exists(model_path):
             print(f"Model not found locally. Downloading {model_name} from {url}...")
@@ -118,9 +153,10 @@ class PARseqrecogniser:
             # Start the download with a progress bar
             response = requests.get(url, stream=True)
             total_size = int(response.headers.get('content-length', 0))
-            os.makedirs(f"{root_model_dir}/models", exist_ok=True)
+            os.makedirs(os.path.join(current_dir, "models"), exist_ok=True)
             
-            with open(model_path, "wb") as f, tqdm(
+            tmp_path = model_path + ".tmp"
+            with open(tmp_path, "wb") as f, tqdm(
                     desc=model_name,
                     total=total_size,
                     unit='B',
@@ -130,12 +166,14 @@ class PARseqrecogniser:
                 for data in response.iter_content(chunk_size=1024):
                     f.write(data)
                     bar.update(len(data))
+            
+            os.rename(tmp_path, model_path)
 
             print(f"Downloaded model for {model_name}.")
             
         return model_path
 
-    def bstr(checkpoint, language, image_dir, save_dir):
+    def bstr(self, checkpoint, language, image_dir, save_dir):
         """
         Runs the OCR model to process images and save the output as a JSON file.
 
@@ -151,14 +189,14 @@ class PARseqrecogniser:
         device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
 
         if language != "english":
-            model = load_model(device, checkpoint)
+            model = self.load_model(device, checkpoint)
         else:
             model = torch.hub.load('baudm/parseq', 'parseq', pretrained=True).eval().to(device)
 
         parseq_dict = {}
         for image_path in tqdm(os.listdir(image_dir)):
             assert os.path.exists(os.path.join(image_dir, image_path)) == True, f"{image_path}"
-            text = get_model_output(device, model, os.path.join(image_dir, image_path), language=f"{language}")
+            text = self.get_model_output(device, model, os.path.join(image_dir, image_path))
         
             filename = image_path.split('/')[-1]
             parseq_dict[filename] = text
@@ -168,7 +206,7 @@ class PARseqrecogniser:
             json.dump(parseq_dict, json_file, indent=4, ensure_ascii=False)
 
 
-    def bstr_onImage(checkpoint, language, image_path):
+    def bstr_onImage(self, checkpoint, language, image_path):
         """
         Runs the OCR model to process images and save the output as a JSON file.
 
@@ -184,19 +222,16 @@ class PARseqrecogniser:
         device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
 
         if language != "english":
-            model = load_model(device, checkpoint)
+            model = self.load_model(device, checkpoint)
         else:
             model = torch.hub.load('baudm/parseq', 'parseq', pretrained=True).eval().to(device)
 
-        # parseq_dict = {}
-        # for image_path in tqdm(os.listdir(image_dir)):
-        #     assert os.path.exists(os.path.join(image_dir, image_path)) == True, f"{image_path}"
-        text = get_model_output(device, model, image_path, language=f"{language}")
+        text = self.get_model_output(device, model, image_path)
         
         return text
 
 
-    def recognise(self, checkpoint: str, image_path: str, language: str, verbose: bool, device: str) -> str:
+    def recognise(self, checkpoint: str, image_path: str, language: str, verbose: bool, device: str, return_confidence: bool = False):
         """
         Loads the desired model and returns the recognized word from the specified image.
 
@@ -206,18 +241,50 @@ class PARseqrecogniser:
             image_path (str): Path to the image for which text recognition is needed.
 
         Returns:
-            str: The recognized text from the image.
+            str or tuple: The recognized text from the image as a string. If return_confidence is True, returns (text, confidence) tuple.
         """
         # device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-        if language != "english":
-            model_path = self.ensure_model(checkpoint)
-            model = self.load_model(device, model_path)
-        else:
-            model = torch.hub.load('baudm/parseq', 'parseq', pretrained=True, verbose=verbose).eval().to(device)
+        if language not in self._model_cache:
+            if language != "english":
+                model_path = self.ensure_model(checkpoint)
+                self._model_cache[language] = self.load_model(device, model_path)
+            else:
+                self._model_cache[language] = torch.hub.load('baudm/parseq', 'parseq', pretrained=True, verbose=verbose).eval().to(device)
 
-        recognized_text = self.get_model_output(device, model, image_path)
+        model = self._model_cache[language]
+
+        result = self.get_model_output(device, model, image_path, return_confidence=return_confidence)
         
-        return recognized_text
+        return result
+
+    def recognise_batch(self, checkpoint: str, image_paths: list, language: str, verbose: bool, device: str, return_confidence: bool = False, batch_size: int = 32) -> list:
+        """
+        Loads the desired model and returns recognized words for a batch of images.
+
+        Args:
+            checkpoint (str): Path to the model checkpoint file.
+            image_paths (list): List of paths to the images.
+            language (str): Language code.
+            verbose (bool): Whether to print verbose output.
+            device (str): Device to run inference on.
+            return_confidence (bool): Whether to return (text, confidence) tuples.
+            batch_size (int): Size of the image batch.
+
+        Returns:
+            list: List of recognized texts or (text, confidence) tuples.
+        """
+        if language not in self._model_cache:
+            if language != "english":
+                model_path = self.ensure_model(language)
+                self._model_cache[language] = self.load_model(device, model_path)
+            else:
+                self._model_cache[language] = torch.hub.load('baudm/parseq', 'parseq', pretrained=True).eval().to(device)
+
+        model = self._model_cache[language]
+
+        results = self.get_model_output_batch(device, model, image_paths, return_confidence=return_confidence, batch_size=batch_size)
+        
+        return results
 # if __name__ == '__main__':
 #     fire.Fire(main)

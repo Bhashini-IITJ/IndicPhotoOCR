@@ -4,6 +4,8 @@ import torch
 from PIL import Image
 import cv2
 import numpy as np
+import matplotlib.pyplot as plt
+import tempfile
 
 
 # from IndicPhotoOCR.detection.east_detector import EASTdetector
@@ -113,67 +115,26 @@ class OCR:
     def identify(self, cropped_path):
         return self.identifier.identify(cropped_path, self.indentifier_lang, self.device)
         
-    def crop_and_identify_script(self, image, bbox):
-        """
-        Crop a text area from the image and identify its script language.
-
-        Args:
-            image (PIL.Image): The full image.
-            bbox (list): List of four corner points, each a [x, y] pair.
-
-        Returns:
-            str: Identified script language.
-            str: Path to the cropped image.
-        """
-        # # Extract x and y coordinates from the four corner points
-        # x_coords = [point[0] for point in bbox]
-        # y_coords = [point[1] for point in bbox]
-
-        # # Get the bounding box coordinates (min and max)
-        # x_min, y_min = min(x_coords), min(y_coords)
-        # x_max, y_max = max(x_coords), max(y_coords)
-
-        # # Crop the image based on the bounding box
-        # cropped_image = image.crop((x_min, y_min, x_max, y_max))
-        
-        # Convert list to numpy array
+    def crop_bbox(self, image, bbox):
         points = np.array(bbox, np.int32)
-
-        # Create a mask to extract the polygonal region
         mask = np.zeros_like(image[:, :, 0], dtype=np.uint8)
         cv2.fillPoly(mask, [points], 255)
-
-        # Apply the mask to extract the region
         cropped = cv2.bitwise_and(image, image, mask=mask)
-
-        # Find bounding rectangle to crop the region
         x, y, w, h = cv2.boundingRect(points)
         cropped_bbox = cropped[y:y+h, x:x+w]
-
-        root_image_dir = "IndicPhotoOCR/script_identification"
-        os.makedirs(f"{root_image_dir}/images", exist_ok=True)
-        # Temporarily save the cropped image to pass to the script model
-        cropped_path = f'{root_image_dir}/images/temp_crop_{x}_{y}.jpg'
-        # # Convert RGBA to RGB so as to save them
-        # if cropped_image.mode == 'RGBA':
-        #     cropped_image = cropped_image.convert('RGB')
-        #     cropped_image.save(cropped_path)
-        # else:
-        #     cropped_image.save(cropped_path)
+        fd, cropped_path = tempfile.mkstemp(suffix=".jpg", prefix=f"crop_{x}_{y}_")
+        os.close(fd)
         cv2.imwrite(cropped_path, cropped_bbox)
+        return cropped_path
 
-        # Predict script language, here we assume "hindi" as the model name
+    def crop_and_identify_script(self, image, bbox):
+        cropped_path = self.crop_bbox(image, bbox)
         if self.verbose:
             print("Identifying script for the cropped area...")
-        script_lang = self.identify(cropped_path)  # Use "hindi" as the model name
-        # print(script_lang)
-
-        # Clean up temporary file
-        # os.remove(cropped_path)
-
+        script_lang = self.identifier.identify(cropped_path, "auto", self.device)
         return script_lang, cropped_path
 
-    def recognise(self, cropped_image_path, script_lang):
+    def recognise(self, cropped_image_path, script_lang, return_confidence=False):
         """
         Recognize text in a cropped image using the identified script model.
         
@@ -182,21 +143,22 @@ class OCR:
             script_lang (str): Identified script language.
         
         Returns:
-            str: Recognized text.
+            str or tuple: Recognized text. If return_confidence is True, returns (text, confidence).
         """
         """Recognize text in a cropped image area using the identified script."""
         if self.verbose:
             print("Recognizing text in detected area...")
-        recognized_text = self.recogniser.recognise(script_lang, cropped_image_path, script_lang, self.verbose, self.device)
+        result = self.recogniser.recognise(script_lang, cropped_image_path, script_lang, self.verbose, self.device, return_confidence=return_confidence)
         # print(recognized_text)
-        return recognized_text
+        return result
 
-    def ocr(self, image_path):
+    def ocr(self, image_path, batch_size=0):
         """
         Perform end-to-end OCR: detect text, identify script, and recognize text.
         
         Args:
             image_path (str): Path to the input image.
+            batch_size (int): Size of batches for script identification and recognition models. If 0, uses sequential execution.
         
         Returns:
             dict: Recognized text with corresponding bounding boxes.
@@ -208,22 +170,47 @@ class OCR:
         # Run detection
         detections = self.detect(image_path)
 
-        # Process each detected text area
-        # for bbox in detections:
-            # # Crop and identify script language
-            # script_lang, cropped_path = self.crop_and_identify_script(image, bbox)
+        if batch_size > 0:
+            cropped_paths = []
+            for id, bbox in enumerate(detections):
+                cropped_path = self.crop_bbox(image, bbox)
+                cropped_paths.append(cropped_path)
+                
+            if self.verbose:
+                print(f"Identifying script languages in batch (size={len(cropped_paths)})...")
+                
+            if len(cropped_paths) > 0:
+                script_langs = self.identifier.identify_batch(cropped_paths, "auto", self.device, batch_size=batch_size)
+                
+                langs_to_crops = {}
+                for id, (lang, path) in enumerate(zip(script_langs, cropped_paths)):
+                    if lang not in langs_to_crops:
+                        langs_to_crops[lang] = []
+                    langs_to_crops[lang].append((id, path))
+                    
+                for lang, items in langs_to_crops.items():
+                    paths = [item[1] for item in items]
+                    ids = [item[0] for item in items]
+                    if self.verbose:
+                        print(f"Recognizing {len(paths)} {lang} crops in batch...")
+                    results = self.recogniser.recognise_batch(lang, paths, lang, self.verbose, self.device, return_confidence=True, batch_size=batch_size)
+                    
+                    for (id, (text, conf)) in zip(ids, results):
+                        bbox = detections[id]
+                        x1 = min([bbox[i][0] for i in range(len(bbox))])
+                        y1 = min([bbox[i][1] for i in range(len(bbox))])
+                        x2 = max([bbox[i][0] for i in range(len(bbox))])
+                        y2 = max([bbox[i][1] for i in range(len(bbox))])
+                        
+                        recognized_texts[f"img_{id}"] = {"txt": text, "bbox": [x1, y1, x2, y2], "confidence": conf}
+            
+            for path in cropped_paths:
+                if os.path.exists(path):
+                    os.remove(path)
+                    
+            return detect_para(recognized_texts)
 
-            # # Check if the script language is valid
-            # if script_lang:
-
-            #     # Recognize text
-            #     recognized_word = self.recognise(cropped_path, script_lang)
-            #     recognized_words.append(recognized_word)
-
-            #     if self.verbose:
-            #         print(f"Recognized word: {recognized_word}")
-
-
+        # Original Sequential Execution
         for id, bbox in enumerate(detections):
             # Identify the script and crop the image to this region
             script_lang, cropped_path = self.crop_and_identify_script(image, bbox)
@@ -235,8 +222,12 @@ class OCR:
             y2 = max([bbox[i][1] for i in range(len(bbox))])
 
             if script_lang:
-                recognized_text = self.recognise(cropped_path, script_lang)
-                recognized_texts[f"img_{id}"] = {"txt": recognized_text, "bbox": [x1, y1, x2, y2]}
+                recognized_text, confidence = self.recognise(cropped_path, script_lang, return_confidence=True)
+                recognized_texts[f"img_{id}"] = {"txt": recognized_text, "bbox": [x1, y1, x2, y2], "confidence": confidence}
+
+            # Clean up the temporary crop file now that we are done with it
+            if os.path.exists(cropped_path):
+                os.remove(cropped_path)
 
         return detect_para(recognized_texts)
         # return recognized_words

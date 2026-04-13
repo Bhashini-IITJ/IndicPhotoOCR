@@ -77,12 +77,12 @@ model_info = {
     "auto": {
         "path": "models/12_classes",
         "url" : "https://github.com/Bhashini-IITJ/ScriptIdentification/releases/download/Vit_Models/12_classes.zip",
-        "subcategories": ["hindi", "english", "assamese","bengali","gujarati","kannada","malayalam","marathi","odia","punjabi","tamil","telegu"]
+        "subcategories": ["hindi", "english", "assamese","bengali","gujarati","kannada","malayalam","marathi","odia","punjabi","tamil","telugu"]
     },
     "10C": {
         "path": "models/10_classes",
         "url" : "https://github.com/Bhashini-IITJ/ScriptIdentification/releases/download/Vit_Models/10_classes.zip",
-        "subcategories": ["hindi", "english","bengali","gujarati","kannada","malayalam","odia","punjabi","tamil","telegu"]
+        "subcategories": ["hindi", "english","bengali","gujarati","kannada","malayalam","odia","punjabi","tamil","telugu"]
     },
     
 
@@ -94,7 +94,7 @@ processor = AutoImageProcessor.from_pretrained(pretrained_vit_model,use_fast=Tru
 
 class VIT_identifier:
     def __init__(self):
-        pass 
+        self._model_cache = {}
 
     def unzip_file(self, zip_path, extract_to):
 
@@ -108,25 +108,26 @@ class VIT_identifier:
     def ensure_model(self, model_name):
         model_path = model_info[model_name]["path"]
         url = model_info[model_name]["url"]
-        root_model_dir = "IndicPhotoOCR/script_identification/vit"
-        model_path = os.path.join(root_model_dir, model_path)
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        model_path = os.path.join(current_dir, model_path)
 
         if not os.path.exists(model_path):
             print(f"Model not found locally. Downloading {model_name} from {url}...")
 
             response = requests.get(url, stream=True)
-            zip_path = os.path.join(model_path, "temp_download.zip")
-
-            os.makedirs(model_path, exist_ok=True)
+            tmp_model_path = model_path + "_tmp"
+            os.makedirs(tmp_model_path, exist_ok=True)
+            zip_path = os.path.join(tmp_model_path, "temp_download.zip")
 
             with open(zip_path, "wb") as file:
                 for chunk in response.iter_content(chunk_size=8192):
                     file.write(chunk)
 
             with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-                zip_ref.extractall(model_path)
+                zip_ref.extractall(tmp_model_path)
 
             os.remove(zip_path)
+            os.rename(tmp_model_path, model_path)
 
             print(f"Downloaded and extracted to {model_path}")
         
@@ -141,10 +142,12 @@ class VIT_identifier:
 
 
     def identify(self, image_path,model_name, device):
-        model_path = self.ensure_model(model_name)
+        if model_name not in self._model_cache:
+            model_path = self.ensure_model(model_name)
+            vit = ViTForImageClassification.from_pretrained(model_path)
+            self._model_cache[model_name] = pipeline('image-classification', model=vit, feature_extractor=processor,device=device)
 
-        vit = ViTForImageClassification.from_pretrained(model_path)
-        model= pipeline('image-classification', model=vit, feature_extractor=processor,device=device)
+        model = self._model_cache[model_name]
 
         if image_path.endswith((".png", ".jpg", ".jpeg")):  
 
@@ -156,6 +159,26 @@ class VIT_identifier:
         
         return predicted_label
 
+    def identify_batch(self, image_paths, model_name, device, batch_size=32):
+        if model_name not in self._model_cache:
+            model_path = self.ensure_model(model_name)
+            vit = ViTForImageClassification.from_pretrained(model_path)
+            self._model_cache[model_name] = pipeline('image-classification', model=vit, feature_extractor=processor, device=device)
+
+        model = self._model_cache[model_name]
+
+        def data():
+            for path in image_paths:
+                if path.endswith((".png", ".jpg", ".jpeg")):
+                    yield Image.open(path)
+                else:
+                    yield Image.new("RGB", (64, 32))
+
+        predicted_labels = []
+        for output in model(data(), batch_size=batch_size):
+            predicted_labels.append(max(output, key=lambda x: x['score'])['label'])
+            
+        return predicted_labels
 
     def predict_batch(self, image_dir,model_name,time_show,output_csv="prediction.csv"):
         model_path = self.ensure_model(model_name)
