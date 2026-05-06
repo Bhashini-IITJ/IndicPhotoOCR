@@ -18,17 +18,16 @@ A Comprehensive Toolkit for Scene Text Recognition in Indian Languages
 </div>
 <hr style="width: 100%; border: 1px solid #000;">
 
-Welcome to **IndicPhotoOCR**! ⚡ We've built an extremely fast, robust, and comprehensive scene text recognition toolkit designed for detecting, identifying, and recognizing text across **11 Indian languages** (plus English). 
+Welcome to **IndicPhotoOCR**! ⚡ We've built an fast, robust, and comprehensive scene text recognition toolkit designed for detecting, identifying, and recognizing text across **11 Indian languages** (plus English). 
 
 **Supported Languages:** Assamese, Bengali, Gujarati, Hindi, Kannada, Malayalam, Marathi, Odia, Punjabi, Tamil, Telugu, and English. (with Urdu and Meitei in the pipeline!)
 
-It is expertly crafted to handle the unique scripts and complex structures of Indian languages. And with our latest **v2 upgrades**, it runs up to **5x faster** natively, with built-in support for **Batch Inference** and precision **Confidence Scoring**! 🔥
+It is expertly crafted to handle the unique scripts and complex structures of Indian languages. And with our latest **upgrades**, it runs **faster** natively, with built-in support for **Batch Inference** and precision **Confidence Scoring**! 🔥
 
 ![](static/pics/visualizeIndicPhotoOCR.png)
 <hr style="width: 100%; border: 1px solid #000;">
 
 ## ✨ What's New & Exciting?
-- 🚀 **Lightning Fast Caching**: The pipeline now intelligently caches models in GPU memory, drastically accelerating sequential scans by **~80% (5x Speedup)** out of the box!
 - ⚡ **Batch Inference Engine**: Got an image with hundreds of words? Just pass `batch_size=32` into the core engine to process bounding boxes concurrently, slashing execution times even further.
 - 🎯 **Confidence Scores**: Our public APIs now optionally expose exact neural network confidence probabilities so you can reliably filter out low-certainty predictions or calculate metrics.
 - 🛡️ **Atomic & Self-Contained**: Auto-downloads models safely without corrupting, and uses system-agnostic absolute paths so you can run it from anywhere.
@@ -36,7 +35,7 @@ It is expertly crafted to handle the unique scripts and complex structures of In
 <hr style="width: 100%; border: 1px solid #000;">
 
 ## 📅 Updates Timeline
-<b>[April 2026]:</b> Added Batch Inference Engine, Model Caching, and Neural Confidence Scores resulting in ~5x speedup.</br>
+<b>[April 2026]:</b> Added Batch Inference Engine, Model Caching, and Neural Confidence Scores resulting in better speedup.</br>
 <b>[August 2025]:</b> [Project page](https://vl2g.github.io/projects/IndicPhotoOCR/) created.</br>
 <b>[April 2025]:</b> [Documentation page](https://bhashini-iitj.github.io/IndicPhotoOCR/) created using Sphnix.</br>
 <b>[March 2025]:</b> Support for [Huggingface Demo](https://huggingface.co/spaces/Bhashini-IITJ/IndicPhotoOCR) extened to 12 languages.</br>
