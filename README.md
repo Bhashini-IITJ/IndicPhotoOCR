@@ -6,7 +6,7 @@ A Comprehensive Toolkit for Scene Text Recognition in Indian Languages
 </p>
 <div align="center">
 
-[![Open Source](https://img.shields.io/badge/Open%20Source-Bhashini-FF6C00)](https://bhashini.gov.in/)
+<!-- [![Open Source](https://img.shields.io/badge/Open%20Source-Bhashini-FF6C00)](https://bhashini.gov.in/)
 ![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=Bhashini-IITJ.IndicPhotoOCR)
 ![GitHub Repo stars](https://img.shields.io/github/stars/Bhashini-IITJ/IndicPhotoOCR?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/Bhashini-IITJ/IndicPhotoOCR?style=social)
@@ -15,6 +15,18 @@ A Comprehensive Toolkit for Scene Text Recognition in Indian Languages
 [![Hugging Face](https://img.shields.io/badge/Hugging_Face-Demo-FF6C00?logo=Huggingface&logoColor=white)](https://huggingface.co/spaces/Bhashini-IITJ/IndicPhotoOCR)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1BILXjUF2kKKrzUJ_evubgLHl2busPiH2?usp=sharing#scrollTo=3v76fsYYzVvz)
 [![Documentation](https://img.shields.io/badge/Documentation-Click%20Here-007BFF?style=for-the-badge&logo=ReadTheDocs&logoColor=white)](https://bhashini-iitj.github.io/IndicPhotoOCR/)
+[![Project Page](https://img.shields.io/badge/Project%20Page-View%20Details-6C63FF?style=for-the-badge&logo=academia&logoColor=white)](https://vl2g.github.io/projects/IndicPhotoOCR/) -->
+[![Open Source](https://img.shields.io/badge/Open%20Source-Bhashini-FF6C00?style=for-the-badge)](https://bhashini.gov.in/)
+![Visitors](https://img.shields.io/badge/Visitors-4373-0A66C2?style=for-the-badge)
+[![Stars](https://img.shields.io/github/stars/Bhashini-IITJ/IndicPhotoOCR?style=for-the-badge)](https://github.com/Bhashini-IITJ/IndicPhotoOCR)
+
+[![Forks](https://img.shields.io/github/forks/Bhashini-IITJ/IndicPhotoOCR?style=for-the-badge)](https://github.com/Bhashini-IITJ/IndicPhotoOCR)
+[![arXiv](https://img.shields.io/badge/arXiv-2401.01234-B31B1B?style=for-the-badge&logo=arxiv&logoColor=white)](https://www.arxiv.org/pdf/2511.23071)
+[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Demo-FF6C00?style=for-the-badge&logo=huggingface&logoColor=white)](https://huggingface.co/spaces/Bhashini-IITJ/IndicPhotoOCR)
+
+[![Colab](https://img.shields.io/badge/Colab-Open%20Notebook-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white)](https://colab.research.google.com/drive/1BILXjUF2kKKrzUJ_evubgLHl2busPiH2)
+[![Documentation](https://img.shields.io/badge/Documentation-Click%20Here-007BFF?style=for-the-badge&logo=readthedocs&logoColor=white)](https://bhashini-iitj.github.io/IndicPhotoOCR/)
+[![Project Page](https://img.shields.io/badge/Project%20Page-View%20Details-6C63FF?style=for-the-badge&logo=academia&logoColor=white)](https://vl2g.github.io/projects/IndicPhotoOCR/)
 </div>
 <hr style="width: 100%; border: 1px solid #000;">
 
