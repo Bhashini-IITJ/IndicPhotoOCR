@@ -4,6 +4,7 @@ import re
 import string
 from collections import defaultdict
 import jiwer
+import argparse
 
 # --- CONFIGURATION ---
 TARGET_LANGUAGES = {
