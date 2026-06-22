@@ -98,10 +98,20 @@ results = ocr_system.ocr("test_images/image_141.jpg")
 #    ["राजीव", "चौक", "मेट्रो", "स्टेशन"],   <-- Line 1
 #    ["Rajiv", "Chowk", "Metro", "Station"]  <-- Line 2
 # ]
-
-# 🔥 PRO-TIP: Process very large images with thousands of words concurrently!
 fast_results = ocr_system.ocr("test_images/image_141.jpg", batch_size=32)
 ```
+
+### Inference and Evaluation on BSTD
+```python
+# run the following script while providing path to directory of images
+python end-to-end-Inference.py --path </path/to/images>
+# by default it will create indicPhotoOCR_predictions.json
+
+# use the following script to reproduce the results provided in the IJDAR version
+python end-to-end-Evaluation.py -g <path/to/bstd/json> -p indicPhotoOCR.json
+# bstd json is in the first section named as BSTD_17.57.json in repository
+```
+
 
 ### 🎯 Modular Execution (Advanced)
 If you do not want to run the entire pipeline at once, you can hook into individual modules manually:
