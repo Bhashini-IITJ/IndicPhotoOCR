@@ -15,30 +15,30 @@ parser = argparse.ArgumentParser(
         """
     )
 
-    parser.add_argument(
-        '--path', '-p',
-        type=str,
-        required=True,
-        help='Path to directory containing images'
-    )
-    parser.add_argument(
-        '--output', '-o',
-        type=str,
-        default='IndicPhotoOCR_predictions.json',
-        help='Output JSON file for predictions (default: IndicPhotoOCR_predictions.json)'
-    )
-    parser.add_argument(
-        '--exceptions', '-e',
-        type=str,
-        default='exceptions.log',
-        help='Log file for exceptions (default: exceptions.log)'
-    )
-    parser.add_argument(
-        '--retries', '-r',
-        type=int,
-        default=2,
-        help='Maximum number of retry attempts (default: 2) if GPU runs into OOM'
-    )
+parser.add_argument(
+    '--path', '-p',
+    type=str,
+    required=True,
+    help='Path to directory containing images'
+)
+parser.add_argument(
+    '--output', '-o',
+    type=str,
+    default='IndicPhotoOCR_predictions.json',
+    help='Output JSON file for predictions (default: IndicPhotoOCR_predictions.json)'
+)
+parser.add_argument(
+    '--exceptions', '-e',
+    type=str,
+    default='exceptions.log',
+    help='Log file for exceptions (default: exceptions.log)'
+)
+parser.add_argument(
+    '--retries', '-r',
+    type=int,
+    default=2,
+    help='Maximum number of retry attempts (default: 2) if GPU runs into OOM'
+)
 
 args = parser.parse_args()
 
@@ -54,10 +54,10 @@ if not os.path.isdir(path):
     exit(1)
 # Initialize OCR Instances
 print("Initializing primary GPU OCR instance...")
-ocr_gpu = OCR(identifier_lang="auto", device="cuda", verbose=False)
+ocr_gpu = OCR(identifier_lang="auto", device="cuda", verbose=False, detector="east")
 
 print("Initializing fallback CPU OCR instance for retries...")
-ocr_cpu = OCR(identifier_lang="auto", device="cpu", verbose=False)
+ocr_cpu = OCR(identifier_lang="auto", device="cpu", verbose=False, detector="east")
 
 results = {}
 exception_images = []
