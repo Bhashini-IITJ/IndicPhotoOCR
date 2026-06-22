@@ -61,6 +61,7 @@ setup(
         'six==1.16.0',
         'matplotlib==3.9.0',
         'pytest==8.4.2',
+        'jiwer==4.0.0'
 
     ],
     extras_require={
