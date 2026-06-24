@@ -67,13 +67,12 @@ Currently demo supports scene images containing bi-lingual Hindi and English tex
 
 We recommend creating a virtual environment before installing:
 ```bash
-conda create -n indicphotoocr python=3.9 -y
+conda create -n indicphotoocr python=3.10 -y
 conda activate indicphotoocr
 
 git clone https://github.com/Bhashini-IITJ/IndicPhotoOCR.git
 cd IndicPhotoOCR
-chmod +x setup.sh
-./setup.sh
+pip install -e .
 ```
 
 <hr style="width: 100%; border: 1px solid #000;">
