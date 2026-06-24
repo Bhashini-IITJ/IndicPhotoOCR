@@ -20,7 +20,7 @@ setup(
         'attrs==24.2.0',
         'certifi==2024.8.30',
         'charset-normalizer==3.4.0',
-        'click==8.1.7',
+        'click',
         'datasets==3.1.0',
         'filelock==3.20.3',
         'frozenlist==1.5.0',
