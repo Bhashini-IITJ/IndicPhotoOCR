@@ -8,11 +8,11 @@ import matplotlib.pyplot as plt
 import tempfile
 
 
-# from IndicPhotoOCR.detection.east_detector import EASTdetector
+from IndicPhotoOCR.detection.east.east_detector import EASTdetector
 # from IndicPhotoOCR.script_identification.CLIP_identifier import CLIPidentifier
 from IndicPhotoOCR.script_identification.vit.vit_infer import VIT_identifier
 from IndicPhotoOCR.recognition.parseq_recogniser import PARseqrecogniser
-import IndicPhotoOCR.detection.east_config as cfg
+import IndicPhotoOCR.detection.east.east_config as cfg
 from IndicPhotoOCR.detection.textbpn.textbpnpp_detector import TextBPNpp_detector
 
 from IndicPhotoOCR.utils.helper import detect_para
@@ -30,17 +30,44 @@ class OCR:
                             'gujarati', 'marathi', 'punjabi', 'odia', 'assamese', 'urdu', 'meitei']
         verbose (bool): Whether to print detailed processing information.
     """
-    def __init__(self, device='cuda:0', identifier_lang='hindi', verbose=False):
+    def __init__(self, device='cuda:0', identifier_lang='hindi', verbose=False, detector='textbpn'):
         # self.detect_model_checkpoint = detect_model_checkpoint
+        # Original device string (e.g. 'cuda', 'cuda:0', or 'cpu')
         self.device = device
+        # Torch device object for PyTorch models
+        try:
+            self.torch_device = torch.device(device)
+        except Exception:
+            # Fallback: default to cpu
+            self.torch_device = torch.device('cpu')
+        # Transformers pipeline expects an int (GPU index) or -1 for CPU
+        if isinstance(device, str) and 'cuda' in device:
+            # pick GPU 0 by default when user passes 'cuda'
+            self.pipeline_device = 0
+        elif isinstance(device, str) and device.startswith('cuda:'):
+            try:
+                self.pipeline_device = int(device.split(':', 1)[1])
+            except Exception:
+                self.pipeline_device = 0
+        else:
+            self.pipeline_device = -1
         self.verbose = verbose
+        self.detector_name = detector.lower()
         # self.image_path = image_path
-        # self.detector = EASTdetector()
-        self.detector = TextBPNpp_detector(device=self.device)
+        # detectors expect a string device (they call torch.device internally)
+        if self.detector_name == "east":
+            self.detector = EASTdetector(device=str(self.torch_device))
+        elif self.detector_name in {"textbpn", "textbpnpp"}:
+            self.detector = TextBPNpp_detector(device=str(self.torch_device))
+        else:
+            raise ValueError("detector must be one of: 'east', 'textbpn', 'textbpnpp'")
         self.recogniser = PARseqrecogniser()
         # self.identifier = CLIPidentifier()
         self.identifier = VIT_identifier()
         self.indentifier_lang = identifier_lang
+        # expose devices for downstream calls: pipeline (int) and torch (torch.device)
+        self._pipeline_device = self.pipeline_device
+        self._torch_device = self.torch_device
 
     # def detect(self, image_path, detect_model_checkpoint=cfg.checkpoint):
     #     """Run the detection model to get bounding boxes of text areas."""
@@ -113,25 +140,57 @@ class OCR:
             print(f"Image saved at: {path_to_save}")
         
     def identify(self, cropped_path):
-        return self.identifier.identify(cropped_path, self.indentifier_lang, self.device)
+        return self.identifier.identify(cropped_path, self.indentifier_lang, self._pipeline_device)
         
     def crop_bbox(self, image, bbox):
+        h_img, w_img = image.shape[:2]
         points = np.array(bbox, np.int32)
-        mask = np.zeros_like(image[:, :, 0], dtype=np.uint8)
+
+        # Clamp polygon points to image bounds to avoid negative coordinates
+        points[:, 0] = np.clip(points[:, 0], 0, w_img - 1)
+        points[:, 1] = np.clip(points[:, 1], 0, h_img - 1)
+
+        mask = np.zeros((h_img, w_img), dtype=np.uint8)
         cv2.fillPoly(mask, [points], 255)
         cropped = cv2.bitwise_and(image, image, mask=mask)
         x, y, w, h = cv2.boundingRect(points)
+
+        # If bounding rect is empty, return None so callers can skip it
+        if w <= 0 or h <= 0:
+            if self.verbose:
+                print("Warning: empty crop for bbox:", bbox)
+            return None
+
         cropped_bbox = cropped[y:y+h, x:x+w]
+        if cropped_bbox.size == 0:
+            if self.verbose:
+                print("Warning: cropped image is empty for bbox:", bbox)
+            return None
+
         fd, cropped_path = tempfile.mkstemp(suffix=".jpg", prefix=f"crop_{x}_{y}_")
         os.close(fd)
-        cv2.imwrite(cropped_path, cropped_bbox)
+        success = cv2.imwrite(cropped_path, cropped_bbox)
+        if not success:
+            if self.verbose:
+                print("Failed to write cropped image to", cropped_path)
+            try:
+                os.remove(cropped_path)
+            except Exception:
+                pass
+            return None
+
         return cropped_path
 
     def crop_and_identify_script(self, image, bbox):
         cropped_path = self.crop_bbox(image, bbox)
+        if cropped_path is None:
+            if self.verbose:
+                print("Skipping bbox due to empty crop:", bbox)
+            return None, None
+
         if self.verbose:
             print("Identifying script for the cropped area...")
-        script_lang = self.identifier.identify(cropped_path, "auto", self.device)
+        script_lang = self.identifier.identify(cropped_path, "auto", self._pipeline_device)
         return script_lang, cropped_path
 
     def recognise(self, cropped_image_path, script_lang, return_confidence=False):
@@ -148,7 +207,7 @@ class OCR:
         """Recognize text in a cropped image area using the identified script."""
         if self.verbose:
             print("Recognizing text in detected area...")
-        result = self.recogniser.recognise(script_lang, cropped_image_path, script_lang, self.verbose, self.device, return_confidence=return_confidence)
+        result = self.recogniser.recognise(script_lang, cropped_image_path, script_lang, self.verbose, self._torch_device, return_confidence=return_confidence)
         # print(recognized_text)
         return result
 
@@ -180,7 +239,7 @@ class OCR:
                 print(f"Identifying script languages in batch (size={len(cropped_paths)})...")
                 
             if len(cropped_paths) > 0:
-                script_langs = self.identifier.identify_batch(cropped_paths, "auto", self.device, batch_size=batch_size)
+                script_langs = self.identifier.identify_batch(cropped_paths, "auto", self._pipeline_device, batch_size=batch_size)
                 
                 langs_to_crops = {}
                 for id, (lang, path) in enumerate(zip(script_langs, cropped_paths)):
@@ -193,7 +252,7 @@ class OCR:
                     ids = [item[0] for item in items]
                     if self.verbose:
                         print(f"Recognizing {len(paths)} {lang} crops in batch...")
-                    results = self.recogniser.recognise_batch(lang, paths, lang, self.verbose, self.device, return_confidence=True, batch_size=batch_size)
+                    results = self.recogniser.recognise_batch(lang, paths, lang, self.verbose, self._torch_device, return_confidence=True, batch_size=batch_size)
                     
                     for (id, (text, conf)) in zip(ids, results):
                         bbox = detections[id]
