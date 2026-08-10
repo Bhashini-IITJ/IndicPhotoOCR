@@ -111,6 +111,27 @@ python end-to-end-Evaluation.py -g <path/to/bstd/json> -p indicPhotoOCR.json
 # bstd json is in the first section named as BSTD_17.57.json in repository
 ```
 
+### 🤖 Open Source Models Evaluation (Surya OCR & Tesseract OCR)
+Evaluate open-source baseline models (Surya OCR and Tesseract OCR) on scene text datasets:
+
+```bash
+# Evaluate Surya OCR model
+python open_source_models/evaluate_surya_full_scene.py \
+    -t <path/to/images> \
+    -g <path/to/gt.json> \
+    -o <path/to/output_dir>
+
+# Evaluate Tesseract OCR model
+python open_source_models/evaluate_tesseract_full_scene.py \
+    -t <path/to/images> \
+    -g <path/to/gt.json> \
+    -o <path/to/output_dir>
+
+# Optional: Run in crop mode (crop GT bounding boxes before recognition)
+python open_source_models/evaluate_surya_full_scene.py -t <path/to/images> -g <path/to/gt.json> -o <path/to/output_dir> --use_crops
+```
+
+
 
 ### 🎯 Modular Execution (Advanced)
 If you do not want to run the entire pipeline at once, you can hook into individual modules manually:
