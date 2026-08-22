@@ -175,11 +175,14 @@ print(f"Recognized: {text} | Certainty: {conf_score * 100:.2f}%")
 
 If you use IndicPhotoOCR in your research, please cite us:
 ```bibtex
-@article{de2025bharat,
-  title={Bharat Scene Text: A Novel Comprehensive Dataset and Benchmark for Indian Language Scene Text Understanding},
-  author={De, Anik and Penamakuri, Abhirama Subramanyam and Yadav, Rajeev and Rathore, Aditya and Shah, Harshiv and Sharma, Devesh and Agarwal, Sagar and Kumar, Pravin and Mishra, Anand},
-  journal={arXiv preprint arXiv:2511.23071},
-  year={2025}
+@article{De2026,
+  author    = {De, Anik and Penamakuri, Abhirama Subramanyam and Yadav, Rajeev and Rathore, Aditya and Shah, Harshiv and Sharma, Devesh and Agarwal, Sagar and Kumar, Pravin and Mishra, Anand},
+  title     = {Bharat scene text: a novel comprehensive dataset and benchmark for indian language scene text understanding},
+  journal   = {International Journal on Document Analysis and Recognition (IJDAR)},
+  year      = {2026},
+  issn      = {1433-2825},
+  doi       = {10.1007/s10032-026-00583-9},
+  url       = {https://doi.org/10.1007/s10032-026-00583-9}
 }
 ```
 
