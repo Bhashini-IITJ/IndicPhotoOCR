@@ -2,10 +2,6 @@
 
 <div align="center">
 
-[![GitHub stars](https://img.shields.io/github/stars/Bhashini-IITJ/BharatSceneTextDataset.svg?style=social&label=Star&maxAge=2592000)](https://github.com/Bhashini-IITJ/BharatSceneTextDataset/stargazers/)
-![Visitors](https://visitor-badge.laobi.icu/badge?page_id=Bhashini-IITJ.BharatSceneTextDataset)
-[![arXiv](https://img.shields.io/badge/arXiv-2401.01234-b31b1b.svg?style=flat-square)](https://www.arxiv.org/pdf/2511.23071)
-
 
 </div>
 
@@ -157,13 +153,6 @@ The model supports for 11 Indian languages and English, which is why images with
 
 > 📥 **Data Download**: The set of images used for evaluation in IJDAR version can be found **[here](https://drive.google.com/drive/folders/1-N28ZE-wJzN3sZFXmyGo51tRwtxQITm2?usp=sharing)**.
  
----
-
-## 🛠️ IndicPhotoOCR Toolkit
-
-The open-source **[IndicPhotoOCR](https://github.com/Bhashini-IITJ/IndicPhotoOCR)** toolkit acts as the official strong baseline designed to detect, identify, and recognize text in English and 11 Indian languages.
-
-Detailed documentation and robust models for usage of the toolkit are available at the **[IndicPhotoOCR Project Page](https://vl2g.github.io/projects/IndicPhotoOCR/)**.
 
 ---
 
@@ -211,13 +200,3 @@ For any queries, please reach out:
 - [Abhirama Subramanyam](mailto:penamakuri.1@iitj.ac.in)
 - [Anik De](mailto:anikde@iitj.ac.in)
 
-## 📝 Citation
-If you use this benchmark or the tools, please cite our underlying works:
-```bibtex
-@article{de2025bharat,
-  title={Bharat Scene Text: A Novel Comprehensive Dataset and Benchmark for Indian Language Scene Text Understanding},
-  author={De, Anik and Penamakuri, Abhirama Subramanyam and Yadav, Rajeev and Rathore, Aditya and Shah, Harshiv and Sharma, Devesh and Agarwal, Sagar and Kumar, Pravin and Mishra, Anand},
-  journal={arXiv preprint arXiv:2511.23071},
-  year={2025}
-}
-```
