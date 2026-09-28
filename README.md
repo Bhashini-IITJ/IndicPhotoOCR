@@ -87,13 +87,69 @@ results = ocr_system.ocr("test_images/image_141.jpg")
 fast_results = ocr_system.ocr("test_images/image_141.jpg", batch_size=32)
 ```
 
+### Script identification backends
+
+This test branch uses **EfficientNetV2-L by default**. Detection and recognition
+models are unchanged. The identifier uses 288×288 RGB crops, bilinear resizing
+with antialiasing, and ImageNet normalization. Class order comes from the
+checkpoint: Hindi, English, Assamese, Bengali, Gujarati, Kannada, Malayalam,
+Marathi, Odia, Punjabi, Tamil, and Telugu. It always predicts across these 12
+classes; `identifier_lang` does not restrict EfficientNet predictions.
+
+```python
+# Default: EfficientNetV2-L (weights download automatically if missing)
+ocr_system = OCR(device="cuda:0", identifier_lang="auto")
+
+# Optional original ViT backend
+vit_system = OCR(device="cuda:0", identifier_lang="auto", identifier_type="vit")
+
+# Optional local EfficientNet checkpoint (verified against the release checksum)
+local_system = OCR(device="cuda:0", identifier_checkpoint="/path/to/efficientnetv2_l_script_id.pth")
+```
+
+The default EfficientNet checkpoint is stored relative to the installed module:
+`IndicPhotoOCR/script_identification/efficientnet/models/efficientnet/efficientnetv2_l_script_id.pth`.
+This directory must be writable for automatic downloads. An explicit
+`identifier_checkpoint` can point to another writable location.
+
+The [test checkpoint release](https://github.com/dikshant-sharma05/IndicPhotoOCR/releases/tag/efficientnetv2-l-v1.0-test)
+hosts the inference-only weights (471,575,150 bytes). Downloads show progress,
+use a temporary file, and verify SHA-256 before installation. Existing weights
+are also verified. Expected SHA-256:
+
+```text
+74b6f6e8f7f77b0d2dc1c6f0684bac718ac2b82247bcc393dad804fa4ea15709
+```
+
+Detection and required recognition weights download separately when missing.
+The first prediction can include recognizer loading/downloads; subsequent
+predictions reuse models within the same `OCR` instance. The smaller checkpoint
+removes training state, not model weights, and does not reduce inference computation.
+
+### Automated tests
+
+Run from the repository root in an environment with the package dependencies
+and pytest installed:
+
+```bash
+python -m pytest tests/test_efficientnet_identifier.py tests/test_ocr_pipeline.py
+```
+
+Unit tests mock downloads and heavy models; no GPU or checkpoint downloads are
+needed. Existing integration tests are skipped unless `--run-integration` is
+passed. A real end-to-end validation on this test branch completed 20 images
+twice without errors and with identical outputs between passes. Exported versus
+original V2-L weights also produced identical script predictions on 439 crops.
+These checks do not establish that EfficientNet is more accurate than ViT.
+
 ### Inference and Evaluation on BSTD
 ```python
 # run the following script while providing path to directory of images
 python end-to-end-Inference.py --path </path/to/images>
 # by default it will create indicPhotoOCR_predictions.json
 
-# use the following script to reproduce the results provided in the IJDAR version
+# Historical IJDAR results use the original model setup, not the new default.
+# Select the original ViT backend in the inference script to reproduce that setup.
 python end-to-end-Evaluation.py -g <path/to/bstd/json> -p indicPhotoOCR.json
 # bstd json is in the first section named as BSTD_17.57.json in repository
 ```
