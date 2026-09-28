@@ -63,9 +63,9 @@ class EfficientNetIdentifier:
         """
         self.device = torch.device(device)
         if checkpoint_path is None:
-            # User-writable cache, including when installed in site-packages.
-            checkpoint_path = (Path.home() / ".cache" / "IndicPhotoOCR" /
-                               "script_identification" / "efficientnet" /
+            # Match the other identifiers: store weights beside this module.
+            checkpoint_path = (Path(__file__).resolve().parent /
+                               model_info[model_name]["path"] /
                                model_info[model_name]["filename"])
         download_model_from_release(model_name, checkpoint_path)
         checkpoint = torch.load(checkpoint_path, map_location="cpu",
@@ -194,5 +194,4 @@ class EfficientNetIdentifier:
                 item_top = [(self.classes[idx.item()], prob.item()) for idx, prob in zip(indices, scores)]
                 results.append(item_top)
         return results
-
 
