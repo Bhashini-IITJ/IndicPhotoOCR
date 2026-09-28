@@ -70,6 +70,12 @@ class OCR:
         if self.detector_name == "east":
             self.detector = EASTdetector(device=str(self.torch_device))
         elif self.detector_name in {"textbpn", "textbpnpp"}:
+            from IndicPhotoOCR.detection.textbpn.cfglib.config import config as detector_config
+            # Match the verified runner: use the requested device and the
+            # existing rectangular-image inference path (not a square canvas).
+            detector_config.device = self.torch_device
+            detector_config.cuda = self.torch_device.type == 'cuda'
+            detector_config.exp_name = "MLT2019"
             self.detector = TextBPNpp_detector(device=str(self.torch_device))
         else:
             raise ValueError("detector must be one of: 'east', 'textbpn', 'textbpnpp'")

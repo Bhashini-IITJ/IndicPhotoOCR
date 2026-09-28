@@ -144,3 +144,36 @@ def test_invalid_backend_rejected():
     from IndicPhotoOCR.ocr import OCR
     with pytest.raises(ValueError, match="identifier_type"):
         OCR(device="cpu", identifier_type="invalid")
+
+
+@pytest.mark.parametrize("bad_index", [0, 1, 2])
+def test_failed_crop_keeps_original_position(identifier, synthetic_crop_image, tmp_path, bad_index):
+    paths = [synthetic_crop_image] * 3
+    paths[bad_index] = str(tmp_path / "missing.jpg")
+    expected = ["english"] * 3
+    expected[bad_index] = "hindi"
+    assert identifier.identify_batch(paths, batch_size=2) == expected
+    top_k = identifier.identify_batch_top_k(paths, top_k=1, batch_size=2)
+    assert [item[0][0] for item in top_k] == expected
+
+
+def test_all_failed_crops_keep_length(identifier, tmp_path):
+    paths = [str(tmp_path / "missing.jpg")] * 3
+    assert identifier.identify_batch(paths, batch_size=2) == ["hindi"] * 3
+    assert identifier.identify_batch_top_k(paths, batch_size=2) == [[("hindi", 1.0)]] * 3
+
+
+@pytest.mark.parametrize("device", ["cpu", "cuda:0", "cuda:1"])
+def test_detector_settings_applied_before_loading(device):
+    from IndicPhotoOCR.ocr import OCR
+    from IndicPhotoOCR.detection.textbpn.cfglib.config import config
+    def construct(**kwargs):
+        assert config.device == torch.device(device)
+        assert config.cuda == (torch.device(device).type == "cuda")
+        assert config.exp_name == "MLT2019"
+        return MagicMock()
+    with patch.dict(config, dict(config)), \
+         patch("IndicPhotoOCR.ocr.TextBPNpp_detector", side_effect=construct), \
+         patch("IndicPhotoOCR.ocr.PARseqrecogniser"), \
+         patch("IndicPhotoOCR.ocr.EfficientNetIdentifier"):
+        OCR(device=device)

@@ -134,18 +134,20 @@ class EfficientNetIdentifier:
         for i in range(0, len(cropped_paths), batch_size):
             batch_paths = cropped_paths[i:i + batch_size]
             batch_tensors = []
-            valid_paths = []
+            valid_indices = []
+            batch_results = [self.classes[0]] * len(batch_paths)
             
-            for path in batch_paths:
+            for index, path in enumerate(batch_paths):
                 try:
                     image = Image.open(path).convert('RGB')
                     batch_tensors.append(self.transform(image))
-                    valid_paths.append(path)
+                    valid_indices.append(index)
                 except Exception:
-                    # If an image fails to load, append a fallback label to maintain order
-                    results.append(self.classes[0]) 
+                    # Leave the fallback at this crop's original position.
+                    pass
                     
             if not batch_tensors:
+                results.extend(batch_results)
                 continue
                 
             input_batch = torch.stack(batch_tensors).to(target_device)
@@ -156,7 +158,9 @@ class EfficientNetIdentifier:
                 
             # Map predictions to class names
             batch_langs = [self.classes[idx.item()] for idx in predicted]
-            results.extend(batch_langs)
+            for index, label in zip(valid_indices, batch_langs):
+                batch_results[index] = label
+            results.extend(batch_results)
         return results
 
     def identify_top_k(self, cropped_path, top_k=3, lang_hint="auto", device=None):
@@ -185,15 +189,19 @@ class EfficientNetIdentifier:
         for i in range(0, len(cropped_paths), batch_size):
             batch_paths = cropped_paths[i:i + batch_size]
             batch_tensors = []
+            valid_indices = []
+            batch_results = [[(self.classes[0], 1.0)] for _ in batch_paths]
             
-            for path in batch_paths:
+            for index, path in enumerate(batch_paths):
                 try:
                     image = Image.open(path).convert('RGB')
                     batch_tensors.append(self.transform(image))
+                    valid_indices.append(index)
                 except Exception:
-                    results.append([(self.classes[0], 1.0)])
+                    pass
                     
             if not batch_tensors:
+                results.extend(batch_results)
                 continue
                 
             input_batch = torch.stack(batch_tensors).to(target_device)
@@ -203,7 +211,8 @@ class EfficientNetIdentifier:
                 probs = torch.softmax(outputs, dim=1)
                 top_probs, top_indices = torch.topk(probs, k=min(top_k, len(self.classes)), dim=1)
                 
-            for indices, scores in zip(top_indices, top_probs):
+            for index, indices, scores in zip(valid_indices, top_indices, top_probs):
                 item_top = [(self.classes[idx.item()], prob.item()) for idx, prob in zip(indices, scores)]
-                results.append(item_top)
+                batch_results[index] = item_top
+            results.extend(batch_results)
         return results
