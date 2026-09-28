@@ -8,6 +8,7 @@ import urllib.request
 import hashlib
 import tempfile
 from pathlib import Path
+from tqdm import tqdm
 
 model_info = {
     "efficientnet_v2_l": {
@@ -44,7 +45,19 @@ def download_model_from_release(model_name, save_path):
     os.close(fd)
     try:
         print(f"Downloading model from {model_data['url']}...")
-        urllib.request.urlretrieve(model_data["url"], temporary)
+        with tqdm(desc="EfficientNetV2-L", unit="B", unit_scale=True,
+                  unit_divisor=1024) as progress:
+            def report_progress(block_count, block_size, total_size):
+                if total_size > 0:
+                    progress.total = total_size
+                downloaded = block_count * block_size
+                if total_size > 0:
+                    downloaded = min(downloaded, total_size)
+                progress.update(max(0, downloaded - progress.n))
+
+            urllib.request.urlretrieve(model_data["url"], temporary,
+                                       reporthook=report_progress)
+        print("Download complete. Verifying checkpoint SHA-256...")
         _verify_checksum(temporary, model_data["sha256"])
         os.replace(temporary, save_path)
     finally:
@@ -194,4 +207,3 @@ class EfficientNetIdentifier:
                 item_top = [(self.classes[idx.item()], prob.item()) for idx, prob in zip(indices, scores)]
                 results.append(item_top)
         return results
-
