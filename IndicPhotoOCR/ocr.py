@@ -10,7 +10,8 @@ import tempfile
 
 from IndicPhotoOCR.detection.east.east_detector import EASTdetector
 # from IndicPhotoOCR.script_identification.CLIP_identifier import CLIPidentifier
-from IndicPhotoOCR.script_identification.vit.vit_infer import VIT_identifier
+# from IndicPhotoOCR.script_identification.vit.vit_infer import VIT_identifier
+from IndicPhotoOCR.script_identification.efficientnet.efficientnet_infer import EfficientNetIdentifier
 from IndicPhotoOCR.recognition.parseq_recogniser import PARseqrecogniser
 import IndicPhotoOCR.detection.east.east_config as cfg
 from IndicPhotoOCR.detection.textbpn.textbpnpp_detector import TextBPNpp_detector
@@ -29,8 +30,19 @@ class OCR:
             Valid options: ['hindi', 'bengali', 'tamil', 'telugu', 'malayalam', 'kannada',
                             'gujarati', 'marathi', 'punjabi', 'odia', 'assamese', 'urdu', 'meitei']
         verbose (bool): Whether to print detailed processing information.
+        identifier_type (str): 'efficientnet' (default) or 'vit'. EfficientNet
+            uses the verified 12-class checkpoint regardless of identifier_lang.
+        identifier_checkpoint (str): Optional local EfficientNet checkpoint.
+            If omitted, the verified release asset is downloaded and cached.
     """
-    def __init__(self, device='cuda:0', identifier_lang='hindi', verbose=False, detector='textbpn'):
+    def __init__(self, device='cuda:0', identifier_lang='hindi', verbose=False,
+                 detector='textbpn', identifier_type='efficientnet',
+                 identifier_checkpoint=None):
+        self.identifier_type = identifier_type.lower()
+        if self.identifier_type not in {'efficientnet', 'vit'}:
+            raise ValueError("identifier_type must be 'efficientnet' or 'vit'")
+        if self.identifier_type == 'vit' and identifier_checkpoint is not None:
+            raise ValueError("identifier_checkpoint is only supported for EfficientNet")
         # self.detect_model_checkpoint = detect_model_checkpoint
         # Original device string (e.g. 'cuda', 'cuda:0', or 'cpu')
         self.device = device
@@ -58,15 +70,29 @@ class OCR:
         if self.detector_name == "east":
             self.detector = EASTdetector(device=str(self.torch_device))
         elif self.detector_name in {"textbpn", "textbpnpp"}:
+            from IndicPhotoOCR.detection.textbpn.cfglib.config import config as detector_config
+            # Match the verified runner: use the requested device and the
+            # existing rectangular-image inference path (not a square canvas).
+            detector_config.device = self.torch_device
+            detector_config.cuda = self.torch_device.type == 'cuda'
+            detector_config.exp_name = "MLT2019"
             self.detector = TextBPNpp_detector(device=str(self.torch_device))
         else:
             raise ValueError("detector must be one of: 'east', 'textbpn', 'textbpnpp'")
         self.recogniser = PARseqrecogniser()
         # self.identifier = CLIPidentifier()
-        self.identifier = VIT_identifier()
+        # self.identifier = VIT_identifier()
+        if self.identifier_type == 'efficientnet':
+            self.identifier = EfficientNetIdentifier(
+                checkpoint_path=identifier_checkpoint, device=str(self.torch_device))
+        else:
+            from IndicPhotoOCR.script_identification.vit.vit_infer import VIT_identifier
+            self.identifier = VIT_identifier()
         self.indentifier_lang = identifier_lang
         # expose devices for downstream calls: pipeline (int) and torch (torch.device)
-        self._pipeline_device = self.pipeline_device
+        self._pipeline_device = (str(self.torch_device)
+                                 if self.identifier_type == 'efficientnet'
+                                 else self.pipeline_device)
         self._torch_device = self.torch_device
 
     # def detect(self, image_path, detect_model_checkpoint=cfg.checkpoint):
