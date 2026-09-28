@@ -33,6 +33,7 @@ Welcome to **IndicPhotoOCR**! ⚡ We've built an scene text recognition toolkit 
 <hr style="width: 100%; border: 1px solid #000;">
 
 ## 📅 Updates Timeline
+<b>[September 2026]:</b> Improved script identification with EfficientNetV2-L, boosting overall WRR by 2%.</br>
 <b>[August 2026]:</b> Oral presentation [ICDAR 2026](https://icdar2026.org/) in Vienna, Austria.</br> 
 <b>[April 2026]:</b> Accepted at International Journal on Document Analysis and Recognition (IJDAR) 20026.</br>
 <b>[August 2025]:</b> [Project page](https://vl2g.github.io/projects/IndicPhotoOCR/) created.</br>
