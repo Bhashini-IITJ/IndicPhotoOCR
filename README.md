@@ -50,6 +50,9 @@ Currently demo supports scene images containing bi-lingual Hindi and English tex
 
 <hr style="width: 100%; border: 1px solid #000;">
 
+## Release Version
+IJDAR 2026 version of the repo: [commit-52011ea](https://github.com/Bhashini-IITJ/IndicPhotoOCR/commits/52011ea4ecd3dc26b79d8da664cf282de0dd801a/)
+
 ## 📦 Quick Installation
 
 We recommend creating a virtual environment before installing:
