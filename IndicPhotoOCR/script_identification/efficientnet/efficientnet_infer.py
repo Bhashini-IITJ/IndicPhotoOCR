@@ -81,7 +81,8 @@ class EfficientNetIdentifier:
                                model_info[model_name]["path"] /
                                model_info[model_name]["filename"])
         download_model_from_release(model_name, checkpoint_path)
-        checkpoint = torch.load(checkpoint_path, map_location="cpu",
+        # Older PyTorch releases require a string filename when mmap=True.
+        checkpoint = torch.load(str(checkpoint_path), map_location="cpu",
                                 weights_only=True, mmap=True)
         if checkpoint.get("architecture") != "efficientnet_v2_l":
             raise ValueError("Expected an EfficientNetV2-L checkpoint")

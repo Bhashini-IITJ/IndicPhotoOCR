@@ -41,6 +41,18 @@ def test_strict_loading_and_eval(identifier):
     assert identifier.classes == CLASSES
 
 
+def test_checkpoint_path_is_string_for_mmap(fake_checkpoint):
+    model = MagicMock()
+    model.classifier = [None, MagicMock(in_features=1280)]
+    checkpoint_path = Path("/fake/weights.pth")
+    with patch.object(module, "download_model_from_release"), \
+         patch.object(module.torch, "load", return_value=fake_checkpoint) as load, \
+         patch.object(module, "efficientnet_v2_l", return_value=model):
+        module.EfficientNetIdentifier(checkpoint_path, device="cpu")
+    load.assert_called_once_with(str(checkpoint_path), map_location="cpu",
+                                 weights_only=True, mmap=True)
+
+
 def test_preprocessing(identifier):
     tensor = identifier.transform(Image.new("RGB", (50, 20), (255, 255, 255)))
     assert tensor.shape == (3, 288, 288)
