@@ -1,0 +1,11 @@
+.git
+**/__pycache__
+*.egg-info
+build/
+dist/
+# downloaded checkpoints are fetched (and SHA-256 verified) at first use
+IndicPhotoOCR/detection/yolo/models/
+IndicPhotoOCR/detection/textbpn/models/
+IndicPhotoOCR/script_identification/efficientnet/models/
+IndicPhotoOCR/script_identification/vit/models/
+IndicPhotoOCR/recognition/models/

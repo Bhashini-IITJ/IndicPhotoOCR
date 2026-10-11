@@ -15,6 +15,7 @@ from IndicPhotoOCR.script_identification.efficientnet.efficientnet_infer import 
 from IndicPhotoOCR.recognition.parseq_recogniser import PARseqrecogniser
 import IndicPhotoOCR.detection.east.east_config as cfg
 from IndicPhotoOCR.detection.textbpn.textbpnpp_detector import TextBPNpp_detector
+from IndicPhotoOCR.detection.yolo.yolo_detector import YOLOdetector
 
 from IndicPhotoOCR.utils.helper import detect_para
 
@@ -30,14 +31,18 @@ class OCR:
             Valid options: ['hindi', 'bengali', 'tamil', 'telugu', 'malayalam', 'kannada',
                             'gujarati', 'marathi', 'punjabi', 'odia', 'assamese', 'urdu', 'meitei']
         verbose (bool): Whether to print detailed processing information.
+        detector (str): Text detector: 'yolo' (default; YOLO11n fine-tuned on
+            BSTD train), 'textbpn'/'textbpnpp' (TextBPN++) or 'east'.
+        detector_checkpoint (str): Optional local YOLO checkpoint. If omitted,
+            the verified release asset is downloaded and cached.
         identifier_type (str): 'efficientnet' (default) or 'vit'. EfficientNet
             uses the verified 12-class checkpoint regardless of identifier_lang.
         identifier_checkpoint (str): Optional local EfficientNet checkpoint.
             If omitted, the verified release asset is downloaded and cached.
     """
     def __init__(self, device='cuda:0', identifier_lang='hindi', verbose=False,
-                 detector='textbpn', identifier_type='efficientnet',
-                 identifier_checkpoint=None):
+                 detector='yolo', identifier_type='efficientnet',
+                 identifier_checkpoint=None, detector_checkpoint=None):
         self.identifier_type = identifier_type.lower()
         if self.identifier_type not in {'efficientnet', 'vit'}:
             raise ValueError("identifier_type must be 'efficientnet' or 'vit'")
@@ -67,7 +72,12 @@ class OCR:
         self.detector_name = detector.lower()
         # self.image_path = image_path
         # detectors expect a string device (they call torch.device internally)
-        if self.detector_name == "east":
+        if detector_checkpoint is not None and self.detector_name != "yolo":
+            raise ValueError("detector_checkpoint is only supported for the YOLO detector")
+        if self.detector_name == "yolo":
+            self.detector = YOLOdetector(device=str(self.torch_device),
+                                         checkpoint_path=detector_checkpoint)
+        elif self.detector_name == "east":
             self.detector = EASTdetector(device=str(self.torch_device))
         elif self.detector_name in {"textbpn", "textbpnpp"}:
             from IndicPhotoOCR.detection.textbpn.cfglib.config import config as detector_config
@@ -78,7 +88,7 @@ class OCR:
             detector_config.exp_name = "MLT2019"
             self.detector = TextBPNpp_detector(device=str(self.torch_device))
         else:
-            raise ValueError("detector must be one of: 'east', 'textbpn', 'textbpnpp'")
+            raise ValueError("detector must be one of: 'yolo', 'east', 'textbpn', 'textbpnpp'")
         self.recogniser = PARseqrecogniser()
         # self.identifier = CLIPidentifier()
         # self.identifier = VIT_identifier()

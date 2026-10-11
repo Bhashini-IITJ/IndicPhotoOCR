@@ -44,7 +44,7 @@ def _make_fake_recogniser(text="टेस्ट", conf=0.95):
 
 def _build_ocr(detector=None, identifier=None, recogniser=None, **kwargs):
     """Construct an OCR instance with all sub-modules replaced by fakes."""
-    with patch("IndicPhotoOCR.ocr.TextBPNpp_detector", return_value=detector or _make_fake_detector()), \
+    with patch("IndicPhotoOCR.ocr.YOLOdetector", return_value=detector or _make_fake_detector()), \
          patch("IndicPhotoOCR.ocr.EfficientNetIdentifier", return_value=identifier or _make_fake_identifier()), \
          patch("IndicPhotoOCR.ocr.PARseqrecogniser",   return_value=recogniser or _make_fake_recogniser()):
         from IndicPhotoOCR.ocr import OCR
@@ -58,7 +58,7 @@ def _build_ocr(detector=None, identifier=None, recogniser=None, **kwargs):
 class TestOCRConstructor:
     def test_default_device_is_cuda(self):
         """Default device param should be 'cuda:0' (even if unavailable)."""
-        with patch("IndicPhotoOCR.ocr.TextBPNpp_detector"), \
+        with patch("IndicPhotoOCR.ocr.YOLOdetector"), \
              patch("IndicPhotoOCR.ocr.EfficientNetIdentifier"), \
              patch("IndicPhotoOCR.ocr.PARseqrecogniser"):
             from IndicPhotoOCR.ocr import OCR
@@ -77,14 +77,55 @@ class TestOCRConstructor:
         assert ocr.indentifier_lang == "tamil"
 
     def test_submodules_instantiated(self):
-        with patch("IndicPhotoOCR.ocr.TextBPNpp_detector") as MockDet, \
+        with patch("IndicPhotoOCR.ocr.YOLOdetector") as MockDet, \
+             patch("IndicPhotoOCR.ocr.TextBPNpp_detector") as MockTextBPN, \
              patch("IndicPhotoOCR.ocr.EfficientNetIdentifier") as MockIdentifier, \
              patch("IndicPhotoOCR.ocr.PARseqrecogniser") as MockRec:
             from IndicPhotoOCR.ocr import OCR
             OCR(device="cpu")
-            MockDet.assert_called_once()
+            MockDet.assert_called_once_with(device="cpu", checkpoint_path=None)
+            MockTextBPN.assert_not_called()
             MockIdentifier.assert_called_once_with(checkpoint_path=None, device="cpu")
             MockRec.assert_called_once()
+
+    def test_default_detector_is_yolo(self):
+        import inspect
+        from IndicPhotoOCR.ocr import OCR
+        assert inspect.signature(OCR.__init__).parameters["detector"].default == "yolo"
+
+    def test_yolo_checkpoint_passed_through(self):
+        with patch("IndicPhotoOCR.ocr.YOLOdetector") as MockDet, \
+             patch("IndicPhotoOCR.ocr.EfficientNetIdentifier"), \
+             patch("IndicPhotoOCR.ocr.PARseqrecogniser"):
+            from IndicPhotoOCR.ocr import OCR
+            OCR(device="cpu", detector_checkpoint="/tmp/custom.pt")
+            MockDet.assert_called_once_with(device="cpu", checkpoint_path="/tmp/custom.pt")
+
+    def test_textbpn_still_selectable(self):
+        with patch("IndicPhotoOCR.ocr.YOLOdetector") as MockDet, \
+             patch("IndicPhotoOCR.ocr.TextBPNpp_detector") as MockTextBPN, \
+             patch("IndicPhotoOCR.ocr.EfficientNetIdentifier"), \
+             patch("IndicPhotoOCR.ocr.PARseqrecogniser"):
+            from IndicPhotoOCR.ocr import OCR
+            ocr = OCR(device="cpu", detector="textbpn")
+            MockTextBPN.assert_called_once_with(device="cpu")
+            MockDet.assert_not_called()
+            assert ocr.detector_name == "textbpn"
+
+    def test_unknown_detector_rejected(self):
+        with patch("IndicPhotoOCR.ocr.EfficientNetIdentifier"), \
+             patch("IndicPhotoOCR.ocr.PARseqrecogniser"):
+            from IndicPhotoOCR.ocr import OCR
+            with pytest.raises(ValueError, match="detector must be one of"):
+                OCR(device="cpu", detector="dbnet")
+
+    def test_detector_checkpoint_only_for_yolo(self):
+        with patch("IndicPhotoOCR.ocr.TextBPNpp_detector"), \
+             patch("IndicPhotoOCR.ocr.EfficientNetIdentifier"), \
+             patch("IndicPhotoOCR.ocr.PARseqrecogniser"):
+            from IndicPhotoOCR.ocr import OCR
+            with pytest.raises(ValueError, match="only supported for the YOLO"):
+                OCR(device="cpu", detector="textbpn", detector_checkpoint="/tmp/x.pt")
 
 
 # ---------------------------------------------------------------------------

@@ -143,7 +143,7 @@ def test_optional_vit_backend_without_downloads():
     fake = types.ModuleType(name)
     fake.VIT_identifier = MagicMock()
     with patch.dict(sys.modules, {name: fake}), \
-         patch("IndicPhotoOCR.ocr.TextBPNpp_detector"), \
+         patch("IndicPhotoOCR.ocr.YOLOdetector"), \
          patch("IndicPhotoOCR.ocr.PARseqrecogniser"), \
          patch("IndicPhotoOCR.ocr.EfficientNetIdentifier") as efficient:
         ocr = OCR(device="cpu", identifier_type="vit")
@@ -188,4 +188,4 @@ def test_detector_settings_applied_before_loading(device):
          patch("IndicPhotoOCR.ocr.TextBPNpp_detector", side_effect=construct), \
          patch("IndicPhotoOCR.ocr.PARseqrecogniser"), \
          patch("IndicPhotoOCR.ocr.EfficientNetIdentifier"):
-        OCR(device=device)
+        OCR(device=device, detector="textbpn")

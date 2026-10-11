@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.4.0] - 2026-10-11
+### Added
+- YOLO11n text detector fine-tuned on the BSTD train split (`detector="yolo"`), downloaded from a release asset with SHA-256 verification
+- `--detector` option for `end-to-end-Inference.py` (default `yolo`; `textbpn` and `east` selectable)
+- `detector_checkpoint` argument for a local YOLO checkpoint
+- Unit tests for the YOLO detector and detector selection
+
+### Changed
+- Default detector of `OCR()` and `end-to-end-Inference.py` is now the fine-tuned YOLO11n (was TextBPN++ / EAST)
+- Dockerfile installs the package from the build context instead of cloning a fixed repository
+- `ultralytics==8.3.227` added to the package requirements
+
+### Fixed
+- `make run` mounted an empty path (`$(pwd)` in Makefile); it now mounts the checkout at `/workspace/IndicPhotoOCR`
+
 ## [1.3.1] - 2025-17-25
 ### Added
 - Seperate function for script identification

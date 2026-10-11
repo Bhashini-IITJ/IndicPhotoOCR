@@ -33,6 +33,7 @@ Welcome to **IndicPhotoOCR**! ⚡ We've built an scene text recognition toolkit 
 <hr style="width: 100%; border: 1px solid #000;">
 
 ## 📅 Updates Timeline
+<b>[October 2026]:</b> Default text detector is now YOLO11n fine-tuned on BSTD train (TextBPN++ and EAST remain selectable).</br>
 <b>[September 2026]:</b> Improved script identification with EfficientNetV2-L, boosting overall WRR by 2%.</br>
 <b>[August 2026]:</b> Oral presentation [ICDAR 2026](https://icdar2026.org/) in Vienna, Austria.</br> 
 <b>[April 2026]:</b> Accepted at International Journal on Document Analysis and Recognition (IJDAR) 20026.</br>
@@ -127,13 +128,66 @@ The first prediction can include recognizer loading/downloads; subsequent
 predictions reuse models within the same `OCR` instance. The smaller checkpoint
 removes training state, not model weights, and does not reduce inference computation.
 
+### Text detection backends
+
+The default detector is **YOLO11n fine-tuned on the BSTD training split**
+(4,737 train / 526 held-out validation images from the official `train` split;
+no test images). It predicts axis-aligned word boxes at `imgsz=1280`,
+`conf=0.25`, `iou=0.7`, returned as 4-point polygons to the unchanged crop →
+script identification → recognition pipeline. TextBPN++ and EAST are still
+available.
+
+```python
+# Default: fine-tuned YOLO11n (weights download automatically if missing)
+ocr_system = OCR(device="cuda:0", identifier_lang="auto")
+
+# Previous default detector
+textbpn_system = OCR(device="cuda:0", identifier_lang="auto", detector="textbpn")
+
+# Optional local YOLO checkpoint (verified only when downloaded by the package)
+local_yolo = OCR(device="cuda:0", detector_checkpoint="/path/to/yolo11n_bstd_finetuned.pt")
+```
+
+The checkpoint is cached at
+`IndicPhotoOCR/detection/yolo/models/yolo11n_bstd_finetuned.pt` and is
+downloaded from the [YOLO release](https://github.com/Asadalk/IndicPhotoOCR/releases/tag/yolo11n-bstd-v1.0) (5,544,339 bytes) with the
+same temporary-file and SHA-256 verification as the EfficientNet weights:
+
+```text
+cb41a7f120ff086180e4db5b36001cd9ba6984b129076a6cf697c634aa3489db
+```
+
+The YOLO detector requires `ultralytics==8.3.227` (installed with the
+package). Note that Ultralytics is licensed under **AGPL-3.0**.
+
+**End-to-end results on the 1,319 BSTD test images** (EfficientNetV2-L script
+identification + PARSeq for both rows; scored with `end-to-end-Evaluation.py`,
+averaged per image, per language, then over the 10 language groups):
+
+| Detector | Precision | Recall | F1 | WRR |
+|---|---:|---:|---:|---:|
+| TextBPN++ (`--detector textbpn`) | 0.49 | 0.48 | 0.47 | 0.38 |
+| **YOLO11n fine-tuned (default)** | **0.54** | **0.57** | **0.54** | **0.42** |
+
+The YOLO row is the output of `python end-to-end-Inference.py -p <test images>`
+on this branch (0 failed images). For TextBPN++, `J_image_241` and
+`K_image_128` fail (GPU out of memory, and the CPU retry needs more than 100 GB
+RAM), so they are omitted as `end-to-end-Inference.py` omits failed images.
+
+| Language | Bengali* | English | Gujarati | Devanagari* | Kannada | Malayalam | Odia | Punjabi | Tamil | Telugu |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| YOLO11n recall | 0.62 | 0.58 | 0.51 | 0.58 | 0.43 | 0.52 | 0.62 | 0.61 | 0.73 | 0.49 |
+| YOLO11n WRR | 0.47 | 0.46 | 0.41 | 0.51 | 0.29 | 0.34 | 0.40 | 0.50 | 0.51 | 0.29 |
+
+\*Assamese is merged into Bengali and Marathi into Devanagari (Hindi), as in the evaluator.
+
 ### Automated tests
 
 Run from the repository root in an environment with the package dependencies
 and pytest installed:
 
 ```bash
-python -m pytest tests/test_efficientnet_identifier.py tests/test_ocr_pipeline.py
+python -m pytest tests/
 ```
 
 Unit tests mock downloads and heavy models; no GPU or checkpoint downloads are
@@ -148,6 +202,8 @@ These checks do not establish that EfficientNet is more accurate than ViT.
 # run the following script while providing path to directory of images
 python end-to-end-Inference.py --path </path/to/images>
 # by default it will create indicPhotoOCR_predictions.json
+# the default detector is the fine-tuned YOLO11n; use --detector textbpn or --detector east to compare
+# image file names must match the BSTD keys (e.g. A_image_109.jpg) for the evaluator
 
 # Historical IJDAR results use the original model setup, not the new default.
 # Select the original ViT backend in the inference script to reproduce that setup.
@@ -252,6 +308,7 @@ If you use IndicPhotoOCR in your research, please cite us:
 
 ## 🙏 Acknowledgements
 - **Text Recognition**: [PARseq](https://github.com/baudm/parseq)
+- **Text Detection**: YOLO11n via [Ultralytics](https://github.com/ultralytics/ultralytics) (AGPL-3.0), fine-tuned on BSTD train
 - **Text Detection**: TextBPN++ [Original Repository](https://github.com/GXYM/TextBPN-Plus-Plus)
 - **EAST Re-implementation**: [EAST Repository](https://github.com/foamliu/EAST)
 - **National Language Translation Mission**: [Bhashini](https://bhashini.gov.in/)

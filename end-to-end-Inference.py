@@ -12,6 +12,7 @@ parser = argparse.ArgumentParser(
     Examples:
     python end-to-end-Inference.py --path /path/to/images --output results.json --exceptions errors.log --retries 3
     python end-to-end-Inference.py -p ./images -o predictions.json -e exceptions.log -r 2
+    python end-to-end-Inference.py -p ./images -o textbpn.json --detector textbpn
         """
     )
 
@@ -34,6 +35,13 @@ parser.add_argument(
     help='Log file for exceptions (default: exceptions.log)'
 )
 parser.add_argument(
+    '--detector', '-d',
+    type=str,
+    default='yolo',
+    choices=['yolo', 'textbpn', 'east'],
+    help='Text detector (default: yolo, fine-tuned YOLO11n on BSTD train)'
+)
+parser.add_argument(
     '--retries', '-r',
     type=int,
     default=2,
@@ -54,10 +62,10 @@ if not os.path.isdir(path):
     exit(1)
 # Initialize OCR Instances
 print("Initializing primary GPU OCR instance...")
-ocr_gpu = OCR(identifier_lang="auto", device="cuda", verbose=False, detector="east")
+ocr_gpu = OCR(identifier_lang="auto", device="cuda", verbose=False, detector=args.detector)
 
 print("Initializing fallback CPU OCR instance for retries...")
-ocr_cpu = OCR(identifier_lang="auto", device="cpu", verbose=False, detector="east")
+ocr_cpu = OCR(identifier_lang="auto", device="cpu", verbose=False, detector=args.detector)
 
 results = {}
 exception_images = []

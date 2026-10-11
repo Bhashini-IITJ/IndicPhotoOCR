@@ -168,6 +168,7 @@ IndicPhotoOCR/script_identification/efficientnet/models/
 
 
 IndicPhotoOCR/detection/textbpn/models
+IndicPhotoOCR/detection/yolo/models/
 
 
 build/

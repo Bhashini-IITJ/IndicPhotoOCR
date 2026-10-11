@@ -14,7 +14,7 @@ run:
 		--gpus all \
 		--rm -it \
 		--shm-size=16g \
-		-v $(pwd):/workspace \
+		-v $(CURDIR):/workspace/IndicPhotoOCR \
 		--name $(IMAGE) \
 		$(IMAGE):latest
 

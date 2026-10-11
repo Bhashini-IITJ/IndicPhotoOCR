@@ -14,10 +14,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libxext6 \
     && rm -rf /var/lib/apt/lists/*
 
-# Clone and install the package
+# Install the package from the build context (this checkout), so the image
+# runs exactly the code being built (default detector: fine-tuned YOLO11n).
 WORKDIR /workspace
-RUN git clone https://github.com/dikshant-sharma05/IndicPhotoOCR.git && \
-    pip install --no-cache-dir -e IndicPhotoOCR \
+COPY . /workspace/IndicPhotoOCR
+RUN pip install --no-cache-dir -e IndicPhotoOCR \
         --extra-index-url https://download.pytorch.org/whl/cu121 && \
     pip uninstall -y opencv-python opencv-python-headless opencv-contrib-python && \
     pip install --no-cache-dir opencv-python-headless==4.7.0.72
@@ -32,3 +33,5 @@ CMD ["bash"]
 # cd IndicPhotoOCR
 # sudo docker build -t indicphotoocr:latest .
 # sudo docker run --gpus all --rm -it indicphotoocr:latest
+# Inside the container:
+# cd /workspace/IndicPhotoOCR && python end-to-end-Inference.py -p <images> -o predictions.json
