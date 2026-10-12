@@ -45,7 +45,7 @@ def _make_fake_recogniser(text="टेस्ट", conf=0.95):
 def _build_ocr(detector=None, identifier=None, recogniser=None, **kwargs):
     """Construct an OCR instance with all sub-modules replaced by fakes."""
     with patch("IndicPhotoOCR.ocr.TextBPNpp_detector", return_value=detector or _make_fake_detector()), \
-         patch("IndicPhotoOCR.ocr.VIT_identifier",     return_value=identifier or _make_fake_identifier()), \
+         patch("IndicPhotoOCR.ocr.EfficientNetIdentifier", return_value=identifier or _make_fake_identifier()), \
          patch("IndicPhotoOCR.ocr.PARseqrecogniser",   return_value=recogniser or _make_fake_recogniser()):
         from IndicPhotoOCR.ocr import OCR
         return OCR(device="cpu", **kwargs)
@@ -59,7 +59,7 @@ class TestOCRConstructor:
     def test_default_device_is_cuda(self):
         """Default device param should be 'cuda:0' (even if unavailable)."""
         with patch("IndicPhotoOCR.ocr.TextBPNpp_detector"), \
-             patch("IndicPhotoOCR.ocr.VIT_identifier"), \
+             patch("IndicPhotoOCR.ocr.EfficientNetIdentifier"), \
              patch("IndicPhotoOCR.ocr.PARseqrecogniser"):
             from IndicPhotoOCR.ocr import OCR
             ocr = OCR.__new__(OCR)
@@ -78,12 +78,12 @@ class TestOCRConstructor:
 
     def test_submodules_instantiated(self):
         with patch("IndicPhotoOCR.ocr.TextBPNpp_detector") as MockDet, \
-             patch("IndicPhotoOCR.ocr.VIT_identifier") as MockVit, \
+             patch("IndicPhotoOCR.ocr.EfficientNetIdentifier") as MockIdentifier, \
              patch("IndicPhotoOCR.ocr.PARseqrecogniser") as MockRec:
             from IndicPhotoOCR.ocr import OCR
             OCR(device="cpu")
             MockDet.assert_called_once()
-            MockVit.assert_called_once()
+            MockIdentifier.assert_called_once_with(checkpoint_path=None, device="cpu")
             MockRec.assert_called_once()
 
 

@@ -164,6 +164,7 @@ IndicPhotoOCR/recognition/models
 IndicPhotoOCR/script_identification/images
 IndicPhotoOCR/script_identification/models
 IndicPhotoOCR/script_identification/vit/models
+IndicPhotoOCR/script_identification/efficientnet/models/
 
 
 IndicPhotoOCR/detection/textbpn/models
@@ -174,6 +175,5 @@ dist/
 test.png
 static/pics/IndicPhotoOCR.gif
 test_images/image_742.jpg
-
 
 
