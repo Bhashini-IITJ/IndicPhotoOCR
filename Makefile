@@ -4,7 +4,7 @@ TAG ?= $(shell date +%Y%m%d)
 # The checkout is mounted at /workspace/IndicPhotoOCR, so the container runs the
 # current code and downloaded model weights persist between runs.
 DOCKER_RUN = docker run --gpus all --rm --shm-size=16g \
-	-v $(CURDIR):/workspace/IndicPhotoOCR
+	-v $(CURDIR):/workspace/IndicPhotoOCR -w /workspace/IndicPhotoOCR
 
 .PHONY: build run test build-run
 

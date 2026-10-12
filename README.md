@@ -79,10 +79,9 @@ make test    # run the test suite inside the container
 make run     # interactive shell; this checkout is mounted at /workspace/IndicPhotoOCR
 ```
 
-Inside the container (`make run`):
+Inside the container (`make run` opens a shell in `/workspace/IndicPhotoOCR`):
 
 ```bash
-cd /workspace/IndicPhotoOCR
 python end-to-end-Inference.py -p test_images -o predictions.json
 python end-to-end-Evaluation.py -g <path/to/BSTD_v17.57.json> -p predictions.json
 ```
@@ -94,7 +93,7 @@ server), pass it to every target: `make build IMAGE=myname`, `make test IMAGE=my
 
 ```bash
 docker build -t indicphotoocr:latest .
-docker run --gpus all --rm -it --shm-size=16g -v "$PWD":/workspace/IndicPhotoOCR indicphotoocr:latest
+docker run --gpus all --rm -it --shm-size=16g -v "$PWD":/workspace/IndicPhotoOCR -w /workspace/IndicPhotoOCR indicphotoocr:latest
 ```
 
 <hr style="width: 100%; border: 1px solid #000;">
