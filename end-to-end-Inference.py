@@ -97,7 +97,8 @@ def process_single_image(image_name, ocr_instance):
 
 # Pass 1: Full Dataset Scan (Using GPU)
 
-all_images = os.listdir(path)
+# Only regular files are images; sub-directories (e.g. test_images/cropped_image) are skipped.
+all_images = sorted(f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f)))
 print(f"\n--- Starting Pass 1: Processing {len(all_images)} images on GPU ---")
 
 for image in tqdm(all_images):

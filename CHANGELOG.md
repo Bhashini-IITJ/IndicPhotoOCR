@@ -14,6 +14,9 @@
 
 ### Fixed
 - `make run` mounted an empty path (`$(pwd)` in Makefile); it now mounts the checkout at `/workspace/IndicPhotoOCR`
+- `make build` no longer requires BuildKit/buildx (plain `docker build`); new `make test` target; image name overridable with `IMAGE=`
+- `end-to-end-Inference.py` skips sub-directories of the image folder instead of logging them as failed images
+- README: Docker instructions and the clone URL of this repository
 
 ## [1.3.1] - 2025-17-25
 ### Added

@@ -59,9 +59,42 @@ We recommend creating a virtual environment before installing:
 conda create -n indicphotoocr python=3.10 -y
 conda activate indicphotoocr
 
-git clone https://github.com/Bhashini-IITJ/IndicPhotoOCR.git
+git clone https://github.com/Asadalk/IndicPhotoOCR.git
 cd IndicPhotoOCR
 pip install -e .
+```
+
+### 🐳 Docker
+
+Requirements: an NVIDIA GPU, Docker, and the
+[NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html).
+Prefix the commands with `sudo` if your user is not in the `docker` group.
+
+```bash
+git clone https://github.com/Asadalk/IndicPhotoOCR.git
+cd IndicPhotoOCR
+
+make build   # docker build -t indicphotoocr:latest .
+make test    # run the test suite inside the container
+make run     # interactive shell; this checkout is mounted at /workspace/IndicPhotoOCR
+```
+
+Inside the container (`make run`):
+
+```bash
+cd /workspace/IndicPhotoOCR
+python end-to-end-Inference.py -p test_images -o predictions.json
+python end-to-end-Evaluation.py -g <path/to/BSTD_v17.57.json> -p predictions.json
+```
+
+Model weights download on first use (about 5 GB) into the mounted checkout,
+so later runs reuse them. To use another image name (for example on a shared
+server), pass it to every target: `make build IMAGE=myname`, `make test IMAGE=myname`,
+`make run IMAGE=myname`. Without `make`, the equivalent commands are:
+
+```bash
+docker build -t indicphotoocr:latest .
+docker run --gpus all --rm -it --shm-size=16g -v "$PWD":/workspace/IndicPhotoOCR indicphotoocr:latest
 ```
 
 <hr style="width: 100%; border: 1px solid #000;">
