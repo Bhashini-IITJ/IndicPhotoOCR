@@ -35,6 +35,8 @@ class OCR:
             BSTD train), 'textbpn'/'textbpnpp' (TextBPN++) or 'east'.
         detector_checkpoint (str): Optional local YOLO checkpoint. If omitted,
             the verified release asset is downloaded and cached.
+        detector_model (str): YOLO model: 'yolo11n_bstd_mist_1920' (default;
+            BSTD + MIST, 1920 px) or 'yolo11n_bstd' (BSTD only, 1280 px).
         identifier_type (str): 'efficientnet' (default) or 'vit'. EfficientNet
             uses the verified 12-class checkpoint regardless of identifier_lang.
         identifier_checkpoint (str): Optional local EfficientNet checkpoint.
@@ -42,7 +44,8 @@ class OCR:
     """
     def __init__(self, device='cuda:0', identifier_lang='hindi', verbose=False,
                  detector='yolo', identifier_type='efficientnet',
-                 identifier_checkpoint=None, detector_checkpoint=None):
+                 identifier_checkpoint=None, detector_checkpoint=None,
+                 detector_model=None):
         self.identifier_type = identifier_type.lower()
         if self.identifier_type not in {'efficientnet', 'vit'}:
             raise ValueError("identifier_type must be 'efficientnet' or 'vit'")
@@ -72,11 +75,12 @@ class OCR:
         self.detector_name = detector.lower()
         # self.image_path = image_path
         # detectors expect a string device (they call torch.device internally)
-        if detector_checkpoint is not None and self.detector_name != "yolo":
-            raise ValueError("detector_checkpoint is only supported for the YOLO detector")
+        if (detector_checkpoint is not None or detector_model is not None) and self.detector_name != "yolo":
+            raise ValueError("detector_checkpoint/detector_model are only supported for the YOLO detector")
         if self.detector_name == "yolo":
+            yolo_kwargs = {"model_name": detector_model} if detector_model is not None else {}
             self.detector = YOLOdetector(device=str(self.torch_device),
-                                         checkpoint_path=detector_checkpoint)
+                                         checkpoint_path=detector_checkpoint, **yolo_kwargs)
         elif self.detector_name == "east":
             self.detector = EASTdetector(device=str(self.torch_device))
         elif self.detector_name in {"textbpn", "textbpnpp"}:

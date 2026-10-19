@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.0] - 2026-10-19
+### Added
+- YOLO11n detector fine-tuned on BSTD train + MIST training frames at 1920 px (`yolo11n_bstd_mist_1920`, release `yolo11n-bstd-mist-v2.0`, SHA-256 verified)
+- `detector_model` argument of `OCR()` to choose the YOLO model; each model runs at the size it was trained at
+
+### Changed
+- Default YOLO model is now `yolo11n_bstd_mist_1920` (MIST detection F1 0.50 -> 0.74; BSTD test recall 0.57 -> 0.58, WRR 0.42 -> 0.40). The BSTD-only 1280 model stays available as `detector_model="yolo11n_bstd"`
+
 ## [1.4.0] - 2026-10-11
 ### Added
 - YOLO11n text detector fine-tuned on the BSTD train split (`detector="yolo"`), downloaded from a release asset with SHA-256 verification

@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="IndicPhotoOCR",
-    version="1.4.0",
+    version="1.5.0",
     description="Scene Text Recognition Toolkit across 13 Indian Languages which contains detection, script identification, and text recognition modules",
     long_description=open("README.md").read() + "\n\n" + open("CHANGELOG.md").read(),
     long_description_content_type="text/markdown",

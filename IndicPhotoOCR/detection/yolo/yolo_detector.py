@@ -1,13 +1,15 @@
-"""YOLO11n text detector fine-tuned on the BSTD training split.
+"""YOLO11n text detectors fine-tuned for Indian scene text.
 
-The checkpoint is an Ultralytics YOLO11n text model fine-tuned on the official
-BSTD train split only (4,737 train / 526 held-out validation images; no test
-images). It predicts axis-aligned word boxes, returned here as 4-point
-polygons so they plug into the existing OCR crop -> script-ID -> recognition
-pipeline unchanged.
+Two Ultralytics YOLO11n checkpoints, both trained without any BSTD test image:
 
-Default inference settings (imgsz=1280, conf=0.25, iou=0.7) are the ones used
-for the reported BSTD end-to-end evaluation.
+- ``yolo11n_bstd_mist_1920`` (default): BSTD train split (4,737 images) plus
+  5,189 MIST training video frames, trained and run at imgsz=1920.
+- ``yolo11n_bstd``: BSTD train split only, trained and run at imgsz=1280.
+
+Both predict axis-aligned word boxes, returned here as 4-point polygons so they
+plug into the existing OCR crop -> script-ID -> recognition pipeline unchanged.
+Each model's default inference size is the one it was trained and evaluated at
+(conf=0.25, iou=0.7).
 """
 import hashlib
 import os
@@ -18,13 +20,22 @@ from pathlib import Path
 from tqdm import tqdm
 
 model_info = {
+    "yolo11n_bstd_mist_1920": {
+        "path": "models",
+        "filename": "yolo11n_bstd_mist_1920.pt",
+        "url": "https://github.com/Asadalk/IndicPhotoOCR/releases/download/yolo11n-bstd-mist-v2.0/yolo11n_bstd_mist_1920.pt",
+        "sha256": "027951606ab3307653b532b8094eba38783723221d8683bd4ff2e11b8db49e2d",
+        "imgsz": 1920,
+    },
     "yolo11n_bstd": {
         "path": "models",
         "filename": "yolo11n_bstd_finetuned.pt",
         "url": "https://github.com/Asadalk/IndicPhotoOCR/releases/download/yolo11n-bstd-v1.0/yolo11n_bstd_finetuned.pt",
         "sha256": "cb41a7f120ff086180e4db5b36001cd9ba6984b129076a6cf697c634aa3489db",
-    }
+        "imgsz": 1280,
+    },
 }
+DEFAULT_MODEL = "yolo11n_bstd_mist_1920"
 
 
 def _verify_checksum(path, expected):
@@ -73,15 +84,16 @@ def download_model_from_release(model_name, save_path):
 
 
 class YOLOdetector:
-    def __init__(self, device="cuda:0", checkpoint_path=None, imgsz=1280,
-                 conf=0.25, iou=0.7, model_name="yolo11n_bstd"):
-        """Load the fine-tuned YOLO11n BSTD text detector.
+    def __init__(self, device="cuda:0", checkpoint_path=None, imgsz=None,
+                 conf=0.25, iou=0.7, model_name=DEFAULT_MODEL):
+        """Load a fine-tuned YOLO11n text detector.
 
         Args:
             device (str): 'cuda', 'cuda:N' or 'cpu'.
             checkpoint_path (str): Optional local checkpoint. If omitted, the
                 verified release asset is downloaded and cached beside this module.
-            imgsz (int): Inference image size (long side).
+            imgsz (int): Inference image size (long side). Default: the size
+                ``model_name`` was trained at (1920 or 1280).
             conf (float): Box confidence threshold.
             iou (float): NMS IoU threshold.
         """
@@ -91,6 +103,10 @@ class YOLOdetector:
             raise ImportError(
                 "The YOLO detector needs the 'ultralytics' package: pip install ultralytics==8.3.227"
             ) from exc
+        if model_name not in model_info:
+            raise ValueError(f"Model '{model_name}' not found in model_info")
+        if imgsz is None:
+            imgsz = model_info[model_name]["imgsz"]
         if checkpoint_path is None:
             checkpoint_path = (Path(__file__).resolve().parent /
                                model_info[model_name]["path"] /

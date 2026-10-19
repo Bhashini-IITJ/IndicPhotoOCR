@@ -162,32 +162,37 @@ removes training state, not model weights, and does not reduce inference computa
 
 ### Text detection backends
 
-The default detector is **YOLO11n fine-tuned on the BSTD training split**
-(4,737 train / 526 held-out validation images from the official `train` split;
-no test images). It predicts axis-aligned word boxes at `imgsz=1280`,
-`conf=0.25`, `iou=0.7`, returned as 4-point polygons to the unchanged crop →
+The default detector is **YOLO11n fine-tuned on the BSTD training split plus
+MIST video frames** (`yolo11n_bstd_mist_1920`): 4,737 BSTD train images (from the
+official `train` split; 526 more held out for validation; no test images) and
+5,189 MIST training frames, trained and run at `imgsz=1920`, `conf=0.25`,
+`iou=0.7`. The previous BSTD-only model (`yolo11n_bstd`, 1280 px) is still
+available. Boxes are returned as 4-point polygons to the unchanged crop →
 script identification → recognition pipeline. TextBPN++ and EAST are still
 available.
 
 ```python
-# Default: fine-tuned YOLO11n (weights download automatically if missing)
+# Default: YOLO11n fine-tuned on BSTD + MIST, 1920 px (weights download automatically if missing)
 ocr_system = OCR(device="cuda:0", identifier_lang="auto")
 
-# Previous default detector
+# Previous YOLO model: BSTD only, 1280 px
+bstd_yolo = OCR(device="cuda:0", identifier_lang="auto", detector_model="yolo11n_bstd")
+
+# Original detector of the toolkit
 textbpn_system = OCR(device="cuda:0", identifier_lang="auto", detector="textbpn")
 
 # Optional local YOLO checkpoint (verified only when downloaded by the package)
-local_yolo = OCR(device="cuda:0", detector_checkpoint="/path/to/yolo11n_bstd_finetuned.pt")
+local_yolo = OCR(device="cuda:0", detector_checkpoint="/path/to/yolo11n_bstd_mist_1920.pt")
 ```
 
-The checkpoint is cached at
-`IndicPhotoOCR/detection/yolo/models/yolo11n_bstd_finetuned.pt` and is
-downloaded from the [YOLO release](https://github.com/Asadalk/IndicPhotoOCR/releases/tag/yolo11n-bstd-v1.0) (5,544,339 bytes) with the
-same temporary-file and SHA-256 verification as the EfficientNet weights:
+Checkpoints are cached in `IndicPhotoOCR/detection/yolo/models/` and downloaded
+from the release assets with the same temporary-file and SHA-256 verification as
+the EfficientNet weights:
 
-```text
-cb41a7f120ff086180e4db5b36001cd9ba6984b129076a6cf697c634aa3489db
-```
+| Model | Release | Size | SHA-256 |
+|---|---|---:|---|
+| `yolo11n_bstd_mist_1920` (default) | [yolo11n-bstd-mist-v2.0](https://github.com/Asadalk/IndicPhotoOCR/releases/tag/yolo11n-bstd-mist-v2.0) | 5,693,267 bytes | `027951606ab3307653b532b8094eba38783723221d8683bd4ff2e11b8db49e2d` |
+| `yolo11n_bstd` | [yolo11n-bstd-v1.0](https://github.com/Asadalk/IndicPhotoOCR/releases/tag/yolo11n-bstd-v1.0) | 5,544,339 bytes | `cb41a7f120ff086180e4db5b36001cd9ba6984b129076a6cf697c634aa3489db` |
 
 The YOLO detector requires `ultralytics==8.3.227` (installed with the
 package). Note that Ultralytics is licensed under **AGPL-3.0**.
@@ -196,20 +201,24 @@ package). Note that Ultralytics is licensed under **AGPL-3.0**.
 identification + PARSeq for both rows; scored with `end-to-end-Evaluation.py`,
 averaged per image, per language, then over the 10 language groups):
 
-| Detector | Precision | Recall | F1 | WRR |
-|---|---:|---:|---:|---:|
-| TextBPN++ (`--detector textbpn`) | 0.49 | 0.48 | 0.47 | 0.38 |
-| **YOLO11n fine-tuned (default)** | **0.54** | **0.57** | **0.54** | **0.42** |
+| Detector | Precision | Recall | F1 | WRR | MIST detection F1 |
+|---|---:|---:|---:|---:|---:|
+| TextBPN++ (`--detector textbpn`) | 0.49 | 0.48 | 0.47 | 0.38 | 0.43 |
+| YOLO11n BSTD, 1280 (`detector_model="yolo11n_bstd"`) | 0.54 | 0.57 | 0.54 | 0.42 | 0.50 |
+| **YOLO11n BSTD + MIST, 1920 (default)** | **0.53** | **0.58** | **0.54** | **0.40** | **0.74** |
 
-The YOLO row is the output of `python end-to-end-Inference.py -p <test images>`
-on this branch (0 failed images). For TextBPN++, `J_image_241` and
+MIST detection F1: the 1,985 MIST test frames (MIST has no transcriptions), boxes
+matched at IoU >= 0.5 against the enclosing rectangles of the MIST polygons.
+
+The YOLO rows use the same detector -> EfficientNetV2-L -> PARSeq pipeline as
+`end-to-end-Inference.py` (0 failed images). For TextBPN++, `J_image_241` and
 `K_image_128` fail (GPU out of memory, and the CPU retry needs more than 100 GB
 RAM), so they are omitted as `end-to-end-Inference.py` omits failed images.
 
 | Language | Bengali* | English | Gujarati | Devanagari* | Kannada | Malayalam | Odia | Punjabi | Tamil | Telugu |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| YOLO11n recall | 0.62 | 0.58 | 0.51 | 0.58 | 0.43 | 0.52 | 0.62 | 0.61 | 0.73 | 0.49 |
-| YOLO11n WRR | 0.47 | 0.46 | 0.41 | 0.51 | 0.29 | 0.34 | 0.40 | 0.50 | 0.51 | 0.29 |
+| YOLO11n BSTD 1280 recall | 0.62 | 0.58 | 0.51 | 0.58 | 0.43 | 0.52 | 0.62 | 0.61 | 0.73 | 0.49 |
+| YOLO11n BSTD 1280 WRR | 0.47 | 0.46 | 0.41 | 0.51 | 0.29 | 0.34 | 0.40 | 0.50 | 0.51 | 0.29 |
 
 \*Assamese is merged into Bengali and Marathi into Devanagari (Hindi), as in the evaluator.
 

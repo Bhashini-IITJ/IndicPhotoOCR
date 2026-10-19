@@ -1,5 +1,5 @@
 """
-Tests for IndicPhotoOCR.detection.yolo – fine-tuned YOLO11n BSTD detector.
+Tests for IndicPhotoOCR.detection.yolo – fine-tuned YOLO11n text detectors.
 
 Unit tests replace the `ultralytics` package with a fake module, so they need
 no GPU, no network and no checkpoint. The integration test (--run-integration)
@@ -63,15 +63,34 @@ class TestYOLOdetector:
             det = yolo_detector.YOLOdetector(device="cpu", checkpoint_path=local_checkpoint)
         download.assert_not_called()
         module.YOLO.assert_called_once_with(local_checkpoint)
-        assert (det.imgsz, det.conf, det.iou) == (1280, 0.25, 0.7)
+        assert (det.imgsz, det.conf, det.iou) == (1920, 0.25, 0.7)
 
     def test_default_checkpoint_is_downloaded_and_verified(self, fake_ultralytics):
         from IndicPhotoOCR.detection.yolo import yolo_detector
         with patch.object(yolo_detector, "download_model_from_release") as download:
-            yolo_detector.YOLOdetector(device="cpu")
+            det = yolo_detector.YOLOdetector(device="cpu")
+        name, path = download.call_args[0]
+        assert name == "yolo11n_bstd_mist_1920"
+        assert str(path).endswith("detection/yolo/models/yolo11n_bstd_mist_1920.pt")
+        assert det.imgsz == 1920
+
+    def test_previous_bstd_model_keeps_1280(self, fake_ultralytics):
+        from IndicPhotoOCR.detection.yolo import yolo_detector
+        with patch.object(yolo_detector, "download_model_from_release") as download:
+            det = yolo_detector.YOLOdetector(device="cpu", model_name="yolo11n_bstd")
         name, path = download.call_args[0]
         assert name == "yolo11n_bstd"
         assert str(path).endswith("detection/yolo/models/yolo11n_bstd_finetuned.pt")
+        assert det.imgsz == 1280
+
+    def test_explicit_imgsz_overrides_model_default(self, fake_ultralytics, local_checkpoint):
+        from IndicPhotoOCR.detection.yolo.yolo_detector import YOLOdetector
+        assert YOLOdetector(device="cpu", checkpoint_path=local_checkpoint, imgsz=640).imgsz == 640
+
+    def test_unknown_model_name_rejected(self, fake_ultralytics):
+        from IndicPhotoOCR.detection.yolo.yolo_detector import YOLOdetector
+        with pytest.raises(ValueError, match="not found"):
+            YOLOdetector(device="cpu", model_name="nope")
 
     def test_detect_returns_four_point_polygons_and_scores(self, fake_ultralytics, local_checkpoint,
                                                            synthetic_scene_image):
@@ -84,7 +103,7 @@ class TestYOLOdetector:
                                      [[5, 5], [15, 5], [15, 9], [5, 9]]]
         assert out["scores"] == pytest.approx([0.9, 0.3])
         _, kwargs = model.predict.call_args
-        assert kwargs == {"device": "cpu", "imgsz": 1280, "conf": 0.25, "iou": 0.7, "verbose": False}
+        assert kwargs == {"device": "cpu", "imgsz": 1920, "conf": 0.25, "iou": 0.7, "verbose": False}
 
     def test_detect_handles_no_boxes(self, fake_ultralytics, local_checkpoint, synthetic_scene_image):
         _, model = fake_ultralytics
