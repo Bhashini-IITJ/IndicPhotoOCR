@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The frame keeps everything, the side menu included, below the phone's status bar -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#FFFFFF" android:fitsSystemWindows="true">
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/drawer" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:fitsSystemWindows="false">
+
+<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/page" android:orientation="vertical">
+
+    <!-- Header: menu, wordmark, tagline -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="#FFFFFF" android:gravity="center_vertical" android:orientation="horizontal"
+        android:paddingStart="4dp" android:paddingTop="10dp" android:paddingEnd="16dp" android:paddingBottom="10dp">
+        <com.google.android.material.button.MaterialButton android:id="@+id/menu"
+            style="@style/Widget.Material3.Button.IconButton" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginEnd="4dp" android:contentDescription="Menu"
+            app:icon="@drawable/ic_menu" app:iconTint="@color/navy" />
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:orientation="vertical">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:gravity="center_vertical" android:orientation="horizontal">
+                <ImageView android:layout_width="wrap_content" android:layout_height="26dp" android:adjustViewBounds="true"
+                    android:contentDescription="IndicPhotoOCR" android:src="@drawable/logo_indicphotoocr" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp" android:background="@drawable/badge" android:paddingStart="7dp"
+                    android:paddingTop="1dp" android:paddingEnd="7dp" android:paddingBottom="1dp" android:text="2.0"
+                    android:textColor="#FFFFFF" android:textSize="12sp" android:textStyle="bold" />
+            </LinearLayout>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp"
+                android:text="@string/tagline" android:textColor="@color/muted" android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <!-- Thin strip in the IndicPhotoOCR logo colours under the header -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="3dp" android:orientation="horizontal">
+        <View android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:background="@color/logo_orange" />
+        <View android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:background="@color/logo_blue" />
+        <View android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:background="@color/logo_green" />
+    </LinearLayout>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="14dp">
+
+            <!-- Errors only (e.g. models could not be loaded) -->
+            <TextView android:id="@+id/status" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp" android:textColor="#C62828" android:textSize="14sp" android:visibility="gone" />
+
+            <!-- Progress of the whole reading, shown while a photo is being read -->
+            <com.google.android.material.card.MaterialCardView android:id="@+id/progressCard" style="@style/Card"
+                android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="14dp"
+                android:visibility="gone">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:gravity="center_vertical" android:orientation="horizontal">
+                        <TextView android:id="@+id/progressLabel" android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Reading text" android:textColor="@color/ink"
+                            android:textSize="15sp" android:textStyle="bold" />
+                        <TextView android:id="@+id/progressPercent" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="0%" android:textColor="@color/navy"
+                            android:textSize="15sp" android:textStyle="bold" />
+                    </LinearLayout>
+                    <com.google.android.material.progressindicator.LinearProgressIndicator android:id="@+id/progress"
+                        android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp"
+                        android:max="100" app:indicatorColor="@color/saffron" app:trackColor="#E3E5FA"
+                        app:trackCornerRadius="6dp" app:trackThickness="10dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Before the first photo -->
+            <com.google.android.material.card.MaterialCardView android:id="@+id/emptyCard" style="@style/Card"
+                android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:gravity="center_horizontal" android:orientation="vertical" android:padding="24dp">
+                    <ImageView android:layout_width="88dp" android:layout_height="88dp" android:contentDescription="@null"
+                        android:src="@drawable/ic_launcher" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp"
+                        android:text="@string/empty_title" android:textColor="@color/ink" android:textSize="20sp" android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp"
+                        android:gravity="center" android:lineSpacingExtra="3dp" android:text="@string/empty_body"
+                        android:textColor="@color/muted" android:textSize="15sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Photo with boxes -->
+            <com.google.android.material.card.MaterialCardView android:id="@+id/imageCard" style="@style/Card"
+                android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp"
+                android:visibility="gone">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                    <ImageView android:id="@+id/image" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:adjustViewBounds="true" android:contentDescription="Photo with detected words"
+                        android:scaleType="fitCenter" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Recognised text -->
+            <com.google.android.material.card.MaterialCardView android:id="@+id/resultCard" style="@style/Card"
+                android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp"
+                android:visibility="gone">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:paddingStart="16dp" android:paddingTop="8dp"
+                    android:paddingEnd="6dp" android:paddingBottom="16dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:gravity="center_vertical" android:orientation="horizontal">
+                        <TextView style="@style/CardTitle" android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Text found" />
+                        <com.google.android.material.button.MaterialButton android:id="@+id/copy"
+                            style="@style/Widget.Material3.Button.IconButton" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:contentDescription="Copy text"
+                            app:icon="@drawable/ic_copy" app:iconTint="@color/navy" />
+                        <com.google.android.material.button.MaterialButton android:id="@+id/share"
+                            style="@style/Widget.Material3.Button.IconButton" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:contentDescription="Share text"
+                            app:icon="@drawable/ic_share" app:iconTint="@color/navy" />
+                    </LinearLayout>
+                    <TextView android:id="@+id/result" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp" android:lineSpacingExtra="4dp" android:textColor="@color/ink"
+                        android:textIsSelectable="true" android:textSize="20sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Actions -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="#FFFFFF" android:orientation="vertical" android:paddingStart="12dp"
+        android:paddingTop="10dp" android:paddingEnd="12dp" android:paddingBottom="6dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+            <com.google.android.material.button.MaterialButton android:id="@+id/camera" android:layout_width="0dp"
+                android:layout_height="56dp" android:layout_weight="1" android:layout_marginEnd="6dp"
+                android:text="Camera" android:textSize="16sp" app:cornerRadius="14dp" app:icon="@drawable/ic_camera"
+                app:iconGravity="textStart" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/gallery"
+                style="@style/Widget.Material3.Button.TonalButton" android:layout_width="0dp" android:layout_height="56dp"
+                android:layout_weight="1" android:layout_marginStart="6dp" android:text="Gallery"
+                android:textSize="16sp" app:cornerRadius="14dp" app:icon="@drawable/ic_gallery" app:iconGravity="textStart" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/cancel" android:layout_width="0dp"
+                android:layout_height="56dp" android:layout_weight="1" android:backgroundTint="#C62828" android:text="Cancel"
+                android:textColor="#FFFFFF" android:textSize="16sp" android:visibility="gone" app:cornerRadius="14dp" />
+        </LinearLayout>
+
+        <!-- Credits (text only; no institute or Bhashini logos) -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp"
+            android:gravity="center" android:text="@string/credit_line" android:textColor="@color/navy" android:textSize="13sp" />
+    </LinearLayout>
+</LinearLayout>
+
+<!-- Side menu -->
+<com.google.android.material.navigation.NavigationView android:id="@+id/nav" android:layout_width="wrap_content"
+    android:layout_height="match_parent" android:layout_gravity="start" android:background="#FFFFFF"
+    android:fitsSystemWindows="false"
+    app:headerLayout="@layout/drawer_header" app:menu="@menu/drawer" app:itemTextColor="@color/ink"
+    app:itemIconTint="@color/navy" />
+</androidx.drawerlayout.widget.DrawerLayout>
+</FrameLayout>

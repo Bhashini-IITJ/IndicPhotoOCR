@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- About Us / Terms of Service / Privacy Policy -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/page"
+    android:orientation="vertical" android:fitsSystemWindows="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="#FFFFFF"
+        android:gravity="center_vertical" android:orientation="horizontal" android:paddingStart="4dp"
+        android:paddingTop="8dp" android:paddingEnd="16dp" android:paddingBottom="8dp">
+        <com.google.android.material.button.MaterialButton android:id="@+id/back"
+            style="@style/Widget.Material3.Button.IconButton" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:contentDescription="Back" app:icon="@drawable/ic_back"
+            app:iconTint="@color/navy" />
+        <TextView android:id="@+id/title" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginStart="4dp" android:textColor="@color/ink" android:textSize="19sp" android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="3dp" android:orientation="horizontal">
+        <View android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:background="@color/logo_orange" />
+        <View android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:background="@color/logo_blue" />
+        <View android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:background="@color/logo_green" />
+    </LinearLayout>
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"
+            android:padding="20dp">
+            <ImageView android:id="@+id/logos" android:layout_width="wrap_content" android:layout_height="64dp"
+                android:layout_gravity="center_horizontal" android:layout_marginBottom="18dp" android:adjustViewBounds="true"
+                android:contentDescription="IndicPhotoOCR" android:src="@drawable/logo_indicphotoocr"
+                android:visibility="gone" />
+            <TextView android:id="@+id/body" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:lineSpacingExtra="5dp" android:textColor="@color/ink" android:textIsSelectable="true" android:textSize="16sp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

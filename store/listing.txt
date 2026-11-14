@@ -1,0 +1,66 @@
+IndicPhotoOCR 2.0 — Google Play store listing text (copy-paste)
+Play Console → Grow users → Store presence → Main store listing
+
+================================================================
+APP NAME (max 30)
+================================================================
+IndicPhotoOCR 2.0
+
+================================================================
+SHORT DESCRIPTION (max 80)
+================================================================
+Read text in photos in English and 11 Indian languages, fully offline.
+
+================================================================
+FULL DESCRIPTION (max 4000) — copy everything between the lines
+================================================================
+----------------------------------------------------------------
+IndicPhotoOCR 2.0 reads text in photos of signboards, shop fronts, notices, labels and pages, in English and 11 Indian languages: Hindi, Bengali, Marathi, Gujarati, Punjabi, Odia, Assamese, Tamil, Telugu, Kannada and Malayalam.
+
+Fully offline and private
+• Everything runs on your phone. The app has no internet permission, so your photos and text never leave your device.
+• No account, no ads, no tracking, no data collected.
+
+Simple to use
+• Take a photo, pick one from your gallery, or share an image to the app from any other app.
+• Every word found is marked with a box on the photo, and the recognised text is shown below.
+• Copy or share the recognised text with one tap.
+• Automatically uses the fastest processor on your phone (CPU, GPU or NPU).
+
+Open source
+IndicPhotoOCR 2.0 is free software under the AGPL-3.0 licence. Source code: https://github.com/Bhashini-IITJ/IndicPhotoOCR/tree/android
+
+Developed by people at the Vision, Language and Learning Group (VL2G), IIT Jodhpur. Supported by Bhashini.
+
+Note: recognition can be wrong for very small, blurred, curved, handwritten or decorative text. Please check important text yourself.
+----------------------------------------------------------------
+
+================================================================
+RELEASE NOTES (for the release, "en-IN" box)
+================================================================
+<en-IN>
+First release of IndicPhotoOCR 2.0: offline text recognition in English and 11 Indian languages.
+</en-IN>
+
+================================================================
+GRAPHICS (files in this folder)
+================================================================
+App icon .............. icon_512.png                 (512 x 512 PNG)
+Feature graphic ....... feature_graphic_1024x500.png (1024 x 500 PNG, no transparency)
+Phone screenshots ..... your 7.6 screenshots         (2 to 8; no IITJ/Bhashini logos)
+
+================================================================
+STORE SETTINGS (Grow users → Store presence → Store settings)
+================================================================
+App or game ........... App
+Category .............. Tools
+Email (public) ........ the email you want shown on the store
+Website (optional) .... https://github.com/Bhashini-IITJ/IndicPhotoOCR/tree/android
+Phone (optional) ...... leave empty
+
+================================================================
+LINKS
+================================================================
+Privacy policy ........ https://asadalk.github.io/IndicPhotoOCR-Android/privacy.html
+Source code ........... https://github.com/Bhashini-IITJ/IndicPhotoOCR/tree/android
+APK releases .......... https://github.com/Asadalk/IndicPhotoOCR-Android/releases

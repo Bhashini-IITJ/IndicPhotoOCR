@@ -1,0 +1,15 @@
+<resources>
+    <color name="navy">#23266E</color>
+    <color name="saffron">#F28C28</color>
+    <color name="page">#F3F4F8</color>
+    <color name="ink">#1C1D2B</color>
+    <color name="muted">#5D6075</color>
+    <color name="hindi">#EB6834</color>
+    <color name="english">#2A78D6</color>
+    <color name="other">#8A8A85</color>
+    <!-- header strip: the three colours of the IndicPhotoOCR logo -->
+    <color name="logo_orange">#FF9900</color>
+    <color name="logo_blue">#0000FF</color>
+    <color name="logo_green">#00FF00</color>
+    <color name="icon_background">#FFFFFF</color>
+</resources>

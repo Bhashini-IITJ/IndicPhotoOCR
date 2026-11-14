@@ -1,0 +1,26 @@
+IndicPhotoOCR is free, open-source software released under the GNU Affero General Public License, version 3 (AGPL-3.0). You may use, study, share and change it under the terms of that licence. The full source code is available at:
+{SOURCE_URL}
+
+This app is provided free of charge, without any warranty.
+
+COMPONENTS AND THEIR LICENCES
+
+• Text detector: YOLO11n, trained with Ultralytics YOLO (https://github.com/ultralytics/ultralytics). Licence: AGPL-3.0.
+
+• Detector starting weights (backbone): yolo11n-text by RoyRud1902 (https://huggingface.co/RoyRud1902/yolo11n-text), trained on DonkeySmall/Yolo-Text-Detection (MIT). Licence: Apache-2.0.
+
+• Text recognisers and IndicPhotoOCR models: IndicPhotoOCR, Copyright (c) 2024 Bhashini Team, IIT Jodhpur (https://github.com/Bhashini-IITJ/IndicPhotoOCR). Licence: MIT.
+
+• PARSeq recogniser architecture: Darwin Bautista and Rowel Atienza (https://github.com/baudm/parseq). Licence: Apache-2.0.
+
+• Script identifier: EfficientNet-B0, initialised from torchvision (https://github.com/pytorch/vision). Licence: BSD-3-Clause.
+
+• ONNX Runtime, Copyright (c) Microsoft Corporation (https://github.com/microsoft/onnxruntime). Licence: MIT.
+
+• Android Jetpack (AndroidX) libraries and Material Components for Android, Copyright The Android Open Source Project / Google LLC. Licence: Apache-2.0.
+
+• Kotlin standard library, Copyright JetBrains s.r.o. and Kotlin contributors. Licence: Apache-2.0.
+
+• Training data: Bharat Scene Text Dataset (BSTD), Bhashini Team, IIT Jodhpur. Annotations: Apache-2.0. Images: Wikimedia Commons contributors, Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0).
+
+The full texts of these licences follow.

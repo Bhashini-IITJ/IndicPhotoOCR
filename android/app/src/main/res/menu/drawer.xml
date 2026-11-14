@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_about" android:icon="@drawable/ic_info" android:title="About Us" />
+    <item android:id="@+id/nav_terms" android:icon="@drawable/ic_doc" android:title="Terms of Service" />
+    <item android:id="@+id/nav_privacy" android:icon="@drawable/ic_lock" android:title="Privacy Policy" />
+    <item android:id="@+id/nav_licences" android:icon="@drawable/ic_doc" android:title="Open-source licences" />
+</menu>

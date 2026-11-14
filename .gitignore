@@ -1,0 +1,11 @@
+build/
+.gradle/
+local.properties
+toolchain/
+*.apk
+*.aab
+*.jks
+*.keystore
+
+# models: downloaded by fetch_models.sh (release asset android-v2.0.0), not kept in Git
+android/model_pack/src/main/assets/models/*.onnx
