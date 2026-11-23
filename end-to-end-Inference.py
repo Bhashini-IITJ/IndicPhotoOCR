@@ -12,6 +12,8 @@ parser = argparse.ArgumentParser(
     Examples:
     python end-to-end-Inference.py --path /path/to/images --output results.json --exceptions errors.log --retries 3
     python end-to-end-Inference.py -p ./images -o predictions.json -e exceptions.log -r 2
+    python end-to-end-Inference.py -p ./images -o textbpn.json --detector textbpn
+    python end-to-end-Inference.py -p ./images -o ijdar.json --detector textbpn --identifier vit
         """
     )
 
@@ -34,6 +36,20 @@ parser.add_argument(
     help='Log file for exceptions (default: exceptions.log)'
 )
 parser.add_argument(
+    '--detector', '-d',
+    type=str,
+    default='yolo',
+    choices=['yolo', 'textbpn', 'east'],
+    help='Text detector (default: yolo, YOLO11n fine-tuned on BSTD + MIST at 1920 px)'
+)
+parser.add_argument(
+    '--identifier', '-i',
+    type=str,
+    default='efficientnet',
+    choices=['efficientnet', 'vit'],
+    help='Script identifier (default: efficientnet, EfficientNetV2-L; vit = original IJDAR setup)'
+)
+parser.add_argument(
     '--retries', '-r',
     type=int,
     default=2,
@@ -54,10 +70,12 @@ if not os.path.isdir(path):
     exit(1)
 # Initialize OCR Instances
 print("Initializing primary GPU OCR instance...")
-ocr_gpu = OCR(identifier_lang="auto", device="cuda", verbose=False, detector="east")
+ocr_gpu = OCR(identifier_lang="auto", device="cuda", verbose=False, detector=args.detector,
+              identifier_type=args.identifier)
 
 print("Initializing fallback CPU OCR instance for retries...")
-ocr_cpu = OCR(identifier_lang="auto", device="cpu", verbose=False, detector="east")
+ocr_cpu = OCR(identifier_lang="auto", device="cpu", verbose=False, detector=args.detector,
+              identifier_type=args.identifier)
 
 results = {}
 exception_images = []
@@ -89,7 +107,8 @@ def process_single_image(image_name, ocr_instance):
 
 # Pass 1: Full Dataset Scan (Using GPU)
 
-all_images = os.listdir(path)
+# Only regular files are images; sub-directories (e.g. test_images/cropped_image) are skipped.
+all_images = sorted(f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f)))
 print(f"\n--- Starting Pass 1: Processing {len(all_images)} images on GPU ---")
 
 for image in tqdm(all_images):

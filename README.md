@@ -11,6 +11,7 @@ A Comprehensive Toolkit for Scene Text Recognition in Indian Languages
 [![Colab](https://img.shields.io/badge/Notebook-Google%20Colab-F9AB00?style=flat-square&logo=googlecolab&logoColor=white)](https://colab.research.google.com/drive/1BILXjUF2kKKrzUJ_evubgLHl2busPiH2)
 [![Documentation](https://img.shields.io/badge/Docs-ReadTheDocs-007BFF?style=flat-square&logo=readthedocs&logoColor=white)](https://bhashini-iitj.github.io/IndicPhotoOCR/)
 [![Project Page](https://img.shields.io/badge/Project-Page-6C63FF?style=flat-square&logo=academia&logoColor=white)](https://vl2g.github.io/projects/IndicPhotoOCR/)
+[![Android App](https://img.shields.io/badge/Android-Offline%20App-3DDC84?style=flat-square&logo=android&logoColor=white)](https://github.com/Bhashini-IITJ/IndicPhotoOCR/tree/android)
 
 [![Open Source](https://img.shields.io/badge/Bhashini-Open%20Source-FF6C00?style=flat-square)](https://bhashini.gov.in/)
 [![Stars](https://img.shields.io/github/stars/Bhashini-IITJ/IndicPhotoOCR?style=flat-square&color=blue)](https://github.com/Bhashini-IITJ/IndicPhotoOCR/stargazers)
@@ -33,6 +34,8 @@ Welcome to **IndicPhotoOCR**! ⚡ We've built an scene text recognition toolkit 
 <hr style="width: 100%; border: 1px solid #000;">
 
 ## 📅 Updates Timeline
+<b>[November 2026]:</b> <b>IndicPhotoOCR 2.0</b>: YOLO11n text detector (fine-tuned on BSTD + MIST, 1920 px) with EfficientNetV2-L script identification. End-to-end recall on the BSTD test set rises from 0.48 to 0.58, and detection is about 11× faster. An offline Android app runs the full pipeline on the phone (source in the [`android` branch](https://github.com/Bhashini-IITJ/IndicPhotoOCR/tree/android)).</br>
+<b>[September 2026]:</b> Improved script identification with EfficientNetV2-L, boosting overall WRR by 2%.</br>
 <b>[August 2026]:</b> Oral presentation [ICDAR 2026](https://icdar2026.org/) in Vienna, Austria.</br> 
 <b>[April 2026]:</b> Accepted at International Journal on Document Analysis and Recognition (IJDAR) 20026.</br>
 <b>[August 2025]:</b> [Project page](https://vl2g.github.io/projects/IndicPhotoOCR/) created.</br>
@@ -65,6 +68,38 @@ cd IndicPhotoOCR
 pip install -e .
 ```
 
+### 🐳 Docker
+
+Requirements: an NVIDIA GPU, Docker, and the
+[NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html).
+Prefix the commands with `sudo` if your user is not in the `docker` group.
+
+```bash
+git clone https://github.com/Bhashini-IITJ/IndicPhotoOCR.git
+cd IndicPhotoOCR
+
+make build   # docker build -t indicphotoocr:latest .
+make test    # run the test suite inside the container
+make run     # interactive shell; this checkout is mounted at /workspace/IndicPhotoOCR
+```
+
+Inside the container (`make run` opens a shell in `/workspace/IndicPhotoOCR`):
+
+```bash
+python end-to-end-Inference.py -p test_images -o predictions.json
+python end-to-end-Evaluation.py -g <path/to/BSTD_v17.57.json> -p predictions.json
+```
+
+Model weights download on first use (about 5 GB) into the mounted checkout,
+so later runs reuse them. To use another image name (for example on a shared
+server), pass it to every target: `make build IMAGE=myname`, `make test IMAGE=myname`,
+`make run IMAGE=myname`. Without `make`, the equivalent commands are:
+
+```bash
+docker build -t indicphotoocr:latest .
+docker run --gpus all --rm -it --shm-size=16g -v "$PWD":/workspace/IndicPhotoOCR -w /workspace/IndicPhotoOCR indicphotoocr:latest
+```
+
 <hr style="width: 100%; border: 1px solid #000;">
 
 ## 💡 How to Use
@@ -90,14 +125,134 @@ results = ocr_system.ocr("test_images/image_141.jpg")
 fast_results = ocr_system.ocr("test_images/image_141.jpg", batch_size=32)
 ```
 
+### Script identification backends
+
+IndicPhotoOCR 2.0 uses **EfficientNetV2-L by default** for script identification. The identifier uses 288×288 RGB crops, bilinear resizing
+with antialiasing, and ImageNet normalization. Class order comes from the
+checkpoint: Hindi, English, Assamese, Bengali, Gujarati, Kannada, Malayalam,
+Marathi, Odia, Punjabi, Tamil, and Telugu. It always predicts across these 12
+classes; `identifier_lang` does not restrict EfficientNet predictions.
+
+```python
+# Default: EfficientNetV2-L (weights download automatically if missing)
+ocr_system = OCR(device="cuda:0", identifier_lang="auto")
+
+# Optional original ViT backend
+vit_system = OCR(device="cuda:0", identifier_lang="auto", identifier_type="vit")
+
+# Optional local EfficientNet checkpoint (verified against the release checksum)
+local_system = OCR(device="cuda:0", identifier_checkpoint="/path/to/efficientnetv2_l_script_id.pth")
+```
+
+The default EfficientNet checkpoint is stored relative to the installed module:
+`IndicPhotoOCR/script_identification/efficientnet/models/efficientnet/efficientnetv2_l_script_id.pth`.
+This directory must be writable for automatic downloads. An explicit
+`identifier_checkpoint` can point to another writable location.
+
+The [efficientnetv2-l-v1.0 release](https://github.com/Bhashini-IITJ/IndicPhotoOCR/releases/tag/efficientnetv2-l-v1.0)
+hosts the inference-only weights (471,575,150 bytes). Downloads show progress,
+use a temporary file, and verify SHA-256 before installation. Existing weights
+are also verified. Expected SHA-256:
+
+```text
+74b6f6e8f7f77b0d2dc1c6f0684bac718ac2b82247bcc393dad804fa4ea15709
+```
+
+Detection and required recognition weights download separately when missing.
+The first prediction can include recognizer loading/downloads; subsequent
+predictions reuse models within the same `OCR` instance. The smaller checkpoint
+removes training state, not model weights, and does not reduce inference computation.
+
+### Text detection backends
+
+The default detector is **YOLO11n fine-tuned on the BSTD training split plus
+MIST video frames** (`yolo11n_bstd_mist_1920`): 4,737 BSTD train images (from the
+official `train` split; 526 more held out for validation; no test images) and
+5,189 [MIST](https://openaccess.thecvf.com/content/WACV2026/html/Mundra_MIST_Multilingual_Incidental_Dataset_for_Scene_Text_Detection_WACV_2026_paper.html) training frames, trained and run at `imgsz=1920`, `conf=0.25`,
+`iou=0.7`. A BSTD-only model, `yolo11n_bstd_1920` (1920 px, the highest recall
+on the BSTD test set), is also available. Boxes are returned as 4-point polygons to the unchanged crop →
+script identification → recognition pipeline. TextBPN++ and EAST are still
+available.
+
+```python
+# Default: YOLO11n fine-tuned on BSTD + MIST, 1920 px (weights download automatically if missing)
+ocr_system = OCR(device="cuda:0", identifier_lang="auto")
+
+# BSTD only, 1920 px (highest recall on the BSTD test set)
+bstd_yolo = OCR(device="cuda:0", identifier_lang="auto", detector_model="yolo11n_bstd_1920")
+
+# Original detector of the toolkit
+textbpn_system = OCR(device="cuda:0", identifier_lang="auto", detector="textbpn")
+
+# Optional local YOLO checkpoint (verified only when downloaded by the package)
+local_yolo = OCR(device="cuda:0", detector_checkpoint="/path/to/yolo11n_bstd_mist_1920.pt")
+```
+
+Checkpoints are cached in `IndicPhotoOCR/detection/yolo/models/` and downloaded
+from the release assets with the same temporary-file and SHA-256 verification as
+the EfficientNet weights:
+
+| Model | Release | Size | SHA-256 |
+|---|---|---:|---|
+| `yolo11n_bstd_mist_1920` (default) | [SceneTextDetection `YOLO`](https://github.com/Bhashini-IITJ/SceneTextDetection/releases/tag/YOLO) | 5,693,267 bytes | `027951606ab3307653b532b8094eba38783723221d8683bd4ff2e11b8db49e2d` |
+| `yolo11n_bstd_1920` | [SceneTextDetection `YOLO`](https://github.com/Bhashini-IITJ/SceneTextDetection/releases/tag/YOLO) | 5,693,587 bytes | `3b9216b50239a8d4f2ba39f1099f68ab0c4499661ca343acdbfc2e28a0c21fc3` |
+
+The YOLO detector requires `ultralytics==8.3.227` (installed with the
+package). Note that Ultralytics is licensed under **AGPL-3.0**.
+
+**End-to-end results on the 1,319 BSTD test images** (EfficientNetV2-L script
+identification + PARSeq for all rows; scored with `end-to-end-Evaluation.py`,
+averaged per image, per language, then over the 10 language groups):
+
+| Detector | Precision | Recall | F1 | WRR | MIST detection F1 |
+|---|---:|---:|---:|---:|---:|
+| TextBPN++ (`--detector textbpn`) | 0.49 | 0.48 | 0.47 | 0.38 | 0.43 |
+| YOLO11n BSTD, 1920 (`detector_model="yolo11n_bstd_1920"`) | 0.54 | 0.59 | 0.55 | 0.42 | 0.48 |
+| **YOLO11n BSTD + MIST, 1920 (default)** | **0.53** | **0.58** | **0.54** | **0.40** | **0.74** |
+
+MIST detection F1: the 1,985 MIST test frames (MIST has no transcriptions), boxes
+matched at IoU >= 0.5 against the enclosing rectangles of the MIST polygons.
+
+The YOLO rows use the same detector -> EfficientNetV2-L -> PARSeq pipeline as
+`end-to-end-Inference.py` (0 failed images). For TextBPN++, `J_image_241` and
+`K_image_128` fail (GPU out of memory, and the CPU retry needs more than 100 GB
+RAM), so they are omitted as `end-to-end-Inference.py` omits failed images.
+
+| Language | Bengali* | English | Gujarati | Devanagari* | Kannada | Malayalam | Odia | Punjabi | Tamil | Telugu |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| YOLO11n BSTD 1920 recall | 0.65 | 0.62 | 0.52 | 0.60 | 0.49 | 0.55 | 0.63 | 0.65 | 0.72 | 0.49 |
+| YOLO11n BSTD 1920 WRR | 0.47 | 0.49 | 0.40 | 0.52 | 0.32 | 0.31 | 0.39 | 0.53 | 0.50 | 0.29 |
+
+\*Assamese is merged into Bengali and Marathi into Devanagari (Hindi), as in the evaluator.
+
+### Automated tests
+
+Run from the repository root in an environment with the package dependencies
+and pytest installed:
+
+```bash
+python -m pytest tests/
+```
+
+Unit tests mock downloads and heavy models; no GPU or checkpoint downloads are
+needed. Existing integration tests are skipped unless `--run-integration` is
+passed. A real end-to-end validation completed 20 images
+twice without errors and with identical outputs between passes. Exported versus
+original V2-L weights also produced identical script predictions on 439 crops.
+These checks do not establish that EfficientNet is more accurate than ViT.
+
 ### Inference and Evaluation on BSTD
 ```python
 # run the following script while providing path to directory of images
 python end-to-end-Inference.py --path </path/to/images>
-# by default it will create indicPhotoOCR_predictions.json
+# by default it will create IndicPhotoOCR_predictions.json
+# the default detector is the fine-tuned YOLO11n; use --detector textbpn or --detector east to compare
+# image file names must match the BSTD keys (e.g. A_image_109.jpg) for the evaluator
 
-# use the following script to reproduce the results provided in the IJDAR version
-python end-to-end-Evaluation.py -g <path/to/bstd/json> -p indicPhotoOCR.json
+# The IJDAR 2026 results used the original setup (TextBPN++ and the ViT script identifier):
+python end-to-end-Inference.py --path </path/to/images> --detector textbpn --identifier vit
+
+python end-to-end-Evaluation.py -g <path/to/bstd/json> -p IndicPhotoOCR_predictions.json
 # bstd json is in the first section named as BSTD_17.57.json in repository
 ```
 
@@ -134,7 +289,7 @@ from IndicPhotoOCR.ocr import OCR
 ocr_system = OCR(verbose=True, identifier_lang="auto", device="cuda:0")
 
 # Identify script of a cropped word
-lang = ocr_system.identify("test_images/cropped_word.jpg")
+lang = ocr_system.identify("test_images/cropped_image/image_141_0.jpg")
 print(lang)
 # Output: 'hindi'
 ```
@@ -151,18 +306,25 @@ from IndicPhotoOCR.ocr import OCR
 ocr_system = OCR(verbose=True, device="cuda:0")
 
 # Recognize text (old behavior, returns string)
-text = ocr_system.recognise("test_images/cropped_word.jpg", "hindi")
+text = ocr_system.recognise("test_images/cropped_image/image_141_0.jpg", "hindi")
 
 # Recognize text WITH Confidence Score (new behavior)
-text, conf_score = ocr_system.recognise("test_images/cropped_word.jpg", "hindi", return_confidence=True)
+text, conf_score = ocr_system.recognise("test_images/cropped_image/image_141_0.jpg", "hindi", return_confidence=True)
 print(f"Recognized: {text} | Certainty: {conf_score * 100:.2f}%")
 ```
 </details>
 
 <hr style="width: 100%; border: 1px solid #000;">
 
+## 📱 Offline Android App
+
+The full IndicPhotoOCR 2.0 pipeline (YOLO11n detection, a distilled EfficientNet-B0 script identifier and int8 PARSeq readers for all 12 languages) also runs fully offline on Android phones, with no internet permission. Source code: the [`android` branch](https://github.com/Bhashini-IITJ/IndicPhotoOCR/tree/android) of this repository (AGPL-3.0). A Google Play release is in testing.
+
+<hr style="width: 100%; border: 1px solid #000;">
+
 ## 📚 Related Datasets & Citations
 - **Bharat Scene Text Dataset** - [BSTD](https://github.com/Bhashini-IITJ/BharatSceneTextDataset)
+- **MIST** (Multilingual Incidental Scene Text, CVIT, IIIT Hyderabad) - [paper](https://openaccess.thecvf.com/content/WACV2026/html/Mundra_MIST_Multilingual_Incidental_Dataset_for_Scene_Text_Detection_WACV_2026_paper.html); used, with BSTD, to train the default YOLO11n detector
 
 > 🎉 **Our paper has been officially accepted in IJDAR** (International Journal on Document Analysis and Recognition)!
 
@@ -179,6 +341,18 @@ If you use IndicPhotoOCR in your research, please cite us:
 }
 ```
 
+The default YOLO11n detector is also trained on MIST. If you use it, please also cite:
+```bibtex
+@InProceedings{Mundra_2026_WACV,
+  author    = {Mundra, Saumya and Mondal, Ajoy and Jawahar, C.V.},
+  title     = {MIST: Multilingual Incidental Dataset for Scene Text Detection},
+  booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+  month     = {March},
+  year      = {2026},
+  pages     = {7658-7667}
+}
+```
+
 ## 🤝 Project Contributors
 | <img src="https://github.com/anikde/anikde.github.io/blob/main/Anik_New_2.jpg" width="100" style="border-radius:15px;"> |
 |:---------------------------------:|
@@ -192,14 +366,20 @@ If you use IndicPhotoOCR in your research, please cite us:
 |:---:|:---:|:---:|
 | [Sagar Agarwal](https://www.linkedin.com/in/sagar-agrawal-4a0b94106/) | [Rajeev Yadav](https://www.linkedin.com/in/rajeev-yadav/) | [Pravin Kumar](https://www.linkedin.com/in/prvnkmr9060/) |
 
+| <img src="https://github.com/Bhashini-IITJ/SceneTextDetection/releases/download/Photos/faisal.jpg" width="100" style="border-radius:15px;"> |
+|:---:|
+| [Asadullah Faisal](https://www.linkedin.com/in/faizal-iitj/) - IndicPhotoOCR 2.0 & Android app |
+
 | <img src="https://anandmishra22.github.io/files/Mishra_oct22.png" width="100" style="border-radius:15px;"> |
 |:---------------------------------:|
 | **[Anand Mishra](https://anandmishra22.github.io/)** - Project Investigator |
 
 ## 🙏 Acknowledgements
 - **Text Recognition**: [PARseq](https://github.com/baudm/parseq)
+- **Text Detection**: YOLO11n via [Ultralytics](https://github.com/ultralytics/ultralytics) (AGPL-3.0), fine-tuned on BSTD train (and MIST video frames for the default model)
 - **Text Detection**: TextBPN++ [Original Repository](https://github.com/GXYM/TextBPN-Plus-Plus)
 - **EAST Re-implementation**: [EAST Repository](https://github.com/foamliu/EAST)
+- **Detector training data**: [MIST](https://openaccess.thecvf.com/content/WACV2026/html/Mundra_MIST_Multilingual_Incidental_Dataset_for_Scene_Text_Detection_WACV_2026_paper.html) (CVIT, IIIT Hyderabad), with BSTD
 - **National Language Translation Mission**: [Bhashini](https://bhashini.gov.in/)
 
 ## 📬 Contact us
