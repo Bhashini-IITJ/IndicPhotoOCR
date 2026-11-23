@@ -149,7 +149,7 @@ The default EfficientNet checkpoint is stored relative to the installed module:
 This directory must be writable for automatic downloads. An explicit
 `identifier_checkpoint` can point to another writable location.
 
-The [test checkpoint release](https://github.com/dikshant-sharma05/IndicPhotoOCR/releases/tag/efficientnetv2-l-v1.0-test)
+The [efficientnetv2-l-v1.0 release](https://github.com/Bhashini-IITJ/IndicPhotoOCR/releases/tag/efficientnetv2-l-v1.0)
 hosts the inference-only weights (471,575,150 bytes). Downloads show progress,
 use a temporary file, and verify SHA-256 before installation. Existing weights
 are also verified. Expected SHA-256:

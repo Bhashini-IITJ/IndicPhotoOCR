@@ -13,7 +13,7 @@ from tqdm import tqdm
 model_info = {
     "efficientnet_v2_l": {
         "path": "models/efficientnet",
-        "url": "https://github.com/dikshant-sharma05/IndicPhotoOCR/releases/download/efficientnetv2-l-v1.0-test/efficientnetv2_l_script_id.pth",
+        "url": "https://github.com/Bhashini-IITJ/IndicPhotoOCR/releases/download/efficientnetv2-l-v1.0/efficientnetv2_l_script_id.pth",
         "filename": "efficientnetv2_l_script_id.pth",
         "sha256": "74b6f6e8f7f77b0d2dc1c6f0684bac718ac2b82247bcc393dad804fa4ea15709",
     }
