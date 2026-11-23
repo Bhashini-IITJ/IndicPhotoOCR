@@ -13,6 +13,7 @@ parser = argparse.ArgumentParser(
     python end-to-end-Inference.py --path /path/to/images --output results.json --exceptions errors.log --retries 3
     python end-to-end-Inference.py -p ./images -o predictions.json -e exceptions.log -r 2
     python end-to-end-Inference.py -p ./images -o textbpn.json --detector textbpn
+    python end-to-end-Inference.py -p ./images -o ijdar.json --detector textbpn --identifier vit
         """
     )
 
@@ -39,7 +40,14 @@ parser.add_argument(
     type=str,
     default='yolo',
     choices=['yolo', 'textbpn', 'east'],
-    help='Text detector (default: yolo, fine-tuned YOLO11n on BSTD train)'
+    help='Text detector (default: yolo, YOLO11n fine-tuned on BSTD + MIST at 1920 px)'
+)
+parser.add_argument(
+    '--identifier', '-i',
+    type=str,
+    default='efficientnet',
+    choices=['efficientnet', 'vit'],
+    help='Script identifier (default: efficientnet, EfficientNetV2-L; vit = original IJDAR setup)'
 )
 parser.add_argument(
     '--retries', '-r',
@@ -62,10 +70,12 @@ if not os.path.isdir(path):
     exit(1)
 # Initialize OCR Instances
 print("Initializing primary GPU OCR instance...")
-ocr_gpu = OCR(identifier_lang="auto", device="cuda", verbose=False, detector=args.detector)
+ocr_gpu = OCR(identifier_lang="auto", device="cuda", verbose=False, detector=args.detector,
+              identifier_type=args.identifier)
 
 print("Initializing fallback CPU OCR instance for retries...")
-ocr_cpu = OCR(identifier_lang="auto", device="cpu", verbose=False, detector=args.detector)
+ocr_cpu = OCR(identifier_lang="auto", device="cpu", verbose=False, detector=args.detector,
+              identifier_type=args.identifier)
 
 results = {}
 exception_images = []

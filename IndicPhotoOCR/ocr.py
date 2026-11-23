@@ -32,7 +32,7 @@ class OCR:
                             'gujarati', 'marathi', 'punjabi', 'odia', 'assamese', 'urdu', 'meitei']
         verbose (bool): Whether to print detailed processing information.
         detector (str): Text detector: 'yolo' (default; YOLO11n fine-tuned on
-            BSTD train), 'textbpn'/'textbpnpp' (TextBPN++) or 'east'.
+            BSTD + MIST), 'textbpn'/'textbpnpp' (TextBPN++) or 'east'.
         detector_checkpoint (str): Optional local YOLO checkpoint. If omitted,
             the verified release asset is downloaded and cached.
         detector_model (str): YOLO model: 'yolo11n_bstd_mist_1920' (default;
@@ -306,7 +306,11 @@ class OCR:
             for path in cropped_paths:
                 if os.path.exists(path):
                     os.remove(path)
-                    
+
+            # Recognition ran per language; restore detection order so the lines
+            # match the sequential path exactly.
+            recognized_texts = dict(sorted(recognized_texts.items(),
+                                           key=lambda item: int(item[0].split("_")[1])))
             return detect_para(recognized_texts)
 
         # Original Sequential Execution

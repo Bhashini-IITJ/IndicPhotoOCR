@@ -11,6 +11,7 @@ A Comprehensive Toolkit for Scene Text Recognition in Indian Languages
 [![Colab](https://img.shields.io/badge/Notebook-Google%20Colab-F9AB00?style=flat-square&logo=googlecolab&logoColor=white)](https://colab.research.google.com/drive/1BILXjUF2kKKrzUJ_evubgLHl2busPiH2)
 [![Documentation](https://img.shields.io/badge/Docs-ReadTheDocs-007BFF?style=flat-square&logo=readthedocs&logoColor=white)](https://bhashini-iitj.github.io/IndicPhotoOCR/)
 [![Project Page](https://img.shields.io/badge/Project-Page-6C63FF?style=flat-square&logo=academia&logoColor=white)](https://vl2g.github.io/projects/IndicPhotoOCR/)
+[![Android App](https://img.shields.io/badge/Android-Offline%20App-3DDC84?style=flat-square&logo=android&logoColor=white)](https://github.com/Bhashini-IITJ/IndicPhotoOCR/tree/android)
 
 [![Open Source](https://img.shields.io/badge/Bhashini-Open%20Source-FF6C00?style=flat-square)](https://bhashini.gov.in/)
 [![Stars](https://img.shields.io/github/stars/Bhashini-IITJ/IndicPhotoOCR?style=flat-square&color=blue)](https://github.com/Bhashini-IITJ/IndicPhotoOCR/stargazers)
@@ -200,7 +201,7 @@ The YOLO detector requires `ultralytics==8.3.227` (installed with the
 package). Note that Ultralytics is licensed under **AGPL-3.0**.
 
 **End-to-end results on the 1,319 BSTD test images** (EfficientNetV2-L script
-identification + PARSeq for both rows; scored with `end-to-end-Evaluation.py`,
+identification + PARSeq for all rows; scored with `end-to-end-Evaluation.py`,
 averaged per image, per language, then over the 10 language groups):
 
 | Detector | Precision | Recall | F1 | WRR | MIST detection F1 |
@@ -235,7 +236,7 @@ python -m pytest tests/
 
 Unit tests mock downloads and heavy models; no GPU or checkpoint downloads are
 needed. Existing integration tests are skipped unless `--run-integration` is
-passed. A real end-to-end validation on this test branch completed 20 images
+passed. A real end-to-end validation completed 20 images
 twice without errors and with identical outputs between passes. Exported versus
 original V2-L weights also produced identical script predictions on 439 crops.
 These checks do not establish that EfficientNet is more accurate than ViT.
@@ -244,13 +245,14 @@ These checks do not establish that EfficientNet is more accurate than ViT.
 ```python
 # run the following script while providing path to directory of images
 python end-to-end-Inference.py --path </path/to/images>
-# by default it will create indicPhotoOCR_predictions.json
+# by default it will create IndicPhotoOCR_predictions.json
 # the default detector is the fine-tuned YOLO11n; use --detector textbpn or --detector east to compare
 # image file names must match the BSTD keys (e.g. A_image_109.jpg) for the evaluator
 
-# Historical IJDAR results use the original model setup, not the new default.
-# Select the original ViT backend in the inference script to reproduce that setup.
-python end-to-end-Evaluation.py -g <path/to/bstd/json> -p indicPhotoOCR.json
+# The IJDAR 2026 results used the original setup (TextBPN++ and the ViT script identifier):
+python end-to-end-Inference.py --path </path/to/images> --detector textbpn --identifier vit
+
+python end-to-end-Evaluation.py -g <path/to/bstd/json> -p IndicPhotoOCR_predictions.json
 # bstd json is in the first section named as BSTD_17.57.json in repository
 ```
 
@@ -287,7 +289,7 @@ from IndicPhotoOCR.ocr import OCR
 ocr_system = OCR(verbose=True, identifier_lang="auto", device="cuda:0")
 
 # Identify script of a cropped word
-lang = ocr_system.identify("test_images/cropped_word.jpg")
+lang = ocr_system.identify("test_images/cropped_image/image_141_0.jpg")
 print(lang)
 # Output: 'hindi'
 ```
@@ -304,10 +306,10 @@ from IndicPhotoOCR.ocr import OCR
 ocr_system = OCR(verbose=True, device="cuda:0")
 
 # Recognize text (old behavior, returns string)
-text = ocr_system.recognise("test_images/cropped_word.jpg", "hindi")
+text = ocr_system.recognise("test_images/cropped_image/image_141_0.jpg", "hindi")
 
 # Recognize text WITH Confidence Score (new behavior)
-text, conf_score = ocr_system.recognise("test_images/cropped_word.jpg", "hindi", return_confidence=True)
+text, conf_score = ocr_system.recognise("test_images/cropped_image/image_141_0.jpg", "hindi", return_confidence=True)
 print(f"Recognized: {text} | Certainty: {conf_score * 100:.2f}%")
 ```
 </details>
