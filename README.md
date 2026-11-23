@@ -168,7 +168,7 @@ removes training state, not model weights, and does not reduce inference computa
 The default detector is **YOLO11n fine-tuned on the BSTD training split plus
 MIST video frames** (`yolo11n_bstd_mist_1920`): 4,737 BSTD train images (from the
 official `train` split; 526 more held out for validation; no test images) and
-5,189 MIST training frames, trained and run at `imgsz=1920`, `conf=0.25`,
+5,189 [MIST](https://openaccess.thecvf.com/content/WACV2026/html/Mundra_MIST_Multilingual_Incidental_Dataset_for_Scene_Text_Detection_WACV_2026_paper.html) training frames, trained and run at `imgsz=1920`, `conf=0.25`,
 `iou=0.7`. A BSTD-only model, `yolo11n_bstd_1920` (1920 px, the highest recall
 on the BSTD test set), is also available. Boxes are returned as 4-point polygons to the unchanged crop →
 script identification → recognition pipeline. TextBPN++ and EAST are still
@@ -324,6 +324,7 @@ The full IndicPhotoOCR 2.0 pipeline (YOLO11n detection, a distilled EfficientNet
 
 ## 📚 Related Datasets & Citations
 - **Bharat Scene Text Dataset** - [BSTD](https://github.com/Bhashini-IITJ/BharatSceneTextDataset)
+- **MIST** (Multilingual Incidental Scene Text, CVIT, IIIT Hyderabad) - [paper](https://openaccess.thecvf.com/content/WACV2026/html/Mundra_MIST_Multilingual_Incidental_Dataset_for_Scene_Text_Detection_WACV_2026_paper.html); used, with BSTD, to train the default YOLO11n detector
 
 > 🎉 **Our paper has been officially accepted in IJDAR** (International Journal on Document Analysis and Recognition)!
 
@@ -337,6 +338,18 @@ If you use IndicPhotoOCR in your research, please cite us:
   issn      = {1433-2825},
   doi       = {10.1007/s10032-026-00583-9},
   url       = {https://doi.org/10.1007/s10032-026-00583-9}
+}
+```
+
+The default YOLO11n detector is also trained on MIST. If you use it, please also cite:
+```bibtex
+@InProceedings{Mundra_2026_WACV,
+  author    = {Mundra, Saumya and Mondal, Ajoy and Jawahar, C.V.},
+  title     = {MIST: Multilingual Incidental Dataset for Scene Text Detection},
+  booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+  month     = {March},
+  year      = {2026},
+  pages     = {7658-7667}
 }
 ```
 
@@ -366,6 +379,7 @@ If you use IndicPhotoOCR in your research, please cite us:
 - **Text Detection**: YOLO11n via [Ultralytics](https://github.com/ultralytics/ultralytics) (AGPL-3.0), fine-tuned on BSTD train (and MIST video frames for the default model)
 - **Text Detection**: TextBPN++ [Original Repository](https://github.com/GXYM/TextBPN-Plus-Plus)
 - **EAST Re-implementation**: [EAST Repository](https://github.com/foamliu/EAST)
+- **Detector training data**: [MIST](https://openaccess.thecvf.com/content/WACV2026/html/Mundra_MIST_Multilingual_Incidental_Dataset_for_Scene_Text_Detection_WACV_2026_paper.html) (CVIT, IIIT Hyderabad), with BSTD
 - **National Language Translation Mission**: [Bhashini](https://bhashini.gov.in/)
 
 ## 📬 Contact us
