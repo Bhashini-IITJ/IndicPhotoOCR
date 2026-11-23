@@ -34,7 +34,6 @@ Welcome to **IndicPhotoOCR**! ⚡ We've built an scene text recognition toolkit 
 
 ## 📅 Updates Timeline
 <b>[November 2026]:</b> <b>IndicPhotoOCR 2.0</b>: YOLO11n text detector (fine-tuned on BSTD + MIST, 1920 px) with EfficientNetV2-L script identification. End-to-end recall on the BSTD test set rises from 0.48 to 0.58, and detection is about 11× faster. An offline Android app runs the full pipeline on the phone (source in the [`android` branch](https://github.com/Bhashini-IITJ/IndicPhotoOCR/tree/android)).</br>
-<b>[October 2026]:</b> Default text detector is now YOLO11n fine-tuned on BSTD train (TextBPN++ and EAST remain selectable).</br>
 <b>[September 2026]:</b> Improved script identification with EfficientNetV2-L, boosting overall WRR by 2%.</br>
 <b>[August 2026]:</b> Oral presentation [ICDAR 2026](https://icdar2026.org/) in Vienna, Austria.</br> 
 <b>[April 2026]:</b> Accepted at International Journal on Document Analysis and Recognition (IJDAR) 20026.</br>
@@ -63,7 +62,7 @@ We recommend creating a virtual environment before installing:
 conda create -n indicphotoocr python=3.10 -y
 conda activate indicphotoocr
 
-git clone https://github.com/Asadalk/IndicPhotoOCR.git
+git clone https://github.com/Bhashini-IITJ/IndicPhotoOCR.git
 cd IndicPhotoOCR
 pip install -e .
 ```
@@ -75,7 +74,7 @@ Requirements: an NVIDIA GPU, Docker, and the
 Prefix the commands with `sudo` if your user is not in the `docker` group.
 
 ```bash
-git clone https://github.com/Asadalk/IndicPhotoOCR.git
+git clone https://github.com/Bhashini-IITJ/IndicPhotoOCR.git
 cd IndicPhotoOCR
 
 make build   # docker build -t indicphotoocr:latest .
@@ -169,9 +168,8 @@ The default detector is **YOLO11n fine-tuned on the BSTD training split plus
 MIST video frames** (`yolo11n_bstd_mist_1920`): 4,737 BSTD train images (from the
 official `train` split; 526 more held out for validation; no test images) and
 5,189 MIST training frames, trained and run at `imgsz=1920`, `conf=0.25`,
-`iou=0.7`. Two BSTD-only models are also available: `yolo11n_bstd_1920`
-(1920 px, the highest recall on the BSTD test set) and the previous default
-`yolo11n_bstd` (1280 px). Boxes are returned as 4-point polygons to the unchanged crop →
+`iou=0.7`. A BSTD-only model, `yolo11n_bstd_1920` (1920 px, the highest recall
+on the BSTD test set), is also available. Boxes are returned as 4-point polygons to the unchanged crop →
 script identification → recognition pipeline. TextBPN++ and EAST are still
 available.
 
@@ -181,9 +179,6 @@ ocr_system = OCR(device="cuda:0", identifier_lang="auto")
 
 # BSTD only, 1920 px (highest recall on the BSTD test set)
 bstd_yolo = OCR(device="cuda:0", identifier_lang="auto", detector_model="yolo11n_bstd_1920")
-
-# Previous YOLO model: BSTD only, 1280 px
-bstd_1280 = OCR(device="cuda:0", identifier_lang="auto", detector_model="yolo11n_bstd")
 
 # Original detector of the toolkit
 textbpn_system = OCR(device="cuda:0", identifier_lang="auto", detector="textbpn")
@@ -200,7 +195,6 @@ the EfficientNet weights:
 |---|---|---:|---|
 | `yolo11n_bstd_mist_1920` (default) | [SceneTextDetection `YOLO`](https://github.com/Bhashini-IITJ/SceneTextDetection/releases/tag/YOLO) | 5,693,267 bytes | `027951606ab3307653b532b8094eba38783723221d8683bd4ff2e11b8db49e2d` |
 | `yolo11n_bstd_1920` | [SceneTextDetection `YOLO`](https://github.com/Bhashini-IITJ/SceneTextDetection/releases/tag/YOLO) | 5,693,587 bytes | `3b9216b50239a8d4f2ba39f1099f68ab0c4499661ca343acdbfc2e28a0c21fc3` |
-| `yolo11n_bstd` | [yolo11n-bstd-v1.0](https://github.com/Asadalk/IndicPhotoOCR/releases/tag/yolo11n-bstd-v1.0) | 5,544,339 bytes | `cb41a7f120ff086180e4db5b36001cd9ba6984b129076a6cf697c634aa3489db` |
 
 The YOLO detector requires `ultralytics==8.3.227` (installed with the
 package). Note that Ultralytics is licensed under **AGPL-3.0**.
@@ -212,7 +206,6 @@ averaged per image, per language, then over the 10 language groups):
 | Detector | Precision | Recall | F1 | WRR | MIST detection F1 |
 |---|---:|---:|---:|---:|---:|
 | TextBPN++ (`--detector textbpn`) | 0.49 | 0.48 | 0.47 | 0.38 | 0.43 |
-| YOLO11n BSTD, 1280 (`detector_model="yolo11n_bstd"`) | 0.54 | 0.57 | 0.54 | 0.42 | 0.50 |
 | YOLO11n BSTD, 1920 (`detector_model="yolo11n_bstd_1920"`) | 0.54 | 0.59 | 0.55 | 0.42 | 0.48 |
 | **YOLO11n BSTD + MIST, 1920 (default)** | **0.53** | **0.58** | **0.54** | **0.40** | **0.74** |
 
@@ -226,8 +219,6 @@ RAM), so they are omitted as `end-to-end-Inference.py` omits failed images.
 
 | Language | Bengali* | English | Gujarati | Devanagari* | Kannada | Malayalam | Odia | Punjabi | Tamil | Telugu |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| YOLO11n BSTD 1280 recall | 0.62 | 0.58 | 0.51 | 0.58 | 0.43 | 0.52 | 0.62 | 0.61 | 0.73 | 0.49 |
-| YOLO11n BSTD 1280 WRR | 0.47 | 0.46 | 0.41 | 0.51 | 0.29 | 0.34 | 0.40 | 0.50 | 0.51 | 0.29 |
 | YOLO11n BSTD 1920 recall | 0.65 | 0.62 | 0.52 | 0.60 | 0.49 | 0.55 | 0.63 | 0.65 | 0.72 | 0.49 |
 | YOLO11n BSTD 1920 WRR | 0.47 | 0.49 | 0.40 | 0.52 | 0.32 | 0.31 | 0.39 | 0.53 | 0.50 | 0.29 |
 

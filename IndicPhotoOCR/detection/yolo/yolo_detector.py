@@ -1,16 +1,14 @@
 """YOLO11n text detectors fine-tuned for Indian scene text.
 
-Three Ultralytics YOLO11n checkpoints, all trained without any BSTD test image:
+Two Ultralytics YOLO11n checkpoints, both trained without any BSTD test image:
 
 - ``yolo11n_bstd_mist_1920`` (default): BSTD train split (4,737 images) plus
   5,189 MIST training video frames, trained and run at imgsz=1920. Most robust
   on real camera and video frames.
 - ``yolo11n_bstd_1920``: BSTD train split only, trained and run at imgsz=1920.
   Highest recall on the BSTD test set.
-- ``yolo11n_bstd``: BSTD train split only, trained and run at imgsz=1280
-  (previous default).
 
-The 1920 checkpoints are the same files as in Bhashini-IITJ/SceneTextDetection
+Both checkpoints are the same files as in Bhashini-IITJ/SceneTextDetection
 (release ``YOLO``).
 
 Both predict axis-aligned word boxes, returned here as 4-point polygons so they
@@ -40,13 +38,6 @@ model_info = {
         "url": "https://github.com/Bhashini-IITJ/SceneTextDetection/releases/download/YOLO/yolo11n_bstd_1920.pt",
         "sha256": "3b9216b50239a8d4f2ba39f1099f68ab0c4499661ca343acdbfc2e28a0c21fc3",
         "imgsz": 1920,
-    },
-    "yolo11n_bstd": {
-        "path": "models",
-        "filename": "yolo11n_bstd_finetuned.pt",
-        "url": "https://github.com/Asadalk/IndicPhotoOCR/releases/download/yolo11n-bstd-v1.0/yolo11n_bstd_finetuned.pt",
-        "sha256": "cb41a7f120ff086180e4db5b36001cd9ba6984b129076a6cf697c634aa3489db",
-        "imgsz": 1280,
     },
 }
 DEFAULT_MODEL = "yolo11n_bstd_mist_1920"
@@ -107,7 +98,7 @@ class YOLOdetector:
             checkpoint_path (str): Optional local checkpoint. If omitted, the
                 verified release asset is downloaded and cached beside this module.
             imgsz (int): Inference image size (long side). Default: the size
-                ``model_name`` was trained at (1920 or 1280).
+                ``model_name`` was trained at (1920).
             conf (float): Box confidence threshold.
             iou (float): NMS IoU threshold.
         """

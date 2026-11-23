@@ -90,15 +90,6 @@ class TestYOLOdetector:
                 "https://github.com/Bhashini-IITJ/SceneTextDetection/releases/download/YOLO/")
             assert len(model_info[name]["sha256"]) == 64
 
-    def test_previous_bstd_model_keeps_1280(self, fake_ultralytics):
-        from IndicPhotoOCR.detection.yolo import yolo_detector
-        with patch.object(yolo_detector, "download_model_from_release") as download:
-            det = yolo_detector.YOLOdetector(device="cpu", model_name="yolo11n_bstd")
-        name, path = download.call_args[0]
-        assert name == "yolo11n_bstd"
-        assert str(path).endswith("detection/yolo/models/yolo11n_bstd_finetuned.pt")
-        assert det.imgsz == 1280
-
     def test_explicit_imgsz_overrides_model_default(self, fake_ultralytics, local_checkpoint):
         from IndicPhotoOCR.detection.yolo.yolo_detector import YOLOdetector
         assert YOLOdetector(device="cpu", checkpoint_path=local_checkpoint, imgsz=640).imgsz == 640

@@ -36,8 +36,7 @@ class OCR:
         detector_checkpoint (str): Optional local YOLO checkpoint. If omitted,
             the verified release asset is downloaded and cached.
         detector_model (str): YOLO model: 'yolo11n_bstd_mist_1920' (default;
-            BSTD + MIST, 1920 px), 'yolo11n_bstd_1920' (BSTD only, 1920 px)
-            or 'yolo11n_bstd' (BSTD only, 1280 px).
+            BSTD + MIST, 1920 px) or 'yolo11n_bstd_1920' (BSTD only, 1920 px).
         identifier_type (str): 'efficientnet' (default) or 'vit'. EfficientNet
             uses the verified 12-class checkpoint regardless of identifier_lang.
         identifier_checkpoint (str): Optional local EfficientNet checkpoint.
