@@ -1,10 +1,17 @@
 """YOLO11n text detectors fine-tuned for Indian scene text.
 
-Two Ultralytics YOLO11n checkpoints, both trained without any BSTD test image:
+Three Ultralytics YOLO11n checkpoints, all trained without any BSTD test image:
 
 - ``yolo11n_bstd_mist_1920`` (default): BSTD train split (4,737 images) plus
-  5,189 MIST training video frames, trained and run at imgsz=1920.
-- ``yolo11n_bstd``: BSTD train split only, trained and run at imgsz=1280.
+  5,189 MIST training video frames, trained and run at imgsz=1920. Most robust
+  on real camera and video frames.
+- ``yolo11n_bstd_1920``: BSTD train split only, trained and run at imgsz=1920.
+  Highest recall on the BSTD test set.
+- ``yolo11n_bstd``: BSTD train split only, trained and run at imgsz=1280
+  (previous default).
+
+The 1920 checkpoints are the same files as in Bhashini-IITJ/SceneTextDetection
+(release ``YOLO``).
 
 Both predict axis-aligned word boxes, returned here as 4-point polygons so they
 plug into the existing OCR crop -> script-ID -> recognition pipeline unchanged.
@@ -23,8 +30,15 @@ model_info = {
     "yolo11n_bstd_mist_1920": {
         "path": "models",
         "filename": "yolo11n_bstd_mist_1920.pt",
-        "url": "https://github.com/Asadalk/IndicPhotoOCR/releases/download/yolo11n-bstd-mist-v2.0/yolo11n_bstd_mist_1920.pt",
+        "url": "https://github.com/Bhashini-IITJ/SceneTextDetection/releases/download/YOLO/yolo11n_bstd_mist_1920.pt",
         "sha256": "027951606ab3307653b532b8094eba38783723221d8683bd4ff2e11b8db49e2d",
+        "imgsz": 1920,
+    },
+    "yolo11n_bstd_1920": {
+        "path": "models",
+        "filename": "yolo11n_bstd_1920.pt",
+        "url": "https://github.com/Bhashini-IITJ/SceneTextDetection/releases/download/YOLO/yolo11n_bstd_1920.pt",
+        "sha256": "3b9216b50239a8d4f2ba39f1099f68ab0c4499661ca343acdbfc2e28a0c21fc3",
         "imgsz": 1920,
     },
     "yolo11n_bstd": {

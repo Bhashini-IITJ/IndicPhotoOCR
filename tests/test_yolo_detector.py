@@ -74,6 +74,22 @@ class TestYOLOdetector:
         assert str(path).endswith("detection/yolo/models/yolo11n_bstd_mist_1920.pt")
         assert det.imgsz == 1920
 
+    def test_bstd_only_1920_model(self, fake_ultralytics):
+        from IndicPhotoOCR.detection.yolo import yolo_detector
+        with patch.object(yolo_detector, "download_model_from_release") as download:
+            det = yolo_detector.YOLOdetector(device="cpu", model_name="yolo11n_bstd_1920")
+        name, path = download.call_args[0]
+        assert name == "yolo11n_bstd_1920"
+        assert str(path).endswith("detection/yolo/models/yolo11n_bstd_1920.pt")
+        assert det.imgsz == 1920
+
+    def test_1920_checkpoints_download_from_lab_release(self):
+        from IndicPhotoOCR.detection.yolo.yolo_detector import model_info
+        for name in ("yolo11n_bstd_mist_1920", "yolo11n_bstd_1920"):
+            assert model_info[name]["url"].startswith(
+                "https://github.com/Bhashini-IITJ/SceneTextDetection/releases/download/YOLO/")
+            assert len(model_info[name]["sha256"]) == 64
+
     def test_previous_bstd_model_keeps_1280(self, fake_ultralytics):
         from IndicPhotoOCR.detection.yolo import yolo_detector
         with patch.object(yolo_detector, "download_model_from_release") as download:
